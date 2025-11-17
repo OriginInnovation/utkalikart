@@ -1,0 +1,287 @@
+//serial number
+let serialNumber = 1; // Initialize the counter
+const serialNumberElements = document.querySelectorAll('.serial-no');
+serialNumberElements.forEach((element) => {
+    element.textContent = serialNumber;
+    serialNumber++;
+});
+
+//Sweet alert for delete
+function confirmDelete(id, tb, tbc, returnpage) {
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "delete.php?delete=" + id + "&tb=" + tb + "&tbc=" + tbc + "&returnpage=" + returnpage;
+        }
+    });
+}
+
+//for active and inactive
+function confirmAction(action, id, tb, tbc, tbc1, returnpage, extra) {
+    var actionText = (action === "active") ? "Are you sure you want to set this to inactive?" : "Are you sure you want to set this to active?";
+    Swal.fire({
+        title: 'Confirmation',
+        text: actionText,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, proceed!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            if (action === "active") {
+                window.location.href = "active.php?status=" + id + "&tb=" + tb + "&tbc=" + tbc + "&tbc1=" + tbc1 + "&returnpage=" + returnpage + "&extra=" + extra;
+            } else {
+                window.location.href = "inactive.php?status0=" + id + "&tb=" + tb + "&tbc=" + tbc + "&tbc1=" + tbc1 + "&returnpage=" + returnpage + "&extra=" + extra;
+            }
+        }
+    });
+    return false;
+}
+
+/* for banner id get */
+function myfcn1(idx, image) {
+    document.getElementById("id1").value = idx;
+    document.getElementById("image1").src = "upload/banner/" + image;
+}
+
+/* for category id get */
+function myfcn2(idx, category_name, popular_category) {
+    document.getElementById("id2").value = idx;
+    document.getElementById("category_name").value = category_name;
+}
+
+/* for sub-category id get */
+function myfcn3(idx, subcategory_name, category_name) {
+    console.log("ID: " + idx, "Sub-Category Name: " + subcategory_name, "Category ID: " + category_name);
+    document.getElementById("id3").value = idx;
+    document.getElementById("subcategory_name").value = subcategory_name;
+    document.getElementById("category_name2").value = category_name;
+}
+
+/* for product id get */
+function myfcn4(idx, productname, category_name, subcategory_name, productcode, productprice, productdiscountprice, productdescription, slug, keywords1, metadescription) {
+    document.getElementById("id4").value = idx;
+    document.getElementById("productname").value = productname;
+    document.getElementById("categoryDropdown").value = category_name;
+    document.getElementById("sub-category-dropdown").value = subcategory_name;
+    document.getElementById("productcode").value = productcode;
+    document.getElementById("productprice").value = productprice;
+    document.getElementById("productdiscountprice").value = productdiscountprice;
+    document.getElementById("content").value = productdescription;
+    document.getElementById("slug").value = slug;
+    document.getElementById("keywords1").value = keywords1;
+    document.getElementById("metadescription").value = metadescription;
+}
+
+
+/* calculate the discount price */
+const priceInput = document.getElementById('productprice');
+const discountInput = document.getElementById('discount');
+const discountPriceInput = document.getElementById('productdiscountprice');
+
+function calculateDiscountedPrice() {
+    let price = parseFloat(priceInput.value);
+    let discount = parseFloat(discountInput.value);
+
+    if (!isNaN(price) && !isNaN(discount)) {
+        let discountedPrice = price - (price * discount / 100);
+        discountPriceInput.value = discountedPrice.toFixed(2);
+    } else {
+        discountPriceInput.value = '';
+    }
+}
+priceInput.addEventListener('input', calculateDiscountedPrice);
+discountInput.addEventListener('input', calculateDiscountedPrice);
+
+/* for sub-subcategory id get */
+function myfcn5(idx, image12, sub_subcategoryname, subcategory_id, category_id) {
+    document.getElementById("id89").value = idx;
+    document.getElementById("subsubcat1_img").src = "upload/subsubcategory/" + image12;
+    document.getElementById("sub_subcategory").value = sub_subcategoryname;
+    document.getElementById("subcategoryname1").value = subcategory_id;
+    document.getElementById("category_name2").value = category_id;
+}
+
+/* for offer id get */
+function myfcn6(idx, offer_name, offer_id, offer_dis) {
+    document.getElementById("id6").value = idx;
+    document.getElementById("offer_name").value = offer_name;
+    document.getElementById("offer_id").value = offer_id;
+    document.getElementById("offer_dis").value = offer_dis;
+}
+
+/* for pdfupload id get */
+function myfcn7(idx, cname, c_code, cexpiry, cdetails) {
+    document.getElementById("id7").value = idx;
+    document.getElementById("cname").value = cname;
+    document.getElementById("c_code").value = c_code;
+    document.getElementById("cexpiry").value = cexpiry;
+    document.getElementById("cdetails").value = cdetails;
+}
+
+/*for addproduct close button*/
+document.getElementById("closeModalBtn").addEventListener("click", function () {
+    window.location.href = "product.php";
+});
+
+
+/* for occasion id get */
+function myfcn8(idx, image, occasion1_name) {
+    document.getElementById("id88").value = idx;
+    document.getElementById("occasion1_img").src = "upload/occasion/" + image;
+    document.getElementById("occasion1_name").value = occasion1_name;
+}
+
+/* for metatags id get */
+function myfcn9(idx, description, keywords, author) {
+    document.getElementById("id9").value = idx;
+    document.getElementById("metaadescription").value = description;
+    document.getElementById("keywoords").value = keywords;
+    document.getElementById("author1").value = author;
+}
+
+
+/*categorywise sub-category in insert*/
+$(document).ready(function () {
+    $('#category-dropdown').on('change', function () {
+        var category_id = this.value;
+        $.ajax({
+            url: "get_subcat_insert.php",
+            type: "POST",
+            data: {
+                category_id: category_id
+            },
+            cache: false,
+            success: function (result) {
+                $("#sub-category-dropdown").html(result);
+            }
+        });
+    });
+});
+
+
+/*categorywise sub-category in update*/
+$(document).ready(function () {
+    var initialCategoryId = $('#categoryDropdown1').val();
+    getSubcategories(initialCategoryId);
+
+    // Event listener to trigger the AJAX request when category changes
+    $('#categoryDropdown1').change(function () {
+        var categoryId = $(this).val();
+        getSubcategories(categoryId);
+    });
+});
+
+// Function to retrieve subcategories using AJAX
+function getSubcategories(categoryId) {
+    $.ajax({
+        url: 'get_subcat_update.php',
+        type: 'POST',
+        data: {
+            category_id: categoryId
+        },
+        success: function (response) {
+            var subcategoryDropdown = $('#sub-category-dropdown1');
+            var selectedSubcategory = subcategoryDropdown
+                .val(); // Get the currently selected subcategory
+
+            // Populate subcategory dropdown with options
+            subcategoryDropdown.html(response);
+
+            // Move the selected subcategory to the top
+            if (selectedSubcategory) {
+                var selectedOption = subcategoryDropdown.find('option[value="' +
+                    selectedSubcategory +
+                    '"]');
+                var topOption = subcategoryDropdown.find('option:first');
+                selectedOption.detach().insertBefore(topOption);
+                selectedOption.prop('selected', true); // Select the moved option
+            }
+        }
+    });
+}
+
+/*add product sub-sub-category insert*/
+$(document).ready(function () {
+    $('#sub-category-dropdown').on('change', function () {
+        var subcategory_id = this.value;
+        $.ajax({
+            url: "get_subsub_insert.php",
+            type: "POST",
+            data: {
+                subcategory_id: subcategory_id
+            },
+            cache: false,
+            success: function (result) {
+                $("#sub-sub-category-dropdown").html(result);
+            }
+        });
+    });
+});
+
+
+/*categorywise sub-sub-category in product update*/
+$(document).ready(function () {
+    var initialsubCategoryId = $('#sub-category-dropdown1').val();
+    getsubSubcategories(initialsubCategoryId);
+
+    // Event listener to trigger the AJAX request when category changes
+    $('#sub-category-dropdown1').change(function () {
+        var subcategoryId = $(this).val();
+        getsubSubcategories(subcategoryId);
+    });
+});
+// Function to retrieve subcategories using AJAX
+function getsubSubcategories(subcategoryId) {
+    $.ajax({
+        url: 'get_subsub_update.php',
+        type: 'POST',
+        data: {
+            subcategory_id: subcategoryId
+        },
+        success: function (response) {
+            var subcategoryDropdown = $('#sub-sub-category-dropdown1');
+            var selectedSubcategory = subcategoryDropdown
+                .val(); // Get the currently selected subcategory
+
+            // Populate subcategory dropdown with options
+            subcategoryDropdown.html(response);
+
+            // Move the selected subcategory to the top
+            if (selectedSubcategory) {
+                var selectedOption = subcategoryDropdown.find('option[value="' +
+                    selectedSubcategory +
+                    '"]');
+                var topOption = subcategoryDropdown.find('option:first');
+                selectedOption.detach().insertBefore(topOption);
+                selectedOption.prop('selected', true); // Select the moved option
+            }
+        }
+    });
+}
+
+//for product price and discount price 
+document.addEventListener("DOMContentLoaded", function () {
+    var productPriceInput = document.getElementById("exampleInputproductprice");
+    var productDiscountPriceInput = document.getElementById("exampleInputproductdiscountprice");
+    var discountPriceError = document.getElementById("discountPriceError");
+
+    productDiscountPriceInput.addEventListener("input", function () {
+        var productPrice = parseInt(productPriceInput.value);
+        var productDiscountPrice = parseInt(productDiscountPriceInput.value);
+
+        if (productDiscountPrice >= productPrice) {
+            discountPriceError.textContent = "Discount price must be less than product price.";
+        } else {
+            discountPriceError.textContent = "";
+        }
+    });
+});
