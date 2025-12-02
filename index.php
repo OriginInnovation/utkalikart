@@ -15,7 +15,160 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="assets/css/main.css?v=3.6">
+    <link rel="stylesheet" href="assets/css/main.css?v=3.8">
+    <style>
+        /* Container Styling */
+        .slider-section {
+            padding: 40px 0;
+            position: relative;
+            background: #fff;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            align-items: center;
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* The Scrollable Area */
+        .slider-track {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 20px;
+            padding: 20px 10px;
+            /* Padding for shadow/hover space */
+            scrollbar-width: none;
+            /* Firefox hide scrollbar */
+        }
+
+        .slider-track::-webkit-scrollbar {
+            display: none;
+            /* Chrome/Safari hide scrollbar */
+        }
+
+        /* Card Styling */
+        .category-card {
+            min-width: 140px;
+            height: 107px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            position: relative;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Image Styling (Floating Effect) */
+        .category-card img {
+            width: 100px;
+            /* Adjust based on your image size */
+            height: auto;
+            position: absolute;
+            top: -20px;
+            /* Pulls image up like the design */
+            transition: transform 0.3s;
+            filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.1));
+        }
+
+        .category-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .category-name {
+            font-weight: 700;
+            font-size: 14px;
+            color: #444;
+            z-index: 2;
+        }
+
+        /* --- Exact Colors from Image --- */
+        .bg-green {
+            background-color: #dceddd;
+        }
+
+        /* New Launches */
+        .bg-red {
+            background-color: #f4d0d2;
+        }
+
+        /* Limited Stock */
+        .bg-brown {
+            background-color: #e8e2df;
+        }
+
+        /* Begin Walk */
+        .bg-blue {
+            background-color: #dce8f4;
+        }
+
+        /* Men */
+        .bg-pink {
+            background-color: #eddcd9;
+        }
+
+        /* Women */
+        .bg-gray {
+            background-color: #f4f4f0;
+        }
+
+        /* Sneakers/Others */
+
+        /* Navigation Buttons */
+        .nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            position: absolute;
+        }
+
+        .nav-btn:hover {
+            background: #333;
+            color: #fff;
+            border-color: #333;
+        }
+
+        .prev-btn {
+            left: -20px;
+        }
+
+        .next-btn {
+            right: -20px;
+        }
+
+        /* Hide buttons on mobile if needed, but flex keeps them okay */
+        @media (max-width: 768px) {
+            .nav-btn {
+                display: none;
+            }
+
+            /* Mobile me ungli se scroll karenge */
+            .slider-track {
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -40,10 +193,10 @@
             $sql = "SELECT * FROM banner";
             $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
-                ?>
+            ?>
 
                 <div class="carousel-item active">
-                    <img src="admin/upload/banner/<?php echo $row['banner_image']; ?>" class="d-block w-100 img-fluid"
+                    <img src="admin/upload/banner/<?php echo $row['banner_image']; ?>" class="d-block w-100 img-fluid banner-image"
                         alt="Handcrafted Products">
                 </div>
             <?php } ?>
@@ -67,8 +220,84 @@
         </div>
     </div>
 
+    <div class="container slider-section">
+    <div class="slider-wrapper">
+        
+        <button class="nav-btn prev-btn" onclick="scrollSlider(-1)">
+            <i class="bi bi-chevron-left fs-5"></i>
+        </button>
 
-    <section class="icon-section py-3">
+        <div class="slider-track" id="slider">
+            
+            <a href="#" class="category-card bg-green">
+                <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Shoe"> 
+                <span class="category-name">New Launches</span>
+            </a>
+
+            <a href="#" class="category-card bg-red">
+                <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Timer">
+                <span class="category-name">Limited Stock</span>
+            </a>
+
+            <a href="#" class="category-card bg-brown">
+                <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Walk">
+                <span class="category-name">Begin Walk</span>
+            </a>
+
+            <a href="#" class="category-card bg-blue">
+                <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Men">
+                <span class="category-name">Men</span>
+            </a>
+
+            <a href="#" class="category-card bg-pink">
+                <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Women">
+                <span class="category-name">Women</span>
+            </a>
+
+            <a href="#" class="category-card bg-gray">
+                <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Sneakers">
+                <span class="category-name">Sneakers</span>
+            </a>
+
+            <a href="#" class="category-card bg-gray">
+                <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Slip Ons">
+                <span class="category-name">Slip Ons</span>
+            </a>
+
+            <a href="#" class="category-card bg-gray">
+                <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Loafers">
+                <span class="category-name">Loafers</span>
+            </a>
+
+             <a href="#" class="category-card bg-gray">
+                <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Oxfords">
+                <span class="category-name">Oxfords</span>
+            </a>
+
+        </div>
+
+        <button class="nav-btn next-btn" onclick="scrollSlider(1)">
+            <i class="bi bi-chevron-right fs-5"></i>
+        </button>
+
+    </div>
+</div>
+
+<script>
+    function scrollSlider(direction) {
+        const slider = document.getElementById('slider');
+        const scrollAmount = 200; // Ek baar me kitna scroll karna hai
+        
+        if (direction === 1) {
+            slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        } else {
+            slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        }
+    }
+</script>
+
+
+    <section class="icon-section pb-5">
         <div class="container">
             <div class="row g-3 justify-content-center text-center">
                 <div class="col-6 col-md-3">
@@ -99,7 +328,7 @@
         </div>
     </section>
 
-    <section class="p-2">
+    <section class="pb-5">
         <div class="bam-carousel">
             <div class="bam-track" id="bamTrack">
                 <?php
@@ -107,7 +336,7 @@
                 $sql1 = "SELECT * FROM sub_subcategory";
                 $result1 = $conn->query($sql1);
                 while ($row1 = $result1->fetch_assoc()) {
-                    ?>
+                ?>
                     <div class="bam-item"><a href="sub_sub_categories.php" class="bam-link">
                             <img src="admin/upload/subsubcategory/<?php echo $row1['image']; ?>" alt="Peach Suit">
                             <p><?php echo $row1['sub_subcategoryname']; ?></p>
@@ -118,39 +347,41 @@
         </div>
     </section>
 
-    <div class="container mb-5 shop-by-section">
-        <div class="of-collection-heading">
-            <h2>Shop by Collection</h2>
-        </div>
-        <div class="row g-4 of-collection-row">
-            <?php
-            include 'admin/conn.php';
-            $sql2 = "SELECT * FROM occasion LIMIT 4";
-            $result2 = $conn->query($sql2);
-            while ($row2 = $result2->fetch_assoc()) {
-                $encoded_id = base64_encode($row2['id']);
+    <section style="background-color: #fff0e9;">
+        <div class="container shop-by-section py-5">
+            <div class="of-collection-heading m-0">
+                <h2 class="mb-5">Shop by Collection</h2>
+            </div>
+            <div class="row g-4 of-collection-row">
+                <?php
+                include 'admin/conn.php';
+                $sql2 = "SELECT * FROM occasion LIMIT 4";
+                $result2 = $conn->query($sql2);
+                while ($row2 = $result2->fetch_assoc()) {
+                    $encoded_id = base64_encode($row2['id']);
                 ?>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="of-collection-item">
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                        <div class="of-collection-item">
 
-                        <!-- <span class="of-collection-tag">New</span> -->
-                        <img src="admin/upload/occasion/<?php echo $row2['image']; ?>" class="of-collection-img"
-                            alt="Ethnic Wear">
-                        <div class="of-collection-overlay">
-                            <div class="of-collection-name"><?php echo $row2['name']; ?></div>
-                            <a href="occasion.php?id=<?php echo $encoded_id; ?>"><button class="of-collection-btn">Shop Now
-                                    ➜</button></a>
+                            <!-- <span class="of-collection-tag">New</span> -->
+                            <img src="admin/upload/occasion/<?php echo $row2['image']; ?>" class="of-collection-img"
+                                alt="Ethnic Wear">
+                            <div class="of-collection-overlay">
+                                <div class="of-collection-name"><?php echo $row2['name']; ?></div>
+                                <a href="occasion.php?id=<?php echo $encoded_id; ?>"><button class="of-collection-btn">Shop Now
+                                        ➜</button></a>
+                            </div>
+
                         </div>
-
                     </div>
-                </div>
-            <?php } ?>
+                <?php } ?>
+            </div>
         </div>
-    </div>
+    </section>
 
     <section class="features">
-        <div class="of-collection-heading2">
-            <h2>Our Featured Products</h2>
+        <div class="of-collection-heading2 m-0">
+            <h2 class="mb-4">Our Featured Products</h2>
         </div>
         <div class="motif-card-container">
             <?php
@@ -158,7 +389,7 @@
             $sql3 = "SELECT * FROM product where featured_product='1'";
             $result3 = $conn->query($sql3);
             while ($row3 = $result3->fetch_assoc()) {
-                ?>
+            ?>
                 <div class="motif-card-link">
                     <div class="motif-card">
                         <div class="motif-card-img-wrapper">
@@ -232,7 +463,7 @@
         </div>
     </section>
 
-    <section class="shop-role-section">
+    <section class="shop-role-section pt-5">
         <div class="shop-role-container">
             <div class="of-collection-heading3">
                 <h2>Top Selling</h2>
@@ -244,7 +475,7 @@
 
                 $result4 = $conn->query($sql4);
                 while ($row4 = $result4->fetch_assoc()) {
-                    ?>
+                ?>
                     <div class="shop-role-card" onclick="filterByRole('bride')">
                         <div class="shop-role-card-img-wrapper">
                             <a href="sub_categories.php"><img
@@ -318,9 +549,9 @@
         </div>
     </section>
 
-    <section class="myshop-section-bg">
-        <div class="container">
-            <div class="of-collection-heading4">
+    <section class="myshop-section-bg" style="background-color: #fff0e9;">
+        <div class="container py-5">
+            <div class="of-collection-heading4 m-0 mb-5">
                 <h2>Popular Products</h2>
             </div>
             <div class="row row-cols-2 row-cols-md-4 g-4">
@@ -330,7 +561,7 @@
 
                 $result5 = $conn->query($sql5);
                 while ($row5 = $result5->fetch_assoc()) {
-                    ?>
+                ?>
                     <div class="col">
                         <div class="myshop-product-card">
                             <i class="fas fa-heart myshop-wishlist-btn"
@@ -377,7 +608,7 @@
 
                 $result6 = $conn->query($sql6);
                 while ($row6 = $result6->fetch_assoc()) {
-                    ?>
+                ?>
                     <div class="col">
                         <div class="oa-product-card">
                             <div class="oa-product-image">
@@ -449,12 +680,12 @@
             const toggle = document.getElementById(toggleId);
             const box = document.getElementById(boxId);
 
-            toggle.addEventListener('click', function (e) {
+            toggle.addEventListener('click', function(e) {
                 e.stopPropagation();
                 box.classList.toggle('d-none');
             });
 
-            document.addEventListener('click', function (e) {
+            document.addEventListener('click', function(e) {
                 if (!box.contains(e.target) && !toggle.contains(e.target)) {
                     box.classList.add('d-none');
                 }
@@ -593,7 +824,7 @@
 
     <!-- JS check out-->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             const panel = document.getElementById("buyNowUnq_CheckoutPanel");
             const buyNowBtn = document.getElementById("buyNowUnq_BuyNowBtn");
             const stepActionBtn = document.getElementById("buyNowUnq_StepActionBtn");
@@ -830,7 +1061,7 @@
                 panel.style.display = "none";
                 successModal.show();
             }
-            successModalElement.addEventListener('shown.bs.modal', function () {
+            successModalElement.addEventListener('shown.bs.modal', function() {
                 if (!lottieAnimation) {
                     lottieAnimation = lottie.loadAnimation({
                         container: document.getElementById('lottie-success'),
@@ -843,7 +1074,7 @@
                     lottieAnimation.goToAndPlay(0, true);
                 }
             });
-            successModalElement.addEventListener('hidden.bs.modal', function () {
+            successModalElement.addEventListener('hidden.bs.modal', function() {
                 if (lottieAnimation) {
                     lottieAnimation.stop();
                 }

@@ -1,4 +1,8 @@
-    body {
+.banner-image {
+  height: 510px !important;
+}
+
+body {
       overflow-x: hidden;
     }
 
@@ -104,7 +108,6 @@
       }
     }
 
-
     #offersBarContainer {
       background-color: #000000;
       overflow: hidden;
@@ -142,7 +145,6 @@
         margin-top: -65px;
       }
     }
-
 
     /* navbar */
     .od-nav-bar {
@@ -306,7 +308,6 @@
       background-color: #333;
     }
 
-
     #ar-account-login-btn-mobile {
       background-color: black;
       color: white;
@@ -322,7 +323,6 @@
     #ar-account-login-btn-mobile:hover {
       background-color: #333;
     }
-
 
     @media (min-width: 992px) {
 
@@ -390,8 +390,6 @@
       z-index: 1000;
     }
 
-
-
     @media (max-width: 991.98px) {
       .desktop-header {
         display: none !important;
@@ -402,7 +400,6 @@
         margin-left: -17px;
       }
     }
-
 
     .od-search-bar {
       background: #fff;
@@ -429,21 +426,17 @@
       cursor: pointer;
     }
 
-
     .od-gallery-icon {
       right: 45px;
     }
-
 
     .od-camera-icon {
       right: 15px;
     }
 
-
     #previewImage img {
       max-height: 200px;
     }
-
 
     /* add to cart */
 
@@ -1106,8 +1099,6 @@
       margin-right: 10px;
     }
 
-
-
     @media (max-width: 767.98px) {
       .view-btn {
         position: fixed;
@@ -1127,7 +1118,6 @@
         flex-grow: 1;
       }
     }
-
 
     @media (max-width: 576px) {
       .modal-content {
@@ -1245,7 +1235,6 @@
       font-size: 1.2rem;
     }
 
-
     @media (max-width: 992px) {
       .carousel-item img {
         height: 60vh;
@@ -1264,7 +1253,6 @@
         padding: 10px 20px;
       }
     }
-
 
     @media (max-width: 768px) {
       .carousel-item img {
@@ -1285,7 +1273,6 @@
         padding: 8px 16px;
       }
     }
-
 
     @media (max-width: 576px) {
       .carousel-item img {
@@ -1457,7 +1444,6 @@
       }
     }
 
-
     @media (max-width: 768px) {
       .motif-card-container {
         grid-template-columns: repeat(2, 1fr);
@@ -1473,7 +1459,6 @@
       }
     }
 
-
     @media (max-width: 480px) {
       .motif-card-container {
         grid-template-columns: repeat(2, 1fr);
@@ -1488,7 +1473,6 @@
         width: 100%;
       }
     }
-
 
     /* css for offer banner */
 
@@ -1508,7 +1492,6 @@
       font-size: 1.05rem;
       line-height: 1.7;
     }
-
 
     .od-banner-img-wrapper {
       text-align: center;
@@ -1646,7 +1629,6 @@
       }
     }
 
-
     @media (min-width:768px) and (max-width:991.98px) {
       .oa-new-arrivals-section .row>[class*="col"] {
         flex: 0 0 50%;
@@ -1657,10 +1639,9 @@
       }
     }
 
-
     /* shop by role section*/
     .shop-role-section {
-      padding: 4rem 1rem;
+      /* padding: 4rem 1rem; */
       background-color: #fff;
     }
 
@@ -1726,7 +1707,6 @@
       margin: 0;
       letter-spacing: 0.5px;
     }
-
 
     @media (max-width: 1024px) {
       .shop-role-card-img-wrapper {
@@ -1954,7 +1934,6 @@
       color: white;
     }
 
-
     @media (max-width: 768px) {
       .of-collection-img {
         height: 240px;
@@ -1970,7 +1949,6 @@
         font-size: 0.8rem;
       }
     }
-
 
     /* product filter page */
     .custom-filter-box {
@@ -1995,7 +1973,6 @@
       display: inline-block;
       border: 1px solid #ccc;
     }
-
 
     .custom-search-input {
       border: 1px solid #ccc;
@@ -2044,7 +2021,6 @@
       width: 50%;
       border-radius: 0;
     }
-
 
     .custom-bottom-bar {
       position: fixed;
@@ -2190,7 +2166,6 @@
       gap: 0.5rem;
     }
 
-
     .offcanvas.offcanvas-bottom {
       height: auto !important;
       max-height: 85vh;
@@ -2233,7 +2208,6 @@
 
     }
 
-
     .sort-options .list-group-item {
       border: none;
       padding: 0.9rem 1.5rem;
@@ -2251,7 +2225,6 @@
       color: #000000;
       font-weight: 600;
     }
-
 
     .filter-content-wrapper {
       display: flex;
@@ -2311,11 +2284,9 @@
       width: calc(100% - 2rem);
     }
 
-
     .filter-detail-pane:not(.active) {
       display: none;
     }
-
 
     /* index categories slide */
     .bam-carousel {
@@ -2543,7 +2514,6 @@
       }
     }
 
-
     /* this css for check out sucess */
 
     .cn-card {
@@ -2667,7 +2637,6 @@
         width: 100%;
       }
     }
-
 
     /* this css for check out failed */
 
@@ -2837,7 +2806,6 @@
       text-decoration: underline;
     }
 
-
     /* account dropdown */
     .ar-account-container {
       position: relative;
@@ -2885,7 +2853,6 @@
       padding: 2px 6px;
       border-radius: 3px;
     }
-
 
     .ar-modal-wrapper {
       max-width: 800px;
@@ -2956,7 +2923,6 @@
         right: -53px;
       }
     }
-
 
     /* Mobile View (up to 767.98px) */
     @media (max-width: 767.98px) {
@@ -3212,7 +3178,6 @@
       font-weight: 600;
     }
 
-
     @media (max-width: 991.98px) {
 
       .custom-desktop-sidebar,
@@ -3256,7 +3221,6 @@
       }
     }
 
-
     /* products loader */
     .skeleton {
       background: linear-gradient(90deg, #eee 25%, #f5f5f5 50%, #eee 75%);
@@ -3291,7 +3255,6 @@
       border-radius: 6px;
     }
 
-
     /* my wishlist page */
     .wl-header {
       display: flex;
@@ -3312,7 +3275,6 @@
       color: #878787;
       font-weight: 500;
     }
-
 
     .wl-card {
       border-radius: 10px;
@@ -3894,7 +3856,6 @@
       }
     }
 
-
     .rating-chart .stars {
       color: #000000;
       font-size: 14px;
@@ -3994,7 +3955,6 @@
       object-fit: cover;
     }
 
-
     @media (max-width: 767px) {
       .rating-buttons {
         margin-top: 20px;
@@ -4054,7 +4014,6 @@
         margin-top: 45px;
       }
     }
-
 
     .contact-info-column,
     .contact-form-column {
@@ -4223,7 +4182,6 @@
       color: #721c24;
     }
 
-
     /* profile page */
 
     .offcanvas-start {
@@ -4284,7 +4242,6 @@
       padding: 10px;
     }
 
-
     .CA-profile-details-table {
       width: 100%;
       margin-bottom: 30px;
@@ -4318,13 +4275,10 @@
 
     }
 
-
     .CA-gender-options {
       display: flex;
       gap: 15px;
     }
-
-
 
     @media (max-width: 575.98px) {
       .CA-gender-options {
@@ -4768,7 +4722,6 @@
       padding-top: 20px;
     }
 
-
     .chk-slide-panel {
       position: absolute;
       top: 0;
@@ -4807,7 +4760,6 @@
       z-index: 1001;
       color: #212529;
     }
-
 
     .chk-order-item {
       border-bottom: 1px solid #eee;
@@ -4893,7 +4845,6 @@
       align-items: center;
       background-color: transparent;
     }
-
 
     @media (max-width: 768px) {
       .chk-modal-dialog {

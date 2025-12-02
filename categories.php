@@ -16,7 +16,82 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/main.css?v=2.6">
+    <style>
+        /* Slider Wrapper */
+        .range-wrapper {
+            position: relative;
+            width: 100%;
+            height: 5px;
+            /* Track height */
+            margin-top: 15px;
+        }
 
+        /* Background Track (Grey Bar) */
+        .slider-track {
+            width: 100%;
+            height: 5px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: #ddd;
+            /* Inactive color */
+            border-radius: 5px;
+        }
+
+        /* Common Styles for Both Inputs */
+        input[type="range"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 100%;
+            outline: none;
+            position: absolute;
+            margin: auto;
+            top: 5px;
+            bottom: 0;
+            background-color: transparent;
+            pointer-events: none;
+            /* Important: Allows clicking through transparent parts */
+        }
+
+        /* Slider Thumb (Circle Handle) Styling */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 18px;
+            width: 18px;
+            background-color: #212529;
+            /* Dark Color */
+            cursor: pointer;
+            border-radius: 50%;
+            pointer-events: auto;
+            /* Re-enable clicking on the thumb */
+            border: 2px solid #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            margin-top: -7px;
+            /* Adjust vertical alignment */
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            height: 18px;
+            width: 18px;
+            background-color: #212529;
+            cursor: pointer;
+            border-radius: 50%;
+            pointer-events: auto;
+            border: 2px solid #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="range"]::-ms-thumb {
+            height: 18px;
+            width: 18px;
+            background-color: #212529;
+            cursor: pointer;
+            border-radius: 50%;
+            pointer-events: auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -47,8 +122,17 @@
 
                         <div class="mb-4">
                             <h6 class="custom-filter-title mb-2">PRICE</h6>
-                            <input type="range" class="form-range custom-price-slider" min="100" max="10000" step="100">
-                            <div class="text-muted small">₹100 - ₹10,000+</div>
+
+                            <div class="range-wrapper position-relative w-100" style="height: 30px;">
+                                <div class="slider-track"></div>
+                                <input type="range" min="0" max="10000" value="1000" id="slider-1" oninput="slideOne()">
+                                <input type="range" min="0" max="10000" value="7000" id="slider-2" oninput="slideTwo()">
+                            </div>
+
+                            <div class="d-flex justify-content-between text-muted small mt-2">
+                                <span>₹<span id="range1">1000</span></span>
+                                <span>₹<span id="range2">7000</span></span>
+                            </div>
                         </div>
 
                         <div class="mb-4">
@@ -1550,6 +1634,43 @@
         // initial load
         showSkeleton();
         setTimeout(loadProducts, 1200);
+    </script>
+        <script>
+        window.onload = function() {
+            slideOne();
+            slideTwo();
+        };
+
+        let sliderOne = document.getElementById("slider-1");
+        let sliderTwo = document.getElementById("slider-2");
+        let displayValOne = document.getElementById("range1");
+        let displayValTwo = document.getElementById("range2");
+        let minGap = 500; // Minimum distance between two handles
+        let sliderTrack = document.querySelector(".slider-track");
+        let sliderMaxValue = document.getElementById("slider-1").max;
+
+        function slideOne() {
+            if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
+                sliderOne.value = parseInt(sliderTwo.value) - minGap;
+            }
+            displayValOne.textContent = sliderOne.value;
+            fillColor();
+        }
+
+        function slideTwo() {
+            if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
+                sliderTwo.value = parseInt(sliderOne.value) + minGap;
+            }
+            displayValTwo.textContent = sliderTwo.value;
+            fillColor();
+        }
+
+        function fillColor() {
+            percent1 = (sliderOne.value / sliderMaxValue) * 100;
+            percent2 = (sliderTwo.value / sliderMaxValue) * 100;
+            // Track background gradient logic
+            sliderTrack.style.background = `linear-gradient(to right, #ddd ${percent1}%, #212529 ${percent1}%, #212529 ${percent2}%, #ddd ${percent2}%)`;
+        }
     </script>
 </body>
 

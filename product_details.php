@@ -170,303 +170,380 @@
     <i class="bi bi-chevron-up"></i>
   </button>
 
-  <div class="container product-details-section">
-    <div class="row mt-5">
-      <div class="col-md-5">
-        <div class="position-relative">
-          <img id="mainImage" src="assets/img/black.webp" class="main-img" alt="Product">
-          <div id="lens" class="img-zoom-lens"></div>
-          <div id="zoomResult" class="img-zoom-result"></div>
-        </div>
-        <div class="thumbs mt-3 d-flex gap-2">
-          <img class="active" src="assets/img/black.webp" data-img="assets/img/black.webp">
-          <img src="assets/img/pink.webp" data-img="assets/img/pink.webp">
-          <img src="assets/img/sky.webp" data-img="assets/img/sky.webp">
-        </div>
-      </div>
-
-
-      <div class="col-md-7 custom-scroll-section">
-        <h3>Handloom Sambalpuri Cotton Saree - Red & Black</h3>
-        <div class="d-flex align-items-center mb-2">
-          <span class="fw-bold fs-4 text-dark">₹1,899</span>
-          <span class="text-muted ms-3 text-decoration-line-through">₹2,999</span>
-          <span class="ms-3 text-success fw-bold">37% OFF</span>
-        </div>
-
-        <!-- Color Section -->
-        <div class="mt-3">
-          <label class="fw-bold d-block mb-2">Colour:</label>
-          <div class="d-flex gap-2">
-            <div class="color-box">
-              <img src="assets/img/yellow.webp" class="color-option border rounded active" alt="Yellow" data-img="assets/img/yellow.webp">
-              <span class="color-tooltip">Yellow</span>
-            </div>
-            <div class="color-box">
-              <img src="assets/img/pink.webp" class="color-option border rounded" alt="Pink" data-img="assets/img/pink.webp">
-              <span class="color-tooltip">Pink</span>
-            </div>
-            <div class="color-box">
-              <img src="assets/img/sky.webp" class="color-option border rounded" alt="Sky Blue" data-img="assets/img/sky.webp">
-              <span class="color-tooltip">Sky Blue</span>
-            </div>
+  <section>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-md-5">
+          <div class="position-relative">
+            <img id="mainImage" src="assets/img/black.webp" class="img-fluid" alt="Product">
+            <div id="lens" class="img-zoom-lens"></div>
+            <div id="zoomResult" class="img-zoom-result"></div>
+          </div>
+          <div class="thumbs mt-3 d-flex gap-2">
+            <img class="active" src="assets/img/black.webp" data-img="assets/img/black.webp">
+            <img src="assets/img/pink.webp" data-img="assets/img/pink.webp">
+            <img src="assets/img/sky.webp" data-img="assets/img/sky.webp">
           </div>
         </div>
 
-        <!-- Size Section -->
-        <div class="mt-3">
-          <label class="fw-bold d-block mb-2">Size:</label>
-          <div class="d-flex gap-2 flex-wrap">
-            <button class="btn btn-outline-dark size-option">S</button>
-            <button class="btn btn-outline-dark size-option">M</button>
-            <button class="btn btn-outline-dark size-option">L</button>
-            <button class="btn btn-outline-dark size-option">XL</button>
-            <button class="btn btn-outline-dark size-option">XXL</button>
+
+        <div class="col-md-7 custom-scroll-section">
+          <h3>Handloom Sambalpuri Cotton Saree - Red & Black</h3>
+          <div class="d-flex align-items-center mb-2">
+            <span class="fw-bold fs-4 text-dark">₹1,899</span>
+            <span class="text-muted ms-3 text-decoration-line-through">₹2,999</span>
+            <span class="ms-3 text-success fw-bold">37% OFF</span>
           </div>
-        </div>
 
-        <div class="row text-center my-3">
+          <!-- Color Section -->
+          <div class="mt-3">
+            <div class="d-flex align-items-center">
 
-          <div class="col-4 col-md-3">
-            <div class="feature-box">
-              <img src="assets/img/icon-returns._CB562506492_.png" class="feature-icon mb-2" alt="Return & Exchange">
-              <p class="mb-0">10 days Return<br>& Exchange</p>
+              <div>
+                <h5 class="fw-bold mb-0 me-3">Color:</h5>
+              </div>
+
+              <div class="d-flex gap-3">
+                <div class="color-box position-relative">
+                  <img src="assets/img/yellow.webp"
+                    class="color-option border border-2 border-dark rounded-circle shadow active"
+                    alt="Yellow"
+                    data-img="assets/img/yellow.webp"
+                    style="width: 40px; height: 40px; object-fit: cover; cursor: pointer;">
+                  <span class="color-tooltip">Yellow</span>
+                </div>
+
+                <div class="color-box position-relative">
+                  <img src="assets/img/pink.webp"
+                    class="color-option border border-1 border-secondary rounded-circle shadow-sm opacity-75"
+                    alt="Pink"
+                    data-img="assets/img/pink.webp"
+                    style="width: 40px; height: 40px; object-fit: cover; cursor: pointer;">
+                  <span class="color-tooltip">Pink</span>
+                </div>
+
+                <div class="color-box position-relative">
+                  <img src="assets/img/sky.webp"
+                    class="color-option border border-1 border-secondary rounded-circle shadow-sm opacity-75"
+                    alt="Sky Blue"
+                    data-img="assets/img/sky.webp"
+                    style="width: 40px; height: 40px; object-fit: cover; cursor: pointer;">
+                  <span class="color-tooltip">Sky Blue</span>
+                </div>
+
+              </div>
             </div>
           </div>
 
-          <div class="col-4 col-md-3">
-            <div class="feature-box">
-              <img src="assets/img/icon-cod._CB562506657_.png" class="feature-icon mb-2" alt="Cash on Delivery">
-              <p class="mb-0">Cash/Pay on<br>Delivery</p>
+          <!-- Size Section -->
+          <div class="mt-3">
+            <div class="mt-3">
+              <div class="d-flex align-items-center">
+
+                <div>
+                  <h5 class="fw-bold mb-0 me-3">Size:</h5>
+                </div>
+
+                <div class="d-flex gap-2 flex-wrap">
+
+                  <button class="btn btn-outline-dark shadow-sm p-0 size-option"
+                    style="width: 40px; height: 40px;">S</button>
+
+                  <button class="btn btn-dark shadow p-0 size-option"
+                    style="width: 40px; height: 40px;">M</button>
+
+                  <button class="btn btn-outline-dark shadow-sm p-0 size-option"
+                    style="width: 40px; height: 40px;">L</button>
+
+                  <button class="btn btn-outline-dark shadow-sm p-0 size-option"
+                    style="width: 40px; height: 40px;">XL</button>
+
+                  <button class="btn btn-outline-dark shadow-sm p-0 size-option"
+                    style="width: 40px; height: 40px;">XXL</button>
+                </div>
+
+              </div>
             </div>
           </div>
 
-          <div class="col-4 col-md-3">
-            <div class="feature-box">
-              <img src="assets/img/Secure-payment._CB650126890_.png" class="feature-icon mb-2" alt="Secure Transaction">
-              <p class="mb-0">Secure<br>transaction</p>
+          <div class="row text-center my-3">
+
+            <div class="col-4 col-md-3">
+              <div class="feature-box">
+                <img src="assets/img/icon-returns._CB562506492_.png" class="feature-icon mb-2" alt="Return & Exchange">
+                <p class="mb-0">10 days Return<br>& Exchange</p>
+              </div>
             </div>
+
+            <div class="col-4 col-md-3">
+              <div class="feature-box">
+                <img src="assets/img/icon-cod._CB562506657_.png" class="feature-icon mb-2" alt="Cash on Delivery">
+                <p class="mb-0">Cash/Pay on<br>Delivery</p>
+              </div>
+            </div>
+
+            <div class="col-4 col-md-3">
+              <div class="feature-box">
+                <img src="assets/img/Secure-payment._CB650126890_.png" class="feature-icon mb-2" alt="Secure Transaction">
+                <p class="mb-0">Secure<br>transaction</p>
+              </div>
+            </div>
+
           </div>
 
+
+          <div class="mt-4">
+    <h6 class="fw-bold mb-3">Product Highlights:</h6>
+    
+    <div class="row g-3">
+        
+        <div class="col-6">
+            <div class="d-flex align-items-center border rounded p-2 shadow-sm h-100">
+                <div class="bg-warning bg-opacity-10 text-warning p-2 rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                    <i class="bi bi-star-fill"></i>
+                </div>
+                <small class="fw-semibold">Authentic Weave</small>
+            </div>
         </div>
 
-
-        <div class="mt-4">
-          <ul class="list-unstyled mt-3">
-            <li><i class="bi bi-star me-2"></i>Authentic Sambalpuri weave</li>
-            <li><i class="bi bi-droplet me-2"></i>Breathable handloom cotton</li>
-            <li><i class="bi bi-cloud-sun me-2"></i>Perfect for any season</li>
-            <li><i class="bi bi-tree me-2"></i>Eco-friendly & artisan-made</li>
-          </ul>
+        <div class="col-6">
+            <div class="d-flex align-items-center border rounded p-2 shadow-sm h-100">
+                <div class="bg-info bg-opacity-10 text-info p-2 rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                    <i class="bi bi-droplet-fill"></i>
+                </div>
+                <small class="fw-semibold">Breathable Cotton</small>
+            </div>
         </div>
 
-
-        <div class="view-btn mt-3">
-          <button class="btn btn-buynow px-4 py-2" data-bs-toggle="modal" data-bs-target="#buyNowUnq_CheckoutPanel">Buy Now</button>
-          <button class="btn btn-buynow px-4 py-2">Add to cart</button>
+        <div class="col-6">
+            <div class="d-flex align-items-center border rounded p-2 shadow-sm h-100">
+                <div class="bg-danger bg-opacity-10 text-danger p-2 rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                    <i class="bi bi-cloud-sun-fill"></i>
+                </div>
+                <small class="fw-semibold">All-Season Wear</small>
+            </div>
         </div>
 
+        <div class="col-6">
+            <div class="d-flex align-items-center border rounded p-2 shadow-sm h-100">
+                <div class="bg-success bg-opacity-10 text-success p-2 rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                    <i class="bi bi-tree-fill"></i>
+                </div>
+                <small class="fw-semibold">Eco-friendly</small>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 
-        <div>
-          <div class="prd-title mt-3">Product Details</div>
+          <div class="view-btn mt-3">
+            <button class="btn btn-buynow px-4 py-2" data-bs-toggle="modal" data-bs-target="#buyNowUnq_CheckoutPanel">Buy Now</button>
+            <button class="btn btn-buynow px-4 py-2">Add to cart</button>
+          </div>
+
+
+
           <div>
+            <div class="prd-title mt-3">Product Details</div>
+            <div>
 
-            <p>This authentic Sambalpuri saree showcases Odisha’s rich heritage. Handwoven with love, it's soft,
-              breathable, and ideal for both festive and casual occasions.</p>
-            <ul>
-              <li><strong>Fabric:</strong> Handloom Cotton</li>
-              <li><strong>Blouse:</strong> Unstitched, 0.8m</li>
-              <li><strong>Care:</strong> First wash dry-clean only</li>
-              <li><strong>Saree Length:</strong> 5.5 meters | <strong>Blouse Piece:</strong> 0.8 meters</li>
-            </ul>
-            <!-- <div class="border-top pt-3 mt-3">
+              <p>This authentic Sambalpuri saree showcases Odisha’s rich heritage. Handwoven with love, it's soft,
+                breathable, and ideal for both festive and casual occasions.</p>
+              <ul>
+                <li><strong>Fabric:</strong> Handloom Cotton</li>
+                <li><strong>Blouse:</strong> Unstitched, 0.8m</li>
+                <li><strong>Care:</strong> First wash dry-clean only</li>
+                <li><strong>Saree Length:</strong> 5.5 meters | <strong>Blouse Piece:</strong> 0.8 meters</li>
+              </ul>
+              <!-- <div class="border-top pt-3 mt-3">
               <p><i class="bi bi-bag-check"></i> Buy any 2 sarees, get <strong>Extra 10% OFF</strong> (₹1,709)</p>
               <p><i class="bi bi-bag-check-fill"></i> Buy any 3 sarees, get <strong>Extra 15% OFF</strong> (₹1,614)</p>
             </div> -->
+            </div>
           </div>
-        </div>
 
-        <div class="mb-4">
-          <h5 class="fw-bold">About this item</h5>
-          <ul class="about-list">
-            <li>Vibrant Yellow & Red Crepe with Zari Stripes Premium nylon blend featuring bold woven zari stripes that lend vivid contrast, visual rhythm, and texture</li>
-            <li>Delicate 1 Zari Border Thin Metallic Border adds a touch of shimmer without overpowering the saree's bright color palette</li>
-            <li>Red contrast edge enhances design, bold red body accents frame saree beautifully, creating a harmonious, vibrant look</li>
-            <li>Coordinated zari-striped blouse piece includes a matching red blouse with zari stripes to tie the ensemble together gracefully</li>
-            <li>Lightweight & breathable crepe fabric, flowy, easy to drape, crease resistant, and comfortable — perfect for festive and daytime events</li>
-          </ul>
-        </div>
-
-        <div>
-          <h5 class="fw-bold">Additional Information</h5>
-          <div class="table-responsive">
-            <table class="table table-borderless info-table">
-              <tbody>
-                <tr>
-                  <th scope="row">Manufacturer</th>
-                  <td>BluPeacock Retail LLP, BluPeacock Retail LLP, No. 11 & 18, First Floor, SNS Chambers, #239, Sankey Road, Sadashivnagar, Bangalore 560080</td>
-                </tr>
-                <tr>
-                  <th scope="row">Packer</th>
-                  <td>BluPeacock Retail LLP, Unit No. 11 & 18, First Floor, SNS Chambers, #239, Sankey Road, Sadashivnagar, Bangalore 560080</td>
-                </tr>
-                <tr>
-                  <th scope="row">Item Weight</th>
-                  <td>1 kg 500 g</td>
-                </tr>
-                <tr>
-                  <th scope="row">Item Dimensions LxWxH</th>
-                  <td>5.3 x 5.3 x 1.14 Meters</td>
-                </tr>
-                <tr>
-                  <th scope="row">Net Quantity</th>
-                  <td>1.0 count</td>
-                </tr>
-                <tr>
-                  <th scope="row">Generic Name</th>
-                  <td>Saree</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="mb-4">
+            <h5 class="fw-bold">About this item</h5>
+            <ul class="about-list">
+              <li>Vibrant Yellow & Red Crepe with Zari Stripes Premium nylon blend featuring bold woven zari stripes that lend vivid contrast, visual rhythm, and texture</li>
+              <li>Delicate 1 Zari Border Thin Metallic Border adds a touch of shimmer without overpowering the saree's bright color palette</li>
+              <li>Red contrast edge enhances design, bold red body accents frame saree beautifully, creating a harmonious, vibrant look</li>
+              <li>Coordinated zari-striped blouse piece includes a matching red blouse with zari stripes to tie the ensemble together gracefully</li>
+              <li>Lightweight & breathable crepe fabric, flowy, easy to drape, crease resistant, and comfortable — perfect for festive and daytime events</li>
+            </ul>
           </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-md-6">
-            <section class="pr-rating-section">
-              <h5 class="fw-bold mb-3">Ratings</h5>
-              <div class="d-flex flex-wrap gap-4">
 
-                <div class="text-center">
-                  <h1 class="pr-rating-score">4.4 <i class="bi bi-star-fill text-success"></i></h1>
-                  <p class="text-muted mb-0">285 Verified Buyers</p>
+          <div>
+            <h5 class="fw-bold">Additional Information</h5>
+            <div class="table-responsive">
+              <table class="table table-borderless info-table">
+                <tbody>
+                  <tr>
+                    <th scope="row">Manufacturer</th>
+                    <td>BluPeacock Retail LLP, BluPeacock Retail LLP, No. 11 & 18, First Floor, SNS Chambers, #239, Sankey Road, Sadashivnagar, Bangalore 560080</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Packer</th>
+                    <td>BluPeacock Retail LLP, Unit No. 11 & 18, First Floor, SNS Chambers, #239, Sankey Road, Sadashivnagar, Bangalore 560080</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Item Weight</th>
+                    <td>1 kg 500 g</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Item Dimensions LxWxH</th>
+                    <td>5.3 x 5.3 x 1.14 Meters</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Net Quantity</th>
+                    <td>1.0 count</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Generic Name</th>
+                    <td>Saree</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-md-6">
+              <section class="pr-rating-section">
+                <h5 class="fw-bold mb-3">Ratings</h5>
+                <div class="d-flex flex-wrap gap-4">
+
+                  <div class="text-center">
+                    <h1 class="pr-rating-score">4.4 <i class="bi bi-star-fill text-success"></i></h1>
+                    <p class="text-muted mb-0">285 Verified Buyers</p>
+                  </div>
+
+
+                  <div class="flex-grow-1">
+                    <div class="pr-rating-bar d-flex align-items-center mb-2">
+                      <small class="me-2">5 <i class="bi bi-star-fill text-warning"></i></small>
+                      <div class="progress pr-progress-bar flex-grow-1 me-2">
+                        <div class="progress-bar bg-success pr-bar-70"></div>
+                      </div>
+                      <small>199</small>
+                    </div>
+                    <div class="pr-rating-bar d-flex align-items-center mb-2">
+                      <small class="me-2">4 <i class="bi bi-star-fill text-warning"></i></small>
+                      <div class="progress pr-progress-bar flex-grow-1 me-2">
+                        <div class="progress-bar bg-success pr-bar-20"></div>
+                      </div>
+                      <small>50</small>
+                    </div>
+                    <div class="pr-rating-bar d-flex align-items-center mb-2">
+                      <small class="me-2">3 <i class="bi bi-star-fill text-warning"></i></small>
+                      <div class="progress pr-progress-bar flex-grow-1 me-2">
+                        <div class="progress-bar bg-secondary pr-bar-06"></div>
+                      </div>
+                      <small>16</small>
+                    </div>
+                    <div class="pr-rating-bar d-flex align-items-center mb-2">
+                      <small class="me-2">2 <i class="bi bi-star-fill text-warning"></i></small>
+                      <div class="progress pr-progress-bar flex-grow-1 me-2">
+                        <div class="progress-bar bg-warning pr-bar-02"></div>
+                      </div>
+                      <small>4</small>
+                    </div>
+                    <div class="pr-rating-bar d-flex align-items-center">
+                      <small class="me-2">1 <i class="bi bi-star-fill text-warning"></i></small>
+                      <div class="progress pr-progress-bar flex-grow-1 me-2">
+                        <div class="progress-bar bg-danger pr-bar-06"></div>
+                      </div>
+                      <small>16</small>
+                    </div>
+                  </div>
                 </div>
+              </section>
+            </div>
 
+            <div class="col-md-6 text-md-end action-buttons">
+              <button id="showReviewBtn" class="btn btn-dark mb-2">WRITE A REVIEW</button>
+              <button id="showQuestionBtn" class="btn btn-outline-dark">Ask A Question</button>
+            </div>
+          </div>
 
-                <div class="flex-grow-1">
-                  <div class="pr-rating-bar d-flex align-items-center mb-2">
-                    <small class="me-2">5 <i class="bi bi-star-fill text-warning"></i></small>
-                    <div class="progress pr-progress-bar flex-grow-1 me-2">
-                      <div class="progress-bar bg-success pr-bar-70"></div>
-                    </div>
-                    <small>199</small>
-                  </div>
-                  <div class="pr-rating-bar d-flex align-items-center mb-2">
-                    <small class="me-2">4 <i class="bi bi-star-fill text-warning"></i></small>
-                    <div class="progress pr-progress-bar flex-grow-1 me-2">
-                      <div class="progress-bar bg-success pr-bar-20"></div>
-                    </div>
-                    <small>50</small>
-                  </div>
-                  <div class="pr-rating-bar d-flex align-items-center mb-2">
-                    <small class="me-2">3 <i class="bi bi-star-fill text-warning"></i></small>
-                    <div class="progress pr-progress-bar flex-grow-1 me-2">
-                      <div class="progress-bar bg-secondary pr-bar-06"></div>
-                    </div>
-                    <small>16</small>
-                  </div>
-                  <div class="pr-rating-bar d-flex align-items-center mb-2">
-                    <small class="me-2">2 <i class="bi bi-star-fill text-warning"></i></small>
-                    <div class="progress pr-progress-bar flex-grow-1 me-2">
-                      <div class="progress-bar bg-warning pr-bar-02"></div>
-                    </div>
-                    <small>4</small>
-                  </div>
-                  <div class="pr-rating-bar d-flex align-items-center">
-                    <small class="me-2">1 <i class="bi bi-star-fill text-warning"></i></small>
-                    <div class="progress pr-progress-bar flex-grow-1 me-2">
-                      <div class="progress-bar bg-danger pr-bar-06"></div>
-                    </div>
-                    <small>16</small>
-                  </div>
-                </div>
+          <div id="reviewBox" class="review mt-4">
+            <h5 class="mb-3">Write a Review</h5>
+            <textarea class="form-control mb-3" placeholder="Write your comments here" rows="4"></textarea>
+            <div class="mb-3">
+              <label class="form-label">Upload Picture/Video</label>
+              <div class="upload-box">
+                <i class="bi bi-upload fs-2"></i><br />
+                <input type="file" accept="image/*,video/*" class="form-control mt-3" multiple>
               </div>
-            </section>
+            </div>
+
+
+            <div class="row">
+              <div class="col order-last">
+                <input type="text" class="form-control mb-2" placeholder="Enter your name">
+              </div>
+              <div class="col">
+                <input type="email" class="form-control mb-3" placeholder="Enter your email">
+              </div>
+            </div>
+
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark">Cancel</button>
+              <button class="btn btn-dark">Submit Review</button>
+            </div>
           </div>
 
-          <div class="col-md-6 text-md-end action-buttons">
-            <button id="showReviewBtn" class="btn btn-dark mb-2">WRITE A REVIEW</button>
-            <button id="showQuestionBtn" class="btn btn-outline-dark">Ask A Question</button>
+          <div id="questionBox" class="question-box mt-4">
+            <h5 class="mb-3">Ask a Question</h5>
+            <textarea class="form-control mb-3" placeholder="Type your question..." rows="3"></textarea>
+            <input type="text" class="form-control mb-2" placeholder="Your name">
+            <input type="email" class="form-control mb-3" placeholder="Your email">
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark">Cancel</button>
+              <button class="btn btn-dark">Submit Question</button>
+            </div>
           </div>
+          <section class="pr-review-section mt-5">
+            <h5 class="fw-bold mb-3">Customer Reviews (575)</h5>
+
+
+            <div class="border rounded p-3 mb-4">
+              <div class="d-flex align-items-center mb-2">
+                <span class="badge bg-success me-2">5★</span>
+                <strong class="me-auto">Customer</strong>
+                <small class="text-muted">1 Nov 2024</small>
+              </div>
+              <p>This purse has quickly become my favorite accessory! The design is both stylish and versatile... Highly
+                recommend if you’re looking for a chic, functional purse!</p>
+              <div class="d-flex gap-3 text-muted">
+                <i class="bi bi-hand-thumbs-up"></i><span>3</span>
+                <i class="bi bi-hand-thumbs-down"></i><span>1</span>
+              </div>
+            </div>
+
+
+            <div class="border rounded p-3 mb-4">
+              <div class="d-flex align-items-center mb-2">
+                <span class="badge bg-success me-2">5★</span>
+                <strong class="me-auto">Subramanian Krishnan</strong>
+                <small class="text-muted">23 July 2023</small>
+              </div>
+              <p>Excellent quality, good finish, great looks ideal for office use... Thanks for this wonderful
+                shopping experience.</p>
+              <div class="d-flex flex-wrap gap-2 mb-2">
+                <img src="assets/img/black.webp" class="pr-review-img img-thumbnail">
+                <img src="assets/img/red.webp" class="pr-review-img img-thumbnail">
+              </div>
+              <div class="d-flex gap-3 text-muted">
+                <i class="bi bi-hand-thumbs-up"></i><span>19</span>
+                <i class="bi bi-hand-thumbs-down"></i><span>6</span>
+              </div>
+            </div>
+          </section>
         </div>
-
-        <div id="reviewBox" class="review mt-4">
-          <h5 class="mb-3">Write a Review</h5>
-          <textarea class="form-control mb-3" placeholder="Write your comments here" rows="4"></textarea>
-          <div class="mb-3">
-            <label class="form-label">Upload Picture/Video</label>
-            <div class="upload-box">
-              <i class="bi bi-upload fs-2"></i><br />
-              <input type="file" accept="image/*,video/*" class="form-control mt-3" multiple>
-            </div>
-          </div>
-
-
-          <div class="row">
-            <div class="col order-last">
-              <input type="text" class="form-control mb-2" placeholder="Enter your name">
-            </div>
-            <div class="col">
-              <input type="email" class="form-control mb-3" placeholder="Enter your email">
-            </div>
-          </div>
-
-          <div class="d-flex gap-2">
-            <button class="btn btn-outline-dark">Cancel</button>
-            <button class="btn btn-dark">Submit Review</button>
-          </div>
-        </div>
-
-        <div id="questionBox" class="question-box mt-4">
-          <h5 class="mb-3">Ask a Question</h5>
-          <textarea class="form-control mb-3" placeholder="Type your question..." rows="3"></textarea>
-          <input type="text" class="form-control mb-2" placeholder="Your name">
-          <input type="email" class="form-control mb-3" placeholder="Your email">
-          <div class="d-flex gap-2">
-            <button class="btn btn-outline-dark">Cancel</button>
-            <button class="btn btn-dark">Submit Question</button>
-          </div>
-        </div>
-        <section class="pr-review-section mt-5">
-          <h5 class="fw-bold mb-3">Customer Reviews (575)</h5>
-
-
-          <div class="border rounded p-3 mb-4">
-            <div class="d-flex align-items-center mb-2">
-              <span class="badge bg-success me-2">5★</span>
-              <strong class="me-auto">Customer</strong>
-              <small class="text-muted">1 Nov 2024</small>
-            </div>
-            <p>This purse has quickly become my favorite accessory! The design is both stylish and versatile... Highly
-              recommend if you’re looking for a chic, functional purse!</p>
-            <div class="d-flex gap-3 text-muted">
-              <i class="bi bi-hand-thumbs-up"></i><span>3</span>
-              <i class="bi bi-hand-thumbs-down"></i><span>1</span>
-            </div>
-          </div>
-
-
-          <div class="border rounded p-3 mb-4">
-            <div class="d-flex align-items-center mb-2">
-              <span class="badge bg-success me-2">5★</span>
-              <strong class="me-auto">Subramanian Krishnan</strong>
-              <small class="text-muted">23 July 2023</small>
-            </div>
-            <p>Excellent quality, good finish, great looks ideal for office use... Thanks for this wonderful
-              shopping experience.</p>
-            <div class="d-flex flex-wrap gap-2 mb-2">
-              <img src="assets/img/black.webp" class="pr-review-img img-thumbnail">
-              <img src="assets/img/red.webp" class="pr-review-img img-thumbnail">
-            </div>
-            <div class="d-flex gap-3 text-muted">
-              <i class="bi bi-hand-thumbs-up"></i><span>19</span>
-              <i class="bi bi-hand-thumbs-down"></i><span>6</span>
-            </div>
-          </div>
-        </section>
       </div>
     </div>
-  </div>
+  </section>
 
   <section class="view-related-products mb-3">
     <div class="container">
