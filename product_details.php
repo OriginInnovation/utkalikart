@@ -293,205 +293,368 @@
 
 
           <div class="mt-4">
-    <h6 class="fw-bold mb-3">Product Highlights:</h6>
-    
-    <div class="row g-3">
-        
-        <div class="col-6">
-            <div class="d-flex align-items-center border rounded p-2 shadow-sm h-100">
-                <div class="bg-warning bg-opacity-10 text-warning p-2 rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+            <h6 class="fw-bold mb-3">Product Highlights:</h6>
+
+            <div class="row g-3">
+
+              <div class="col-6">
+                <div class="d-flex align-items-center border rounded p-2 shadow-sm h-100">
+                  <div class="bg-warning bg-opacity-10 text-warning p-2 rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
                     <i class="bi bi-star-fill"></i>
+                  </div>
+                  <small class="fw-semibold">Authentic Weave</small>
                 </div>
-                <small class="fw-semibold">Authentic Weave</small>
-            </div>
-        </div>
+              </div>
 
-        <div class="col-6">
-            <div class="d-flex align-items-center border rounded p-2 shadow-sm h-100">
-                <div class="bg-info bg-opacity-10 text-info p-2 rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+              <div class="col-6">
+                <div class="d-flex align-items-center border rounded p-2 shadow-sm h-100">
+                  <div class="bg-info bg-opacity-10 text-info p-2 rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
                     <i class="bi bi-droplet-fill"></i>
+                  </div>
+                  <small class="fw-semibold">Breathable Cotton</small>
                 </div>
-                <small class="fw-semibold">Breathable Cotton</small>
-            </div>
-        </div>
+              </div>
 
-        <div class="col-6">
-            <div class="d-flex align-items-center border rounded p-2 shadow-sm h-100">
-                <div class="bg-danger bg-opacity-10 text-danger p-2 rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+              <div class="col-6">
+                <div class="d-flex align-items-center border rounded p-2 shadow-sm h-100">
+                  <div class="bg-danger bg-opacity-10 text-danger p-2 rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
                     <i class="bi bi-cloud-sun-fill"></i>
+                  </div>
+                  <small class="fw-semibold">All-Season Wear</small>
                 </div>
-                <small class="fw-semibold">All-Season Wear</small>
+              </div>
+
+              <div class="col-6">
+                <div class="d-flex align-items-center border rounded p-2 shadow-sm h-100">
+                  <div class="bg-success bg-opacity-10 text-success p-2 rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                    <i class="bi bi-tree-fill"></i>
+                  </div>
+                  <small class="fw-semibold">Eco-friendly</small>
+                </div>
+              </div>
+
             </div>
+          </div>
+
+
+          <div class="view-btn mt-4 mb-4">
+            <div class="d-flex gap-3">
+
+              <button class="btn btn-dark flex-grow-1 py-3 fw-bold rounded-3 shadow-sm"
+                data-bs-toggle="modal"
+                data-bs-target="#buyNowUnq_CheckoutPanel">
+                <i class="bi bi-lightning-fill me-2 text-warning"></i>BUY NOW
+              </button>
+
+              <button class="btn btn-outline-dark flex-grow-1 py-3 fw-bold rounded-3">
+                <i class="bi bi-bag-plus-fill me-2"></i>ADD TO CART
+              </button>
+
+            </div>
+
+            <div class="text-center mt-2">
+              <small class="text-muted" style="font-size: 0.8rem;">
+                <i class="bi bi-shield-lock-fill text-success"></i> Secure checkout provided
+              </small>
+            </div>
+          </div>
+
+
+
+          <div class="mt-5">
+
+            <div class="d-flex align-items-center mb-3 border-bottom pb-2">
+              <i class="bi bi-file-earmark-text fs-5 me-2"></i>
+              <h5 class="fw-bold mb-0">Product Details</h5>
+            </div>
+
+            <div>
+              <p class="text-muted small lh-base">
+                This authentic Sambalpuri saree showcases Odisha’s rich heritage. Handwoven with love, it's soft, breathable, and ideal for both festive and casual occasions.
+              </p>
+
+              <div class="row g-3 mt-1">
+
+                <div class="col-6">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-layers text-secondary me-2 mt-1"></i>
+                    <div>
+                      <small class="text-muted d-block">Fabric</small>
+                      <span class="fw-semibold small">Handloom Cotton</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-scissors text-secondary me-2 mt-1"></i>
+                    <div>
+                      <small class="text-muted d-block">Blouse</small>
+                      <span class="fw-semibold small">Unstitched (0.8m)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-droplet text-secondary me-2 mt-1"></i>
+                    <div>
+                      <small class="text-muted d-block">Care</small>
+                      <span class="fw-semibold small">Dry-clean only</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-aspect-ratio text-secondary me-2 mt-1"></i>
+                    <div>
+                      <small class="text-muted d-block">Dimensions</small>
+                      <span class="fw-semibold small">Saree: 5.5m | Blouse: 0.8m</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="bg-light bg-opacity-50 border border-secondary border-opacity-25 rounded p-3 mt-4">
+                <h6 class="fw-bold small mb-2"><i class="bi bi-tags-fill text-danger me-2"></i>Available Offers</h6>
+
+                <div class="d-flex align-items-center mb-2">
+                  <i class="bi bi-bag-check text-success me-2"></i>
+                  <small class="text-dark">Buy any 2 sarees, get <strong class="text-danger">Extra 10% OFF</strong></small>
+                </div>
+
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-bag-check-fill text-success me-2"></i>
+                  <small class="text-dark">Buy any 3 sarees, get <strong class="text-danger">Extra 15% OFF</strong></small>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="mt-5">
+    
+    <div class="mb-5">
+        <h5 class="fw-bold mb-3">
+            <i class="bi bi-stars text-warning me-2"></i>About this item
+        </h5>
+        
+        <div class="bg-light bg-opacity-50 p-4 rounded border">
+            <ul class="list-unstyled mb-0">
+                
+                <li class="d-flex align-items-start mb-3">
+                    <i class="bi bi-check-circle-fill text-success mt-1 me-3 flex-shrink-0"></i>
+                    <span>
+                        <strong>Vibrant Yellow & Red Crepe:</strong> Premium nylon blend featuring bold woven zari stripes that lend vivid contrast, visual rhythm, and texture.
+                    </span>
+                </li>
+
+                <li class="d-flex align-items-start mb-3">
+                    <i class="bi bi-check-circle-fill text-success mt-1 me-3 flex-shrink-0"></i>
+                    <span>
+                        <strong>Delicate Zari Border:</strong> Thin Metallic Border adds a touch of shimmer without overpowering the saree's bright color palette.
+                    </span>
+                </li>
+
+                <li class="d-flex align-items-start mb-3">
+                    <i class="bi bi-check-circle-fill text-success mt-1 me-3 flex-shrink-0"></i>
+                    <span>
+                        <strong>Red Contrast Edge:</strong> Enhances design, bold red body accents frame saree beautifully, creating a harmonious, vibrant look.
+                    </span>
+                </li>
+
+                <li class="d-flex align-items-start mb-3">
+                    <i class="bi bi-check-circle-fill text-success mt-1 me-3 flex-shrink-0"></i>
+                    <span>
+                        <strong>Coordinated Blouse Piece:</strong> Includes a matching red blouse with zari stripes to tie the ensemble together gracefully.
+                    </span>
+                </li>
+
+                <li class="d-flex align-items-start">
+                    <i class="bi bi-check-circle-fill text-success mt-1 me-3 flex-shrink-0"></i>
+                    <span>
+                        <strong>Comfort & Flow:</strong> Lightweight & breathable crepe fabric, flowy, easy to drape, crease resistant — perfect for festive events.
+                    </span>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div>
+        <h5 class="fw-bold mb-3">
+            <i class="bi bi-info-circle text-primary me-2"></i>Additional Information
+        </h5>
+        
+        <div class="border rounded overflow-hidden shadow-sm">
+            <table class="table table-striped table-hover mb-0">
+                <tbody>
+                    <tr>
+                        <th scope="row" class="px-4 py-3 text-muted w-25 bg-light">Manufacturer</th>
+                        <td class="px-4 py-3">BluPeacock Retail LLP, No. 11 & 18, First Floor, SNS Chambers, #239, Sankey Road, Sadashivnagar, Bangalore 560080</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="px-4 py-3 text-muted bg-light">Packer</th>
+                        <td class="px-4 py-3">BluPeacock Retail LLP, Unit No. 11 & 18, First Floor, SNS Chambers, Bangalore 560080</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="px-4 py-3 text-muted bg-light">Item Weight</th>
+                        <td class="px-4 py-3">1 kg 500 g</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="px-4 py-3 text-muted bg-light">Dimensions</th>
+                        <td class="px-4 py-3">5.3 x 5.3 x 1.14 Meters</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="px-4 py-3 text-muted bg-light">Net Quantity</th>
+                        <td class="px-4 py-3">1.0 count</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="px-4 py-3 text-muted bg-light">Generic Name</th>
+                        <td class="px-4 py-3">Saree</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+          <div class="mt-5">
+  
+  <div class="row align-items-center">
+    
+    <div class="col-md-7">
+      <h5 class="fw-bold mb-4"><i class="bi bi-bar-chart-line me-2"></i>Ratings & Reviews</h5>
+      
+      <div class="d-flex align-items-center gap-4">
+        <div class="text-center p-3 rounded bg-light border">
+          <h1 class="display-4 fw-bold mb-0 text-dark">4.4</h1>
+          <div class="text-warning small mb-1">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+          </div>
+          <p class="text-muted small mb-0 text-nowrap">285 Verified Buyers</p>
         </div>
 
-        <div class="col-6">
-            <div class="d-flex align-items-center border rounded p-2 shadow-sm h-100">
-                <div class="bg-success bg-opacity-10 text-success p-2 rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-                    <i class="bi bi-tree-fill"></i>
-                </div>
-                <small class="fw-semibold">Eco-friendly</small>
+        <div class="flex-grow-1 w-100">
+          
+          <div class="d-flex align-items-center mb-2">
+            <span class="small fw-bold me-2" style="width: 30px;">5 <i class="bi bi-star-fill text-warning"></i></span>
+            <div class="progress flex-grow-1 rounded-pill" style="height: 6px;">
+              <div class="progress-bar bg-success rounded-pill" style="width: 70%"></div>
             </div>
+            <span class="small text-muted ms-2" style="width: 30px;">199</span>
+          </div>
+
+          <div class="d-flex align-items-center mb-2">
+            <span class="small fw-bold me-2" style="width: 30px;">4 <i class="bi bi-star-fill text-warning"></i></span>
+            <div class="progress flex-grow-1 rounded-pill" style="height: 6px;">
+              <div class="progress-bar bg-success rounded-pill" style="width: 20%"></div>
+            </div>
+            <span class="small text-muted ms-2" style="width: 30px;">50</span>
+          </div>
+
+          <div class="d-flex align-items-center mb-2">
+            <span class="small fw-bold me-2" style="width: 30px;">3 <i class="bi bi-star-fill text-warning"></i></span>
+            <div class="progress flex-grow-1 rounded-pill" style="height: 6px;">
+              <div class="progress-bar bg-warning rounded-pill" style="width: 6%"></div>
+            </div>
+            <span class="small text-muted ms-2" style="width: 30px;">16</span>
+          </div>
+
+          <div class="d-flex align-items-center mb-2">
+            <span class="small fw-bold me-2" style="width: 30px;">2 <i class="bi bi-star-fill text-warning"></i></span>
+            <div class="progress flex-grow-1 rounded-pill" style="height: 6px;">
+              <div class="progress-bar bg-warning rounded-pill" style="width: 2%"></div>
+            </div>
+            <span class="small text-muted ms-2" style="width: 30px;">4</span>
+          </div>
+
+          <div class="d-flex align-items-center">
+            <span class="small fw-bold me-2" style="width: 30px;">1 <i class="bi bi-star-fill text-warning"></i></span>
+            <div class="progress flex-grow-1 rounded-pill" style="height: 6px;">
+              <div class="progress-bar bg-danger rounded-pill" style="width: 6%"></div>
+            </div>
+            <span class="small text-muted ms-2" style="width: 30px;">16</span>
+          </div>
+
         </div>
+      </div>
+    </div>
+
+    <div class="col-md-5 text-md-end mt-4 mt-md-0">
+      <div class="d-flex flex-column align-items-end gap-2">
+        <p class="text-muted small mb-1">Have you used this product?</p>
+        <button id="showReviewBtn" class="btn btn-dark w-50 shadow-sm">
+          <i class="bi bi-pen me-2"></i>Write a Review
+        </button>
+        <button id="showQuestionBtn" class="btn btn-outline-dark w-50">
+          <i class="bi bi-question-circle me-2"></i>Ask a Question
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="reviewBox" class="card border-0 shadow-sm bg-light mt-4 d-none"> <div class="card-body p-4">
+      <h5 class="fw-bold mb-3">Share your experience</h5>
+      
+      <div class="row g-3">
+        <div class="col-12">
+          <label class="form-label small fw-bold">Your Review</label>
+          <textarea class="form-control" placeholder="What did you like or dislike?" rows="4"></textarea>
+        </div>
+
+        <div class="col-12">
+          <label class="form-label small fw-bold">Add Photos/Videos</label>
+          <div class="border border-2 border-secondary border-opacity-25 rounded bg-white p-4 text-center position-relative" style="border-style: dashed !important;">
+            <i class="bi bi-cloud-upload fs-3 text-muted"></i>
+            <p class="small text-muted mb-0 mt-1">Click to upload or drag and drop</p>
+            <input type="file" accept="image/*,video/*" class="form-control position-absolute top-0 start-0 h-100 opacity-0" multiple style="cursor: pointer;">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label small fw-bold">Name</label>
+          <input type="text" class="form-control" placeholder="Enter your name">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label small fw-bold">Email</label>
+          <input type="email" class="form-control" placeholder="Enter your email">
+        </div>
+
+        <div class="col-12 d-flex justify-content-end gap-2 mt-2">
+          <button class="btn btn-outline-secondary px-4">Cancel</button>
+          <button class="btn btn-dark px-4">Submit Review</button>
+        </div>
+      </div>
 
     </div>
-</div>
+  </div>
 
-
-          <div class="view-btn mt-3">
-            <button class="btn btn-buynow px-4 py-2" data-bs-toggle="modal" data-bs-target="#buyNowUnq_CheckoutPanel">Buy Now</button>
-            <button class="btn btn-buynow px-4 py-2">Add to cart</button>
-          </div>
-
-
-
-          <div>
-            <div class="prd-title mt-3">Product Details</div>
-            <div>
-
-              <p>This authentic Sambalpuri saree showcases Odisha’s rich heritage. Handwoven with love, it's soft,
-                breathable, and ideal for both festive and casual occasions.</p>
-              <ul>
-                <li><strong>Fabric:</strong> Handloom Cotton</li>
-                <li><strong>Blouse:</strong> Unstitched, 0.8m</li>
-                <li><strong>Care:</strong> First wash dry-clean only</li>
-                <li><strong>Saree Length:</strong> 5.5 meters | <strong>Blouse Piece:</strong> 0.8 meters</li>
-              </ul>
-              <!-- <div class="border-top pt-3 mt-3">
-              <p><i class="bi bi-bag-check"></i> Buy any 2 sarees, get <strong>Extra 10% OFF</strong> (₹1,709)</p>
-              <p><i class="bi bi-bag-check-fill"></i> Buy any 3 sarees, get <strong>Extra 15% OFF</strong> (₹1,614)</p>
-            </div> -->
-            </div>
-          </div>
-
-          <div class="mb-4">
-            <h5 class="fw-bold">About this item</h5>
-            <ul class="about-list">
-              <li>Vibrant Yellow & Red Crepe with Zari Stripes Premium nylon blend featuring bold woven zari stripes that lend vivid contrast, visual rhythm, and texture</li>
-              <li>Delicate 1 Zari Border Thin Metallic Border adds a touch of shimmer without overpowering the saree's bright color palette</li>
-              <li>Red contrast edge enhances design, bold red body accents frame saree beautifully, creating a harmonious, vibrant look</li>
-              <li>Coordinated zari-striped blouse piece includes a matching red blouse with zari stripes to tie the ensemble together gracefully</li>
-              <li>Lightweight & breathable crepe fabric, flowy, easy to drape, crease resistant, and comfortable — perfect for festive and daytime events</li>
-            </ul>
-          </div>
-
-          <div>
-            <h5 class="fw-bold">Additional Information</h5>
-            <div class="table-responsive">
-              <table class="table table-borderless info-table">
-                <tbody>
-                  <tr>
-                    <th scope="row">Manufacturer</th>
-                    <td>BluPeacock Retail LLP, BluPeacock Retail LLP, No. 11 & 18, First Floor, SNS Chambers, #239, Sankey Road, Sadashivnagar, Bangalore 560080</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Packer</th>
-                    <td>BluPeacock Retail LLP, Unit No. 11 & 18, First Floor, SNS Chambers, #239, Sankey Road, Sadashivnagar, Bangalore 560080</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Item Weight</th>
-                    <td>1 kg 500 g</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Item Dimensions LxWxH</th>
-                    <td>5.3 x 5.3 x 1.14 Meters</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Net Quantity</th>
-                    <td>1.0 count</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Generic Name</th>
-                    <td>Saree</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="row mt-5">
+  <div id="questionBox" class="card border-0 shadow-sm bg-light mt-4 d-none">
+      <div class="card-body p-4">
+        <h5 class="fw-bold mb-3">Ask a Question</h5>
+        <div class="mb-3">
+            <textarea class="form-control" placeholder="Type your question regarding the product..." rows="3"></textarea>
+        </div>
+        <div class="row g-2">
             <div class="col-md-6">
-              <section class="pr-rating-section">
-                <h5 class="fw-bold mb-3">Ratings</h5>
-                <div class="d-flex flex-wrap gap-4">
-
-                  <div class="text-center">
-                    <h1 class="pr-rating-score">4.4 <i class="bi bi-star-fill text-success"></i></h1>
-                    <p class="text-muted mb-0">285 Verified Buyers</p>
-                  </div>
-
-
-                  <div class="flex-grow-1">
-                    <div class="pr-rating-bar d-flex align-items-center mb-2">
-                      <small class="me-2">5 <i class="bi bi-star-fill text-warning"></i></small>
-                      <div class="progress pr-progress-bar flex-grow-1 me-2">
-                        <div class="progress-bar bg-success pr-bar-70"></div>
-                      </div>
-                      <small>199</small>
-                    </div>
-                    <div class="pr-rating-bar d-flex align-items-center mb-2">
-                      <small class="me-2">4 <i class="bi bi-star-fill text-warning"></i></small>
-                      <div class="progress pr-progress-bar flex-grow-1 me-2">
-                        <div class="progress-bar bg-success pr-bar-20"></div>
-                      </div>
-                      <small>50</small>
-                    </div>
-                    <div class="pr-rating-bar d-flex align-items-center mb-2">
-                      <small class="me-2">3 <i class="bi bi-star-fill text-warning"></i></small>
-                      <div class="progress pr-progress-bar flex-grow-1 me-2">
-                        <div class="progress-bar bg-secondary pr-bar-06"></div>
-                      </div>
-                      <small>16</small>
-                    </div>
-                    <div class="pr-rating-bar d-flex align-items-center mb-2">
-                      <small class="me-2">2 <i class="bi bi-star-fill text-warning"></i></small>
-                      <div class="progress pr-progress-bar flex-grow-1 me-2">
-                        <div class="progress-bar bg-warning pr-bar-02"></div>
-                      </div>
-                      <small>4</small>
-                    </div>
-                    <div class="pr-rating-bar d-flex align-items-center">
-                      <small class="me-2">1 <i class="bi bi-star-fill text-warning"></i></small>
-                      <div class="progress pr-progress-bar flex-grow-1 me-2">
-                        <div class="progress-bar bg-danger pr-bar-06"></div>
-                      </div>
-                      <small>16</small>
-                    </div>
-                  </div>
-                </div>
-              </section>
+                <input type="text" class="form-control" placeholder="Your Name">
             </div>
-
-            <div class="col-md-6 text-md-end action-buttons">
-              <button id="showReviewBtn" class="btn btn-dark mb-2">WRITE A REVIEW</button>
-              <button id="showQuestionBtn" class="btn btn-outline-dark">Ask A Question</button>
+            <div class="col-md-6">
+                <input type="email" class="form-control" placeholder="Your Email">
             </div>
-          </div>
+        </div>
+        <div class="d-flex justify-content-end gap-2 mt-3">
+            <button class="btn btn-outline-secondary">Cancel</button>
+            <button class="btn btn-dark">Submit Question</button>
+        </div>
+      </div>
+  </div>
 
-          <div id="reviewBox" class="review mt-4">
-            <h5 class="mb-3">Write a Review</h5>
-            <textarea class="form-control mb-3" placeholder="Write your comments here" rows="4"></textarea>
-            <div class="mb-3">
-              <label class="form-label">Upload Picture/Video</label>
-              <div class="upload-box">
-                <i class="bi bi-upload fs-2"></i><br />
-                <input type="file" accept="image/*,video/*" class="form-control mt-3" multiple>
-              </div>
-            </div>
-
-
-            <div class="row">
-              <div class="col order-last">
-                <input type="text" class="form-control mb-2" placeholder="Enter your name">
-              </div>
-              <div class="col">
-                <input type="email" class="form-control mb-3" placeholder="Enter your email">
-              </div>
-            </div>
-
-            <div class="d-flex gap-2">
-              <button class="btn btn-outline-dark">Cancel</button>
-              <button class="btn btn-dark">Submit Review</button>
-            </div>
-          </div>
+</div>
 
           <div id="questionBox" class="question-box mt-4">
             <h5 class="mb-3">Ask a Question</h5>

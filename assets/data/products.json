@@ -1,0 +1,56 @@
+{
+  "filters": {
+    "size": [
+      { "label": "S", "value": "s" },
+      { "label": "M", "value": "m" },
+      { "label": "L", "value": "l" },
+      { "label": "XL", "value": "xl" },
+      { "label": "XXL", "value": "xxl" }
+    ],
+
+    "price": {
+      "min": 100,
+      "max": 5000
+    },
+
+    "color": [
+      { "label": "Blue", "value": "blue", "count": 1681 },
+      { "label": "Green", "value": "green", "count": 1927 },
+      { "label": "Black", "value": "black", "count": 2023 },
+      { "label": "Yellow", "value": "yellow", "count": 1796 }
+    ],
+
+    "discount_range": [
+      { "label": "10% and above", "value": "10" },
+      { "label": "20% and above", "value": "20" },
+      { "label": "30% and above", "value": "30" },
+      { "label": "40% and above", "value": "40" },
+      { "label": "50% and above", "value": "50" }
+    ],
+
+    "bundles": [
+      { "label": "Single", "value": "single" },
+      { "label": "Combo", "value": "combo" }
+    ],
+
+    "rating": [
+      { "label": "4 ★ & Up", "value": "4" },
+      { "label": "3 ★ & Up", "value": "3" }
+    ],
+
+    "fabric": [
+      { "label": "Cotton", "value": "cotton" },
+      { "label": "Linen", "value": "linen" }
+    ],
+
+    "occasion": [
+      { "label": "Casual", "value": "casual" },
+      { "label": "Party", "value": "party" }
+    ],
+
+    "fashion_trend": [
+      { "label": "Oversized", "value": "oversized" },
+      { "label": "Slim Fit", "value": "slimfit" }
+    ]
+  }
+}

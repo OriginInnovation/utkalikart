@@ -1,150 +1,342 @@
 <style>
-        /* --- Base Footer Styling --- */
-        .footer-wrapper {
-            background-color: #fff0e9; /* Soft Gray Background */
-            color: #4a4a4a;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            padding-top: 70px;
-            padding-bottom: 30px;
-            border-top: 1px solid #e5e5e5;
+    /* --- Base Footer Styling --- */
+    .footer-wrapper {
+        background-color: #fff0e9;
+        /* Soft Gray Background */
+        color: #4a4a4a;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        padding-top: 70px;
+        padding-bottom: 30px;
+        border-top: 1px solid #e5e5e5;
+    }
+
+    .footer-wrapper h6 {
+        color: #222;
+        font-weight: 700;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+
+    .footer-wrapper a {
+        color: #555;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        display: inline-block;
+    }
+
+    .footer-wrapper a:hover {
+        color: #000;
+        transform: translateX(3px);
+        /* Subtle shift right */
+        font-weight: 500;
+    }
+
+    .footer-wrapper ul li {
+        margin-bottom: 12px;
+    }
+
+    /* --- Newsletter Card (Unique Touch) --- */
+    .newsletter-card {
+        background-color: #ffffff;
+        border: 1px solid #eaeaea;
+        border-radius: 16px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        /* Soft Floating Shadow */
+    }
+
+    .newsletter-card h3 {
+        font-family: serif;
+        font-style: italic;
+        color: #222;
+        margin-bottom: 10px;
+    }
+
+    .input-group-custom {
+        border: 1px solid #ddd;
+        border-radius: 50px;
+        padding: 5px;
+        background: #fff;
+        display: flex;
+    }
+
+    .input-group-custom input {
+        border: none;
+        outline: none;
+        padding-left: 20px;
+        width: 100%;
+        border-radius: 50px;
+    }
+
+    .input-group-custom button {
+        border-radius: 50px;
+        padding: 10px 25px;
+        background: #222;
+        color: #fff;
+        border: none;
+        font-weight: 600;
+        transition: background 0.3s;
+    }
+
+    .input-group-custom button:hover {
+        background: #444;
+    }
+
+    /* --- Divider --- */
+    .custom-hr {
+        margin: 40px 0;
+        border-top: 1px solid #e0e0e0;
+        opacity: 1;
+    }
+
+    /* --- Contact Buttons --- */
+    .btn-contact {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #222;
+        color: #222;
+        text-align: center;
+        border-radius: 8px;
+        background: transparent;
+        font-weight: 600;
+        font-size: 13px;
+        transition: all 0.3s;
+    }
+
+    .btn-contact:hover {
+        background: #222;
+        color: #fff;
+    }
+
+    /* --- Payment & Trust --- */
+    .payment-row img {
+        height: 20px;
+        margin: 0 8px;
+        filter: grayscale(100%);
+        /* Make icons B&W initially */
+        opacity: 0.7;
+        transition: all 0.3s;
+    }
+
+    .payment-row img:hover {
+        filter: grayscale(0%);
+        /* Color on hover */
+        opacity: 1;
+    }
+
+    /* --- Bottom SEO Text --- */
+    .seo-text {
+        font-size: 11px;
+        color: #888;
+        line-height: 1.8;
+        text-align: justify;
+    }
+
+    .recent-searches a {
+        color: #888;
+        font-size: 11px;
+        margin-right: 10px;
+        border-bottom: 1px dotted #ccc;
+    }
+
+    /* --- Base Footer Styling --- */
+    .footer-wrapper {
+        background-color: #fff0e9;
+        /* Soft Gray Background */
+        color: #4a4a4a;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        padding-top: 0;
+        /* Changed to 0 to accommodate top bar */
+        padding-bottom: 30px;
+        border-top: 1px solid #e5e5e5;
+        overflow: hidden;
+        /* Prevent horizontal scrollbar on body */
+    }
+
+    /* --- Scrolling Text Styles (New Added) --- */
+    .scrolling-bar {
+        background-color: #fff0e9;
+        /* Dark background for contrast */
+        color: #fff;
+        padding: 15px 0;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        margin-bottom: 10px;
+        /* Space below the bar */
+    }
+
+    .scrolling-bar h1 {
+        display: inline-block;
+        color: #ffffff94;
+        font-size: 55px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0;
+        letter-spacing: 2px;
+        padding-left: 100%;
+        animation: scrollText 30s linear infinite;
+    }
+
+    /* Keyframes for Right to Left Animation */
+    @keyframes scrollText {
+        0% {
+            transform: translate(0, 0);
         }
 
-        .footer-wrapper h6 {
-            color: #222;
-            font-weight: 700;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
+        100% {
+            transform: translate(-100%, 0);
+            /* Move completely to left */
         }
+    }
 
-        .footer-wrapper a {
-            color: #555;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            display: inline-block;
-        }
+    .footer-wrapper h6 {
+        color: #222;
+        font-weight: 700;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
 
-        .footer-wrapper a:hover {
-            color: #000;
-            transform: translateX(3px); /* Subtle shift right */
-            font-weight: 500;
-        }
+    .footer-wrapper a {
+        color: #555;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        display: inline-block;
+    }
 
-        .footer-wrapper ul li {
-            margin-bottom: 12px;
-        }
+    .footer-wrapper a:hover {
+        color: #000;
+        transform: translateX(3px);
+        font-weight: 500;
+    }
 
-        /* --- Newsletter Card (Unique Touch) --- */
-        .newsletter-card {
-            background-color: #ffffff;
-            border: 1px solid #eaeaea;
-            border-radius: 16px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03); /* Soft Floating Shadow */
-        }
+    .footer-wrapper ul li {
+        margin-bottom: 12px;
+    }
 
-        .newsletter-card h3 {
-            font-family: serif;
-            font-style: italic;
-            color: #222;
-            margin-bottom: 10px;
-        }
+    /* --- Newsletter Card --- */
+    .newsletter-card {
+        background-color: #ffffff;
+        border: 1px solid #eaeaea;
+        border-radius: 16px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
 
-        .input-group-custom {
-            border: 1px solid #ddd;
-            border-radius: 50px;
-            padding: 5px;
-            background: #fff;
-            display: flex;
-        }
+    .newsletter-card h3 {
+        font-family: serif;
+        font-style: italic;
+        color: #222;
+        margin-bottom: 10px;
+    }
 
-        .input-group-custom input {
-            border: none;
-            outline: none;
-            padding-left: 20px;
-            width: 100%;
-            border-radius: 50px;
-        }
+    .input-group-custom {
+        border: 1px solid #ddd;
+        border-radius: 50px;
+        padding: 5px;
+        background: #fff;
+        display: flex;
+    }
 
-        .input-group-custom button {
-            border-radius: 50px;
-            padding: 10px 25px;
-            background: #222;
-            color: #fff;
-            border: none;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
+    .input-group-custom input {
+        border: none;
+        outline: none;
+        padding-left: 20px;
+        width: 100%;
+        border-radius: 50px;
+    }
 
-        .input-group-custom button:hover {
-            background: #444;
-        }
+    .input-group-custom button {
+        border-radius: 50px;
+        padding: 10px 25px;
+        background: #222;
+        color: #fff;
+        border: none;
+        font-weight: 600;
+        transition: background 0.3s;
+    }
 
-        /* --- Divider --- */
-        .custom-hr {
-            margin: 40px 0;
-            border-top: 1px solid #e0e0e0;
-            opacity: 1;
-        }
+    .input-group-custom button:hover {
+        background: #444;
+    }
 
-        /* --- Contact Buttons --- */
-        .btn-contact {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #222;
-            color: #222;
-            text-align: center;
-            border-radius: 8px;
-            background: transparent;
-            font-weight: 600;
-            font-size: 13px;
-            transition: all 0.3s;
-        }
+    /* --- Divider --- */
+    .custom-hr {
+        margin: 40px 0;
+        border-top: 1px solid #e0e0e0;
+        opacity: 1;
+    }
 
-        .btn-contact:hover {
-            background: #222;
-            color: #fff;
-        }
+    /* --- Contact Buttons --- */
+    .btn-contact {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #222;
+        color: #222;
+        text-align: center;
+        border-radius: 8px;
+        background: transparent;
+        font-weight: 600;
+        font-size: 13px;
+        transition: all 0.3s;
+    }
 
-        /* --- Payment & Trust --- */
-        .payment-row img {
-            height: 20px;
-            margin: 0 8px;
-            filter: grayscale(100%); /* Make icons B&W initially */
-            opacity: 0.7;
-            transition: all 0.3s;
-        }
+    .btn-contact:hover {
+        background: #222;
+        color: #fff;
+    }
 
-        .payment-row img:hover {
-            filter: grayscale(0%); /* Color on hover */
-            opacity: 1;
-        }
+    /* --- Payment & Trust --- */
+    .payment-row img {
+        height: 20px;
+        margin: 0 8px;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: all 0.3s;
+    }
 
-        /* --- Bottom SEO Text --- */
-        .seo-text {
-            font-size: 11px;
-            color: #888;
-            line-height: 1.8;
-            text-align: justify;
-        }
-        
-        .recent-searches a {
-            color: #888;
-            font-size: 11px;
-            margin-right: 10px;
-            border-bottom: 1px dotted #ccc;
-        }
-    </style>
+    .payment-row img:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+
+    /* --- Bottom SEO Text --- */
+    .seo-text {
+        font-size: 11px;
+        color: #888;
+        line-height: 1.8;
+        text-align: justify;
+    }
+
+    .recent-searches a {
+        color: #888;
+        font-size: 11px;
+        margin-right: 10px;
+        border-bottom: 1px dotted #ccc;
+    }
+</style>
 <footer class="footer-wrapper">
+
+    <div class="scrolling-bar">
+        <h1>🚀 Super Sale is Live! Get Flat 50% OFF on New Arrivals. 🌟 Free Shipping on Orders above ₹999. 🛍️ Limited Time Offer!</h1>
+    </div>
+
     <div class="container">
-        
+
         <div class="row align-items-start">
-            
+
             <div class="col-lg-7 col-md-12">
                 <div class="row">
                     <div class="col-sm-4 col-6 mb-4">
@@ -268,21 +460,21 @@
         </div>
 
         <div class="mt-5">
-             <h6 class="text-muted small">About The Brand</h6>
-             <p class="seo-text">
-                Established in 2025, we started with a simple question: "Why compromise style for comfort?" 
-                Today, we are revolutionizing the footwear industry in India by combining recycled materials 
-                with cutting-edge ergonomic design. We are not just selling shoes; we are promoting a lifestyle 
+            <h6 class="text-muted small">About The Brand</h6>
+            <p class="seo-text">
+                Established in 2025, we started with a simple question: "Why compromise style for comfort?"
+                Today, we are revolutionizing the footwear industry in India by combining recycled materials
+                with cutting-edge ergonomic design. We are not just selling shoes; we are promoting a lifestyle
                 that values the planet as much as personal style.
-             </p>
-             
-             <div class="recent-searches mt-3">
-                 <strong>Trending:</strong>
-                 <a href="#">Men's Casual</a>
-                 <a href="#">Women's Flats</a>
-                 <a href="#">Summer Collection</a>
-                 <a href="#">Eco-Friendly Shoes</a>
-             </div>
+            </p>
+
+            <div class="recent-searches mt-3">
+                <strong>Trending:</strong>
+                <a href="#">Men's Casual</a>
+                <a href="#">Women's Flats</a>
+                <a href="#">Summer Collection</a>
+                <a href="#">Eco-Friendly Shoes</a>
+            </div>
         </div>
 
         <div class="text-center mt-5 pt-3 border-top small text-muted">

@@ -185,6 +185,91 @@
         <i class="bi bi-chevron-up"></i>
     </button>
 
+    
+    <div class="container slider-section">
+        <div class="slider-wrapper">
+
+            <button class="nav-btn prev-btn" onclick="scrollSlider(-1)">
+                <i class="bi bi-chevron-left fs-5"></i>
+            </button>
+
+            <div class="slider-track" id="slider">
+
+                <a href="#" class="category-card bg-green">
+                    <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Shoe">
+                    <span class="category-name">New Launches</span>
+                </a>
+
+                <a href="#" class="category-card bg-red">
+                    <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Timer">
+                    <span class="category-name">Limited Stock</span>
+                </a>
+
+                <a href="#" class="category-card bg-brown">
+                    <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Walk">
+                    <span class="category-name">Begin Walk</span>
+                </a>
+
+                <a href="#" class="category-card bg-blue">
+                    <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Men">
+                    <span class="category-name">Men</span>
+                </a>
+
+                <a href="#" class="category-card bg-pink">
+                    <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Women">
+                    <span class="category-name">Women</span>
+                </a>
+
+                <a href="#" class="category-card bg-gray">
+                    <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Sneakers">
+                    <span class="category-name">Sneakers</span>
+                </a>
+
+                <a href="#" class="category-card bg-gray">
+                    <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Slip Ons">
+                    <span class="category-name">Slip Ons</span>
+                </a>
+
+                <a href="#" class="category-card bg-gray">
+                    <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Loafers">
+                    <span class="category-name">Loafers</span>
+                </a>
+
+                <a href="#" class="category-card bg-gray">
+                    <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Oxfords">
+                    <span class="category-name">Oxfords</span>
+                </a>
+
+            </div>
+
+            <button class="nav-btn next-btn" onclick="scrollSlider(1)">
+                <i class="bi bi-chevron-right fs-5"></i>
+            </button>
+
+        </div>
+    </div>
+
+    <script>
+        function scrollSlider(direction) {
+            const slider = document.getElementById('slider');
+            const scrollAmount = 200; // Ek baar me kitna scroll karna hai
+
+            if (direction === 1) {
+                slider.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            } else {
+                slider.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
+
+
+
     <div id="heroCarousel" class="carousel slide carousel-fade carousel-slide1" data-bs-ride="carousel"
         data-bs-interval="3000">
         <div class="carousel-inner">
@@ -220,84 +305,7 @@
         </div>
     </div>
 
-    <div class="container slider-section">
-    <div class="slider-wrapper">
-        
-        <button class="nav-btn prev-btn" onclick="scrollSlider(-1)">
-            <i class="bi bi-chevron-left fs-5"></i>
-        </button>
-
-        <div class="slider-track" id="slider">
-            
-            <a href="#" class="category-card bg-green">
-                <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Shoe"> 
-                <span class="category-name">New Launches</span>
-            </a>
-
-            <a href="#" class="category-card bg-red">
-                <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Timer">
-                <span class="category-name">Limited Stock</span>
-            </a>
-
-            <a href="#" class="category-card bg-brown">
-                <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Walk">
-                <span class="category-name">Begin Walk</span>
-            </a>
-
-            <a href="#" class="category-card bg-blue">
-                <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Men">
-                <span class="category-name">Men</span>
-            </a>
-
-            <a href="#" class="category-card bg-pink">
-                <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Women">
-                <span class="category-name">Women</span>
-            </a>
-
-            <a href="#" class="category-card bg-gray">
-                <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Sneakers">
-                <span class="category-name">Sneakers</span>
-            </a>
-
-            <a href="#" class="category-card bg-gray">
-                <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Slip Ons">
-                <span class="category-name">Slip Ons</span>
-            </a>
-
-            <a href="#" class="category-card bg-gray">
-                <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Loafers">
-                <span class="category-name">Loafers</span>
-            </a>
-
-             <a href="#" class="category-card bg-gray">
-                <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" alt="Oxfords">
-                <span class="category-name">Oxfords</span>
-            </a>
-
-        </div>
-
-        <button class="nav-btn next-btn" onclick="scrollSlider(1)">
-            <i class="bi bi-chevron-right fs-5"></i>
-        </button>
-
-    </div>
-</div>
-
-<script>
-    function scrollSlider(direction) {
-        const slider = document.getElementById('slider');
-        const scrollAmount = 200; // Ek baar me kitna scroll karna hai
-        
-        if (direction === 1) {
-            slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        } else {
-            slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        }
-    }
-</script>
-
-
-    <section class="icon-section pb-5">
+    <section class="icon-section py-5">
         <div class="container">
             <div class="row g-3 justify-content-center text-center">
                 <div class="col-6 col-md-3">
@@ -463,7 +471,7 @@
         </div>
     </section>
 
-    <section class="shop-role-section pt-5">
+    <section class="shop-role-section py-5">
         <div class="shop-role-container">
             <div class="of-collection-heading3">
                 <h2>Top Selling</h2>
