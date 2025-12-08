@@ -809,14 +809,14 @@ if (isset($_GET['id'])) {
 
     <!-- filter js -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const filterCategories = document.querySelectorAll('.filter-category-item');
             const filterDetailPanes = document.querySelectorAll('.filter-detail-pane');
             const clearAllFiltersBtn = document.getElementById('clearAllFilters');
             const filterOffcanvasElement = document.getElementById('filterOffcanvas');
 
             filterCategories.forEach(item => {
-                item.addEventListener('click', function () {
+                item.addEventListener('click', function() {
 
                     filterCategories.forEach(cat => cat.classList.remove('active'));
 
@@ -834,7 +834,7 @@ if (isset($_GET['id'])) {
 
 
             if (clearAllFiltersBtn) {
-                clearAllFiltersBtn.addEventListener('click', function () {
+                clearAllFiltersBtn.addEventListener('click', function() {
 
                     filterOffcanvasElement.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
                         checkbox.checked = false;
@@ -860,7 +860,7 @@ if (isset($_GET['id'])) {
             const sortOptions = document.querySelectorAll('.sort-options .list-group-item');
 
             sortOptions.forEach(option => {
-                option.addEventListener('click', function () {
+                option.addEventListener('click', function() {
                     sortOptions.forEach(opt => opt.classList.remove('active'));
                     this.classList.add('active');
                     const selectedSort = this.dataset.sortValue;
@@ -998,7 +998,7 @@ if (isset($_GET['id'])) {
 
     <!-- JS check out-->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             const panel = document.getElementById("buyNowUnq_CheckoutPanel");
             const buyNowBtn = document.getElementById("buyNowUnq_BuyNowBtn");
             const stepActionBtn = document.getElementById("buyNowUnq_StepActionBtn");
@@ -1234,7 +1234,7 @@ if (isset($_GET['id'])) {
                 panel.style.display = "none";
                 successModal.show();
             }
-            successModalElement.addEventListener('shown.bs.modal', function () {
+            successModalElement.addEventListener('shown.bs.modal', function() {
                 if (!lottieAnimation) {
                     lottieAnimation = lottie.loadAnimation({
                         container: document.getElementById('lottie-success'),
@@ -1247,7 +1247,7 @@ if (isset($_GET['id'])) {
                     lottieAnimation.goToAndPlay(0, true);
                 }
             });
-            successModalElement.addEventListener('hidden.bs.modal', function () {
+            successModalElement.addEventListener('hidden.bs.modal', function() {
                 if (lottieAnimation) {
                     lottieAnimation.stop();
                 }
@@ -1413,12 +1413,12 @@ if (isset($_GET['id'])) {
             const toggle = document.getElementById(toggleId);
             const box = document.getElementById(boxId);
 
-            toggle.addEventListener('click', function (e) {
+            toggle.addEventListener('click', function(e) {
                 e.stopPropagation();
                 box.classList.toggle('d-none');
             });
 
-            document.addEventListener('click', function (e) {
+            document.addEventListener('click', function(e) {
                 if (!box.contains(e.target) && !toggle.contains(e.target)) {
                     box.classList.add('d-none');
                 }

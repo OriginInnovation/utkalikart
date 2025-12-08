@@ -1635,7 +1635,7 @@
         showSkeleton();
         setTimeout(loadProducts, 1200);
     </script>
-        <script>
+    <script>
         window.onload = function() {
             slideOne();
             slideTwo();

@@ -97,11 +97,12 @@
             .track-faq-question {
                 font-size: 1rem;
             }
-            .trackfaq{
+
+            .trackfaq {
                 margin-top: 65px;
             }
         }
-        
+
         @media (min-width: 768px) {
             .trackfaq {
                 margin-top: 65px;

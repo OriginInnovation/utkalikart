@@ -1147,7 +1147,7 @@
                             <div>
                                 <p class="text-warning fw-bold w-50" id="ppDeactivateBtn">Deactivate Account</p>
                                 <p class="text-danger fw-bold w-50" id="ppDeleteBtn">Delete Account</p>
-                                
+
                             </div>
                             <div class="pp-success-message" id="ppSuccessMsg"></div>
                             <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/myProfileFooter_4e9fe2.png" class="w-100" alt="photo">

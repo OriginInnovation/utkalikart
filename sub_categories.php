@@ -120,7 +120,7 @@
                                     class="form-check-label" for="sizeXXL">XXL</label></div>
                         </div>
 
-                       <div class="mb-4">
+                        <div class="mb-4">
                             <h6 class="custom-filter-title mb-2">PRICE</h6>
 
                             <div class="range-wrapper position-relative w-100" style="height: 30px;">
@@ -1635,7 +1635,7 @@
         showSkeleton();
         setTimeout(loadProducts, 1200);
     </script>
-        <script>
+    <script>
         window.onload = function() {
             slideOne();
             slideTwo();

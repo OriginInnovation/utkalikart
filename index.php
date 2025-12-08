@@ -17,6 +17,17 @@
 
     <link rel="stylesheet" href="assets/css/main.css?v=3.8">
     <style>
+        .view-btn {
+            transition: 0.3s ease-in-out;
+        }
+
+        .view-btn:hover {
+            background: #000 !important;
+            color: #fff !important;
+            border-color: #000 !important;
+            transform: translateY(-2px);
+        }
+
         /* Container Styling */
         .slider-section {
             padding: 40px 0;
@@ -168,16 +179,75 @@
                 gap: 15px;
             }
         }
+
+        .category-section {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Card */
+        .cat-card {
+            position: relative;
+            background: linear-gradient(#ffe9c9, #ffd7a4);
+            padding: 20px;
+            border-radius: 12px;
+            height: 260px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* Title */
+        .cat-title {
+            margin: 0;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Arrow */
+        .cat-arrow {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background: white;
+            border: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Images */
+        .cat-img {
+            /* width: 120px; */
+            margin-top: 15px;
+            transition: 0.4s;
+            transform: rotate(-5deg);
+        }
+
+        .cat-card:hover .cat-img {
+            transform: translateY(-8px) rotate(-5deg);
+        }
+
+        /* Stand */
+        .cat-stand {
+            width: 120px;
+            height: 45px;
+            background: #f7d1a4;
+            border-radius: 6px;
+            margin: 12px auto 0;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- <div class="utkalika-loader">
+    <div class="utkalika-loader">
         <div class="utkalika-title">ଉତ୍କଳିକା </div>
         <div class="utkalika-subtitle">Utkalikart</div>
         <div class="utkalika-loading-text">Loading<span>.</span><span>.</span><span>.</span></div>
-    </div> -->
+    </div>
 
     <?php include 'common/header.php' ?>
 
@@ -185,9 +255,9 @@
         <i class="bi bi-chevron-up"></i>
     </button>
 
-    
-    <div class="container slider-section">
-        <div class="slider-wrapper">
+
+    <div class="slider-section">
+        <div class="slider-wrapper px-5">
 
             <button class="nav-btn prev-btn" onclick="scrollSlider(-1)">
                 <i class="bi bi-chevron-left fs-5"></i>
@@ -471,7 +541,158 @@
         </div>
     </section>
 
-    <section class="shop-role-section py-5">
+    <section class="category-section py-5">
+        <div class="container">
+
+            <!-- Title -->
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Shop by Category</h2>
+
+                <!-- Toggle Buttons -->
+                <div class="btn-group mt-3 gap-2">
+                    <button id="btn-men" class="btn btn-dark btn-sm">Men</button>
+                    <button id="btn-women" class="btn btn-outline-dark btn-sm">Women</button>
+                </div>
+            </div>
+
+            <!-- MEN Categories -->
+            <div id="men-cats" class="row g-4">
+
+                <!-- 1 -->
+                <div class="col-6 col-md-3">
+                    <div class="cat-card">
+                        <p class="cat-title">Sneakers</p>
+                        <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
+                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <div class="cat-stand"></div>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="col-6 col-md-3">
+                    <div class="cat-card">
+                        <p class="cat-title">Slip Ons</p>
+                        <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
+                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <div class="cat-stand"></div>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="col-6 col-md-3">
+                    <div class="cat-card">
+                        <p class="cat-title">Loafers</p>
+                        <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
+                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <div class="cat-stand"></div>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="col-6 col-md-3">
+                    <div class="cat-card">
+                        <p class="cat-title">Oxfords</p>
+                        <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
+                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <div class="cat-stand"></div>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="col-6 col-md-3">
+                    <div class="cat-card">
+                        <p class="cat-title">Sandals</p>
+                        <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
+                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <div class="cat-stand"></div>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="col-6 col-md-3">
+                    <div class="cat-card">
+                        <p class="cat-title">Flip Flops</p>
+                        <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
+                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <div class="cat-stand"></div>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="col-6 col-md-3">
+                    <div class="cat-card">
+                        <p class="cat-title">Slides</p>
+                        <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
+                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <div class="cat-stand"></div>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="col-6 col-md-3">
+                    <div class="cat-card">
+                        <p class="cat-title">Clogs</p>
+                        <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
+                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <div class="cat-stand"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- WOMEN Categories -->
+            <div id="women-cats" class="row g-4 d-none">
+
+                <div class="col-6 col-md-3">
+                    <div class="cat-card">
+                        <p class="cat-title">Heels</p>
+                        <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
+                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <div class="cat-stand"></div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="cat-card">
+                        <p class="cat-title">Flats</p>
+                        <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
+                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <div class="cat-stand"></div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="cat-card">
+                        <p class="cat-title">Boots</p>
+                        <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
+                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <div class="cat-stand"></div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="cat-card">
+                        <p class="cat-title">Sandals</p>
+                        <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
+                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <div class="cat-stand"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- View All -->
+            <div class="text-center mt-4">
+                <button class="btn btn-outline-dark px-4 py-2 rounded-pill fw-semibold view-btn">
+                    View All <i class="bi bi-chevron-right ms-2"></i>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="shop-role-section pb-5">
         <div class="shop-role-container">
             <div class="of-collection-heading3">
                 <h2>Top Selling</h2>
@@ -663,6 +884,192 @@
             </div>
         </div>
     </section>
+
+    <style>
+  .glass-box {
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.5);
+    border-radius: 20px;
+    padding: 40px 30px;
+    transition: all .3s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .glass-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+
+  .icon-modern {
+    font-size: 32px;
+    padding: 15px;
+    border-radius: 14px;
+    background: #000;
+    color: #fff;
+    display: inline-flex;
+    margin-bottom: 15px;
+  }
+
+  .title-highlight {
+    background: linear-gradient(90deg, #000, #555);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 800;
+  }
+</style>
+
+
+<section class="py-5">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h1 class="title-highlight">What We Do</h1>
+      <p class="text-muted w-75 mx-auto fs-5">
+        Crafting modern, premium & sustainable clothing designed for everyday comfort.
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-6 col-md-3">
+        <div class="glass-box text-center">
+          <i class="fa-solid fa-shirt icon-modern"></i>
+          <h6 class="fw-semibold mt-2">Men Fashion</h6>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="glass-box text-center">
+          <i class="fa-solid fa-person-dress icon-modern"></i>
+          <h6 class="fw-semibold mt-2">Women Fashion</h6>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="glass-box text-center">
+          <i class="fa-solid fa-children icon-modern"></i>
+          <h6 class="fw-semibold mt-2">Kids Apparel</h6>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="glass-box text-center">
+          <i class="fa-solid fa-gem icon-modern"></i>
+          <h6 class="fw-semibold mt-2">Premium Accessories</h6>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .process-img {
+    border-radius: 20px;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: .3s;
+  }
+
+  .process-img:hover {
+    transform: scale(1.03);
+  }
+
+  .step-box {
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .step-number {
+    width: 45px;
+    height: 45px;
+    background: #000;
+    color: #fff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-right: 15px;
+    flex-shrink: 0;
+  }
+</style>
+
+
+<section class="py-5 bg-light">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h1 class="title-highlight">Our Making Process</h1>
+      <p class="text-muted fs-5">Precision. Passion. Perfection.</p>
+    </div>
+
+    <div class="row g-5 align-items-center">
+
+      <!-- Image Grid -->
+      <div class="col-md-6">
+        <div class="row g-4">
+
+          <div class="col-6">
+            <img class="process-img" src="https://i.ibb.co/0Gv7wkd/fabric.jpg" />
+          </div>
+
+          <div class="col-6 mt-5">
+            <img class="process-img" src="https://i.ibb.co/grR30sP/cutting.jpg" />
+          </div>
+
+          <div class="col-12">
+            <img class="process-img mt-4" src="https://i.ibb.co/hYj8mN1/stitching.jpg" />
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Steps -->
+      <div class="col-md-6">
+
+        <div class="step-box d-flex">
+          <div class="step-number">1</div>
+          <div>
+            <h5 class="fw-bold">Premium Fabric Selection</h5>
+            <p class="text-muted mb-0">Choosing world-class fabrics for durability & comfort.</p>
+          </div>
+        </div>
+
+        <div class="step-box d-flex">
+          <div class="step-number">2</div>
+          <div>
+            <h5 class="fw-bold">Laser Cutting Precision</h5>
+            <p class="text-muted mb-0">Advanced machines for perfect shape & fit.</p>
+          </div>
+        </div>
+
+        <div class="step-box d-flex">
+          <div class="step-number">3</div>
+          <div>
+            <h5 class="fw-bold">Handcrafted Stitching</h5>
+            <p class="text-muted mb-0">Skilled tailors ensure flawless detailing.</p>
+          </div>
+        </div>
+
+        <div class="step-box d-flex">
+          <div class="step-number">4</div>
+          <div>
+            <h5 class="fw-bold">Final QC & Packing</h5>
+            <p class="text-muted mb-0">Every item passes strict quality checks.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 
     <?php include 'common/footer.php' ?>
     <!-- top offers bar -->
@@ -1324,6 +1731,37 @@
             animate();
         });
     </script>
+
+    <script>
+        const menBtn = document.getElementById("btn-men");
+        const womenBtn = document.getElementById("btn-women");
+
+        const menCats = document.getElementById("men-cats");
+        const womenCats = document.getElementById("women-cats");
+
+        menBtn.addEventListener("click", () => {
+            menBtn.classList.add("btn-dark");
+            menBtn.classList.remove("btn-outline-dark");
+
+            womenBtn.classList.add("btn-outline-dark");
+            womenBtn.classList.remove("btn-dark");
+
+            menCats.classList.remove("d-none");
+            womenCats.classList.add("d-none");
+        });
+
+        womenBtn.addEventListener("click", () => {
+            womenBtn.classList.add("btn-dark");
+            womenBtn.classList.remove("btn-outline-dark");
+
+            menBtn.classList.add("btn-outline-dark");
+            menBtn.classList.remove("btn-dark");
+
+            womenCats.classList.remove("d-none");
+            menCats.classList.add("d-none");
+        });
+    </script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>

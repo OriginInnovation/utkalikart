@@ -435,226 +435,227 @@
           </div>
 
           <div class="mt-5">
-    
-    <div class="mb-5">
-        <h5 class="fw-bold mb-3">
-            <i class="bi bi-stars text-warning me-2"></i>About this item
-        </h5>
-        
-        <div class="bg-light bg-opacity-50 p-4 rounded border">
-            <ul class="list-unstyled mb-0">
-                
-                <li class="d-flex align-items-start mb-3">
+
+            <div class="mb-5">
+              <h5 class="fw-bold mb-3">
+                <i class="bi bi-stars text-warning me-2"></i>About this item
+              </h5>
+
+              <div class="bg-light bg-opacity-50 p-4 rounded border">
+                <ul class="list-unstyled mb-0">
+
+                  <li class="d-flex align-items-start mb-3">
                     <i class="bi bi-check-circle-fill text-success mt-1 me-3 flex-shrink-0"></i>
                     <span>
-                        <strong>Vibrant Yellow & Red Crepe:</strong> Premium nylon blend featuring bold woven zari stripes that lend vivid contrast, visual rhythm, and texture.
+                      <strong>Vibrant Yellow & Red Crepe:</strong> Premium nylon blend featuring bold woven zari stripes that lend vivid contrast, visual rhythm, and texture.
                     </span>
-                </li>
+                  </li>
 
-                <li class="d-flex align-items-start mb-3">
+                  <li class="d-flex align-items-start mb-3">
                     <i class="bi bi-check-circle-fill text-success mt-1 me-3 flex-shrink-0"></i>
                     <span>
-                        <strong>Delicate Zari Border:</strong> Thin Metallic Border adds a touch of shimmer without overpowering the saree's bright color palette.
+                      <strong>Delicate Zari Border:</strong> Thin Metallic Border adds a touch of shimmer without overpowering the saree's bright color palette.
                     </span>
-                </li>
+                  </li>
 
-                <li class="d-flex align-items-start mb-3">
+                  <li class="d-flex align-items-start mb-3">
                     <i class="bi bi-check-circle-fill text-success mt-1 me-3 flex-shrink-0"></i>
                     <span>
-                        <strong>Red Contrast Edge:</strong> Enhances design, bold red body accents frame saree beautifully, creating a harmonious, vibrant look.
+                      <strong>Red Contrast Edge:</strong> Enhances design, bold red body accents frame saree beautifully, creating a harmonious, vibrant look.
                     </span>
-                </li>
+                  </li>
 
-                <li class="d-flex align-items-start mb-3">
+                  <li class="d-flex align-items-start mb-3">
                     <i class="bi bi-check-circle-fill text-success mt-1 me-3 flex-shrink-0"></i>
                     <span>
-                        <strong>Coordinated Blouse Piece:</strong> Includes a matching red blouse with zari stripes to tie the ensemble together gracefully.
+                      <strong>Coordinated Blouse Piece:</strong> Includes a matching red blouse with zari stripes to tie the ensemble together gracefully.
                     </span>
-                </li>
+                  </li>
 
-                <li class="d-flex align-items-start">
+                  <li class="d-flex align-items-start">
                     <i class="bi bi-check-circle-fill text-success mt-1 me-3 flex-shrink-0"></i>
                     <span>
-                        <strong>Comfort & Flow:</strong> Lightweight & breathable crepe fabric, flowy, easy to drape, crease resistant — perfect for festive events.
+                      <strong>Comfort & Flow:</strong> Lightweight & breathable crepe fabric, flowy, easy to drape, crease resistant — perfect for festive events.
                     </span>
-                </li>
+                  </li>
 
-            </ul>
-        </div>
-    </div>
+                </ul>
+              </div>
+            </div>
 
-    <div>
-        <h5 class="fw-bold mb-3">
-            <i class="bi bi-info-circle text-primary me-2"></i>Additional Information
-        </h5>
-        
-        <div class="border rounded overflow-hidden shadow-sm">
-            <table class="table table-striped table-hover mb-0">
-                <tbody>
-                    <tr>
-                        <th scope="row" class="px-4 py-3 text-muted w-25 bg-light">Manufacturer</th>
-                        <td class="px-4 py-3">BluPeacock Retail LLP, No. 11 & 18, First Floor, SNS Chambers, #239, Sankey Road, Sadashivnagar, Bangalore 560080</td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="px-4 py-3 text-muted bg-light">Packer</th>
-                        <td class="px-4 py-3">BluPeacock Retail LLP, Unit No. 11 & 18, First Floor, SNS Chambers, Bangalore 560080</td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="px-4 py-3 text-muted bg-light">Item Weight</th>
-                        <td class="px-4 py-3">1 kg 500 g</td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="px-4 py-3 text-muted bg-light">Dimensions</th>
-                        <td class="px-4 py-3">5.3 x 5.3 x 1.14 Meters</td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="px-4 py-3 text-muted bg-light">Net Quantity</th>
-                        <td class="px-4 py-3">1.0 count</td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="px-4 py-3 text-muted bg-light">Generic Name</th>
-                        <td class="px-4 py-3">Saree</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+            <div>
+              <h5 class="fw-bold mb-3">
+                <i class="bi bi-info-circle text-primary me-2"></i>Additional Information
+              </h5>
 
-</div>
+              <div class="border rounded overflow-hidden shadow-sm">
+                <table class="table table-striped table-hover mb-0">
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="px-4 py-3 text-muted w-25 bg-light">Manufacturer</th>
+                      <td class="px-4 py-3">BluPeacock Retail LLP, No. 11 & 18, First Floor, SNS Chambers, #239, Sankey Road, Sadashivnagar, Bangalore 560080</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="px-4 py-3 text-muted bg-light">Packer</th>
+                      <td class="px-4 py-3">BluPeacock Retail LLP, Unit No. 11 & 18, First Floor, SNS Chambers, Bangalore 560080</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="px-4 py-3 text-muted bg-light">Item Weight</th>
+                      <td class="px-4 py-3">1 kg 500 g</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="px-4 py-3 text-muted bg-light">Dimensions</th>
+                      <td class="px-4 py-3">5.3 x 5.3 x 1.14 Meters</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="px-4 py-3 text-muted bg-light">Net Quantity</th>
+                      <td class="px-4 py-3">1.0 count</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="px-4 py-3 text-muted bg-light">Generic Name</th>
+                      <td class="px-4 py-3">Saree</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
           <div class="mt-5">
-  
-  <div class="row align-items-center">
-    
-    <div class="col-md-7">
-      <h5 class="fw-bold mb-4"><i class="bi bi-bar-chart-line me-2"></i>Ratings & Reviews</h5>
-      
-      <div class="d-flex align-items-center gap-4">
-        <div class="text-center p-3 rounded bg-light border">
-          <h1 class="display-4 fw-bold mb-0 text-dark">4.4</h1>
-          <div class="text-warning small mb-1">
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
-          </div>
-          <p class="text-muted small mb-0 text-nowrap">285 Verified Buyers</p>
-        </div>
 
-        <div class="flex-grow-1 w-100">
-          
-          <div class="d-flex align-items-center mb-2">
-            <span class="small fw-bold me-2" style="width: 30px;">5 <i class="bi bi-star-fill text-warning"></i></span>
-            <div class="progress flex-grow-1 rounded-pill" style="height: 6px;">
-              <div class="progress-bar bg-success rounded-pill" style="width: 70%"></div>
+            <div class="row align-items-center">
+
+              <div class="col-md-7">
+                <h5 class="fw-bold mb-4"><i class="bi bi-bar-chart-line me-2"></i>Ratings & Reviews</h5>
+
+                <div class="d-flex align-items-center gap-4">
+                  <div class="text-center p-3 rounded bg-light border">
+                    <h1 class="display-4 fw-bold mb-0 text-dark">4.4</h1>
+                    <div class="text-warning small mb-1">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                    </div>
+                    <p class="text-muted small mb-0 text-nowrap">285 Verified Buyers</p>
+                  </div>
+
+                  <div class="flex-grow-1 w-100">
+
+                    <div class="d-flex align-items-center mb-2">
+                      <span class="small fw-bold me-2" style="width: 30px;">5 <i class="bi bi-star-fill text-warning"></i></span>
+                      <div class="progress flex-grow-1 rounded-pill" style="height: 6px;">
+                        <div class="progress-bar bg-success rounded-pill" style="width: 70%"></div>
+                      </div>
+                      <span class="small text-muted ms-2" style="width: 30px;">199</span>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-2">
+                      <span class="small fw-bold me-2" style="width: 30px;">4 <i class="bi bi-star-fill text-warning"></i></span>
+                      <div class="progress flex-grow-1 rounded-pill" style="height: 6px;">
+                        <div class="progress-bar bg-success rounded-pill" style="width: 20%"></div>
+                      </div>
+                      <span class="small text-muted ms-2" style="width: 30px;">50</span>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-2">
+                      <span class="small fw-bold me-2" style="width: 30px;">3 <i class="bi bi-star-fill text-warning"></i></span>
+                      <div class="progress flex-grow-1 rounded-pill" style="height: 6px;">
+                        <div class="progress-bar bg-warning rounded-pill" style="width: 6%"></div>
+                      </div>
+                      <span class="small text-muted ms-2" style="width: 30px;">16</span>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-2">
+                      <span class="small fw-bold me-2" style="width: 30px;">2 <i class="bi bi-star-fill text-warning"></i></span>
+                      <div class="progress flex-grow-1 rounded-pill" style="height: 6px;">
+                        <div class="progress-bar bg-warning rounded-pill" style="width: 2%"></div>
+                      </div>
+                      <span class="small text-muted ms-2" style="width: 30px;">4</span>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                      <span class="small fw-bold me-2" style="width: 30px;">1 <i class="bi bi-star-fill text-warning"></i></span>
+                      <div class="progress flex-grow-1 rounded-pill" style="height: 6px;">
+                        <div class="progress-bar bg-danger rounded-pill" style="width: 6%"></div>
+                      </div>
+                      <span class="small text-muted ms-2" style="width: 30px;">16</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5 text-md-end mt-4 mt-md-0">
+                <div class="d-flex flex-column align-items-end gap-2">
+                  <p class="text-muted small mb-1">Have you used this product?</p>
+                  <button id="showReviewBtn" class="btn btn-dark w-50 shadow-sm">
+                    <i class="bi bi-pen me-2"></i>Write a Review
+                  </button>
+                  <button id="showQuestionBtn" class="btn btn-outline-dark w-50">
+                    <i class="bi bi-question-circle me-2"></i>Ask a Question
+                  </button>
+                </div>
+              </div>
+
             </div>
-            <span class="small text-muted ms-2" style="width: 30px;">199</span>
-          </div>
 
-          <div class="d-flex align-items-center mb-2">
-            <span class="small fw-bold me-2" style="width: 30px;">4 <i class="bi bi-star-fill text-warning"></i></span>
-            <div class="progress flex-grow-1 rounded-pill" style="height: 6px;">
-              <div class="progress-bar bg-success rounded-pill" style="width: 20%"></div>
+            <div id="reviewBox" class="card border-0 shadow-sm bg-light mt-4 d-none">
+              <div class="card-body p-4">
+                <h5 class="fw-bold mb-3">Share your experience</h5>
+
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label small fw-bold">Your Review</label>
+                    <textarea class="form-control" placeholder="What did you like or dislike?" rows="4"></textarea>
+                  </div>
+
+                  <div class="col-12">
+                    <label class="form-label small fw-bold">Add Photos/Videos</label>
+                    <div class="border border-2 border-secondary border-opacity-25 rounded bg-white p-4 text-center position-relative" style="border-style: dashed !important;">
+                      <i class="bi bi-cloud-upload fs-3 text-muted"></i>
+                      <p class="small text-muted mb-0 mt-1">Click to upload or drag and drop</p>
+                      <input type="file" accept="image/*,video/*" class="form-control position-absolute top-0 start-0 h-100 opacity-0" multiple style="cursor: pointer;">
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold">Name</label>
+                    <input type="text" class="form-control" placeholder="Enter your name">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold">Email</label>
+                    <input type="email" class="form-control" placeholder="Enter your email">
+                  </div>
+
+                  <div class="col-12 d-flex justify-content-end gap-2 mt-2">
+                    <button class="btn btn-outline-secondary px-4">Cancel</button>
+                    <button class="btn btn-dark px-4">Submit Review</button>
+                  </div>
+                </div>
+
+              </div>
             </div>
-            <span class="small text-muted ms-2" style="width: 30px;">50</span>
-          </div>
 
-          <div class="d-flex align-items-center mb-2">
-            <span class="small fw-bold me-2" style="width: 30px;">3 <i class="bi bi-star-fill text-warning"></i></span>
-            <div class="progress flex-grow-1 rounded-pill" style="height: 6px;">
-              <div class="progress-bar bg-warning rounded-pill" style="width: 6%"></div>
+            <div id="questionBox" class="card border-0 shadow-sm bg-light mt-4 d-none">
+              <div class="card-body p-4">
+                <h5 class="fw-bold mb-3">Ask a Question</h5>
+                <div class="mb-3">
+                  <textarea class="form-control" placeholder="Type your question regarding the product..." rows="3"></textarea>
+                </div>
+                <div class="row g-2">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Your Name">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="email" class="form-control" placeholder="Your Email">
+                  </div>
+                </div>
+                <div class="d-flex justify-content-end gap-2 mt-3">
+                  <button class="btn btn-outline-secondary">Cancel</button>
+                  <button class="btn btn-dark">Submit Question</button>
+                </div>
+              </div>
             </div>
-            <span class="small text-muted ms-2" style="width: 30px;">16</span>
+
           </div>
-
-          <div class="d-flex align-items-center mb-2">
-            <span class="small fw-bold me-2" style="width: 30px;">2 <i class="bi bi-star-fill text-warning"></i></span>
-            <div class="progress flex-grow-1 rounded-pill" style="height: 6px;">
-              <div class="progress-bar bg-warning rounded-pill" style="width: 2%"></div>
-            </div>
-            <span class="small text-muted ms-2" style="width: 30px;">4</span>
-          </div>
-
-          <div class="d-flex align-items-center">
-            <span class="small fw-bold me-2" style="width: 30px;">1 <i class="bi bi-star-fill text-warning"></i></span>
-            <div class="progress flex-grow-1 rounded-pill" style="height: 6px;">
-              <div class="progress-bar bg-danger rounded-pill" style="width: 6%"></div>
-            </div>
-            <span class="small text-muted ms-2" style="width: 30px;">16</span>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-5 text-md-end mt-4 mt-md-0">
-      <div class="d-flex flex-column align-items-end gap-2">
-        <p class="text-muted small mb-1">Have you used this product?</p>
-        <button id="showReviewBtn" class="btn btn-dark w-50 shadow-sm">
-          <i class="bi bi-pen me-2"></i>Write a Review
-        </button>
-        <button id="showQuestionBtn" class="btn btn-outline-dark w-50">
-          <i class="bi bi-question-circle me-2"></i>Ask a Question
-        </button>
-      </div>
-    </div>
-
-  </div>
-
-  <div id="reviewBox" class="card border-0 shadow-sm bg-light mt-4 d-none"> <div class="card-body p-4">
-      <h5 class="fw-bold mb-3">Share your experience</h5>
-      
-      <div class="row g-3">
-        <div class="col-12">
-          <label class="form-label small fw-bold">Your Review</label>
-          <textarea class="form-control" placeholder="What did you like or dislike?" rows="4"></textarea>
-        </div>
-
-        <div class="col-12">
-          <label class="form-label small fw-bold">Add Photos/Videos</label>
-          <div class="border border-2 border-secondary border-opacity-25 rounded bg-white p-4 text-center position-relative" style="border-style: dashed !important;">
-            <i class="bi bi-cloud-upload fs-3 text-muted"></i>
-            <p class="small text-muted mb-0 mt-1">Click to upload or drag and drop</p>
-            <input type="file" accept="image/*,video/*" class="form-control position-absolute top-0 start-0 h-100 opacity-0" multiple style="cursor: pointer;">
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <label class="form-label small fw-bold">Name</label>
-          <input type="text" class="form-control" placeholder="Enter your name">
-        </div>
-        <div class="col-md-6">
-          <label class="form-label small fw-bold">Email</label>
-          <input type="email" class="form-control" placeholder="Enter your email">
-        </div>
-
-        <div class="col-12 d-flex justify-content-end gap-2 mt-2">
-          <button class="btn btn-outline-secondary px-4">Cancel</button>
-          <button class="btn btn-dark px-4">Submit Review</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div id="questionBox" class="card border-0 shadow-sm bg-light mt-4 d-none">
-      <div class="card-body p-4">
-        <h5 class="fw-bold mb-3">Ask a Question</h5>
-        <div class="mb-3">
-            <textarea class="form-control" placeholder="Type your question regarding the product..." rows="3"></textarea>
-        </div>
-        <div class="row g-2">
-            <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Your Name">
-            </div>
-            <div class="col-md-6">
-                <input type="email" class="form-control" placeholder="Your Email">
-            </div>
-        </div>
-        <div class="d-flex justify-content-end gap-2 mt-3">
-            <button class="btn btn-outline-secondary">Cancel</button>
-            <button class="btn btn-dark">Submit Question</button>
-        </div>
-      </div>
-  </div>
-
-</div>
 
           <div id="questionBox" class="question-box mt-4">
             <h5 class="mb-3">Ask a Question</h5>
