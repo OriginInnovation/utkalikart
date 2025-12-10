@@ -15,8 +15,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="assets/css/main.css?v=3.8">
+    <link rel="stylesheet" href="assets/css/main.css?v=3.9">
     <style>
+        .hero-banner {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .banner-img {
+            width: 100%;
+            height: 350px;
+            display: block;
+            object-fit: cover;
+        }
+
         .view-btn {
             transition: 0.3s ease-in-out;
         }
@@ -30,7 +42,7 @@
 
         /* Container Styling */
         .slider-section {
-            padding: 40px 0;
+            padding: 4px 0;
             position: relative;
             background: #fff;
         }
@@ -243,11 +255,11 @@
 
 <body>
 
-    <div class="utkalika-loader">
+    <!-- <div class="utkalika-loader">
         <div class="utkalika-title">ଉତ୍କଳିକା </div>
         <div class="utkalika-subtitle">Utkalikart</div>
         <div class="utkalika-loading-text">Loading<span>.</span><span>.</span><span>.</span></div>
-    </div>
+    </div> -->
 
     <?php include 'common/header.php' ?>
 
@@ -340,40 +352,11 @@
 
 
 
-    <div id="heroCarousel" class="carousel slide carousel-fade carousel-slide1" data-bs-ride="carousel"
-        data-bs-interval="3000">
-        <div class="carousel-inner">
-            <?php
-            include 'admin/conn.php';
-            $sql = "SELECT * FROM banner";
-            $result = $conn->query($sql);
-            while ($row = $result->fetch_assoc()) {
-            ?>
-
-                <div class="carousel-item active">
-                    <img src="admin/upload/banner/<?php echo $row['banner_image']; ?>" class="d-block w-100 img-fluid banner-image"
-                        alt="Handcrafted Products">
-                </div>
-            <?php } ?>
-        </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
-                aria-current="true"></button>
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
-        </div>
+    <div class="hero-banner">
+        <img src="assets/img/eZCrPgtM_ecf89ec6e998443894b3bd4eed721c3e.webp"
+            alt="Advertisement Banner" class="banner-img">
     </div>
+
 
     <section class="icon-section py-5">
         <div class="container">
@@ -406,114 +389,315 @@
         </div>
     </section>
 
-    <section class="pb-5">
-        <div class="bam-carousel">
-            <div class="bam-track" id="bamTrack">
-                <?php
-                include 'admin/conn.php';
-                $sql1 = "SELECT * FROM sub_subcategory";
-                $result1 = $conn->query($sql1);
-                while ($row1 = $result1->fetch_assoc()) {
-                ?>
-                    <div class="bam-item"><a href="sub_sub_categories.php" class="bam-link">
-                            <img src="admin/upload/subsubcategory/<?php echo $row1['image']; ?>" alt="Peach Suit">
-                            <p><?php echo $row1['sub_subcategoryname']; ?></p>
-                        </a>
-                    </div>
-                <?php } ?>
+<section class="pb-5">
+    <div class="bam-carousel">
+        <div class="bam-track" id="bamTrack">
+
+            <!-- 10 Static Items -->
+            <div class="bam-item">
+                <a href="#" class="bam-link">
+                    <img src="assets/img/premium_shirts.jpeg" alt="">
+                    <p>Premium Shirts</p>
+                </a>
             </div>
-        </div>
-    </section>
 
-    <section style="background-color: #fff0e9;">
-        <div class="container shop-by-section py-5">
-            <div class="of-collection-heading m-0">
-                <h2 class="mb-5">Shop by Collection</h2>
+            <div class="bam-item">
+                <a href="#" class="bam-link">
+                    <img src="assets/img/ethinic_collection.webp" alt="">
+                    <p>Menswear</p>
+                </a>
             </div>
-            <div class="row g-4 of-collection-row">
-                <?php
-                include 'admin/conn.php';
-                $sql2 = "SELECT * FROM occasion LIMIT 4";
-                $result2 = $conn->query($sql2);
-                while ($row2 = $result2->fetch_assoc()) {
-                    $encoded_id = base64_encode($row2['id']);
-                ?>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="of-collection-item">
 
-                            <!-- <span class="of-collection-tag">New</span> -->
-                            <img src="admin/upload/occasion/<?php echo $row2['image']; ?>" class="of-collection-img"
-                                alt="Ethnic Wear">
-                            <div class="of-collection-overlay">
-                                <div class="of-collection-name"><?php echo $row2['name']; ?></div>
-                                <a href="occasion.php?id=<?php echo $encoded_id; ?>"><button class="of-collection-btn">Shop Now
-                                        ➜</button></a>
-                            </div>
-
-                        </div>
-                    </div>
-                <?php } ?>
+            <div class="bam-item">
+                <a href="#" class="bam-link">
+                    <img src="assets/img/womens_fashion.jpeg" alt="">
+                    <p>Women Fashion</p>
+                </a>
             </div>
+
+            <div class="bam-item">
+                <a href="#" class="bam-link">
+                    <img src="assets/img/designer_wear.webp" alt="">
+                    <p>Designer Wear</p>
+                </a>
+            </div>
+
+            <div class="bam-item">
+                <a href="#" class="bam-link">
+                    <img src="assets/img/ethinic_collection.webp" alt="">
+                    <p>Ethnic Collection</p>
+                </a>
+            </div>
+
+            <div class="bam-item">
+                <a href="#" class="bam-link">
+                    <img src="assets/img/casual_wear.jpeg" alt="">
+                    <p>Casual Wear</p>
+                </a>
+            </div>
+
+            <div class="bam-item">
+                <a href="#" class="bam-link">
+                    <img src="assets/img/profile photo.jpg" alt="">
+                    <p>Formal Collection</p>
+                </a>
+            </div>
+
+            <div class="bam-item">
+                <a href="#" class="bam-link">
+                    <img src="assets/img/trndy_tops.jpeg" alt="">
+                    <p>Trendy Tops</p>
+                </a>
+            </div>
+
+            <div class="bam-item">
+                <a href="#" class="bam-link">
+                    <img src="assets/img/jackets.webp" alt="">
+                    <p>Jackets</p>
+                </a>
+            </div>
+
+            <div class="bam-item">
+                <a href="#" class="bam-link">
+                    <img src="assets/img/western_wear.jpeg" alt="">
+                    <p>Western Wear</p>
+                </a>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="features">
-        <div class="of-collection-heading2 m-0">
-            <h2 class="mb-4">Our Featured Products</h2>
+
+<section style="background-color: #fff0e9;">
+    <div class="container shop-by-section py-5">
+        <div class="of-collection-heading m-0">
+            <h2 class="mb-5">Shop by Collection</h2>
         </div>
-        <div class="motif-card-container">
-            <?php
-            include 'admin/conn.php';
-            $sql3 = "SELECT * FROM product where featured_product='1'";
-            $result3 = $conn->query($sql3);
-            while ($row3 = $result3->fetch_assoc()) {
-            ?>
-                <div class="motif-card-link">
-                    <div class="motif-card">
-                        <div class="motif-card-img-wrapper">
-                            <a href="product_details.php"><img
-                                    src="admin/upload/product/<?php echo $row3['product_image1']; ?>" class="motif-base-img"
-                                    alt="Red Product">
-                                <img src="admin/upload/product/<?php echo $row3['product_image2']; ?>"
-                                    class="motif-hover-img" alt="Red Hover"></a>
-                            <?php if (!empty($row3['discount_idd'])): ?>
-                                <div class="oa-sale-badge">
-                                    <?php echo $row3['discount_idd']; ?>% OFF
-                                </div>
-                            <?php endif; ?>
-                            <i class="fas fa-heart myshop-wishlist-btn"
-                                onclick="event.stopPropagation(); toggleWishlist(this)"></i>
-                            <i class="fas fa-cart-shopping myshop-cart-icon"></i>
 
-                        </div>
-                        <div class="motif-card-content">
-                            <div>
-                                <div class="motif-card-title"><?php echo $row3['product_name']; ?></div>
-                                <div class="motif-card-description"><?php echo $row3['product_short_nm']; ?>.</div>
-                                <div class="ab-rating">
-                                    <svg viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <?php echo $row3['rating']; ?> <span class="motif-text text-secondary">|
-                                        <?php echo $row3['review']; ?> Reviews</span>
-                                </div>
-                                <?php if (!empty($row3['product_price'])) { ?>
-                                    <span class="wl-price">₹<?php echo $row3['product_discount_price']; ?></span>
-                                    <span class="wl-price-original">₹<?php echo $row3['product_price']; ?></span>
-                                <?php } else { ?>
-                                    <span class="motif-card-title">₹<?php echo $row3['product_discount_price']; ?></span>
-                                <?php } ?>
-                            </div>
-                            <a href="product_details.php"><button class="motif-card-btn">Buy Now</button></a>
+        <div class="row g-4 of-collection-row">
 
-                        </div>
-
+            <!-- Item 1 -->
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="of-collection-item">
+                    <img src="assets/img/pink.webp"
+                         class="of-collection-img" alt="">
+                    <div class="of-collection-overlay">
+                        <div class="of-collection-name">Wedding Collection</div>
+                        <a href="#"><button class="of-collection-btn">Shop Now ➜</button></a>
                     </div>
                 </div>
-            <?php } ?>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="of-collection-item">
+                    <img src="assets/img/cotton2.webp"
+                         class="of-collection-img" alt="">
+                    <div class="of-collection-overlay">
+                        <div class="of-collection-name">Festive Collection</div>
+                        <a href="#"><button class="of-collection-btn">Shop Now ➜</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="of-collection-item">
+                    <img src="assets/img/ethinic_collection.webp"
+                         class="of-collection-img" alt="">
+                    <div class="of-collection-overlay">
+                        <div class="of-collection-name">Casual Collection</div>
+                        <a href="#"><button class="of-collection-btn">Shop Now ➜</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="of-collection-item">
+                    <img src="assets/img/jackets.webp"
+                         class="of-collection-img" alt="">
+                    <div class="of-collection-overlay">
+                        <div class="of-collection-name">Designer Collection</div>
+                        <a href="#"><button class="of-collection-btn">Shop Now ➜</button></a>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
+
+<section class="features">
+    <div class="of-collection-heading2 m-0">
+        <h2 class="mb-4">Our Featured Products</h2>
+    </div>
+
+    <div class="motif-card-container container">
+
+        <!-- Product 1 -->
+        <div class="motif-card-link">
+            <div class="motif-card">
+                <div class="motif-card-img-wrapper">
+                    <a href="product_details.html">
+                        <img src="assets/img/pink.webp" class="motif-base-img" alt="">
+                        <img src="assets/img/pink2.webp" class="motif-hover-img" alt="">
+                    </a>
+
+                    <div class="oa-sale-badge">20% OFF</div>
+
+                    <i class="fas fa-heart myshop-wishlist-btn"></i>
+                    <i class="fas fa-cart-shopping myshop-cart-icon"></i>
+                </div>
+
+                <div class="motif-card-content">
+                    <div>
+                        <div class="motif-card-title">Elegant Pink Dress</div>
+                        <div class="motif-card-description">Soft, stylish and premium.</div>
+
+                        <div class="ab-rating">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 
+                                8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                            4.5 <span class="motif-text text-secondary">| 152 Reviews</span>
+                        </div>
+
+                        <span class="wl-price">₹1499</span>
+                        <span class="wl-price-original">₹1799</span>
+                    </div>
+
+                    <a href="product_details.html">
+                        <button class="motif-card-btn">Buy Now</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Product 2 -->
+        <div class="motif-card-link">
+            <div class="motif-card">
+                <div class="motif-card-img-wrapper">
+                    <a href="product_details.html">
+                        <img src="assets/img/sky.webp" class="motif-base-img" alt="">
+                        <img src="assets/img/sky2.webp" class="motif-hover-img" alt="">
+                    </a>
+
+                    <div class="oa-sale-badge">15% OFF</div>
+
+                    <i class="fas fa-heart myshop-wishlist-btn"></i>
+                    <i class="fas fa-cart-shopping myshop-cart-icon"></i>
+                </div>
+
+                <div class="motif-card-content">
+                    <div>
+                        <div class="motif-card-title">Premium Blue Sarees</div>
+                        <div class="motif-card-description">Warm & comfortable.</div>
+
+                        <div class="ab-rating">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 
+                                8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                            4.7 <span class="motif-text text-secondary">| 98 Reviews</span>
+                        </div>
+
+                        <span class="wl-price">₹999</span>
+                        <span class="wl-price-original">₹1199</span>
+                    </div>
+
+                    <a href="product_details.html">
+                        <button class="motif-card-btn">Buy Now</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Product 3 -->
+        <div class="motif-card-link">
+            <div class="motif-card">
+                <div class="motif-card-img-wrapper">
+                    <a href="product_details.html">
+                        <img src="assets/img/dhoti.webp" class="motif-base-img" alt="">
+                        <img src="assets/img/dhoti2.webp" class="motif-hover-img" alt="">
+                    </a>
+
+                    <div class="oa-sale-badge">10% OFF</div>
+
+                    <i class="fas fa-heart myshop-wishlist-btn"></i>
+                    <i class="fas fa-cart-shopping myshop-cart-icon"></i>
+                </div>
+
+                <div class="motif-card-content">
+                    <div>
+                        <div class="motif-card-title">Classic White Dhoti</div>
+                        <div class="motif-card-description">Perfect for any occasion.</div>
+
+                        <div class="ab-rating">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 
+                                8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                            4.3 <span class="motif-text text-secondary">| 210 Reviews</span>
+                        </div>
+
+                        <span class="wl-price">₹799</span>
+                        <span class="wl-price-original">₹899</span>
+                    </div>
+
+                    <a href="product_details.html">
+                        <button class="motif-card-btn">Buy Now</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Product 4 -->
+        <div class="motif-card-link">
+            <div class="motif-card">
+                <div class="motif-card-img-wrapper">
+                    <a href="product_details.html">
+                        <img src="assets/img/white.webp" class="motif-base-img" alt="">
+                        <img src="assets/img/white2.webp" class="motif-hover-img" alt="">
+                    </a>
+
+                    <div class="oa-sale-badge">10% OFF</div>
+
+                    <i class="fas fa-heart myshop-wishlist-btn"></i>
+                    <i class="fas fa-cart-shopping myshop-cart-icon"></i>
+                </div>
+
+                <div class="motif-card-content">
+                    <div>
+                        <div class="motif-card-title">Classic Coated Sarees</div>
+                        <div class="motif-card-description">Perfect for any occasion.</div>
+
+                        <div class="ab-rating">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 
+                                8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                            4.3 <span class="motif-text text-secondary">| 210 Reviews</span>
+                        </div>
+
+                        <span class="wl-price">₹799</span>
+                        <span class="wl-price-original">₹899</span>
+                    </div>
+
+                    <a href="product_details.html">
+                        <button class="motif-card-btn">Buy Now</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
 
     <section class="od-banner-wrapper">
         <img src="assets/img/about_bg_element.png" class="od-dome-bg" alt="Dome Background" />
@@ -692,91 +876,123 @@
     </section>
 
 
-    <section class="shop-role-section pb-5">
-        <div class="shop-role-container">
-            <div class="of-collection-heading3">
-                <h2>Top Selling</h2>
-            </div>
-            <div class="shop-role-row d-none d-md-grid">
-                <?php
-                include 'admin/conn.php';
-                $sql4 = "SELECT * FROM product WHERE top_sell='1' LIMIT 4";
+   <section class="shop-role-section pb-5">
+    <div class="shop-role-container">
+        <div class="of-collection-heading3">
+            <h2>Top Selling</h2>
+        </div>
 
-                $result4 = $conn->query($sql4);
-                while ($row4 = $result4->fetch_assoc()) {
-                ?>
-                    <div class="shop-role-card" onclick="filterByRole('bride')">
-                        <div class="shop-role-card-img-wrapper">
-                            <a href="sub_categories.php"><img
-                                    src="admin/upload/product/<?php echo $row4['product_image1']; ?>" alt="Bride"></a>
-                        </div>
-                        <div class="shop-role-card-body">
-                            <h5><?php echo $row4['product_name']; ?></h5>
-                        </div>
-                    </div>
-                <?php } ?>
+        <!-- Desktop Grid (No Backend) -->
+        <div class="shop-role-row d-none d-md-grid">
+
+            <div class="shop-role-card">
+                <div class="shop-role-card-img-wrapper">
+                    <a href="product_details.html">
+                        <img src="assets/img/jackets.webp" alt="Top Product 1">
+                    </a>
+                </div>
+                <div class="shop-role-card-body">
+                    <h5>Royal Silk Saree</h5>
+                </div>
             </div>
 
-            <div id="pr-carousel" class="carousel slide d-md-none mt-3" data-bs-ride="carousel" data-bs-interval="3000">
-                <div class="carousel-inner">
+            <div class="shop-role-card">
+                <div class="shop-role-card-img-wrapper">
+                    <a href="product_details.html">
+                        <img src="assets/img/pink.webp" alt="Top Product 2">
+                    </a>
+                </div>
+                <div class="shop-role-card-body">
+                    <h5>Designer Kurti Set</h5>
+                </div>
+            </div>
 
-                    <div class="carousel-item active">
-                        <div class="shop-role-card">
-                            <div class="shop-role-card-img-wrapper">
-                                <a href="sub_categories.php"><img
-                                        src="https://i0.wp.com/utkalikaodisha.com/wp-content/uploads/2024/06/6-3-1.jpg?resize=600%2C600&ssl=1"
-                                        alt="Bride"></a>
-                            </div>
-                            <div class="shop-role-card-body">
-                                <h5>Women Ethnic Wear</h5>
-                            </div>
-                        </div>
-                    </div>
+            <div class="shop-role-card">
+                <div class="shop-role-card-img-wrapper">
+                    <a href="product_details.html">
+                        <img src="assets/img/sky.webp" alt="Top Product 3">
+                    </a>
+                </div>
+                <div class="shop-role-card-body">
+                    <h5>Kids Ethnic Wear</h5>
+                </div>
+            </div>
 
-                    <div class="carousel-item">
-                        <div class="shop-role-card">
-                            <div class="shop-role-card-img-wrapper">
-                                <a href="sub_categories.php"><img
-                                        src="https://i0.wp.com/utkalikaodisha.com/wp-content/uploads/2025/01/IMG_9743_1_optimized_550.jpg?resize=600%2C600&ssl=1"
-                                        alt="Kids Wear"></a>
-                            </div>
-                            <div class="shop-role-card-body">
-                                <h5>Kids Wear</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="shop-role-card">
-                            <div class="shop-role-card-img-wrapper">
-                                <a href="sub_sub_categories.php"><img
-                                        src="https://i0.wp.com/utkalikaodisha.com/wp-content/uploads/2025/05/New_2__silk_set190_shrestha_front__2025-5-22-15-35-24__4096X4096_optimized_500.jpg?resize=300%2C300&ssl=1"
-                                        alt="Banarasi Sarees"></a>
-                            </div>
-                            <div class="shop-role-card-body">
-                                <h5>Banarasi Sarees</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="shop-role-card">
-                            <div class="shop-role-card-img-wrapper">
-                                <a href="sub_categories.php"><img
-                                        src="https://priyaodisha.com/cdn/shop/files/IMG_2756.jpg?v=1732554642&width=1080"
-                                        alt="Men Festival Wear"></a>
-                            </div>
-                            <div class="shop-role-card-body">
-                                <h5>Men Festival Wear</h5>
-                            </div>
-                        </div>
-                    </div>
-
+            <div class="shop-role-card">
+                <div class="shop-role-card-img-wrapper">
+                    <a href="product_details.html">
+                        <img src="assets/img/slide 3.webp" alt="Top Product 4">
+                    </a>
+                </div>
+                <div class="shop-role-card-body">
+                    <h5>Men Festive Kurta</h5>
                 </div>
             </div>
 
         </div>
-    </section>
+
+        <!-- Mobile Carousel (Static) -->
+        <div id="pr-carousel" class="carousel slide d-md-none mt-3" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <div class="shop-role-card">
+                        <div class="shop-role-card-img-wrapper">
+                            <a href="product_details.html">
+                                <img src="assets/img/jackets.webp" alt="Product">
+                            </a>
+                        </div>
+                        <div class="shop-role-card-body">
+                            <h5>Royal Silk Saree</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="shop-role-card">
+                        <div class="shop-role-card-img-wrapper">
+                            <a href="product_details.html">
+                                <img src="assets/img/pink.webp" alt="Product">
+                            </a>
+                        </div>
+                        <div class="shop-role-card-body">
+                            <h5>Designer Kurti Set</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="shop-role-card">
+                        <div class="shop-role-card-img-wrapper">
+                            <a href="product_details.html">
+                                <img src="assets/img/sky.webp" alt="Product">
+                            </a>
+                        </div>
+                        <div class="shop-role-card-body">
+                            <h5>Kids Ethnic Wear</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="shop-role-card">
+                        <div class="shop-role-card-img-wrapper">
+                            <a href="product_details.html">
+                                <img src="assets/img/slide 3.webp" alt="Product">
+                            </a>
+                        </div>
+                        <div class="shop-role-card-body">
+                            <h5>Men Festive Kurta</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
 
     <section class="myshop-section-bg" style="background-color: #fff0e9;">
         <div class="container py-5">
@@ -886,189 +1102,189 @@
     </section>
 
     <style>
-  .glass-box {
-    backdrop-filter: blur(10px);
-    background: rgba(255,255,255,0.5);
-    border-radius: 20px;
-    padding: 40px 30px;
-    transition: all .3s ease;
-    border: 1px solid rgba(255,255,255,0.2);
-  }
+        .glass-box {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: all .3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-  .glass-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  }
+        .glass-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
 
-  .icon-modern {
-    font-size: 32px;
-    padding: 15px;
-    border-radius: 14px;
-    background: #000;
-    color: #fff;
-    display: inline-flex;
-    margin-bottom: 15px;
-  }
+        .icon-modern {
+            font-size: 32px;
+            padding: 15px;
+            border-radius: 14px;
+            background: #000;
+            color: #fff;
+            display: inline-flex;
+            margin-bottom: 15px;
+        }
 
-  .title-highlight {
-    background: linear-gradient(90deg, #000, #555);
-    -webkit-background-clip: text;
-    color: transparent;
-    font-weight: 800;
-  }
-</style>
-
-
-<section class="py-5">
-  <div class="container">
-
-    <div class="text-center mb-5">
-      <h1 class="title-highlight">What We Do</h1>
-      <p class="text-muted w-75 mx-auto fs-5">
-        Crafting modern, premium & sustainable clothing designed for everyday comfort.
-      </p>
-    </div>
-
-    <div class="row g-4">
-
-      <div class="col-6 col-md-3">
-        <div class="glass-box text-center">
-          <i class="fa-solid fa-shirt icon-modern"></i>
-          <h6 class="fw-semibold mt-2">Men Fashion</h6>
-        </div>
-      </div>
-
-      <div class="col-6 col-md-3">
-        <div class="glass-box text-center">
-          <i class="fa-solid fa-person-dress icon-modern"></i>
-          <h6 class="fw-semibold mt-2">Women Fashion</h6>
-        </div>
-      </div>
-
-      <div class="col-6 col-md-3">
-        <div class="glass-box text-center">
-          <i class="fa-solid fa-children icon-modern"></i>
-          <h6 class="fw-semibold mt-2">Kids Apparel</h6>
-        </div>
-      </div>
-
-      <div class="col-6 col-md-3">
-        <div class="glass-box text-center">
-          <i class="fa-solid fa-gem icon-modern"></i>
-          <h6 class="fw-semibold mt-2">Premium Accessories</h6>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<style>
-  .process-img {
-    border-radius: 20px;
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    transition: .3s;
-  }
-
-  .process-img:hover {
-    transform: scale(1.03);
-  }
-
-  .step-box {
-    padding: 20px 0;
-    border-bottom: 1px solid #e5e5e5;
-  }
-
-  .step-number {
-    width: 45px;
-    height: 45px;
-    background: #000;
-    color: #fff;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    margin-right: 15px;
-    flex-shrink: 0;
-  }
-</style>
+        .title-highlight {
+            background: linear-gradient(90deg, #000, #555);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 800;
+        }
+    </style>
 
 
-<section class="py-5 bg-light">
-  <div class="container">
+    <section class="py-5">
+        <div class="container">
 
-    <div class="text-center mb-5">
-      <h1 class="title-highlight">Our Making Process</h1>
-      <p class="text-muted fs-5">Precision. Passion. Perfection.</p>
-    </div>
+            <div class="text-center mb-5">
+                <h1 class="title-highlight">What We Do</h1>
+                <p class="text-muted w-75 mx-auto fs-5">
+                    Crafting modern, premium & sustainable clothing designed for everyday comfort.
+                </p>
+            </div>
 
-    <div class="row g-5 align-items-center">
+            <div class="row g-4">
 
-      <!-- Image Grid -->
-      <div class="col-md-6">
-        <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="glass-box text-center">
+                        <i class="fa-solid fa-shirt icon-modern"></i>
+                        <h6 class="fw-semibold mt-2">Men Fashion</h6>
+                    </div>
+                </div>
 
-          <div class="col-6">
-            <img class="process-img" src="https://i.ibb.co/0Gv7wkd/fabric.jpg" />
-          </div>
+                <div class="col-6 col-md-3">
+                    <div class="glass-box text-center">
+                        <i class="fa-solid fa-person-dress icon-modern"></i>
+                        <h6 class="fw-semibold mt-2">Women Fashion</h6>
+                    </div>
+                </div>
 
-          <div class="col-6 mt-5">
-            <img class="process-img" src="https://i.ibb.co/grR30sP/cutting.jpg" />
-          </div>
+                <div class="col-6 col-md-3">
+                    <div class="glass-box text-center">
+                        <i class="fa-solid fa-children icon-modern"></i>
+                        <h6 class="fw-semibold mt-2">Kids Apparel</h6>
+                    </div>
+                </div>
 
-          <div class="col-12">
-            <img class="process-img mt-4" src="https://i.ibb.co/hYj8mN1/stitching.jpg" />
-          </div>
+                <div class="col-6 col-md-3">
+                    <div class="glass-box text-center">
+                        <i class="fa-solid fa-gem icon-modern"></i>
+                        <h6 class="fw-semibold mt-2">Premium Accessories</h6>
+                    </div>
+                </div>
+
+            </div>
 
         </div>
-      </div>
+    </section>
 
-      <!-- Steps -->
-      <div class="col-md-6">
+    <style>
+        .process-img {
+            border-radius: 20px;
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: .3s;
+        }
 
-        <div class="step-box d-flex">
-          <div class="step-number">1</div>
-          <div>
-            <h5 class="fw-bold">Premium Fabric Selection</h5>
-            <p class="text-muted mb-0">Choosing world-class fabrics for durability & comfort.</p>
-          </div>
+        .process-img:hover {
+            transform: scale(1.03);
+        }
+
+        .step-box {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .step-number {
+            width: 45px;
+            height: 45px;
+            background: #000;
+            color: #fff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+    </style>
+
+
+    <section class="py-5 bg-light">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <h1 class="title-highlight">Our Making Process</h1>
+                <p class="text-muted fs-5">Precision. Passion. Perfection.</p>
+            </div>
+
+            <div class="row g-5 align-items-center">
+
+                <!-- Image Grid -->
+                <div class="col-md-6">
+                    <div class="row g-4">
+
+                        <div class="col-6">
+                            <img class="process-img" src="https://i.ibb.co/0Gv7wkd/fabric.jpg" />
+                        </div>
+
+                        <div class="col-6 mt-5">
+                            <img class="process-img" src="https://i.ibb.co/grR30sP/cutting.jpg" />
+                        </div>
+
+                        <div class="col-12">
+                            <img class="process-img mt-4" src="https://i.ibb.co/hYj8mN1/stitching.jpg" />
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Steps -->
+                <div class="col-md-6">
+
+                    <div class="step-box d-flex">
+                        <div class="step-number">1</div>
+                        <div>
+                            <h5 class="fw-bold">Premium Fabric Selection</h5>
+                            <p class="text-muted mb-0">Choosing world-class fabrics for durability & comfort.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-box d-flex">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h5 class="fw-bold">Laser Cutting Precision</h5>
+                            <p class="text-muted mb-0">Advanced machines for perfect shape & fit.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-box d-flex">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h5 class="fw-bold">Handcrafted Stitching</h5>
+                            <p class="text-muted mb-0">Skilled tailors ensure flawless detailing.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-box d-flex">
+                        <div class="step-number">4</div>
+                        <div>
+                            <h5 class="fw-bold">Final QC & Packing</h5>
+                            <p class="text-muted mb-0">Every item passes strict quality checks.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-
-        <div class="step-box d-flex">
-          <div class="step-number">2</div>
-          <div>
-            <h5 class="fw-bold">Laser Cutting Precision</h5>
-            <p class="text-muted mb-0">Advanced machines for perfect shape & fit.</p>
-          </div>
-        </div>
-
-        <div class="step-box d-flex">
-          <div class="step-number">3</div>
-          <div>
-            <h5 class="fw-bold">Handcrafted Stitching</h5>
-            <p class="text-muted mb-0">Skilled tailors ensure flawless detailing.</p>
-          </div>
-        </div>
-
-        <div class="step-box d-flex">
-          <div class="step-number">4</div>
-          <div>
-            <h5 class="fw-bold">Final QC & Packing</h5>
-            <p class="text-muted mb-0">Every item passes strict quality checks.</p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
+    </section>
 
 
     <?php include 'common/footer.php' ?>
@@ -1702,35 +1918,34 @@
     </script>
 
     <!-- categories slider -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const track = document.getElementById("bamTrack");
-            let items = [...track.children];
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const track = document.getElementById("bamTrack");
+    let items = [...track.children];
 
-            // Duplicate items for seamless looping
-            items.forEach(item => {
-                let clone = item.cloneNode(true);
-                track.appendChild(clone);
-            });
+    // Duplicate for infinite scroll
+    items.forEach(item => {
+        track.appendChild(item.cloneNode(true));
+    });
 
-            let scrollSpeed = 0.6; // Adjust slide speed
-            let position = 0;
+    let scrollSpeed = 0.6;
+    let position = 0;
 
-            function animate() {
-                position -= scrollSpeed;
+    function animate() {
+        position -= scrollSpeed;
 
-                // Reset smoothly when halfway through
-                if (Math.abs(position) >= track.scrollWidth / 2) {
-                    position = 0;
-                }
+        if (Math.abs(position) >= track.scrollWidth / 2) {
+            position = 0;
+        }
 
-                track.style.transform = `translateX(${position}px)`;
-                requestAnimationFrame(animate);
-            }
+        track.style.transform = `translateX(${position}px)`;
+        requestAnimationFrame(animate);
+    }
 
-            animate();
-        });
-    </script>
+    animate();
+});
+</script>
+
 
     <script>
         const menBtn = document.getElementById("btn-men");

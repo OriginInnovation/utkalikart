@@ -164,7 +164,7 @@
     .scrolling-bar {
         background-color: #fff0e9;
         /* Dark background for contrast */
-        color: #fff;
+        color: #e364296b;
         padding: 15px 0;
         width: 100%;
         overflow: hidden;
@@ -175,7 +175,7 @@
 
     .scrolling-bar h1 {
         display: inline-block;
-        color: #ffffff94;
+        /* color: #ffffff94; */
         font-size: 55px;
         font-weight: 700;
         text-transform: uppercase;
