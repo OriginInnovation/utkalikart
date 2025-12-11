@@ -1,52 +1,48 @@
 <style>
     .mega-dropdown {
-        position: static;
+        position: relative;
+    }
+
+    .mega-dropdown .mega-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 999;
+        padding: 20px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 1rem;
     }
 
     .mega-dropdown:hover .mega-menu {
         display: block;
     }
 
-    .mega-menu {
-        width: 100%;
-        position: absolute;
-        left: 0;
-        top: 100%;
-        background: #fff;
-        z-index: 9999;
-        display: none;
-        border-radius: 20px;
-    }
-
-    .mega-list li {
-        padding: 8px 0;
-    }
-
-    .mega-list li a {
+    .mega-col li a {
+        display: block;
+        padding: 4px 0;
+        color: #333;
         text-decoration: none;
-        color: #000;
-        font-weight: 500;
+        font-size: 14.5px;
     }
 
-    .mega-card {
-        padding: 12px;
-        background: #f5f3ef;
-        border-radius: 12px;
-        position: relative;
-        transition: 0.2s;
+    .mega-col li a:hover {
+        color: #ffbf00;
+        /* matches yellow highlight in image */
     }
 
-    .mega-card:hover {
-        transform: translateY(-3px);
-        background: #eceae6;
+    .mega-menu h6 {
+        font-size: 15px;
     }
 
-    .mega-card .arrow {
-        position: absolute;
-        right: 15px;
-        bottom: 15px;
-        font-size: 22px;
-        opacity: 0.6;
+    .mega-menu .col-4 {
+        border-right: 1px solid #eee;
+    }
+
+    .mega-menu .col-4:last-child {
+        border-right: none;
     }
 </style>
 
@@ -120,159 +116,113 @@
             <img src="assets/img/ecommerce_logo_maker.png" alt="Logo" class="p-2 img-fluid" width="150">
         </a>
 
-        <!-- LEFT NAV LINKS -->
-        <ul class="navbar-nav ms-3 d-flex align-items-center gap-4 fw-bold">
+        <!-- CENTER NAV LINKS -->
+        <ul class="navbar-nav mx-auto d-flex align-items-center gap-4 fw-bold">
             <li class="nav-item">
                 <a class="nav-link" href="#">New Arrivals</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Offers</a>
             </li>
-            <li class="nav-item dropdown mega-dropdown">
-                <a class="nav-link" href="#" id="sareeMenu">Sarees & Kurti</a>
+            <li class="nav-item dropdown mega-dropdown position-static">
+                <a class="nav-link fw-bold" href="#" id="sareeMenu">Sarees & Kurti</a>
 
-                <!-- Mega Menu -->
-                <div class="mega-menu shadow-lg p-4 rounded-4">
-                    <div class="row">
+                <div class="mega-menu shadow-lg p-4 rounded-4 bg-white">
+                    <div class="row g-4">
 
-                        <!-- LEFT SIDE LIST -->
-                        <div class="col-3 border-end">
-                            <h6 class="fw-bold mb-3">Featured:</h6>
-                            <ul class="list-unstyled mega-list">
-                                <li><a href="#">Best Selling</a></li>
-                                <li><a href="#">Trending</a></li>
-                                <li><a href="#">All Products</a></li>
+                        <!-- Column 1 -->
+                        <div class="col-4">
+                            <h6 class="fw-bold text-warning mb-3">Sarees</h6>
+                            <ul class="list-unstyled mega-col">
+                                <li><a href="#">Silk Sarees</a></li>
+                                <li><a href="#">Cotton Sarees</a></li>
+                                <li><a href="#">Chiffon Sarees</a></li>
+                                <li><a href="#">Georgette Sarees</a></li>
+                                <li><a href="#">Designer Sarees</a></li>
+                                <li><a href="#">Wedding Sarees</a></li>
                             </ul>
 
-                            <!-- Banner -->
-                            <div class="mt-4">
-                                <img src="https://via.placeholder.com/250x120?text=SALE+50%25+OFF" class="img-fluid rounded-3">
-                            </div>
+                            <h6 class="fw-bold text-warning mt-4 mb-3">Kurti Sets</h6>
+                            <ul class="list-unstyled mega-col">
+                                <li><a href="#">Casual Kurtis</a></li>
+                                <li><a href="#">Party Wear Kurtis</a></li>
+                                <li><a href="#">Anarkali Kurtis</a></li>
+                                <li><a href="#">Straight Kurtis</a></li>
+                                <li><a href="#">Long Kurtis</a></li>
+                            </ul>
                         </div>
 
-                        <!-- RIGHT SIDE CATEGORY CARDS -->
-                        <div class="col-9">
-                            <div class="row g-4">
+                        <!-- Column 2 -->
+                        <div class="col-4">
+                            <h6 class="fw-bold text-warning mb-3">Bottoms & Dupattas</h6>
+                            <ul class="list-unstyled mega-col">
+                                <li><a href="#">Leggings</a></li>
+                                <li><a href="#">Palazzos</a></li>
+                                <li><a href="#">Salwars</a></li>
+                                <li><a href="#">Dupattas</a></li>
+                                <li><a href="#">Scarves & Stoles</a></li>
+                            </ul>
 
-                                <!-- Card 1 -->
-                                <div class="col-3">
-                                    <div class="mega-card">
-                                        <img src="assets/img/black.webp" class="img-fluid rounded" style="height: 70px;">
-                                        <p class="mt-2 fw-semibold">Silk Sarees</p>
-                                        <span class="arrow">›</span>
-                                    </div>
-                                </div>
+                            <h6 class="fw-bold text-warning mt-4 mb-3">Blouses & Tops</h6>
+                            <ul class="list-unstyled mega-col">
+                                <li><a href="#">Saree Blouses</a></li>
+                                <li><a href="#">Casual Tops</a></li>
+                                <li><a href="#">Designer Tops</a></li>
+                            </ul>
+                        </div>
 
-                                <!-- Card 2 -->
-                                <div class="col-3">
-                                    <div class="mega-card">
-                                        <img src="assets/img/cotton.webp" class="img-fluid rounded" style="height: 70px;">
-                                        <p class="mt-2 fw-semibold">Cotton Sarees</p>
-                                        <span class="arrow">›</span>
-                                    </div>
-                                </div>
+                        <!-- Column 3 -->
+                        <div class="col-4">
+                            <h6 class="fw-bold text-warning mb-3">Accessories & Footwear</h6>
+                            <ul class="list-unstyled mega-col">
+                                <li><a href="#">Jewellery</a></li>
+                                <li><a href="#">Bags & Clutches</a></li>
+                                <li><a href="#">Footwear</a></li>
+                                <li><a href="#">Belts & Waistbands</a></li>
+                                <li><a href="#">Hair Accessories</a></li>
+                            </ul>
 
-                                <!-- Card 3 -->
-                                <div class="col-3">
-                                    <div class="mega-card">
-                                        <img src="assets/img/Manthulir Green.webp" class="img-fluid rounded" style="height: 70px;">
-                                        <p class="mt-2 fw-semibold">Designer Kurtis</p>
-                                        <span class="arrow">›</span>
-                                    </div>
-                                </div>
-
-                                <!-- Card 4 -->
-                                <div class="col-3">
-                                    <div class="mega-card">
-                                        <img src="assets/img/pink.webp" class="img-fluid rounded" style="height: 70px;">
-                                        <p class="mt-2 fw-semibold">Anarkali Kurtis</p>
-                                        <span class="arrow">›</span>
-                                    </div>
-                                </div>
-
-                                <!-- Card 5 -->
-                                <div class="col-3">
-                                    <div class="mega-card">
-                                        <img src="assets/img/red.webp" class="img-fluid rounded" style="height: 70px;">
-                                        <p class="mt-2 fw-semibold">Lehenga Style Kurtis</p>
-                                        <span class="arrow">›</span>
-                                    </div>
-                                </div>
-
-                                <!-- Card 6 -->
-                                <div class="col-3">
-                                    <div class="mega-card">
-                                        <img src="assets/img/sky.webp" class="img-fluid rounded" style="height: 70px;">
-                                        <p class="mt-2 fw-semibold">All Products</p>
-                                        <span class="arrow">›</span>
-                                    </div>
-                                </div>
-
-                            </div>
+                            <h6 class="fw-bold text-warning mt-4 mb-3">Fabrics & Unstitched</h6>
+                            <ul class="list-unstyled mega-col">
+                                <li><a href="#">Dress Materials</a></li>
+                                <li><a href="#">Unstitched Suits</a></li>
+                                <li><a href="#">Fabric Rolls</a></li>
+                            </ul>
                         </div>
 
                     </div>
                 </div>
             </li>
-
         </ul>
 
-        <!-- RIGHT SIDE: SEARCH + WISHLIST + CART -->
-        <div class="d-flex align-items-center gap-4 ms-auto">
+        <!-- RIGHT SIDE: SEARCH + PROFILE + WISHLIST + CART -->
+        <div class="d-flex align-items-center gap-3 ms-auto">
 
-            <!-- BIG SEARCH BAR -->
+            <!-- SEARCH BAR -->
             <div class="position-relative" style="width: 350px;">
                 <input type="text" class="form-control rounded-pill ps-4" placeholder="Search for products...">
-                <i class="fa-solid fa-magnifying-glass position-absolute top-50 end-0 translate-middle-y me-3"></i>
+                <i class="fa-solid fa-magnifying-glass position-absolute top-50 end-0 translate-middle-y me-3" style="color: rgb(227 101 42);"></i>
             </div>
 
-            <!-- WISHLIST -->
+            <!-- PROFILE ICON -->
             <a href="#" class="text-dark">
-                <i class="fa-regular fa-heart fs-4"></i>
+                <i class="fa-regular fa-circle-user fs-4" style="color: rgb(227 101 42);" ></i> <!-- modern user/profile icon -->
             </a>
 
-            <!-- CART -->
+            <!-- WISHLIST ICON -->
             <a href="#" class="text-dark">
-                <i class="fa-solid fa-bag-shopping fs-4"></i>
+                <i class="fa-regular fa-heart fs-4" style="color: rgb(227 101 42);" ></i> <!-- keeps wishlist subtle and clean -->
+            </a>
+
+            <!-- CART ICON -->
+            <a href="#" class="text-dark">
+                <i class="fa-solid fa-cart-shopping fs-4" style="color: rgb(227 101 42);" ></i> <!-- actual shopping cart icon -->
             </a>
 
         </div>
 
     </div>
 </nav>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const rightSide = document.querySelector(".mega-menu .col-9 .row");
-
-    const templates = {
-        "Best Selling": `
-            <div class="col-4"><div class="mega-card"><img src="assets/img/sky.webp" style="height: 70px;"><p class="mt-2 fw-semibold">Best 1</p><span class="arrow">›</span></div></div>
-            <div class="col-4"><div class="mega-card"><img src="assets/img/sky.webp" style="height: 70px;"><p class="mt-2 fw-semibold">Best 2</p><span class="arrow">›</span></div></div>
-            <div class="col-4"><div class="mega-card"><img src="assets/img/sky.webp" style="height: 70px;"><p class="mt-2 fw-semibold">Best 3</p><span class="arrow">›</span></div></div>
-        `,
-        "Trending": `
-            <div class="col-4"><div class="mega-card"><img src="assets/img/sky.webp" style="height: 70px;"><p class="mt-2 fw-semibold">Trend 1</p><span class="arrow">›</span></div></div>
-            <div class="col-4"><div class="mega-card"><img src="assets/img/sky.webp" style="height: 70px;"><p class="mt-2 fw-semibold">Trend 2</p><span class="arrow">›</span></div></div>
-            <div class="col-4"><div class="mega-card"><img src="assets/img/sky.webp" style="height: 70px;"><p class="mt-2 fw-semibold">Trend 3</p><span class="arrow">›</span></div></div>
-        `,
-        "All Products": `
-            <div class="col-4"><div class="mega-card"><img src="assets/img/sky.webp" style="height: 70px;"><p class="mt-2 fw-semibold">All 1</p><span class="arrow">›</span></div></div>
-            <div class="col-4"><div class="mega-card"><img src="assets/img/sky.webp" style="height: 70px;"><p class="mt-2 fw-semibold">All 2</p><span class="arrow">›</span></div></div>
-            <div class="col-4"><div class="mega-card"><img src="assets/img/sky.webp" style="height: 70px;"><p class="mt-2 fw-semibold">All 3</p><span class="arrow">›</span></div></div>
-        `
-    };
-
-    document.querySelectorAll(".mega-list li a").forEach(link => {
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
-            const txt = this.textContent.trim();
-            rightSide.innerHTML = templates[txt] || "";
-        });
-    });
-});
-</script>
-
 
 
 <div class="modal fade" id="trackingOrderModal" tabindex="-1" aria-labelledby="trackingOrderLabel" aria-hidden="true">

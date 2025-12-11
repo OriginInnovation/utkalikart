@@ -956,15 +956,112 @@
     </section>
 
 
-    <section class="shop-role-section pb-5">
+    <style>
+        .shop-role-section {
+            position: relative;
+            padding-bottom: 50px;
+        }
+
+        .shop-role-container {
+            max-width: 1200px;
+            margin: auto;
+            position: relative;
+        }
+
+        .of-collection-heading3 h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        /* Slider wrapper */
+        .shop-role-slider-wrapper {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 15px;
+        }
+
+        .shop-role-slider-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Cards */
+        .shop-role-card {
+            min-width: 220px;
+            max-width: 220px;
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            flex: 0 0 auto;
+            transition: transform 0.3s;
+        }
+
+        .shop-role-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .shop-role-card-img-wrapper img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .shop-role-card-body {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .shop-role-card-body h5 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Slider buttons top right */
+        .slider-nav-btn {
+            position: absolute;
+            top: 5px;
+            right: 25px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .slider-nav-btn button {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slider-nav-btn button:hover {
+            background: #ffbf00;
+            color: #000;
+        }
+    </style>
+
+    <div class="shop-role-section pb-5">
         <div class="shop-role-container">
             <div class="of-collection-heading3">
-                <h2>Top Selling</h2>
+                <h2 class="fs-2" >Top Selling</h2>
             </div>
-
-            <!-- Desktop Grid (No Backend) -->
-            <div class="shop-role-row d-none d-md-grid">
-
+            <div class="slider-nav-btn">
+                <button id="prevCard"><i class="fa-solid fa-chevron-left"></i></button>
+                <button id="nextCard"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <div class="shop-role-slider-wrapper">
                 <div class="shop-role-card">
                     <div class="shop-role-card-img-wrapper">
                         <a href="product_details.html">
@@ -975,7 +1072,6 @@
                         <h5>Royal Silk Saree</h5>
                     </div>
                 </div>
-
                 <div class="shop-role-card">
                     <div class="shop-role-card-img-wrapper">
                         <a href="product_details.html">
@@ -986,7 +1082,6 @@
                         <h5>Designer Kurti Set</h5>
                     </div>
                 </div>
-
                 <div class="shop-role-card">
                     <div class="shop-role-card-img-wrapper">
                         <a href="product_details.html">
@@ -997,7 +1092,6 @@
                         <h5>Kids Ethnic Wear</h5>
                     </div>
                 </div>
-
                 <div class="shop-role-card">
                     <div class="shop-role-card-img-wrapper">
                         <a href="product_details.html">
@@ -1008,70 +1102,111 @@
                         <h5>Men Festive Kurta</h5>
                     </div>
                 </div>
-
-            </div>
-
-            <!-- Mobile Carousel (Static) -->
-            <div id="pr-carousel" class="carousel slide d-md-none mt-3" data-bs-ride="carousel" data-bs-interval="3000">
-                <div class="carousel-inner">
-
-                    <div class="carousel-item active">
-                        <div class="shop-role-card">
-                            <div class="shop-role-card-img-wrapper">
-                                <a href="product_details.html">
-                                    <img src="assets/img/jackets.webp" alt="Product">
-                                </a>
-                            </div>
-                            <div class="shop-role-card-body">
-                                <h5>Royal Silk Saree</h5>
-                            </div>
-                        </div>
+                <div class="shop-role-card">
+                    <div class="shop-role-card-img-wrapper">
+                        <a href="product_details.html">
+                            <img src="assets/img/jackets.webp" alt="Top Product 1">
+                        </a>
                     </div>
-
-                    <div class="carousel-item">
-                        <div class="shop-role-card">
-                            <div class="shop-role-card-img-wrapper">
-                                <a href="product_details.html">
-                                    <img src="assets/img/pink.webp" alt="Product">
-                                </a>
-                            </div>
-                            <div class="shop-role-card-body">
-                                <h5>Designer Kurti Set</h5>
-                            </div>
-                        </div>
+                    <div class="shop-role-card-body">
+                        <h5>Royal Silk Saree</h5>
                     </div>
-
-                    <div class="carousel-item">
-                        <div class="shop-role-card">
-                            <div class="shop-role-card-img-wrapper">
-                                <a href="product_details.html">
-                                    <img src="assets/img/sky.webp" alt="Product">
-                                </a>
-                            </div>
-                            <div class="shop-role-card-body">
-                                <h5>Kids Ethnic Wear</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="shop-role-card">
-                            <div class="shop-role-card-img-wrapper">
-                                <a href="product_details.html">
-                                    <img src="assets/img/slide 3.webp" alt="Product">
-                                </a>
-                            </div>
-                            <div class="shop-role-card-body">
-                                <h5>Men Festive Kurta</h5>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+                <div class="shop-role-card">
+                    <div class="shop-role-card-img-wrapper">
+                        <a href="product_details.html">
+                            <img src="assets/img/pink.webp" alt="Top Product 2">
+                        </a>
+                    </div>
+                    <div class="shop-role-card-body">
+                        <h5>Designer Kurti Set</h5>
+                    </div>
+                </div>
+                <div class="shop-role-card">
+                    <div class="shop-role-card-img-wrapper">
+                        <a href="product_details.html">
+                            <img src="assets/img/sky.webp" alt="Top Product 3">
+                        </a>
+                    </div>
+                    <div class="shop-role-card-body">
+                        <h5>Kids Ethnic Wear</h5>
+                    </div>
+                </div>
+                <div class="shop-role-card">
+                    <div class="shop-role-card-img-wrapper">
+                        <a href="product_details.html">
+                            <img src="assets/img/slide 3.webp" alt="Top Product 4">
+                        </a>
+                    </div>
+                    <div class="shop-role-card-body">
+                        <h5>Men Festive Kurta</h5>
+                    </div>
+                </div>
+                <!-- Add more cards as needed -->
             </div>
-
         </div>
-    </section>
+    </div>
+
+   <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const slider = document.querySelector('.shop-role-slider-wrapper');
+    const prevBtn = document.getElementById('prevCard');
+    const nextBtn = document.getElementById('nextCard');
+    const cards = Array.from(slider.children);
+    const cardWidth = 240; // width + gap of each card
+    const visibleCards = Math.floor(slider.offsetWidth / cardWidth);
+
+    // Clone first and last cards for seamless scroll
+    const totalCards = cards.length;
+    const prependCards = cards.slice(-visibleCards).map(card => card.cloneNode(true));
+    const appendCards = cards.slice(0, visibleCards).map(card => card.cloneNode(true));
+
+    prependCards.forEach(card => slider.insertBefore(card, slider.firstChild));
+    appendCards.forEach(card => slider.appendChild(card));
+
+    // Set initial scroll to first real card
+    let scrollPosition = cardWidth * visibleCards;
+    slider.scrollLeft = scrollPosition;
+
+    // Scroll smoothly
+    function scrollTo(pos) {
+        slider.scrollTo({
+            left: pos,
+            behavior: 'smooth'
+        });
+    }
+
+    nextBtn.addEventListener('click', () => {
+        scrollPosition += cardWidth;
+        scrollTo(scrollPosition);
+        // Loop when reaching clones
+        if (scrollPosition >= cardWidth * (totalCards + visibleCards)) {
+            setTimeout(() => {
+                scrollPosition = cardWidth * visibleCards;
+                slider.scrollLeft = scrollPosition;
+            }, 300); // match scroll animation duration
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        scrollPosition -= cardWidth;
+        scrollTo(scrollPosition);
+        if (scrollPosition < cardWidth) {
+            setTimeout(() => {
+                scrollPosition = cardWidth * totalCards;
+                slider.scrollLeft = scrollPosition;
+            }, 300);
+        }
+    });
+
+    // Optional: auto scroll every 3s
+    // setInterval(() => nextBtn.click(), 3000);
+
+});
+</script>
+
+
 
 
     <section class="myshop-section-bg" style="background-color: #fff0e9;">
@@ -1118,147 +1253,6 @@
             </div>
         </div>
     </section>
-
-    <section class="oa-new-arrivals-section">
-        <div class="container">
-            <div class="of-collection-heading5">
-                <h2>New Arrivals</h2>
-            </div>
-            <p class="oa-subtitle">Discover the latest must-have arrivals. Fresh styles and best picks just for you.
-            </p>
-            <div class="row row-cols-2 row-cols-md-4 g-4">
-                <?php
-                include 'admin/conn.php';
-                $sql6 = "SELECT * FROM product WHERE bestsellers='1'";
-
-                $result6 = $conn->query($sql6);
-                while ($row6 = $result6->fetch_assoc()) {
-                ?>
-                    <div class="col">
-                        <div class="oa-product-card">
-                            <div class="oa-product-image">
-                                <a href="sub_sub_categories.php"><img
-                                        src="admin/upload/product/<?php echo $row6['product_image1']; ?>"
-                                        alt="New Saree"></a>
-                                <!-- <div class="oa-sale-badge"><?php echo $row6['discount_idd']; ?>% OFF</div> -->
-
-                                <?php if (!empty($row6['discount_idd'])): ?>
-                                    <div class="oa-sale-badge">
-                                        <?php echo $row6['discount_idd']; ?>% OFF
-                                    </div>
-                                <?php endif; ?>
-
-                                <div class="oa-product-icons">
-                                    <i class="fas fa-heart myshop-wishlist-btn"
-                                        onclick="event.stopPropagation(); toggleWishlist(this)"></i>
-                                    <i class="fas fa-cart-shopping myshop-cart-icon"></i>
-                                </div>
-                            </div>
-                            <div class="oa-product-content">
-                                <div class="oa-product-title"><?php echo $row6['product_name']; ?></div>
-                                <div class="oa-product-brand"><?php echo $row6['product_short_nm']; ?></div>
-                                <div class="wl-rating p-1">
-                                    <svg viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <?php echo $row6['rating']; ?> <span class="wl-rating-count">|
-                                        <?php echo $row6['review']; ?> Reviews</span>
-                                </div>
-                                <?php if (!empty($row6['product_price'])) { ?>
-                                    <span class="wl-price">₹<?php echo $row6['product_discount_price']; ?></span>
-                                    <span class="wl-price-original">₹<?php echo $row6['product_price']; ?></span>
-                                <?php } else { ?>
-                                    <span class="motif-card-title">₹<?php echo $row6['product_discount_price']; ?></span>
-                                <?php } ?>
-                                <a href="product_details.php"><button class="btn myshop-add-to-cart-btn my-3">Buy
-                                        Now</button></a>
-                            </div>
-                        </div>
-                    </div>
-                <?php } ?>
-            </div>
-        </div>
-    </section>
-
-    <style>
-        .glass-box {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 20px;
-            padding: 40px 30px;
-            transition: all .3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .glass-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .icon-modern {
-            font-size: 32px;
-            padding: 15px;
-            border-radius: 14px;
-            background: #000;
-            color: #fff;
-            display: inline-flex;
-            margin-bottom: 15px;
-        }
-
-        .title-highlight {
-            background: linear-gradient(90deg, #000, #555);
-            -webkit-background-clip: text;
-            color: transparent;
-            font-weight: 800;
-        }
-    </style>
-
-
-    <!-- <section class="py-5">
-        <div class="container">
-
-            <div class="text-center mb-5">
-                <h1 class="title-highlight">What We Do</h1>
-                <p class="text-muted w-75 mx-auto fs-5">
-                    Crafting modern, premium & sustainable clothing designed for everyday comfort.
-                </p>
-            </div>
-
-            <div class="row g-4">
-
-                <div class="col-6 col-md-3">
-                    <div class="glass-box text-center">
-                        <i class="fa-solid fa-shirt icon-modern"></i>
-                        <h6 class="fw-semibold mt-2">Men Fashion</h6>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-3">
-                    <div class="glass-box text-center">
-                        <i class="fa-solid fa-person-dress icon-modern"></i>
-                        <h6 class="fw-semibold mt-2">Women Fashion</h6>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-3">
-                    <div class="glass-box text-center">
-                        <i class="fa-solid fa-children icon-modern"></i>
-                        <h6 class="fw-semibold mt-2">Kids Apparel</h6>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-3">
-                    <div class="glass-box text-center">
-                        <i class="fa-solid fa-gem icon-modern"></i>
-                        <h6 class="fw-semibold mt-2">Premium Accessories</h6>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section> -->
 
     <style>
         .video-carousel-wrapper {
@@ -1359,30 +1353,46 @@
         }
 
         .video-modal-content {
-            width: 420px;
-            max-width: 95%;
+            width: 500px;
+            max-width: 90%;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         #popupVideo {
             width: 100%;
+            height: 500px !important;
             border-radius: 10px;
         }
 
         .close-modal {
             position: absolute;
-            top: -45px;
+            top: -35px;
             right: 0;
-            font-size: 40px;
+            font-size: 35px;
             color: white;
             cursor: pointer;
+            z-index: 10;
+        }
+
+        .fullscreen-btn {
+            margin-top: 10px;
+            padding: 8px 15px;
+            font-size: 14px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ffbf00;
+            color: #000;
+            cursor: pointer;
+            font-weight: 600;
         }
 
         /* CUSTOM TOP RIGHT BUTTONS */
         .custom-top-controls {
             position: absolute !important;
             top: -55px !important;
-            /* cards section ke upar */
             z-index: 50 !important;
             width: 42px !important;
             height: 42px !important;
@@ -1392,24 +1402,22 @@
             opacity: 1 !important;
         }
 
-        /* LEFT BUTTON */
         .carousel-control-prev.custom-top-controls {
             right: 55px !important;
             left: auto !important;
         }
 
-        /* RIGHT BUTTON */
         .carousel-control-next.custom-top-controls {
             right: 10px !important;
             left: auto !important;
         }
 
-        /* ICONS */
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
             filter: invert(1) !important;
         }
     </style>
+
 
     <section class="py-5">
         <div class="container">
@@ -1429,25 +1437,25 @@
                         <div class="video-info">Splendiferous Sky…<span>₹1,699</span></div>
                     </div>
                     <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3695955128721715073_video.mp4" muted autoplay loop playsinline></video>
+                        <video class="video-thumb" src="assets/videos/3739441664931710900_video.mp4" muted autoplay loop playsinline></video>
                         <div class="video-info">Pretty Rama Nylon…<span>₹2,999</span></div>
                     </div>
 
                     <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
+                        <video class="video-thumb" src="assets/videos/3740164265094212156_video.mp4" muted autoplay loop playsinline></video>
                         <div class="video-info">Splendiferous Sky…<span>₹1,699</span></div>
                     </div>
                     <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3695955128721715073_video.mp4" muted autoplay loop playsinline></video>
+                        <video class="video-thumb" src="assets/videos/3740164265094212156_video.mp4" muted autoplay loop playsinline></video>
                         <div class="video-info">Pretty Rama Nylon…<span>₹2,999</span></div>
                     </div>
 
                     <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
+                        <video class="video-thumb" src="assets/videos/3688762854879451532_video.mp4" muted autoplay loop playsinline></video>
                         <div class="video-info">Splendiferous Sky…<span>₹1,699</span></div>
                     </div>
                     <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3695955128721715073_video.mp4" muted autoplay loop playsinline></video>
+                        <video class="video-thumb" src="assets/videos/3656871212438455884_video.mp4" muted autoplay loop playsinline></video>
                         <div class="video-info">Pretty Rama Nylon…<span>₹2,999</span></div>
                     </div>
 
@@ -1489,47 +1497,47 @@
         <div class="video-modal-content">
             <span class="close-modal">&times;</span>
             <video id="popupVideo" controls autoplay></video>
+            <!-- <button class="fullscreen-btn">Full Screen</button> -->
         </div>
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
 
-            /* ----------------------------------
-               GROUP VIDEO CARDS (4 per slide)
-            ---------------------------------- */
             const container = document.getElementById("carouselContainer");
             const items = Array.from(container.querySelectorAll(".video-card"));
+            container.innerHTML = ""; // clear original
 
-            container.innerHTML = ""; // remove old content
+            const perSlide = 4; // number of cards per slide
+            const total = items.length;
 
-            let slide;
-            items.forEach((item, index) => {
-                if (index % 4 === 0) {
-                    slide = document.createElement("div");
-                    slide.classList.add("carousel-item");
-                    if (index === 0) slide.classList.add("active");
+            // CREATE CIRCULAR SLIDES
+            for (let i = 0; i < total; i += perSlide) {
+                const slide = document.createElement("div");
+                slide.classList.add("carousel-item");
+                if (i === 0) slide.classList.add("active");
 
-                    const row = document.createElement("div");
-                    row.classList.add("row", "g-4");
-                    slide.appendChild(row);
+                const row = document.createElement("div");
+                row.classList.add("row", "g-4");
+                slide.appendChild(row);
 
-                    container.appendChild(slide);
+                for (let j = 0; j < perSlide; j++) {
+                    const idx = (i + j) % total; // circular index
+                    const col = document.createElement("div");
+                    col.classList.add("col-6", "col-md-3");
+                    col.appendChild(items[idx].cloneNode(true));
+                    row.appendChild(col);
                 }
 
-                const col = document.createElement("div");
-                col.classList.add("col-6", "col-md-3");
-                col.appendChild(item);
+                container.appendChild(slide);
+            }
 
-                slide.querySelector(".row").appendChild(col);
-            });
-
-
-            /* ----------------------------------
+            /* ---------------------------------- 
                MODAL PLAY ON CLICK
             ---------------------------------- */
             const modal = document.getElementById("videoModal");
             const popupVideo = document.getElementById("popupVideo");
+            const fullscreenBtn = modal.querySelector(".fullscreen-btn");
 
             document.querySelectorAll(".video-card video").forEach(video => {
                 video.parentElement.addEventListener("click", () => {
@@ -1539,12 +1547,14 @@
                 });
             });
 
+            // Close modal top-right
             document.querySelector(".close-modal").onclick = () => {
                 modal.style.display = "none";
                 popupVideo.pause();
                 popupVideo.src = "";
             };
 
+            // Click outside modal to close
             window.onclick = (e) => {
                 if (e.target === modal) {
                     modal.style.display = "none";
@@ -1553,11 +1563,161 @@
                 }
             };
 
+            // Fullscreen button
+            fullscreenBtn.onclick = () => {
+                if (popupVideo.requestFullscreen) {
+                    popupVideo.requestFullscreen();
+                } else if (popupVideo.webkitRequestFullscreen) {
+                    /* Safari */
+                    popupVideo.webkitRequestFullscreen();
+                } else if (popupVideo.msRequestFullscreen) {
+                    /* IE11 */
+                    popupVideo.msRequestFullscreen();
+                }
+            };
+
         });
     </script>
 
+    <section class="oa-new-arrivals-section">
+        <div class="container">
+            <div class="of-collection-heading5">
+                <h2>New Arrivals</h2>
+            </div>
+            <p class="oa-subtitle">Discover the latest must-have arrivals. Fresh styles and best picks just for you.
+            </p>
+            <div class="row row-cols-2 row-cols-md-4 g-4">
+                <?php
+                include 'admin/conn.php';
+                $sql6 = "SELECT * FROM product WHERE bestsellers='1'";
 
+                $result6 = $conn->query($sql6);
+                while ($row6 = $result6->fetch_assoc()) {
+                ?>
+                    <div class="col">
+                        <div class="oa-product-card">
+                            <div class="oa-product-image">
+                                <a href="sub_sub_categories.php"><img
+                                        src="admin/upload/product/<?php echo $row6['product_image1']; ?>"
+                                        alt="New Saree"></a>
+                                <!-- <div class="oa-sale-badge"><?php echo $row6['discount_idd']; ?>% OFF</div> -->
 
+                                <?php if (!empty($row6['discount_idd'])): ?>
+                                    <div class="oa-sale-badge">
+                                        <?php echo $row6['discount_idd']; ?>% OFF
+                                    </div>
+                                <?php endif; ?>
+
+                                <div class="oa-product-icons">
+                                    <i class="fas fa-heart myshop-wishlist-btn"
+                                        onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+                                    <i class="fas fa-cart-shopping myshop-cart-icon"></i>
+                                </div>
+                            </div>
+                            <div class="oa-product-content">
+                                <div class="oa-product-title"><?php echo $row6['product_name']; ?></div>
+                                <div class="oa-product-brand"><?php echo $row6['product_short_nm']; ?></div>
+                                <div class="wl-rating p-1">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                    </svg>
+                                    <?php echo $row6['rating']; ?> <span class="wl-rating-count">|
+                                        <?php echo $row6['review']; ?> Reviews</span>
+                                </div>
+                                <?php if (!empty($row6['product_price'])) { ?>
+                                    <span class="wl-price">₹<?php echo $row6['product_discount_price']; ?></span>
+                                    <span class="wl-price-original">₹<?php echo $row6['product_price']; ?></span>
+                                <?php } else { ?>
+                                    <span class="motif-card-title">₹<?php echo $row6['product_discount_price']; ?></span>
+                                <?php } ?>
+                                <a href="product_details.php"><button class="btn myshop-add-to-cart-btn my-3">Buy
+                                        Now</button></a>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .glass-box {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: all .3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .glass-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-modern {
+            font-size: 32px;
+            padding: 15px;
+            border-radius: 14px;
+            background: #000;
+            color: #fff;
+            display: inline-flex;
+            margin-bottom: 15px;
+        }
+
+        .title-highlight {
+            background: linear-gradient(90deg, #000, #555);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 800;
+        }
+    </style>
+
+    <!-- <section class="py-5">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <h1 class="title-highlight">What We Do</h1>
+                <p class="text-muted w-75 mx-auto fs-5">
+                    Crafting modern, premium & sustainable clothing designed for everyday comfort.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-6 col-md-3">
+                    <div class="glass-box text-center">
+                        <i class="fa-solid fa-shirt icon-modern"></i>
+                        <h6 class="fw-semibold mt-2">Men Fashion</h6>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="glass-box text-center">
+                        <i class="fa-solid fa-person-dress icon-modern"></i>
+                        <h6 class="fw-semibold mt-2">Women Fashion</h6>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="glass-box text-center">
+                        <i class="fa-solid fa-children icon-modern"></i>
+                        <h6 class="fw-semibold mt-2">Kids Apparel</h6>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="glass-box text-center">
+                        <i class="fa-solid fa-gem icon-modern"></i>
+                        <h6 class="fw-semibold mt-2">Premium Accessories</h6>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section> -->
 
     <?php include 'common/footer.php' ?>
     <!-- top offers bar -->
