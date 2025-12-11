@@ -51,7 +51,7 @@
             display: flex;
             align-items: center;
             position: relative;
-            max-width: 1200px;
+            /* max-width: 1200px; */
             margin: 0 auto;
         }
 
@@ -235,6 +235,7 @@
             margin-top: 15px;
             transition: 0.4s;
             transform: rotate(-5deg);
+            height: 200px;
         }
 
         .cat-card:hover .cat-img {
@@ -249,6 +250,40 @@
             border-radius: 6px;
             margin: 12px auto 0;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .shop-by-price-section img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .price-card {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+
+        .price-overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 18px 0;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+            color: #f3e4b0;
+            /* Golden shade */
+            background: rgba(0, 0, 0, 0.55);
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+        }
+
+        .price-card:hover img {
+            transform: scale(1.05);
+            transition: 0.4s ease;
         }
     </style>
 </head>
@@ -268,7 +303,7 @@
     </button>
 
 
-    <div class="slider-section">
+    <div class="slider-section px-4">
         <div class="slider-wrapper px-5">
 
             <button class="nav-btn prev-btn" onclick="scrollSlider(-1)">
@@ -389,315 +424,360 @@
         </div>
     </section>
 
-<section class="pb-5">
-    <div class="bam-carousel">
-        <div class="bam-track" id="bamTrack">
+    <section class="pb-5">
+        <div class="bam-carousel">
+            <div class="bam-track" id="bamTrack">
 
-            <!-- 10 Static Items -->
-            <div class="bam-item">
-                <a href="#" class="bam-link">
-                    <img src="assets/img/premium_shirts.jpeg" alt="">
-                    <p>Premium Shirts</p>
-                </a>
-            </div>
-
-            <div class="bam-item">
-                <a href="#" class="bam-link">
-                    <img src="assets/img/ethinic_collection.webp" alt="">
-                    <p>Menswear</p>
-                </a>
-            </div>
-
-            <div class="bam-item">
-                <a href="#" class="bam-link">
-                    <img src="assets/img/womens_fashion.jpeg" alt="">
-                    <p>Women Fashion</p>
-                </a>
-            </div>
-
-            <div class="bam-item">
-                <a href="#" class="bam-link">
-                    <img src="assets/img/designer_wear.webp" alt="">
-                    <p>Designer Wear</p>
-                </a>
-            </div>
-
-            <div class="bam-item">
-                <a href="#" class="bam-link">
-                    <img src="assets/img/ethinic_collection.webp" alt="">
-                    <p>Ethnic Collection</p>
-                </a>
-            </div>
-
-            <div class="bam-item">
-                <a href="#" class="bam-link">
-                    <img src="assets/img/casual_wear.jpeg" alt="">
-                    <p>Casual Wear</p>
-                </a>
-            </div>
-
-            <div class="bam-item">
-                <a href="#" class="bam-link">
-                    <img src="assets/img/profile photo.jpg" alt="">
-                    <p>Formal Collection</p>
-                </a>
-            </div>
-
-            <div class="bam-item">
-                <a href="#" class="bam-link">
-                    <img src="assets/img/trndy_tops.jpeg" alt="">
-                    <p>Trendy Tops</p>
-                </a>
-            </div>
-
-            <div class="bam-item">
-                <a href="#" class="bam-link">
-                    <img src="assets/img/jackets.webp" alt="">
-                    <p>Jackets</p>
-                </a>
-            </div>
-
-            <div class="bam-item">
-                <a href="#" class="bam-link">
-                    <img src="assets/img/western_wear.jpeg" alt="">
-                    <p>Western Wear</p>
-                </a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<section style="background-color: #fff0e9;">
-    <div class="container shop-by-section py-5">
-        <div class="of-collection-heading m-0">
-            <h2 class="mb-5">Shop by Collection</h2>
-        </div>
-
-        <div class="row g-4 of-collection-row">
-
-            <!-- Item 1 -->
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="of-collection-item">
-                    <img src="assets/img/pink.webp"
-                         class="of-collection-img" alt="">
-                    <div class="of-collection-overlay">
-                        <div class="of-collection-name">Wedding Collection</div>
-                        <a href="#"><button class="of-collection-btn">Shop Now ➜</button></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="of-collection-item">
-                    <img src="assets/img/cotton2.webp"
-                         class="of-collection-img" alt="">
-                    <div class="of-collection-overlay">
-                        <div class="of-collection-name">Festive Collection</div>
-                        <a href="#"><button class="of-collection-btn">Shop Now ➜</button></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="of-collection-item">
-                    <img src="assets/img/ethinic_collection.webp"
-                         class="of-collection-img" alt="">
-                    <div class="of-collection-overlay">
-                        <div class="of-collection-name">Casual Collection</div>
-                        <a href="#"><button class="of-collection-btn">Shop Now ➜</button></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Item 4 -->
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="of-collection-item">
-                    <img src="assets/img/jackets.webp"
-                         class="of-collection-img" alt="">
-                    <div class="of-collection-overlay">
-                        <div class="of-collection-name">Designer Collection</div>
-                        <a href="#"><button class="of-collection-btn">Shop Now ➜</button></a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<section class="features">
-    <div class="of-collection-heading2 m-0">
-        <h2 class="mb-4">Our Featured Products</h2>
-    </div>
-
-    <div class="motif-card-container container">
-
-        <!-- Product 1 -->
-        <div class="motif-card-link">
-            <div class="motif-card">
-                <div class="motif-card-img-wrapper">
-                    <a href="product_details.html">
-                        <img src="assets/img/pink.webp" class="motif-base-img" alt="">
-                        <img src="assets/img/pink2.webp" class="motif-hover-img" alt="">
+                <!-- 10 Static Items -->
+                <div class="bam-item">
+                    <a href="#" class="bam-link">
+                        <img src="assets/img/premium_shirts.jpeg" alt="">
+                        <p>Premium Shirts</p>
                     </a>
-
-                    <div class="oa-sale-badge">20% OFF</div>
-
-                    <i class="fas fa-heart myshop-wishlist-btn"></i>
-                    <i class="fas fa-cart-shopping myshop-cart-icon"></i>
                 </div>
 
-                <div class="motif-card-content">
-                    <div>
-                        <div class="motif-card-title">Elegant Pink Dress</div>
-                        <div class="motif-card-description">Soft, stylish and premium.</div>
+                <div class="bam-item">
+                    <a href="#" class="bam-link">
+                        <img src="assets/img/ethinic_collection.webp" alt="">
+                        <p>Menswear</p>
+                    </a>
+                </div>
 
-                        <div class="ab-rating">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 
-                                8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                            </svg>
-                            4.5 <span class="motif-text text-secondary">| 152 Reviews</span>
+                <div class="bam-item">
+                    <a href="#" class="bam-link">
+                        <img src="assets/img/womens_fashion.jpeg" alt="">
+                        <p>Women Fashion</p>
+                    </a>
+                </div>
+
+                <div class="bam-item">
+                    <a href="#" class="bam-link">
+                        <img src="assets/img/designer_wear.webp" alt="">
+                        <p>Designer Wear</p>
+                    </a>
+                </div>
+
+                <div class="bam-item">
+                    <a href="#" class="bam-link">
+                        <img src="assets/img/ethinic_collection.webp" alt="">
+                        <p>Ethnic Collection</p>
+                    </a>
+                </div>
+
+                <div class="bam-item">
+                    <a href="#" class="bam-link">
+                        <img src="assets/img/casual_wear.jpeg" alt="">
+                        <p>Casual Wear</p>
+                    </a>
+                </div>
+
+                <div class="bam-item">
+                    <a href="#" class="bam-link">
+                        <img src="assets/img/profile photo.jpg" alt="">
+                        <p>Formal Collection</p>
+                    </a>
+                </div>
+
+                <div class="bam-item">
+                    <a href="#" class="bam-link">
+                        <img src="assets/img/trndy_tops.jpeg" alt="">
+                        <p>Trendy Tops</p>
+                    </a>
+                </div>
+
+                <div class="bam-item">
+                    <a href="#" class="bam-link">
+                        <img src="assets/img/jackets.webp" alt="">
+                        <p>Jackets</p>
+                    </a>
+                </div>
+
+                <div class="bam-item">
+                    <a href="#" class="bam-link">
+                        <img src="assets/img/western_wear.jpeg" alt="">
+                        <p>Western Wear</p>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section style="background-color: #fff0e9;">
+        <div class="container shop-by-section py-5">
+            <div class="of-collection-heading m-0">
+                <h2 class="mb-5">Shop by Collection</h2>
+            </div>
+
+            <div class="row g-4 of-collection-row">
+
+                <!-- Item 1 -->
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="of-collection-item">
+                        <img src="assets/img/pink.webp"
+                            class="of-collection-img" alt="">
+                        <div class="of-collection-overlay">
+                            <div class="of-collection-name">Wedding Collection</div>
+                            <a href="#"><button class="of-collection-btn">Shop Now ➜</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="of-collection-item">
+                        <img src="assets/img/cotton2.webp"
+                            class="of-collection-img" alt="">
+                        <div class="of-collection-overlay">
+                            <div class="of-collection-name">Festive Collection</div>
+                            <a href="#"><button class="of-collection-btn">Shop Now ➜</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="of-collection-item">
+                        <img src="assets/img/ethinic_collection.webp"
+                            class="of-collection-img" alt="">
+                        <div class="of-collection-overlay">
+                            <div class="of-collection-name">Casual Collection</div>
+                            <a href="#"><button class="of-collection-btn">Shop Now ➜</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="of-collection-item">
+                        <img src="assets/img/jackets.webp"
+                            class="of-collection-img" alt="">
+                        <div class="of-collection-overlay">
+                            <div class="of-collection-name">Designer Collection</div>
+                            <a href="#"><button class="of-collection-btn">Shop Now ➜</button></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="features">
+        <div class="of-collection-heading2 m-0">
+            <h2 class="mb-4">Our Featured Products</h2>
+        </div>
+
+        <div class="motif-card-container container">
+
+            <!-- Product 1 -->
+            <div class="motif-card-link">
+                <div class="motif-card">
+                    <div class="motif-card-img-wrapper">
+                        <a href="product_details.html">
+                            <img src="assets/img/pink.webp" class="motif-base-img" alt="">
+                            <img src="assets/img/pink2.webp" class="motif-hover-img" alt="">
+                        </a>
+
+                        <div class="oa-sale-badge">20% OFF</div>
+
+                        <i class="fas fa-heart myshop-wishlist-btn"></i>
+                        <i class="fas fa-cart-shopping myshop-cart-icon"></i>
+                    </div>
+
+                    <div class="motif-card-content">
+                        <div>
+                            <div class="motif-card-title">Elegant Pink Dress</div>
+                            <div class="motif-card-description">Soft, stylish and premium.</div>
+
+                            <div class="ab-rating">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 
+                                8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg>
+                                4.5 <span class="motif-text text-secondary">| 152 Reviews</span>
+                            </div>
+
+                            <span class="wl-price">₹1499</span>
+                            <span class="wl-price-original">₹1799</span>
                         </div>
 
-                        <span class="wl-price">₹1499</span>
-                        <span class="wl-price-original">₹1799</span>
+                        <a href="product_details.html">
+                            <button class="motif-card-btn">Buy Now</button>
+                        </a>
                     </div>
-
-                    <a href="product_details.html">
-                        <button class="motif-card-btn">Buy Now</button>
-                    </a>
                 </div>
             </div>
-        </div>
 
 
-        <!-- Product 2 -->
-        <div class="motif-card-link">
-            <div class="motif-card">
-                <div class="motif-card-img-wrapper">
-                    <a href="product_details.html">
-                        <img src="assets/img/sky.webp" class="motif-base-img" alt="">
-                        <img src="assets/img/sky2.webp" class="motif-hover-img" alt="">
-                    </a>
+            <!-- Product 2 -->
+            <div class="motif-card-link">
+                <div class="motif-card">
+                    <div class="motif-card-img-wrapper">
+                        <a href="product_details.html">
+                            <img src="assets/img/sky.webp" class="motif-base-img" alt="">
+                            <img src="assets/img/sky2.webp" class="motif-hover-img" alt="">
+                        </a>
 
-                    <div class="oa-sale-badge">15% OFF</div>
+                        <div class="oa-sale-badge">15% OFF</div>
 
-                    <i class="fas fa-heart myshop-wishlist-btn"></i>
-                    <i class="fas fa-cart-shopping myshop-cart-icon"></i>
-                </div>
+                        <i class="fas fa-heart myshop-wishlist-btn"></i>
+                        <i class="fas fa-cart-shopping myshop-cart-icon"></i>
+                    </div>
 
-                <div class="motif-card-content">
-                    <div>
-                        <div class="motif-card-title">Premium Blue Sarees</div>
-                        <div class="motif-card-description">Warm & comfortable.</div>
+                    <div class="motif-card-content">
+                        <div>
+                            <div class="motif-card-title">Premium Blue Sarees</div>
+                            <div class="motif-card-description">Warm & comfortable.</div>
 
-                        <div class="ab-rating">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 
-                                8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                            </svg>
-                            4.7 <span class="motif-text text-secondary">| 98 Reviews</span>
+                            <div class="ab-rating">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 
+                                8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg>
+                                4.7 <span class="motif-text text-secondary">| 98 Reviews</span>
+                            </div>
+
+                            <span class="wl-price">₹999</span>
+                            <span class="wl-price-original">₹1199</span>
                         </div>
 
-                        <span class="wl-price">₹999</span>
-                        <span class="wl-price-original">₹1199</span>
+                        <a href="product_details.html">
+                            <button class="motif-card-btn">Buy Now</button>
+                        </a>
                     </div>
-
-                    <a href="product_details.html">
-                        <button class="motif-card-btn">Buy Now</button>
-                    </a>
                 </div>
             </div>
-        </div>
 
 
-        <!-- Product 3 -->
-        <div class="motif-card-link">
-            <div class="motif-card">
-                <div class="motif-card-img-wrapper">
-                    <a href="product_details.html">
-                        <img src="assets/img/dhoti.webp" class="motif-base-img" alt="">
-                        <img src="assets/img/dhoti2.webp" class="motif-hover-img" alt="">
-                    </a>
+            <!-- Product 3 -->
+            <div class="motif-card-link">
+                <div class="motif-card">
+                    <div class="motif-card-img-wrapper">
+                        <a href="product_details.html">
+                            <img src="assets/img/dhoti.webp" class="motif-base-img" alt="">
+                            <img src="assets/img/dhoti2.webp" class="motif-hover-img" alt="">
+                        </a>
 
-                    <div class="oa-sale-badge">10% OFF</div>
+                        <div class="oa-sale-badge">10% OFF</div>
 
-                    <i class="fas fa-heart myshop-wishlist-btn"></i>
-                    <i class="fas fa-cart-shopping myshop-cart-icon"></i>
-                </div>
+                        <i class="fas fa-heart myshop-wishlist-btn"></i>
+                        <i class="fas fa-cart-shopping myshop-cart-icon"></i>
+                    </div>
 
-                <div class="motif-card-content">
-                    <div>
-                        <div class="motif-card-title">Classic White Dhoti</div>
-                        <div class="motif-card-description">Perfect for any occasion.</div>
+                    <div class="motif-card-content">
+                        <div>
+                            <div class="motif-card-title">Classic White Dhoti</div>
+                            <div class="motif-card-description">Perfect for any occasion.</div>
 
-                        <div class="ab-rating">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 
-                                8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                            </svg>
-                            4.3 <span class="motif-text text-secondary">| 210 Reviews</span>
+                            <div class="ab-rating">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 
+                                8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg>
+                                4.3 <span class="motif-text text-secondary">| 210 Reviews</span>
+                            </div>
+
+                            <span class="wl-price">₹799</span>
+                            <span class="wl-price-original">₹899</span>
                         </div>
 
-                        <span class="wl-price">₹799</span>
-                        <span class="wl-price-original">₹899</span>
+                        <a href="product_details.html">
+                            <button class="motif-card-btn">Buy Now</button>
+                        </a>
                     </div>
-
-                    <a href="product_details.html">
-                        <button class="motif-card-btn">Buy Now</button>
-                    </a>
                 </div>
             </div>
-        </div>
 
 
-        <!-- Product 4 -->
-        <div class="motif-card-link">
-            <div class="motif-card">
-                <div class="motif-card-img-wrapper">
-                    <a href="product_details.html">
-                        <img src="assets/img/white.webp" class="motif-base-img" alt="">
-                        <img src="assets/img/white2.webp" class="motif-hover-img" alt="">
-                    </a>
+            <!-- Product 4 -->
+            <div class="motif-card-link">
+                <div class="motif-card">
+                    <div class="motif-card-img-wrapper">
+                        <a href="product_details.html">
+                            <img src="assets/img/white.webp" class="motif-base-img" alt="">
+                            <img src="assets/img/white2.webp" class="motif-hover-img" alt="">
+                        </a>
 
-                    <div class="oa-sale-badge">10% OFF</div>
+                        <div class="oa-sale-badge">10% OFF</div>
 
-                    <i class="fas fa-heart myshop-wishlist-btn"></i>
-                    <i class="fas fa-cart-shopping myshop-cart-icon"></i>
-                </div>
+                        <i class="fas fa-heart myshop-wishlist-btn"></i>
+                        <i class="fas fa-cart-shopping myshop-cart-icon"></i>
+                    </div>
 
-                <div class="motif-card-content">
-                    <div>
-                        <div class="motif-card-title">Classic Coated Sarees</div>
-                        <div class="motif-card-description">Perfect for any occasion.</div>
+                    <div class="motif-card-content">
+                        <div>
+                            <div class="motif-card-title">Classic Coated Sarees</div>
+                            <div class="motif-card-description">Perfect for any occasion.</div>
 
-                        <div class="ab-rating">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 
-                                8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                            </svg>
-                            4.3 <span class="motif-text text-secondary">| 210 Reviews</span>
+                            <div class="ab-rating">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 
+                                8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg>
+                                4.3 <span class="motif-text text-secondary">| 210 Reviews</span>
+                            </div>
+
+                            <span class="wl-price">₹799</span>
+                            <span class="wl-price-original">₹899</span>
                         </div>
 
-                        <span class="wl-price">₹799</span>
-                        <span class="wl-price-original">₹899</span>
+                        <a href="product_details.html">
+                            <button class="motif-card-btn">Buy Now</button>
+                        </a>
                     </div>
-
-                    <a href="product_details.html">
-                        <button class="motif-card-btn">Buy Now</button>
-                    </a>
                 </div>
             </div>
+
+        </div>
+    </section>
+
+    <section class="shop-by-price-section py-5">
+        <div class="of-collection-heading2 m-0 text-center mb-4">
+            <h2>SHOP BY PRICE</h2>
         </div>
 
-    </div>
-</section>
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- UNDER 1499 -->
+                <div class="col-6 col-md-3">
+                    <a href="#" class="price-card">
+                        <img src="assets/img/black.webp" alt="">
+                        <div class="price-overlay">UNDER ₹1499</div>
+                    </a>
+                </div>
+
+                <!-- UNDER 1999 -->
+                <div class="col-6 col-md-3">
+                    <a href="#" class="price-card">
+                        <img src="assets/img/cotton.webp" alt="">
+                        <div class="price-overlay">UNDER ₹1999</div>
+                    </a>
+                </div>
+
+                <!-- UNDER 2999 -->
+                <div class="col-6 col-md-3">
+                    <a href="#" class="price-card">
+                        <img src="assets/img/jackets.webp" alt="">
+                        <div class="price-overlay">UNDER ₹2999</div>
+                    </a>
+                </div>
+
+                <!-- UNDER 5999 -->
+                <div class="col-6 col-md-3">
+                    <a href="#" class="price-card">
+                        <img src="assets/img/sky.webp" alt="">
+                        <div class="price-overlay">UNDER ₹5999</div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
 
     <section class="od-banner-wrapper">
         <img src="assets/img/about_bg_element.png" class="od-dome-bg" alt="Dome Background" />
@@ -734,8 +814,8 @@
 
                 <!-- Toggle Buttons -->
                 <div class="btn-group mt-3 gap-2">
-                    <button id="btn-men" class="btn btn-dark btn-sm">Men</button>
-                    <button id="btn-women" class="btn btn-outline-dark btn-sm">Women</button>
+                    <button id="btn-men" class="btn btn-dark btn-sm">Sarees</button>
+                    <button id="btn-women" class="btn btn-outline-dark btn-sm">Kurti</button>
                 </div>
             </div>
 
@@ -747,7 +827,7 @@
                     <div class="cat-card">
                         <p class="cat-title">Sneakers</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
-                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <img src="assets/img/banner1.jpg" class="cat-img img-fluid">
                         <div class="cat-stand"></div>
                     </div>
                 </div>
@@ -757,7 +837,7 @@
                     <div class="cat-card">
                         <p class="cat-title">Slip Ons</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
-                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <img src="assets/img/cotton2.webp" class="cat-img img-fluid">
                         <div class="cat-stand"></div>
                     </div>
                 </div>
@@ -767,7 +847,7 @@
                     <div class="cat-card">
                         <p class="cat-title">Loafers</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
-                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <img src="assets/img/jackets.webp" class="cat-img img-fluid">
                         <div class="cat-stand"></div>
                     </div>
                 </div>
@@ -777,7 +857,7 @@
                     <div class="cat-card">
                         <p class="cat-title">Oxfords</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
-                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <img src="assets/img/pink2.webp" class="cat-img img-fluid">
                         <div class="cat-stand"></div>
                     </div>
                 </div>
@@ -787,7 +867,7 @@
                     <div class="cat-card">
                         <p class="cat-title">Sandals</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
-                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <img src="assets/img/sky.webp" class="cat-img img-fluid">
                         <div class="cat-stand"></div>
                     </div>
                 </div>
@@ -797,7 +877,7 @@
                     <div class="cat-card">
                         <p class="cat-title">Flip Flops</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
-                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <img src="assets/img/slide 1.webp" class="cat-img img-fluid">
                         <div class="cat-stand"></div>
                     </div>
                 </div>
@@ -807,7 +887,7 @@
                     <div class="cat-card">
                         <p class="cat-title">Slides</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
-                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <img src="assets/img/slide 3.webp" class="cat-img img-fluid">
                         <div class="cat-stand"></div>
                     </div>
                 </div>
@@ -817,7 +897,7 @@
                     <div class="cat-card">
                         <p class="cat-title">Clogs</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
-                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <img src="assets/img/slide 4.webp" class="cat-img img-fluid">
                         <div class="cat-stand"></div>
                     </div>
                 </div>
@@ -831,7 +911,7 @@
                     <div class="cat-card">
                         <p class="cat-title">Heels</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
-                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <img src="assets/img/slide 5.webp" class="cat-img img-fluid">
                         <div class="cat-stand"></div>
                     </div>
                 </div>
@@ -840,7 +920,7 @@
                     <div class="cat-card">
                         <p class="cat-title">Flats</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
-                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <img src="assets/img/trndy_tops.jpeg" class="cat-img img-fluid">
                         <div class="cat-stand"></div>
                     </div>
                 </div>
@@ -849,7 +929,7 @@
                     <div class="cat-card">
                         <p class="cat-title">Boots</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
-                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <img src="assets/img/western_wear.jpeg" class="cat-img img-fluid">
                         <div class="cat-stand"></div>
                     </div>
                 </div>
@@ -858,7 +938,7 @@
                     <div class="cat-card">
                         <p class="cat-title">Sandals</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
-                        <img src="//neemans.com/cdn/shop/files/Slides_9799e993-257e-4334-a853-ff938ac7bcb9.png?v=1759889764&width=300" class="cat-img img-fluid">
+                        <img src="assets/img/white.webp" class="cat-img img-fluid">
                         <div class="cat-stand"></div>
                     </div>
                 </div>
@@ -876,122 +956,122 @@
     </section>
 
 
-   <section class="shop-role-section pb-5">
-    <div class="shop-role-container">
-        <div class="of-collection-heading3">
-            <h2>Top Selling</h2>
+    <section class="shop-role-section pb-5">
+        <div class="shop-role-container">
+            <div class="of-collection-heading3">
+                <h2>Top Selling</h2>
+            </div>
+
+            <!-- Desktop Grid (No Backend) -->
+            <div class="shop-role-row d-none d-md-grid">
+
+                <div class="shop-role-card">
+                    <div class="shop-role-card-img-wrapper">
+                        <a href="product_details.html">
+                            <img src="assets/img/jackets.webp" alt="Top Product 1">
+                        </a>
+                    </div>
+                    <div class="shop-role-card-body">
+                        <h5>Royal Silk Saree</h5>
+                    </div>
+                </div>
+
+                <div class="shop-role-card">
+                    <div class="shop-role-card-img-wrapper">
+                        <a href="product_details.html">
+                            <img src="assets/img/pink.webp" alt="Top Product 2">
+                        </a>
+                    </div>
+                    <div class="shop-role-card-body">
+                        <h5>Designer Kurti Set</h5>
+                    </div>
+                </div>
+
+                <div class="shop-role-card">
+                    <div class="shop-role-card-img-wrapper">
+                        <a href="product_details.html">
+                            <img src="assets/img/sky.webp" alt="Top Product 3">
+                        </a>
+                    </div>
+                    <div class="shop-role-card-body">
+                        <h5>Kids Ethnic Wear</h5>
+                    </div>
+                </div>
+
+                <div class="shop-role-card">
+                    <div class="shop-role-card-img-wrapper">
+                        <a href="product_details.html">
+                            <img src="assets/img/slide 3.webp" alt="Top Product 4">
+                        </a>
+                    </div>
+                    <div class="shop-role-card-body">
+                        <h5>Men Festive Kurta</h5>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Mobile Carousel (Static) -->
+            <div id="pr-carousel" class="carousel slide d-md-none mt-3" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <div class="shop-role-card">
+                            <div class="shop-role-card-img-wrapper">
+                                <a href="product_details.html">
+                                    <img src="assets/img/jackets.webp" alt="Product">
+                                </a>
+                            </div>
+                            <div class="shop-role-card-body">
+                                <h5>Royal Silk Saree</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="shop-role-card">
+                            <div class="shop-role-card-img-wrapper">
+                                <a href="product_details.html">
+                                    <img src="assets/img/pink.webp" alt="Product">
+                                </a>
+                            </div>
+                            <div class="shop-role-card-body">
+                                <h5>Designer Kurti Set</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="shop-role-card">
+                            <div class="shop-role-card-img-wrapper">
+                                <a href="product_details.html">
+                                    <img src="assets/img/sky.webp" alt="Product">
+                                </a>
+                            </div>
+                            <div class="shop-role-card-body">
+                                <h5>Kids Ethnic Wear</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="shop-role-card">
+                            <div class="shop-role-card-img-wrapper">
+                                <a href="product_details.html">
+                                    <img src="assets/img/slide 3.webp" alt="Product">
+                                </a>
+                            </div>
+                            <div class="shop-role-card-body">
+                                <h5>Men Festive Kurta</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
-
-        <!-- Desktop Grid (No Backend) -->
-        <div class="shop-role-row d-none d-md-grid">
-
-            <div class="shop-role-card">
-                <div class="shop-role-card-img-wrapper">
-                    <a href="product_details.html">
-                        <img src="assets/img/jackets.webp" alt="Top Product 1">
-                    </a>
-                </div>
-                <div class="shop-role-card-body">
-                    <h5>Royal Silk Saree</h5>
-                </div>
-            </div>
-
-            <div class="shop-role-card">
-                <div class="shop-role-card-img-wrapper">
-                    <a href="product_details.html">
-                        <img src="assets/img/pink.webp" alt="Top Product 2">
-                    </a>
-                </div>
-                <div class="shop-role-card-body">
-                    <h5>Designer Kurti Set</h5>
-                </div>
-            </div>
-
-            <div class="shop-role-card">
-                <div class="shop-role-card-img-wrapper">
-                    <a href="product_details.html">
-                        <img src="assets/img/sky.webp" alt="Top Product 3">
-                    </a>
-                </div>
-                <div class="shop-role-card-body">
-                    <h5>Kids Ethnic Wear</h5>
-                </div>
-            </div>
-
-            <div class="shop-role-card">
-                <div class="shop-role-card-img-wrapper">
-                    <a href="product_details.html">
-                        <img src="assets/img/slide 3.webp" alt="Top Product 4">
-                    </a>
-                </div>
-                <div class="shop-role-card-body">
-                    <h5>Men Festive Kurta</h5>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Mobile Carousel (Static) -->
-        <div id="pr-carousel" class="carousel slide d-md-none mt-3" data-bs-ride="carousel" data-bs-interval="3000">
-            <div class="carousel-inner">
-
-                <div class="carousel-item active">
-                    <div class="shop-role-card">
-                        <div class="shop-role-card-img-wrapper">
-                            <a href="product_details.html">
-                                <img src="assets/img/jackets.webp" alt="Product">
-                            </a>
-                        </div>
-                        <div class="shop-role-card-body">
-                            <h5>Royal Silk Saree</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="shop-role-card">
-                        <div class="shop-role-card-img-wrapper">
-                            <a href="product_details.html">
-                                <img src="assets/img/pink.webp" alt="Product">
-                            </a>
-                        </div>
-                        <div class="shop-role-card-body">
-                            <h5>Designer Kurti Set</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="shop-role-card">
-                        <div class="shop-role-card-img-wrapper">
-                            <a href="product_details.html">
-                                <img src="assets/img/sky.webp" alt="Product">
-                            </a>
-                        </div>
-                        <div class="shop-role-card-body">
-                            <h5>Kids Ethnic Wear</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="shop-role-card">
-                        <div class="shop-role-card-img-wrapper">
-                            <a href="product_details.html">
-                                <img src="assets/img/slide 3.webp" alt="Product">
-                            </a>
-                        </div>
-                        <div class="shop-role-card-body">
-                            <h5>Men Festive Kurta</h5>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-</section>
+    </section>
 
 
     <section class="myshop-section-bg" style="background-color: #fff0e9;">
@@ -1135,7 +1215,7 @@
     </style>
 
 
-    <section class="py-5">
+    <!-- <section class="py-5">
         <div class="container">
 
             <div class="text-center mb-5">
@@ -1178,113 +1258,305 @@
             </div>
 
         </div>
-    </section>
+    </section> -->
 
     <style>
-        .process-img {
-            border-radius: 20px;
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            transition: .3s;
+        .video-carousel-wrapper {
+            position: relative;
+            overflow: hidden;
         }
 
-        .process-img:hover {
-            transform: scale(1.03);
-        }
-
-        .step-box {
-            padding: 20px 0;
-            border-bottom: 1px solid #e5e5e5;
-        }
-
-        .step-number {
-            width: 45px;
-            height: 45px;
-            background: #000;
-            color: #fff;
-            border-radius: 12px;
+        .video-carousel {
             display: flex;
-            align-items: center;
+            gap: 22px;
+            overflow-x: scroll !important;
+            width: 100% !important;
+            scroll-behavior: smooth;
+            padding-bottom: 15px;
+            white-space: nowrap;
+        }
+
+        .video-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .video-carousel-wrapper {
+            overflow: visible !important;
+        }
+
+        .video-card {
+            min-width: 280px;
+            max-width: 280px;
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            flex: 0 0 auto;
+        }
+
+        .video-thumb {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        .video-info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 0 0 18px 18px;
+        }
+
+        .video-info span {
+            display: block;
+            margin-top: 4px;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 40%;
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 22px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+        }
+
+        .prev-btn {
+            left: -10px;
+        }
+
+        .next-btn {
+            right: -10px;
+        }
+
+        /* MODAL */
+        .video-modal {
+            display: none;
+            position: fixed;
+            z-index: 5000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
             justify-content: center;
-            font-size: 18px;
-            margin-right: 15px;
-            flex-shrink: 0;
+            align-items: center;
+        }
+
+        .video-modal-content {
+            width: 420px;
+            max-width: 95%;
+            position: relative;
+        }
+
+        #popupVideo {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -45px;
+            right: 0;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* CUSTOM TOP RIGHT BUTTONS */
+        .custom-top-controls {
+            position: absolute !important;
+            top: -55px !important;
+            /* cards section ke upar */
+            z-index: 50 !important;
+            width: 42px !important;
+            height: 42px !important;
+            border-radius: 50% !important;
+            background: #ffffff !important;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.18) !important;
+            opacity: 1 !important;
+        }
+
+        /* LEFT BUTTON */
+        .carousel-control-prev.custom-top-controls {
+            right: 55px !important;
+            left: auto !important;
+        }
+
+        /* RIGHT BUTTON */
+        .carousel-control-next.custom-top-controls {
+            right: 10px !important;
+            left: auto !important;
+        }
+
+        /* ICONS */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(1) !important;
         }
     </style>
 
-
-    <section class="py-5 bg-light">
+    <section class="py-5">
         <div class="container">
+            <h2 class="mb-4 fw-bold">Trending Reels</h2>
 
-            <div class="text-center mb-5">
-                <h1 class="title-highlight">Our Making Process</h1>
-                <p class="text-muted fs-5">Precision. Passion. Perfection.</p>
-            </div>
+            <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" id="carouselContainer">
 
-            <div class="row g-5 align-items-center">
-
-                <!-- Image Grid -->
-                <div class="col-md-6">
-                    <div class="row g-4">
-
-                        <div class="col-6">
-                            <img class="process-img" src="https://i.ibb.co/0Gv7wkd/fabric.jpg" />
-                        </div>
-
-                        <div class="col-6 mt-5">
-                            <img class="process-img" src="https://i.ibb.co/grR30sP/cutting.jpg" />
-                        </div>
-
-                        <div class="col-12">
-                            <img class="process-img mt-4" src="https://i.ibb.co/hYj8mN1/stitching.jpg" />
-                        </div>
-
+                    <!-- Just dump all cards here -->
+                    <div class="video-card">
+                        <video class="video-thumb" src="assets/videos/3695955128721715073_video.mp4" muted autoplay loop playsinline></video>
+                        <div class="video-info">Pretty Rama Nylo Pretty Rama Nylon Pretty Rama Nylon<span>₹2,999</span></div>
                     </div>
+
+                    <div class="video-card">
+                        <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
+                        <div class="video-info">Splendiferous Sky…<span>₹1,699</span></div>
+                    </div>
+                    <div class="video-card">
+                        <video class="video-thumb" src="assets/videos/3695955128721715073_video.mp4" muted autoplay loop playsinline></video>
+                        <div class="video-info">Pretty Rama Nylon…<span>₹2,999</span></div>
+                    </div>
+
+                    <div class="video-card">
+                        <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
+                        <div class="video-info">Splendiferous Sky…<span>₹1,699</span></div>
+                    </div>
+                    <div class="video-card">
+                        <video class="video-thumb" src="assets/videos/3695955128721715073_video.mp4" muted autoplay loop playsinline></video>
+                        <div class="video-info">Pretty Rama Nylon…<span>₹2,999</span></div>
+                    </div>
+
+                    <div class="video-card">
+                        <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
+                        <div class="video-info">Splendiferous Sky…<span>₹1,699</span></div>
+                    </div>
+                    <div class="video-card">
+                        <video class="video-thumb" src="assets/videos/3695955128721715073_video.mp4" muted autoplay loop playsinline></video>
+                        <div class="video-info">Pretty Rama Nylon…<span>₹2,999</span></div>
+                    </div>
+
+                    <div class="video-card">
+                        <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
+                        <div class="video-info">Splendiferous Sky…<span>₹1,699</span></div>
+                    </div>
+                    <div class="video-card">
+                        <video class="video-thumb" src="assets/videos/3695955128721715073_video.mp4" muted autoplay loop playsinline></video>
+                        <div class="video-info">Pretty Rama Nylon…<span>₹2,999</span></div>
+                    </div>
+
+                    <div class="video-card">
+                        <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
+                        <div class="video-info">Splendiferous Sky…<span>₹1,699</span></div>
+                    </div>
+
+                    <!-- Jitne chahe utne cards yaha daal -->
+
                 </div>
 
-                <!-- Steps -->
-                <div class="col-md-6">
+                <!-- CONTROLS -->
+                <button class="carousel-control-prev custom-top-controls" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
 
-                    <div class="step-box d-flex">
-                        <div class="step-number">1</div>
-                        <div>
-                            <h5 class="fw-bold">Premium Fabric Selection</h5>
-                            <p class="text-muted mb-0">Choosing world-class fabrics for durability & comfort.</p>
-                        </div>
-                    </div>
-
-                    <div class="step-box d-flex">
-                        <div class="step-number">2</div>
-                        <div>
-                            <h5 class="fw-bold">Laser Cutting Precision</h5>
-                            <p class="text-muted mb-0">Advanced machines for perfect shape & fit.</p>
-                        </div>
-                    </div>
-
-                    <div class="step-box d-flex">
-                        <div class="step-number">3</div>
-                        <div>
-                            <h5 class="fw-bold">Handcrafted Stitching</h5>
-                            <p class="text-muted mb-0">Skilled tailors ensure flawless detailing.</p>
-                        </div>
-                    </div>
-
-                    <div class="step-box d-flex">
-                        <div class="step-number">4</div>
-                        <div>
-                            <h5 class="fw-bold">Final QC & Packing</h5>
-                            <p class="text-muted mb-0">Every item passes strict quality checks.</p>
-                        </div>
-                    </div>
-
-                </div>
+                <button class="carousel-control-next custom-top-controls" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
 
             </div>
 
         </div>
     </section>
+
+
+    <!-- VIDEO POPUP (MODAL) -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-content">
+            <span class="close-modal">&times;</span>
+            <video id="popupVideo" controls autoplay></video>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /* ----------------------------------
+               GROUP VIDEO CARDS (4 per slide)
+            ---------------------------------- */
+            const container = document.getElementById("carouselContainer");
+            const items = Array.from(container.querySelectorAll(".video-card"));
+
+            container.innerHTML = ""; // remove old content
+
+            let slide;
+            items.forEach((item, index) => {
+                if (index % 4 === 0) {
+                    slide = document.createElement("div");
+                    slide.classList.add("carousel-item");
+                    if (index === 0) slide.classList.add("active");
+
+                    const row = document.createElement("div");
+                    row.classList.add("row", "g-4");
+                    slide.appendChild(row);
+
+                    container.appendChild(slide);
+                }
+
+                const col = document.createElement("div");
+                col.classList.add("col-6", "col-md-3");
+                col.appendChild(item);
+
+                slide.querySelector(".row").appendChild(col);
+            });
+
+
+            /* ----------------------------------
+               MODAL PLAY ON CLICK
+            ---------------------------------- */
+            const modal = document.getElementById("videoModal");
+            const popupVideo = document.getElementById("popupVideo");
+
+            document.querySelectorAll(".video-card video").forEach(video => {
+                video.parentElement.addEventListener("click", () => {
+                    modal.style.display = "flex";
+                    popupVideo.src = video.src;
+                    popupVideo.play();
+                });
+            });
+
+            document.querySelector(".close-modal").onclick = () => {
+                modal.style.display = "none";
+                popupVideo.pause();
+                popupVideo.src = "";
+            };
+
+            window.onclick = (e) => {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                    popupVideo.pause();
+                    popupVideo.src = "";
+                }
+            };
+
+        });
+    </script>
+
+
 
 
     <?php include 'common/footer.php' ?>
@@ -1918,33 +2190,33 @@
     </script>
 
     <!-- categories slider -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const track = document.getElementById("bamTrack");
-    let items = [...track.children];
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const track = document.getElementById("bamTrack");
+            let items = [...track.children];
 
-    // Duplicate for infinite scroll
-    items.forEach(item => {
-        track.appendChild(item.cloneNode(true));
-    });
+            // Duplicate for infinite scroll
+            items.forEach(item => {
+                track.appendChild(item.cloneNode(true));
+            });
 
-    let scrollSpeed = 0.6;
-    let position = 0;
+            let scrollSpeed = 0.6;
+            let position = 0;
 
-    function animate() {
-        position -= scrollSpeed;
+            function animate() {
+                position -= scrollSpeed;
 
-        if (Math.abs(position) >= track.scrollWidth / 2) {
-            position = 0;
-        }
+                if (Math.abs(position) >= track.scrollWidth / 2) {
+                    position = 0;
+                }
 
-        track.style.transform = `translateX(${position}px)`;
-        requestAnimationFrame(animate);
-    }
+                track.style.transform = `translateX(${position}px)`;
+                requestAnimationFrame(animate);
+            }
 
-    animate();
-});
-</script>
+            animate();
+        });
+    </script>
 
 
     <script>

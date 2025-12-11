@@ -1,3 +1,55 @@
+<style>
+    .mega-dropdown {
+        position: static;
+    }
+
+    .mega-dropdown:hover .mega-menu {
+        display: block;
+    }
+
+    .mega-menu {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background: #fff;
+        z-index: 9999;
+        display: none;
+        border-radius: 20px;
+    }
+
+    .mega-list li {
+        padding: 8px 0;
+    }
+
+    .mega-list li a {
+        text-decoration: none;
+        color: #000;
+        font-weight: 500;
+    }
+
+    .mega-card {
+        padding: 12px;
+        background: #f5f3ef;
+        border-radius: 12px;
+        position: relative;
+        transition: 0.2s;
+    }
+
+    .mega-card:hover {
+        transform: translateY(-3px);
+        background: #eceae6;
+    }
+
+    .mega-card .arrow {
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        font-size: 22px;
+        opacity: 0.6;
+    }
+</style>
+
 <div id="offersBarContainer">
     <div id="offersBar">🎉 Summer Sale! Flat 25% OFF on all ethnic wear | Use Code: INDIASALE25 | Free Shipping on
         orders over ₹999
@@ -63,303 +115,165 @@
 <nav class="navbar navbar-expand-lg od-nav-bar sticky-top py-2 d-none d-lg-flex bg-white border-bottom shadow-sm">
     <div class="container-fluid px-4 d-flex justify-content-between align-items-center">
 
+        <!-- LOGO -->
         <a class="navbar-brand" href="index.php">
-            <img src="assets/img/ecommerce_logo_maker.png" alt="Logo" class="p-2 img-fluid" width="150px">
+            <img src="assets/img/ecommerce_logo_maker.png" alt="Logo" class="p-2 img-fluid" width="150">
         </a>
 
-        <ul class="navbar-nav od-nav-links d-flex gap-3">
+        <!-- LEFT NAV LINKS -->
+        <ul class="navbar-nav ms-3 d-flex align-items-center gap-4 fw-bold">
             <li class="nav-item">
-                <a class="nav-link fw-bold" href="Categories.php">NEW</a>
+                <a class="nav-link" href="#">New Arrivals</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Offers</a>
+            </li>
+            <li class="nav-item dropdown mega-dropdown">
+                <a class="nav-link" href="#" id="sareeMenu">Sarees & Kurti</a>
 
-            <?php
-            include 'admin/conn.php';
-            $sql = "SELECT * FROM category WHERE status='1'";
-            $result = $conn->query($sql);
+                <!-- Mega Menu -->
+                <div class="mega-menu shadow-lg p-4 rounded-4">
+                    <div class="row">
 
-            while ($row = $result->fetch_assoc()) {
-                $category_id = base64_encode($row['id']);
-                ?>
-                <li class="nav-item dropdown od-nav-item position-relative">
-                    <a class="nav-link fw-bold" href="Categories.php?id=<?php echo $category_id; ?>">
-                        <?php echo htmlspecialchars($row['category_name']); ?>
-                    </a>
+                        <!-- LEFT SIDE LIST -->
+                        <div class="col-3 border-end">
+                            <h6 class="fw-bold mb-3">Featured:</h6>
+                            <ul class="list-unstyled mega-list">
+                                <li><a href="#">Best Selling</a></li>
+                                <li><a href="#">Trending</a></li>
+                                <li><a href="#">All Products</a></li>
+                            </ul>
 
-                    <div class="od-mega-desktop">
-                        <div class="row">
-                            <?php
-                            $xyz = $row['id'];
-                            $sql2 = "SELECT * FROM sub_category WHERE status='1' AND category_id='$xyz' LIMIT 4";
-                            $result2 = $conn->query($sql2);
+                            <!-- Banner -->
+                            <div class="mt-4">
+                                <img src="https://via.placeholder.com/250x120?text=SALE+50%25+OFF" class="img-fluid rounded-3">
+                            </div>
+                        </div>
 
-                            while ($row2 = $result2->fetch_assoc()) {
-                                $sub_category_id = base64_encode($row2['id']);
-                                ?>
-                                <div class="col">
-                                    <a href="sub_categories.php?id=<?php echo $sub_category_id; ?>">
-                                        <h6><?php echo htmlspecialchars($row2['sub_category_name']); ?></h6>
-                                    </a>
-                                    <?php
-                                    // Fetch sub-subcategories dynamically (example)
-                                    $sub_sql = "SELECT * FROM sub_subcategory WHERE status='1' AND sub_category_id='{$row2['id']}' LIMIT 4";
-                                    $sub_result = $conn->query($sub_sql);
-                                    if ($sub_result->num_rows > 0) {
-                                        while ($sub_row = $sub_result->fetch_assoc()) {
-                                            $sub_sub_category_id = base64_encode($sub_row['id']);
-                                            ?>
-                                            <a href="sub_sub_categories.php?id=<?php echo $sub_sub_category_id; ?>">
-                                                <?php echo htmlspecialchars($sub_row['sub_subcategoryname']); ?>
-                                            </a>
-                                            <?php
-                                        }
-                                    } else {
-                                        // Static fallback links if no data
-                                        ?>
-                                        <!-- <a href="sub_sub_categories.php">Sambalpuri Shirts</a>
-                                        <a href="sub_sub_categories.php">Bomkai Kurtas</a>
-                                        <a href="sub_sub_categories.php">Pasapalli Nehru Jackets</a>
-                                        <a href="sub_sub_categories.php">Ikat Cotton Shirts</a> -->
-                                        <?php
-                                    }
-                                    ?>
+                        <!-- RIGHT SIDE CATEGORY CARDS -->
+                        <div class="col-9">
+                            <div class="row g-4">
+
+                                <!-- Card 1 -->
+                                <div class="col-3">
+                                    <div class="mega-card">
+                                        <img src="assets/img/black.webp" class="img-fluid rounded" style="height: 70px;">
+                                        <p class="mt-2 fw-semibold">Silk Sarees</p>
+                                        <span class="arrow">›</span>
+                                    </div>
                                 </div>
-                                <?php
-                            }
-                            ?>
-                        </div>
-                    </div>
-                </li>
-                <?php
-            }
-            ?>
 
-            <!-- <li class="nav-item dropdown od-nav-item">
-                <a class="nav-link fw-bold" href="Categories.php">WOMEN</a>
-                <div class="od-mega-desktop">
-                    <div class="row">
-                        <div class="col">
-                            <a href="sub_categories.php">
-                                <h6>Sarees</h6>
-                            </a>
-                            <a href="sub_sub_categories.php">Sambalpuri Sarees</a>
-                            <a href="sub_sub_categories.php">Bomkai Sarees</a>
-                            <a href="sub_sub_categories.php">Pasapalli Sarees</a>
-                            <a href="sub_sub_categories.php">Bapta Sarees</a>
+                                <!-- Card 2 -->
+                                <div class="col-3">
+                                    <div class="mega-card">
+                                        <img src="assets/img/cotton.webp" class="img-fluid rounded" style="height: 70px;">
+                                        <p class="mt-2 fw-semibold">Cotton Sarees</p>
+                                        <span class="arrow">›</span>
+                                    </div>
+                                </div>
+
+                                <!-- Card 3 -->
+                                <div class="col-3">
+                                    <div class="mega-card">
+                                        <img src="assets/img/Manthulir Green.webp" class="img-fluid rounded" style="height: 70px;">
+                                        <p class="mt-2 fw-semibold">Designer Kurtis</p>
+                                        <span class="arrow">›</span>
+                                    </div>
+                                </div>
+
+                                <!-- Card 4 -->
+                                <div class="col-3">
+                                    <div class="mega-card">
+                                        <img src="assets/img/pink.webp" class="img-fluid rounded" style="height: 70px;">
+                                        <p class="mt-2 fw-semibold">Anarkali Kurtis</p>
+                                        <span class="arrow">›</span>
+                                    </div>
+                                </div>
+
+                                <!-- Card 5 -->
+                                <div class="col-3">
+                                    <div class="mega-card">
+                                        <img src="assets/img/red.webp" class="img-fluid rounded" style="height: 70px;">
+                                        <p class="mt-2 fw-semibold">Lehenga Style Kurtis</p>
+                                        <span class="arrow">›</span>
+                                    </div>
+                                </div>
+
+                                <!-- Card 6 -->
+                                <div class="col-3">
+                                    <div class="mega-card">
+                                        <img src="assets/img/sky.webp" class="img-fluid rounded" style="height: 70px;">
+                                        <p class="mt-2 fw-semibold">All Products</p>
+                                        <span class="arrow">›</span>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
-                        <div class="col">
-                            <a href="sub_categories.php">
-                                <h6>Kurtis & Tops</h6>
-                            </a>
-                            <a href="sub_sub_categories.php">Handloom Kurtis</a>
-                            <a href="sub_sub_categories.php">Patachitra Printed Tops</a>
-                            <a href="sub_sub_categories.php">Crop Tops</a>
-                        </div>
-                        <div class="col">
-                            <a href="sub_categories.php">
-                                <h6>Dresses & Sets</h6>
-                            </a>
-                            <a href="sub_sub_categories.php">Fusion Dresses</a>
-                            <a href="sub_sub_categories.php">Co-ord Sets</a>
-                            <a href="sub_sub_categories.php">Handloom Gowns</a>
-                        </div>
+
                     </div>
                 </div>
             </li>
 
-            <li class="nav-item dropdown od-nav-item">
-                <a class="nav-link fw-bold" href="Categories.php">KIDS</a>
-                <div class="od-mega-desktop">
-                    <div class="row">
-                        <div class="col">
-                            <a href="sub_categories.php">
-                                <h6>Boys</h6>
-                            </a>
-                            <a href="sub_sub_categories.php">Sambalpuri Shirts</a>
-                            <a href="sub_sub_categories.php">Handloom Kurta Sets</a>
-                            <a href="sub_sub_categories.php">Cotton Shorts</a>
-                        </div>
-                        <div class="col">
-                            <a href="sub_categories.php">
-                                <h6>Girls</h6>
-                            </a>
-                            <a href="sub_sub_categories.php">Bomkai Frocks</a>
-                            <a href="sub_sub_categories.php">Sambalpuri Skirts</a>
-                            <a href="sub_sub_categories.php">Ikat Tops</a>
-                        </div>
-                        <div class="col">
-                            <a href="sub_categories.php">
-                                <h6>Festive Wear</h6>
-                            </a>
-                            <a href="sub_sub_categories.php">Mini Sarees</a>
-                            <a href="sub_sub_categories.php">Sherwani Sets</a>
-                            <a href="sub_sub_categories.php">Rakhi Edit</a>
-                        </div>
-                    </div>
-                </div>
-            </li> -->
         </ul>
 
-        <div class="d-flex align-items-center gap-3 position-relative search-login-cart">
-            <div class="position-relative">
-                <div class="d-block">
-                    <button class="btn p-0 border-0 text-dark" id="searchToggle1">
-                        <i class="fa-solid fa-magnifying-glass fs-5"></i>
-                    </button>
-                </div>
-                <div class="position-absolute searchbar-section bg-white border shadow-sm p-2 mt-2 rounded d-none"
-                    id="searchBox1">
-                    <input type="text" class="form-control" placeholder="Search for products...">
-                </div>
+        <!-- RIGHT SIDE: SEARCH + WISHLIST + CART -->
+        <div class="d-flex align-items-center gap-4 ms-auto">
+
+            <!-- BIG SEARCH BAR -->
+            <div class="position-relative" style="width: 350px;">
+                <input type="text" class="form-control rounded-pill ps-4" placeholder="Search for products...">
+                <i class="fa-solid fa-magnifying-glass position-absolute top-50 end-0 translate-middle-y me-3"></i>
             </div>
 
-            <div class="container py-4 search-login-cart">
-                <div class="d-flex  gap-2">
-                    <div class="ar-account-container" id="ar-account-container-desktop">
-                        <i class="fa-solid fa-user fs-5" id="ar-account-icon-desktop"></i>
-                        <div class="ar-account-dropdown" id="ar-account-dropdown-desktop">
-                            <div id="ar-account-before-login-desktop">
+            <!-- WISHLIST -->
+            <a href="#" class="text-dark">
+                <i class="fa-regular fa-heart fs-4"></i>
+            </a>
 
-                                <div class="p-3">
-                                    <h6>Welcome</h6>
-                                    <p class="text-muted small">To access account and manage orders</p>
-                                    <button id="ar-account-login-btn-desktop">LOGIN / SIGNUP</button>
-                                </div>
-                                <hr class="m-0" />
-                                <div class="ar-account-item">
-                                    <i class="fa-solid fa-box me-2"></i> Orders
-                                </div>
-                                <div class="ar-account-item">
-                                    <i class="fa-solid fa-heart me-2"></i> Wishlist
-                                </div>
-                                <div class="ar-account-item">
-                                    <i class="fa-solid fa-phone me-2"></i> Contact Us
-                                </div>
-                                <div class="ar-account-item d-flex justify-content-between align-items-center">
-                                    <div><i class="fa-solid fa-gift me-2"></i> Gift Cards</div>
-                                    <span class="ar-new-badge">NEW</span>
-                                </div>
-                            </div>
+            <!-- CART -->
+            <a href="#" class="text-dark">
+                <i class="fa-solid fa-bag-shopping fs-4"></i>
+            </a>
 
-                            <div id="ar-account-after-login-desktop" class="d-none">
-                                <div class="p-3">
-                                    <h6>Hello User</h6>
-                                    <p id="ar-account-mobile" class="text-muted">3256981250</p>
-                                </div>
-                                <hr class="m-0" />
-                                <a href="profile_page.php" class="text-decoration-none">
-                                    <div class="ar-account-item">
-                                        <i class="fa-solid fa-box me-2"></i> Orders
-                                    </div>
-                                </a>
-                                <a href="profile_page.php" class="text-decoration-none">
-                                    <div class="ar-account-item">
-                                        <i class="fa-solid fa-heart me-2"></i> Wishlist
-                                    </div>
-                                </a>
-                                <a href="contact_us_page.php" class="text-decoration-none">
-                                    <div class="ar-account-item">
-                                        <i class="fa-solid fa-phone me-2"></i> Contact Us
-                                    </div>
-                                </a>
-                                <a href="profile_page.php" class="text-decoration-none">
-                                    <div class="ar-account-item d-flex justify-content-between align-items-center">
-                                        <div><i class="fa-solid fa-gift me-2"></i> Gift Cards</div>
-                                        <span class="ar-new-badge">NEW</span>
-                                    </div>
-                                </a>
-                                <hr class="m-0" />
-                                <a href="profile_page.php" class="text-decoration-none">
-                                    <div class="ar-account-item">
-                                        <i class="fa-solid fa-tag me-2"></i> Coupons
-                                    </div>
-                                </a>
-                                <a href="profile_page.php" class="text-decoration-none">
-                                    <div class="ar-account-item">
-                                        <i class="fa-solid fa-credit-card me-2"></i> Saved Cards
-                                    </div>
-                                </a>
-                                <a href="profile_page.php" class="text-decoration-none">
-                                    <div class="ar-account-item">
-                                        <i class="fa-solid fa-location-dot me-2"></i> Saved Addresses
-                                    </div>
-                                </a>
-                                <a href="profile_page.php" class="text-decoration-none">
-                                    <div class="ar-account-item">
-                                        <i class="fa-solid fa-user-pen me-2"></i> Edit Profile
-                                    </div>
-                                </a>
-                                <div class="ar-account-item" id="ar-account-logout-btn-desktop">
-                                    <i class="fa-solid fa-arrow-right-from-bracket me-2"></i> Logout
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="container search-login-cart">
-                <div class="d-flex ">
-                    <div class="cartIcon " id="cartOpenBtn">
-                        <i class="fa fa-shopping-cart"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cartOverlay" id="overlay-desktop"></div>
-
-            <div class="cartPanel" id="cartPanel-desktop">
-                <div class="cartHeader">
-                    My Cart <span class="cart-count-label" id="cartCount-desktop">(1 item)</span>
-                    <span class="closeCart" id="cartCloseBtn-desktop">&times;</span>
-                </div>
-
-                <div class="cartDiscount">
-                    <p id="offerText">Add 1 more and get <b>Extra 7% OFF</b></p>
-                    <div class="progressBar"><span id="progressBar"></span></div>
-                    <div class="progressLabels">
-                        <div>2 items<br><b>EXTRA 7% OFF</b></div>
-                        <div>3 items<br><b>EXTRA 10% OFF</b></div>
-                    </div>
-                </div>
-
-                <div id="cartItems">
-                    <div class="item">
-                        <img src="" />
-                        <div class="item-details">
-                            <h4>Crossover Brogues : Tan</h4>
-                            <div class="price-line">Rs. 5,199 <span class="price">Rs. 2749</span> <span
-                                    class="green-text">47% OFF</span></div>
-                            <div class="qty-control">
-                                <button class="qty-dec">−</button>
-                                <span class="qty">1</span>
-                                <button class="qty-inc">+</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="recommend">
-                    <h5>Top Picks for Max Savings 🚀</h5>
-                    <div class="recommend-item">
-                        <img src="" />
-                        <div class="recommend-details">
-                            <h6>Sole Max Slip Ons : Ultra Black</h6>
-                            <p>Rs. 2,999</p>
-                            <div class="price">Rs. 1529</div>
-                        </div>
-                        <button class="add-btn">ADD +</button>
-                    </div>
-                </div>
-
-                <div class="subtotal">Subtotal: Rs. <span id="subtotal">2749</span>
-                    <button id="buyNowUnq_BuyNowBtn" class="checkout-btn">PROCEED TO CHECKOUT</button>
-                </div>
-            </div>
         </div>
+
     </div>
 </nav>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const rightSide = document.querySelector(".mega-menu .col-9 .row");
+
+    const templates = {
+        "Best Selling": `
+            <div class="col-4"><div class="mega-card"><img src="assets/img/sky.webp" style="height: 70px;"><p class="mt-2 fw-semibold">Best 1</p><span class="arrow">›</span></div></div>
+            <div class="col-4"><div class="mega-card"><img src="assets/img/sky.webp" style="height: 70px;"><p class="mt-2 fw-semibold">Best 2</p><span class="arrow">›</span></div></div>
+            <div class="col-4"><div class="mega-card"><img src="assets/img/sky.webp" style="height: 70px;"><p class="mt-2 fw-semibold">Best 3</p><span class="arrow">›</span></div></div>
+        `,
+        "Trending": `
+            <div class="col-4"><div class="mega-card"><img src="assets/img/sky.webp" style="height: 70px;"><p class="mt-2 fw-semibold">Trend 1</p><span class="arrow">›</span></div></div>
+            <div class="col-4"><div class="mega-card"><img src="assets/img/sky.webp" style="height: 70px;"><p class="mt-2 fw-semibold">Trend 2</p><span class="arrow">›</span></div></div>
+            <div class="col-4"><div class="mega-card"><img src="assets/img/sky.webp" style="height: 70px;"><p class="mt-2 fw-semibold">Trend 3</p><span class="arrow">›</span></div></div>
+        `,
+        "All Products": `
+            <div class="col-4"><div class="mega-card"><img src="assets/img/sky.webp" style="height: 70px;"><p class="mt-2 fw-semibold">All 1</p><span class="arrow">›</span></div></div>
+            <div class="col-4"><div class="mega-card"><img src="assets/img/sky.webp" style="height: 70px;"><p class="mt-2 fw-semibold">All 2</p><span class="arrow">›</span></div></div>
+            <div class="col-4"><div class="mega-card"><img src="assets/img/sky.webp" style="height: 70px;"><p class="mt-2 fw-semibold">All 3</p><span class="arrow">›</span></div></div>
+        `
+    };
+
+    document.querySelectorAll(".mega-list li a").forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const txt = this.textContent.trim();
+            rightSide.innerHTML = templates[txt] || "";
+        });
+    });
+});
+</script>
+
+
 
 <div class="modal fade" id="trackingOrderModal" tabindex="-1" aria-labelledby="trackingOrderLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-sm-down">
