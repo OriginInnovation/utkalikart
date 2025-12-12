@@ -1776,7 +1776,7 @@ body {
 
     .oa-product-image img {
       width: 100%;
-      height: auto;
+      height: 261px !important;
       object-fit: cover;
       transition: transform 0.3s ease-in-out;
     }

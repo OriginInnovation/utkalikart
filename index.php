@@ -1702,62 +1702,150 @@
             <div class="of-collection-heading5">
                 <h2>New Arrivals</h2>
             </div>
-            <p class="oa-subtitle">Discover the latest must-have arrivals. Fresh styles and best picks just for you.
-            </p>
+            <p class="oa-subtitle">Discover the latest must-have arrivals. Fresh styles and best picks just for you.</p>
+
             <div class="row row-cols-2 row-cols-md-4 g-4">
-                <?php
-                include 'admin/conn.php';
-                $sql6 = "SELECT * FROM product WHERE bestsellers='1'";
 
-                $result6 = $conn->query($sql6);
-                while ($row6 = $result6->fetch_assoc()) {
-                ?>
-                    <div class="col">
-                        <div class="oa-product-card">
-                            <div class="oa-product-image">
-                                <a href="sub_sub_categories.php"><img
-                                        src="admin/upload/product/<?php echo $row6['product_image1']; ?>"
-                                        alt="New Saree"></a>
-                                <!-- <div class="oa-sale-badge"><?php echo $row6['discount_idd']; ?>% OFF</div> -->
+                <!-- CARD 1 -->
+                <div class="col">
+                    <div class="oa-product-card">
+                        <div class="oa-product-image">
+                            <a href="#"><img src="assets/img/black2.webp" alt=""></a>
 
-                                <?php if (!empty($row6['discount_idd'])): ?>
-                                    <div class="oa-sale-badge">
-                                        <?php echo $row6['discount_idd']; ?>% OFF
-                                    </div>
-                                <?php endif; ?>
+                            <div class="oa-sale-badge">20% OFF</div>
 
-                                <div class="oa-product-icons">
-                                    <i class="fas fa-heart myshop-wishlist-btn"
-                                        onclick="event.stopPropagation(); toggleWishlist(this)"></i>
-                                    <i class="fas fa-cart-shopping myshop-cart-icon"></i>
-                                </div>
-                            </div>
-                            <div class="oa-product-content">
-                                <div class="oa-product-title"><?php echo $row6['product_name']; ?></div>
-                                <div class="oa-product-brand"><?php echo $row6['product_short_nm']; ?></div>
-                                <div class="wl-rating p-1">
-                                    <svg viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <?php echo $row6['rating']; ?> <span class="wl-rating-count">|
-                                        <?php echo $row6['review']; ?> Reviews</span>
-                                </div>
-                                <?php if (!empty($row6['product_price'])) { ?>
-                                    <span class="wl-price">₹<?php echo $row6['product_discount_price']; ?></span>
-                                    <span class="wl-price-original">₹<?php echo $row6['product_price']; ?></span>
-                                <?php } else { ?>
-                                    <span class="motif-card-title">₹<?php echo $row6['product_discount_price']; ?></span>
-                                <?php } ?>
-                                <a href="product_details.php"><button class="btn myshop-add-to-cart-btn my-3">Buy
-                                        Now</button></a>
+                            <div class="oa-product-icons">
+                                <i class="fas fa-heart myshop-wishlist-btn"
+                                    onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+                                <i class="fas fa-cart-shopping myshop-cart-icon"></i>
                             </div>
                         </div>
+
+                        <div class="oa-product-content">
+                            <div class="oa-product-title">Sambalpuri Cotton Saree</div>
+                            <div class="oa-product-brand">Handloom Premium</div>
+
+                            <div class="wl-rating p-1">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg>
+                                4.7 <span class="wl-rating-count">| 90 Reviews</span>
+                            </div>
+
+                            <span class="wl-price">₹1299</span>
+                            <span class="wl-price-original">₹1599</span>
+
+                            <button class="btn myshop-add-to-cart-btn my-3">Buy Now</button>
+                        </div>
                     </div>
-                <?php } ?>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="col">
+                    <div class="oa-product-card">
+                        <div class="oa-product-image">
+                            <a href="#"><img src="assets/img/cotton2.webp" alt=""></a>
+
+                            <div class="oa-sale-badge">15% OFF</div>
+
+                            <div class="oa-product-icons">
+                                <i class="fas fa-heart myshop-wishlist-btn"
+                                    onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+                                <i class="fas fa-cart-shopping myshop-cart-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="oa-product-content">
+                            <div class="oa-product-title">Ikat Printed Kurti</div>
+                            <div class="oa-product-brand">Urban Collection</div>
+
+                            <div class="wl-rating p-1">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg>
+                                4.5 <span class="wl-rating-count">| 75 Reviews</span>
+                            </div>
+
+                            <span class="wl-price">₹899</span>
+                            <span class="wl-price-original">₹1050</span>
+
+                            <button class="btn myshop-add-to-cart-btn my-3">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="col">
+                    <div class="oa-product-card">
+                        <div class="oa-product-image">
+                            <a href="#"><img src="assets/img/ethinic_collection.webp" alt=""></a>
+
+                            <div class="oa-sale-badge">30% OFF</div>
+
+                            <div class="oa-product-icons">
+                                <i class="fas fa-heart myshop-wishlist-btn"
+                                    onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+                                <i class="fas fa-cart-shopping myshop-cart-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="oa-product-content">
+                            <div class="oa-product-title">Designer Silk Saree</div>
+                            <div class="oa-product-brand">Royal Silk</div>
+
+                            <div class="wl-rating p-1">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg>
+                                4.9 <span class="wl-rating-count">| 200 Reviews</span>
+                            </div>
+
+                            <span class="wl-price">₹3499</span>
+                            <span class="wl-price-original">₹4999</span>
+
+                            <button class="btn myshop-add-to-cart-btn my-3">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="col">
+                    <div class="oa-product-card">
+                        <div class="oa-product-image">
+                            <a href="#"><img src="assets/img/pink2.webp" alt=""></a>
+
+                            <div class="oa-sale-badge">10% OFF</div>
+
+                            <div class="oa-product-icons">
+                                <i class="fas fa-heart myshop-wishlist-btn"
+                                    onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+                                <i class="fas fa-cart-shopping myshop-cart-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="oa-product-content">
+                            <div class="oa-product-title">Handloom Dupatta</div>
+                            <div class="oa-product-brand">Ethnic Style</div>
+
+                            <div class="wl-rating p-1">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg>
+                                4.6 <span class="wl-rating-count">| 40 Reviews</span>
+                            </div>
+
+                            <span class="wl-price">₹599</span>
+                            <span class="wl-price-original">₹670</span>
+
+                            <button class="btn myshop-add-to-cart-btn my-3">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+
 
     <style>
         .glass-box {
