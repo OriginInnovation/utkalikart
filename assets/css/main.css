@@ -341,6 +341,7 @@ body {
     /* navbar icon */
     .navbar-brand {
       margin-left: 41px;
+      margin-right: 150px !important;
     }
 
     .desktop-header .search-box {

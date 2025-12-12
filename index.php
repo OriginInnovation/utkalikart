@@ -15,7 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="assets/css/main.css?v=3.9">
+    <link rel="stylesheet" href="assets/css/main.css?v=3.91">
     <style>
         .hero-banner {
             width: 100%;
@@ -234,7 +234,7 @@
             /* width: 120px; */
             margin-top: 15px;
             transition: 0.4s;
-            transform: rotate(-5deg);
+            /* transform: rotate(-5deg); */
             height: 200px;
         }
 
@@ -257,6 +257,7 @@
             height: 350px;
             object-fit: cover;
             border-radius: 6px;
+            transition: transform 0.4s ease;
         }
 
         .price-card {
@@ -264,6 +265,35 @@
             display: block;
             overflow: hidden;
             border-radius: 6px;
+        }
+
+        /* 🌟 Passing Shadow Effect */
+        .price-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            /* shadow start from outside left */
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right,
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 0.35) 50%,
+                    rgba(0, 0, 0, 0) 100%);
+            transform: skewX(-15deg);
+            transition: 0.5s ease;
+            pointer-events: none;
+        }
+
+        /* Hover → shadow sweeps across the card */
+        .price-card:hover::after {
+            left: 100%;
+            /* sweep from left → right */
+        }
+
+        /* Hover → Slight zoom */
+        .price-card:hover img {
+            transform: scale(1.06);
         }
 
         .price-overlay {
@@ -275,15 +305,9 @@
             font-size: 30px;
             font-weight: 700;
             color: #f3e4b0;
-            /* Golden shade */
             background: rgba(0, 0, 0, 0.55);
             font-family: 'Cinzel', serif;
             letter-spacing: 1px;
-        }
-
-        .price-card:hover img {
-            transform: scale(1.05);
-            transition: 0.4s ease;
         }
     </style>
 </head>
@@ -989,8 +1013,10 @@
 
         /* Cards */
         .shop-role-card {
-            min-width: 220px;
-            max-width: 220px;
+            min-width: 290px;
+            /* CHANGED */
+            max-width: 290px;
+            /* CHANGED */
             background: #fff;
             border-radius: 15px;
             overflow: hidden;
@@ -1055,7 +1081,7 @@
     <div class="shop-role-section pb-5">
         <div class="shop-role-container">
             <div class="of-collection-heading3">
-                <h2 class="fs-2" >Top Selling</h2>
+                <h2 class="fs-2">Top Selling</h2>
             </div>
             <div class="slider-nav-btn">
                 <button id="prevCard"><i class="fa-solid fa-chevron-left"></i></button>
@@ -1147,64 +1173,64 @@
         </div>
     </div>
 
-   <script>
-document.addEventListener("DOMContentLoaded", () => {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
 
-    const slider = document.querySelector('.shop-role-slider-wrapper');
-    const prevBtn = document.getElementById('prevCard');
-    const nextBtn = document.getElementById('nextCard');
-    const cards = Array.from(slider.children);
-    const cardWidth = 240; // width + gap of each card
-    const visibleCards = Math.floor(slider.offsetWidth / cardWidth);
+            const slider = document.querySelector('.shop-role-slider-wrapper');
+            const prevBtn = document.getElementById('prevCard');
+            const nextBtn = document.getElementById('nextCard');
+            const cards = Array.from(slider.children);
+            const cardWidth = 310; // width + gap of each card
+            const visibleCards = Math.floor(slider.offsetWidth / cardWidth);
 
-    // Clone first and last cards for seamless scroll
-    const totalCards = cards.length;
-    const prependCards = cards.slice(-visibleCards).map(card => card.cloneNode(true));
-    const appendCards = cards.slice(0, visibleCards).map(card => card.cloneNode(true));
+            // Clone first and last cards for seamless scroll
+            const totalCards = cards.length;
+            const prependCards = cards.slice(-visibleCards).map(card => card.cloneNode(true));
+            const appendCards = cards.slice(0, visibleCards).map(card => card.cloneNode(true));
 
-    prependCards.forEach(card => slider.insertBefore(card, slider.firstChild));
-    appendCards.forEach(card => slider.appendChild(card));
+            prependCards.forEach(card => slider.insertBefore(card, slider.firstChild));
+            appendCards.forEach(card => slider.appendChild(card));
 
-    // Set initial scroll to first real card
-    let scrollPosition = cardWidth * visibleCards;
-    slider.scrollLeft = scrollPosition;
+            // Set initial scroll to first real card
+            let scrollPosition = cardWidth * visibleCards;
+            slider.scrollLeft = scrollPosition;
 
-    // Scroll smoothly
-    function scrollTo(pos) {
-        slider.scrollTo({
-            left: pos,
-            behavior: 'smooth'
+            // Scroll smoothly
+            function scrollTo(pos) {
+                slider.scrollTo({
+                    left: pos,
+                    behavior: 'smooth'
+                });
+            }
+
+            nextBtn.addEventListener('click', () => {
+                scrollPosition += cardWidth;
+                scrollTo(scrollPosition);
+                // Loop when reaching clones
+                if (scrollPosition >= cardWidth * (totalCards + visibleCards)) {
+                    setTimeout(() => {
+                        scrollPosition = cardWidth * visibleCards;
+                        slider.scrollLeft = scrollPosition;
+                    }, 300); // match scroll animation duration
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                scrollPosition -= cardWidth;
+                scrollTo(scrollPosition);
+                if (scrollPosition < cardWidth) {
+                    setTimeout(() => {
+                        scrollPosition = cardWidth * totalCards;
+                        slider.scrollLeft = scrollPosition;
+                    }, 300);
+                }
+            });
+
+            // Optional: auto scroll every 3s
+            // setInterval(() => nextBtn.click(), 3000);
+
         });
-    }
-
-    nextBtn.addEventListener('click', () => {
-        scrollPosition += cardWidth;
-        scrollTo(scrollPosition);
-        // Loop when reaching clones
-        if (scrollPosition >= cardWidth * (totalCards + visibleCards)) {
-            setTimeout(() => {
-                scrollPosition = cardWidth * visibleCards;
-                slider.scrollLeft = scrollPosition;
-            }, 300); // match scroll animation duration
-        }
-    });
-
-    prevBtn.addEventListener('click', () => {
-        scrollPosition -= cardWidth;
-        scrollTo(scrollPosition);
-        if (scrollPosition < cardWidth) {
-            setTimeout(() => {
-                scrollPosition = cardWidth * totalCards;
-                slider.scrollLeft = scrollPosition;
-            }, 300);
-        }
-    });
-
-    // Optional: auto scroll every 3s
-    // setInterval(() => nextBtn.click(), 3000);
-
-});
-</script>
+    </script>
 
 
 

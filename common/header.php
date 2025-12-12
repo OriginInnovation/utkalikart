@@ -206,18 +206,25 @@
 
             <!-- PROFILE ICON -->
             <a href="#" class="text-dark">
-                <i class="fa-regular fa-circle-user fs-4" style="color: rgb(227 101 42);" ></i> <!-- modern user/profile icon -->
+                <i class="fa-regular fa-circle-user fs-4" style="color: rgb(227 101 42);"></i> <!-- modern user/profile icon -->
             </a>
 
             <!-- WISHLIST ICON -->
             <a href="#" class="text-dark">
-                <i class="fa-regular fa-heart fs-4" style="color: rgb(227 101 42);" ></i> <!-- keeps wishlist subtle and clean -->
+                <i class="fa-regular fa-heart fs-4" style="color: rgb(227 101 42);"></i> <!-- keeps wishlist subtle and clean -->
             </a>
 
             <!-- CART ICON -->
             <a href="#" class="text-dark">
-                <i class="fa-solid fa-cart-shopping fs-4" style="color: rgb(227 101 42);" ></i> <!-- actual shopping cart icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                    stroke="rgb(227, 101, 42)" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="feather feather-shopping-cart">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
             </a>
+
 
         </div>
 
