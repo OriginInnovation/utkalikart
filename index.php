@@ -1240,45 +1240,137 @@
             <div class="of-collection-heading4 m-0 mb-5">
                 <h2>Popular Products</h2>
             </div>
-            <div class="row row-cols-2 row-cols-md-4 g-4">
-                <?php
-                include 'admin/conn.php';
-                $sql5 = "SELECT * FROM product WHERE popul_pro='1'";
 
-                $result5 = $conn->query($sql5);
-                while ($row5 = $result5->fetch_assoc()) {
-                ?>
-                    <div class="col">
-                        <div class="myshop-product-card">
-                            <i class="fas fa-heart myshop-wishlist-btn"
-                                onclick="event.stopPropagation(); toggleWishlist(this)"></i>
-                            <i class="fas fa-cart-shopping myshop-cart-icon"></i>
-                            <div class="myshop-image-box">
-                                <a href="sub_sub_categories.php">
-                                    <img src="admin/upload/product/<?php echo $row5['product_image1']; ?>"
-                                        class="myshop-product-image" alt="Sambalpuri Saree 2" />
-                                </a>
-                            </div>
-                            <div class="myshop-product-title p-2"><?php echo $row5['product_name']; ?></div>
-                            <div class="wl-rating px-2">
-                                <svg viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                </svg>
-                                <?php echo $row5['rating']; ?> <span class="myshop text-secondary">|
-                                    <?php echo $row5['review']; ?> Reviews</span>
-                            </div>
-                            <span class="wl-price text-dark p-2">₹<?php echo $row5['product_discount_price']; ?></span>
-                            <div class="myshop-product-body">
-                                <a href="product_details.php"><button class="btn myshop-add-to-cart-btn">Buy
-                                        Now</button></a>
-                            </div>
+            <div class="row row-cols-2 row-cols-md-4 g-4">
+
+                <!-- CARD 1 -->
+                <div class="col">
+                    <div class="myshop-product-card">
+                        <i class="fas fa-heart myshop-wishlist-btn"
+                            onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+                        <i class="fas fa-cart-shopping myshop-cart-icon"></i>
+
+                        <div class="myshop-image-box">
+                            <a href="#">
+                                <img src="assets/img/cotton.webp" class="myshop-product-image" alt="">
+                            </a>
+                        </div>
+
+                        <div class="myshop-product-title p-2">Sambalpuri Cotton Saree</div>
+
+                        <div class="wl-rating px-2">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            4.8 <span class="myshop text-secondary">| 120 Reviews</span>
+                        </div>
+
+                        <span class="wl-price text-dark p-2">₹1299</span>
+
+                        <div class="myshop-product-body">
+                            <button class="btn myshop-add-to-cart-btn">Buy Now</button>
                         </div>
                     </div>
-                <?php } ?>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="col">
+                    <div class="myshop-product-card">
+                        <i class="fas fa-heart myshop-wishlist-btn"
+                            onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+                        <i class="fas fa-cart-shopping myshop-cart-icon"></i>
+
+                        <div class="myshop-image-box">
+                            <a href="#">
+                                <img src="assets/img/black2.webp" class="myshop-product-image" alt="">
+                            </a>
+                        </div>
+
+                        <div class="myshop-product-title p-2">Handloom Ikat Kurti</div>
+
+                        <div class="wl-rating px-2">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            4.5 <span class="myshop text-secondary">| 85 Reviews</span>
+                        </div>
+
+                        <span class="wl-price text-dark p-2">₹999</span>
+
+                        <div class="myshop-product-body">
+                            <button class="btn myshop-add-to-cart-btn">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="col">
+                    <div class="myshop-product-card">
+                        <i class="fas fa-heart myshop-wishlist-btn"
+                            onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+                        <i class="fas fa-cart-shopping myshop-cart-icon"></i>
+
+                        <div class="myshop-image-box">
+                            <a href="#">
+                                <img src="assets/img/pink.webp" class="myshop-product-image" alt="">
+                            </a>
+                        </div>
+
+                        <div class="myshop-product-title p-2">Traditional Silk Saree</div>
+
+                        <div class="wl-rating px-2">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            4.9 <span class="myshop text-secondary">| 180 Reviews</span>
+                        </div>
+
+                        <span class="wl-price text-dark p-2">₹2499</span>
+
+                        <div class="myshop-product-body">
+                            <button class="btn myshop-add-to-cart-btn">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="col">
+                    <div class="myshop-product-card">
+                        <i class="fas fa-heart myshop-wishlist-btn"
+                            onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+                        <i class="fas fa-cart-shopping myshop-cart-icon"></i>
+
+                        <div class="myshop-image-box">
+                            <a href="#">
+                                <img src="assets/img/slide 5.webp" class="myshop-product-image" alt="">
+                            </a>
+                        </div>
+
+                        <div class="myshop-product-title p-2">Designer Handloom Dupatta</div>
+
+                        <div class="wl-rating px-2">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            4.7 <span class="myshop text-secondary">| 60 Reviews</span>
+                        </div>
+
+                        <span class="wl-price text-dark p-2">₹799</span>
+
+                        <div class="myshop-product-body">
+                            <button class="btn myshop-add-to-cart-btn">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+
 
     <style>
         .video-carousel-wrapper {
