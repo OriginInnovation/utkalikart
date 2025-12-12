@@ -143,27 +143,42 @@
                 </a>
 
                 <script>
-                    document.getElementById("sareeMenu").addEventListener("click", function(e) {
-                        e.preventDefault();
+document.addEventListener("DOMContentLoaded", function() {
+    const dropdowns = document.querySelectorAll(".mega-dropdown");
 
-                        const menu = this.parentElement.querySelector(".mega-menu");
-                        const arrow = this.querySelector(".dropdown-arrow");
+    dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector("#sareeMenu");
+        const menu = dropdown.querySelector(".mega-menu");
+        const arrow = link.querySelector(".dropdown-arrow");
 
-                        menu.classList.toggle("show");
-                        arrow.classList.toggle("open");
-                    });
+        // Open menu when mouse enters link
+        link.addEventListener("mouseenter", () => {
+            menu.classList.add("show");
+            arrow.classList.add("open");
+        });
 
-                    // Outside click close
-                    document.addEventListener("click", function(e) {
-                        const dropdown = document.querySelector(".mega-dropdown");
-                        const menu = dropdown.querySelector(".mega-menu");
+        // Also open menu if mouse enters the menu itself
+        menu.addEventListener("mouseenter", () => {
+            menu.classList.add("show");
+            arrow.classList.add("open");
+        });
+    });
 
-                        if (!dropdown.contains(e.target)) {
-                            menu.classList.remove("show");
-                            dropdown.querySelector(".dropdown-arrow").classList.remove("open");
-                        }
-                    });
-                </script>
+    // Close menu only if click happens outside dropdown
+    document.addEventListener("click", (e) => {
+        dropdowns.forEach(dropdown => {
+            const menu = dropdown.querySelector(".mega-menu");
+            const arrow = dropdown.querySelector(".dropdown-arrow");
+
+            if (!dropdown.contains(e.target)) {
+                menu.classList.remove("show");
+                arrow.classList.remove("open");
+            }
+        });
+    });
+});
+</script>
+
 
 
 

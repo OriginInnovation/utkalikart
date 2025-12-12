@@ -17,6 +17,25 @@
 
     <link rel="stylesheet" href="assets/css/main.css?v=3.91">
     <style>
+        .full-banner-section img {
+            width: 100%;
+            /* height: 400px;  */
+            /* adjust height as needed */
+            object-fit: cover;
+            /* makes sure image fills the section nicely */
+            border-radius: 0;
+            /* remove if you want rounded corners */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            /* optional subtle shadow */
+            transition: transform 0.3s ease;
+        }
+
+        .full-banner-section img:hover {
+            transform: scale(1.02);
+            /* slight zoom on hover for effect */
+        }
+
+
         .hero-banner {
             width: 100%;
             overflow: hidden;
@@ -253,78 +272,79 @@
         }
 
         .shop-by-price-section img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 6px;
-    transition: transform 0.4s ease;
-}
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 6px;
+            transition: transform 0.4s ease;
+        }
 
-.price-card {
-    position: relative;
-    display: block;
-    overflow: hidden;
-    border-radius: 6px;
-    cursor: pointer;
-}
+        .price-card {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            border-radius: 6px;
+            cursor: pointer;
+        }
 
-/* 🌟 Full shadow overlay animation */
-.price-card::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    pointer-events: none;
-    opacity: 0;
-    transform: scale(1);
-    border-radius: 6px;
-    transition: opacity 0.3s ease;
-}
+        /* 🌟 Full shadow overlay animation */
+        .price-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            pointer-events: none;
+            opacity: 0;
+            transform: scale(1);
+            border-radius: 6px;
+            transition: opacity 0.3s ease;
+        }
 
-/* Trigger shadow animation on hover */
-.price-card:hover::after {
-    animation: shadowFade 0.8s forwards;
-}
+        /* Trigger shadow animation on hover */
+        .price-card:hover::after {
+            animation: shadowFade 0.8s forwards;
+        }
 
-/* Slight zoom on image */
-.price-card:hover img {
-    transform: scale(1.06);
-}
+        /* Slight zoom on image */
+        .price-card:hover img {
+            transform: scale(1.06);
+        }
 
-/* Price overlay */
-.price-overlay {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 18px 0;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 700;
-    color: #f3e4b0;
-    background: rgba(0, 0, 0, 0.55);
-    font-family: 'Cinzel', serif;
-    letter-spacing: 1px;
-}
+        /* Price overlay */
+        .price-overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 18px 0;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+            color: #f3e4b0;
+            background: rgba(0, 0, 0, 0.55);
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+        }
 
-/* Keyframes for shadow animation */
-@keyframes shadowFade {
-    0% {
-        opacity: 0;
-        transform: scale(1.2);
-    }
-    30% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-}
+        /* Keyframes for shadow animation */
+        @keyframes shadowFade {
+            0% {
+                opacity: 0;
+                transform: scale(1.2);
+            }
 
+            30% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+        }
     </style>
 </head>
 
@@ -1188,6 +1208,16 @@
             </div>
         </div>
     </div>
+
+    <!-- Full Banner Section -->
+    <section class="full-banner-section">
+        <div class="container-fluid p-0">
+            <a href="https://example.com" target="_blank">
+                <img src="assets/img/middle-banner.webp" alt="Advertisement Banner" class="img-fluid w-100" style="object-fit: cover;">
+            </a>
+        </div>
+    </section>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
