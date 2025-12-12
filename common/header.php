@@ -1,4 +1,7 @@
 <style>
+    .nav-text-link {
+        color: rgb(255 81 0) !important;
+    }
     .mega-dropdown {
         position: relative;
     }
@@ -16,9 +19,18 @@
         border-radius: 1rem;
     }
 
-    .mega-dropdown:hover .mega-menu {
+    .mega-menu.show {
         display: block;
     }
+
+    .dropdown-arrow {
+        transition: 0.3s;
+    }
+
+    .dropdown-arrow.open {
+        transform: rotate(180deg);
+    }
+
 
     .mega-col li a {
         display: block;
@@ -29,7 +41,7 @@
     }
 
     .mega-col li a:hover {
-        color: #ffbf00;
+        color: rgb(255 81 0) !important;
         /* matches yellow highlight in image */
     }
 
@@ -125,14 +137,42 @@
                 <a class="nav-link" href="#">Offers</a>
             </li>
             <li class="nav-item dropdown mega-dropdown position-static">
-                <a class="nav-link fw-bold" href="#" id="sareeMenu">Sarees & Kurti</a>
+                <a class="nav-link fw-bold d-flex align-items-center gap-1" href="#" id="sareeMenu">
+                    Sarees & Kurti
+                    <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+                </a>
+
+                <script>
+                    document.getElementById("sareeMenu").addEventListener("click", function(e) {
+                        e.preventDefault();
+
+                        const menu = this.parentElement.querySelector(".mega-menu");
+                        const arrow = this.querySelector(".dropdown-arrow");
+
+                        menu.classList.toggle("show");
+                        arrow.classList.toggle("open");
+                    });
+
+                    // Outside click close
+                    document.addEventListener("click", function(e) {
+                        const dropdown = document.querySelector(".mega-dropdown");
+                        const menu = dropdown.querySelector(".mega-menu");
+
+                        if (!dropdown.contains(e.target)) {
+                            menu.classList.remove("show");
+                            dropdown.querySelector(".dropdown-arrow").classList.remove("open");
+                        }
+                    });
+                </script>
+
+
 
                 <div class="mega-menu shadow-lg p-4 rounded-4 bg-white">
                     <div class="row g-4">
 
                         <!-- Column 1 -->
                         <div class="col-4">
-                            <h6 class="fw-bold text-warning mb-3">Sarees</h6>
+                            <h6 class="fw-bold nav-text-link mb-3">Sarees</h6>
                             <ul class="list-unstyled mega-col">
                                 <li><a href="#">Silk Sarees</a></li>
                                 <li><a href="#">Cotton Sarees</a></li>
@@ -142,7 +182,7 @@
                                 <li><a href="#">Wedding Sarees</a></li>
                             </ul>
 
-                            <h6 class="fw-bold text-warning mt-4 mb-3">Kurti Sets</h6>
+                            <h6 class="fw-bold nav-text-link mt-4 mb-3">Kurti Sets</h6>
                             <ul class="list-unstyled mega-col">
                                 <li><a href="#">Casual Kurtis</a></li>
                                 <li><a href="#">Party Wear Kurtis</a></li>
@@ -154,7 +194,7 @@
 
                         <!-- Column 2 -->
                         <div class="col-4">
-                            <h6 class="fw-bold text-warning mb-3">Bottoms & Dupattas</h6>
+                            <h6 class="fw-bold nav-text-link mb-3">Bottoms & Dupattas</h6>
                             <ul class="list-unstyled mega-col">
                                 <li><a href="#">Leggings</a></li>
                                 <li><a href="#">Palazzos</a></li>
@@ -163,7 +203,7 @@
                                 <li><a href="#">Scarves & Stoles</a></li>
                             </ul>
 
-                            <h6 class="fw-bold text-warning mt-4 mb-3">Blouses & Tops</h6>
+                            <h6 class="fw-bold nav-text-link mt-4 mb-3">Blouses & Tops</h6>
                             <ul class="list-unstyled mega-col">
                                 <li><a href="#">Saree Blouses</a></li>
                                 <li><a href="#">Casual Tops</a></li>
@@ -173,7 +213,7 @@
 
                         <!-- Column 3 -->
                         <div class="col-4">
-                            <h6 class="fw-bold text-warning mb-3">Accessories & Footwear</h6>
+                            <h6 class="fw-bold nav-text-link mb-3">Accessories & Footwear</h6>
                             <ul class="list-unstyled mega-col">
                                 <li><a href="#">Jewellery</a></li>
                                 <li><a href="#">Bags & Clutches</a></li>
@@ -182,7 +222,7 @@
                                 <li><a href="#">Hair Accessories</a></li>
                             </ul>
 
-                            <h6 class="fw-bold text-warning mt-4 mb-3">Fabrics & Unstitched</h6>
+                            <h6 class="fw-bold nav-text-link mt-4 mb-3">Fabrics & Unstitched</h6>
                             <ul class="list-unstyled mega-col">
                                 <li><a href="#">Dress Materials</a></li>
                                 <li><a href="#">Unstitched Suits</a></li>

@@ -253,62 +253,78 @@
         }
 
         .shop-by-price-section img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border-radius: 6px;
-            transition: transform 0.4s ease;
-        }
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.4s ease;
+}
 
-        .price-card {
-            position: relative;
-            display: block;
-            overflow: hidden;
-            border-radius: 6px;
-        }
+.price-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 6px;
+    cursor: pointer;
+}
 
-        /* 🌟 Passing Shadow Effect */
-        .price-card::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            /* shadow start from outside left */
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right,
-                    rgba(0, 0, 0, 0) 0%,
-                    rgba(0, 0, 0, 0.35) 50%,
-                    rgba(0, 0, 0, 0) 100%);
-            transform: skewX(-15deg);
-            transition: 0.5s ease;
-            pointer-events: none;
-        }
+/* 🌟 Full shadow overlay animation */
+.price-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(1);
+    border-radius: 6px;
+    transition: opacity 0.3s ease;
+}
 
-        /* Hover → shadow sweeps across the card */
-        .price-card:hover::after {
-            left: 100%;
-            /* sweep from left → right */
-        }
+/* Trigger shadow animation on hover */
+.price-card:hover::after {
+    animation: shadowFade 0.8s forwards;
+}
 
-        /* Hover → Slight zoom */
-        .price-card:hover img {
-            transform: scale(1.06);
-        }
+/* Slight zoom on image */
+.price-card:hover img {
+    transform: scale(1.06);
+}
 
-        .price-overlay {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            padding: 18px 0;
-            text-align: center;
-            font-size: 30px;
-            font-weight: 700;
-            color: #f3e4b0;
-            background: rgba(0, 0, 0, 0.55);
-            font-family: 'Cinzel', serif;
-            letter-spacing: 1px;
-        }
+/* Price overlay */
+.price-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 18px 0;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: #f3e4b0;
+    background: rgba(0, 0, 0, 0.55);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+}
+
+/* Keyframes for shadow animation */
+@keyframes shadowFade {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+    30% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
     </style>
 </head>
 
@@ -1091,7 +1107,7 @@
                 <div class="shop-role-card">
                     <div class="shop-role-card-img-wrapper">
                         <a href="product_details.html">
-                            <img src="assets/img/jackets.webp" alt="Top Product 1">
+                            <img src="assets/img/jackets.webp" style="height: 316px !important;" alt="Top Product 1">
                         </a>
                     </div>
                     <div class="shop-role-card-body">
@@ -1101,7 +1117,7 @@
                 <div class="shop-role-card">
                     <div class="shop-role-card-img-wrapper">
                         <a href="product_details.html">
-                            <img src="assets/img/pink.webp" alt="Top Product 2">
+                            <img src="assets/img/pink.webp" style="height: 316px !important;" alt="Top Product 2">
                         </a>
                     </div>
                     <div class="shop-role-card-body">
@@ -1111,7 +1127,7 @@
                 <div class="shop-role-card">
                     <div class="shop-role-card-img-wrapper">
                         <a href="product_details.html">
-                            <img src="assets/img/sky.webp" alt="Top Product 3">
+                            <img src="assets/img/sky.webp" style="height: 316px !important;" alt="Top Product 3">
                         </a>
                     </div>
                     <div class="shop-role-card-body">
@@ -1121,7 +1137,7 @@
                 <div class="shop-role-card">
                     <div class="shop-role-card-img-wrapper">
                         <a href="product_details.html">
-                            <img src="assets/img/slide 3.webp" alt="Top Product 4">
+                            <img src="assets/img/slide 3.webp" style="height: 316px !important;" alt="Top Product 4">
                         </a>
                     </div>
                     <div class="shop-role-card-body">
@@ -1131,7 +1147,7 @@
                 <div class="shop-role-card">
                     <div class="shop-role-card-img-wrapper">
                         <a href="product_details.html">
-                            <img src="assets/img/jackets.webp" alt="Top Product 1">
+                            <img src="assets/img/jackets.webp" style="height: 316px !important;" alt="Top Product 1">
                         </a>
                     </div>
                     <div class="shop-role-card-body">
@@ -1141,7 +1157,7 @@
                 <div class="shop-role-card">
                     <div class="shop-role-card-img-wrapper">
                         <a href="product_details.html">
-                            <img src="assets/img/pink.webp" alt="Top Product 2">
+                            <img src="assets/img/pink.webp" style="height: 316px !important;" alt="Top Product 2">
                         </a>
                     </div>
                     <div class="shop-role-card-body">
@@ -1151,7 +1167,7 @@
                 <div class="shop-role-card">
                     <div class="shop-role-card-img-wrapper">
                         <a href="product_details.html">
-                            <img src="assets/img/sky.webp" alt="Top Product 3">
+                            <img src="assets/img/sky.webp" style="height: 316px !important;" alt="Top Product 3">
                         </a>
                     </div>
                     <div class="shop-role-card-body">
@@ -1161,7 +1177,7 @@
                 <div class="shop-role-card">
                     <div class="shop-role-card-img-wrapper">
                         <a href="product_details.html">
-                            <img src="assets/img/slide 3.webp" alt="Top Product 4">
+                            <img src="assets/img/slide 3.webp" style="height: 316px !important;" alt="Top Product 4">
                         </a>
                     </div>
                     <div class="shop-role-card-body">
