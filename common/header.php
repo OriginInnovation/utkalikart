@@ -2,6 +2,7 @@
     .nav-text-link {
         color: rgb(255 81 0) !important;
     }
+
     .mega-dropdown {
         position: relative;
     }
@@ -143,41 +144,41 @@
                 </a>
 
                 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const dropdowns = document.querySelectorAll(".mega-dropdown");
+                    document.addEventListener("DOMContentLoaded", function() {
+                        const dropdowns = document.querySelectorAll(".mega-dropdown");
 
-    dropdowns.forEach(dropdown => {
-        const link = dropdown.querySelector("#sareeMenu");
-        const menu = dropdown.querySelector(".mega-menu");
-        const arrow = link.querySelector(".dropdown-arrow");
+                        dropdowns.forEach(dropdown => {
+                            const link = dropdown.querySelector("#sareeMenu");
+                            const menu = dropdown.querySelector(".mega-menu");
+                            const arrow = link.querySelector(".dropdown-arrow");
 
-        // Open menu when mouse enters link
-        link.addEventListener("mouseenter", () => {
-            menu.classList.add("show");
-            arrow.classList.add("open");
-        });
+                            // Open menu when mouse enters link
+                            link.addEventListener("mouseenter", () => {
+                                menu.classList.add("show");
+                                arrow.classList.add("open");
+                            });
 
-        // Also open menu if mouse enters the menu itself
-        menu.addEventListener("mouseenter", () => {
-            menu.classList.add("show");
-            arrow.classList.add("open");
-        });
-    });
+                            // Also open menu if mouse enters the menu itself
+                            menu.addEventListener("mouseenter", () => {
+                                menu.classList.add("show");
+                                arrow.classList.add("open");
+                            });
+                        });
 
-    // Close menu only if click happens outside dropdown
-    document.addEventListener("click", (e) => {
-        dropdowns.forEach(dropdown => {
-            const menu = dropdown.querySelector(".mega-menu");
-            const arrow = dropdown.querySelector(".dropdown-arrow");
+                        // Close menu only if click happens outside dropdown
+                        document.addEventListener("click", (e) => {
+                            dropdowns.forEach(dropdown => {
+                                const menu = dropdown.querySelector(".mega-menu");
+                                const arrow = dropdown.querySelector(".dropdown-arrow");
 
-            if (!dropdown.contains(e.target)) {
-                menu.classList.remove("show");
-                arrow.classList.remove("open");
-            }
-        });
-    });
-});
-</script>
+                                if (!dropdown.contains(e.target)) {
+                                    menu.classList.remove("show");
+                                    arrow.classList.remove("open");
+                                }
+                            });
+                        });
+                    });
+                </script>
 
 
 
@@ -894,163 +895,105 @@ document.addEventListener("DOMContentLoaded", function() {
     <div class="offcanvas-body d-flex flex-column">
         <div class="accordion" id="mobAccordion">
 
+            <!-- NEW ARRIVALS -->
             <div class="accordion-item border-0">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#newCollapse">NEW</button>
+                        data-bs-target="#newArrivalsCollapse">
+                        New Arrivals
+                    </button>
                 </h2>
-                <div id="newCollapse" class="accordion-collapse collapse">
+                <div id="newArrivalsCollapse" class="accordion-collapse collapse"
+                    data-bs-parent="#mobAccordion">
                     <div class="accordion-body">
-                        <a href="sub_categories.php">
-                            <h6 class="text-dark">Sarees</h6>
-                        </a>
-                        <a href="sub_sub_categories.php">Sambalpuri Sarees</a>
-                        <a href="sub_sub_categories.php">Bomkai Sarees</a>
-                        <a href="sub_sub_categories.php">Pasapalli Sarees</a>
-                        <a href="sub_sub_categories.php">Bapta Sarees</a>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item border-0">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#menCollapse">MEN</button>
-                </h2>
-                <div id="menCollapse" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        <a href="sub_categories.php">
-                            <h6 class="text-dark">Handloom Wear</h6>
-                        </a>
-                        <a href="sub_sub_categories.php">Sambalpuri Shirts</a>
-                        <a href="sub_sub_categories.php">Bomkai Kurtas</a>
-                        <a href="sub_sub_categories.php">Pasapalli Nehru Jackets</a>
-                        <a href="sub_sub_categories.php">Ikat Cotton Shirts</a>
-                    </div>
-                    <div class="accordion-body">
-                        <a href="Sub_categories.php">
-                            <h6 class="text-dark">Traditional Sets</h6>
-                        </a>
-                        <a href="sub_sub_categories.php">Kurta & Dhoti Sets</a>
-                        <a href="sub_sub_categories.php">Sherwanis</a>
-                        <a href="sub_sub_categories.php">Patachitra Jackets</a>
-                    </div>
-                    <div class="accordion-body">
-                        <a href="Sub_categories.php">
-                            <h6 class="text-dark">Bottomwear</h6>
-                        </a>
-                        <a href="sub_sub_categories.php">Handloom Pants</a>
-                        <a href="sub_sub_categories.php">Lungis & Dhotis</a>
-                        <a href="sub_sub_categories.php">Cotton Pajamas</a>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item border-0">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#womenCollapse">WOMEN</button>
-                </h2>
-                <div id="womenCollapse" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        <a href="sub_categories.php">
-                            <h6 class="text-dark">Sarees</h6>
-                        </a>
-                        <a href="sub_sub_categories.php">Sambalpuri Sarees</a>
-                        <a href="sub_sub_categories.php">Bomkai Sarees</a>
-                        <a href="sub_sub_categories.php">Pasapalli Sarees</a>
-                        <a href="sub_sub_categories.php">Bapta Sarees</a>
-                    </div>
-                    <div class="accordion-body">
-                        <a href="sub_categories.php">
-                            <h6 class="text-dark">Kurtis & Tops</h6>
-                        </a>
-                        <a href="sub_sub_categories.php">Handloom Kurtis</a>
-                        <a href="sub_sub_categories.php">Patachitra Printed Tops</a>
-                        <a href="sub_sub_categories.php">Crop Tops</a>
-                    </div>
-                    <div class="accordion-body">
-                        <a href="sub_categories.php">
-                            <h6 class="text-dark">Dresses & Sets</h6>
-                        </a>
-                        <a href="sub_sub_categories.php">Fusion Dresses</a>
-                        <a href="sub_sub_categories.php">Co-ord Sets</a>
-                        <a href="sub_sub_categories.php">Handloom Gowns</a>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item border-0">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#kidsCollapse">KIDS</button>
-                </h2>
-                <div id="kidsCollapse" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        <a href="sub_categories.php">
-                            <h6 class="text-dark">Boys</h6>
-                        </a>
-                        <a href="sub_sub_categories.php">Sambalpuri Shirts</a>
-                        <a href="sub_sub_categories.php">Handloom Kurta Sets</a>
-                        <a href="sub_sub_categories.php">Cotton Shorts</a>
-                    </div>
-                    <div class="accordion-body">
-                        <a href="sub_categories.php">
-                            <h6 class="text-dark">Girls</h6>
-                        </a>
-                        <a href="sub_sub_categories.php">Bomkai Frocks</a>
-                        <a href="sub_sub_categories.php">Sambalpuri Skirts</a>
-                        <a href="sub_sub_categories.php">Ikat Tops</a>
-                    </div>
-                    <div class="accordion-body">
-                        <a href="sub_categories.php">
-                            <h6 class="text-dark">Festival Wear</h6>
-                        </a>
-                        <a href="sub_sub_categories.php">Mini Sarees</a>
-                        <a href="sub_sub_categories.php">Sherwani Sets</a>
-                        <a href="sub_sub_categories.php">Rakhi Edit</a>
+                        <a href="#">Latest Sarees</a>
+                        <a href="#">New Kurtis</a>
+                        <a href="#">Trending Sets</a>
                     </div>
                 </div>
             </div>
 
+            <!-- OFFERS -->
             <div class="accordion-item border-0">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" data-bs-toggle="collapse"
                         data-bs-target="#offersCollapse">
-                        OFFERS
+                        Offers
                     </button>
                 </h2>
-                <div id="offersCollapse" class="accordion-collapse collapse">
+                <div id="offersCollapse" class="accordion-collapse collapse"
+                    data-bs-parent="#mobAccordion">
                     <div class="accordion-body">
                         <a href="#">All Sale</a>
                         <a href="#">Deals</a>
                     </div>
                 </div>
             </div>
+
+            <!-- SAREES & KURTI -->
             <div class="accordion-item border-0">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#aboutCollapse">
-                        ABOUT US
+                        data-bs-target="#sareeKurtiCollapse">
+                        Sarees & Kurti
                     </button>
                 </h2>
-                <div id="aboutCollapse" class="accordion-collapse collapse">
+
+                <div id="sareeKurtiCollapse" class="accordion-collapse collapse"
+                    data-bs-parent="#mobAccordion">
                     <div class="accordion-body">
-                        <a href="contact_us_page.php">Contact Us</a>
+
+                        <!-- Sarees -->
+                        <h6 class="fw-bold mt-2">Sarees</h6>
+                        <a href="#">Silk Sarees</a>
+                        <a href="#">Cotton Sarees</a>
+                        <a href="#">Chiffon Sarees</a>
+                        <a href="#">Georgette Sarees</a>
+                        <a href="#">Designer Sarees</a>
+                        <a href="#">Wedding Sarees</a>
+
+                        <!-- Kurti Sets -->
+                        <h6 class="fw-bold mt-3">Kurti Sets</h6>
+                        <a href="#">Casual Kurtis</a>
+                        <a href="#">Party Wear Kurtis</a>
+                        <a href="#">Anarkali Kurtis</a>
+                        <a href="#">Straight Kurtis</a>
+                        <a href="#">Long Kurtis</a>
+
+                        <!-- Bottoms -->
+                        <h6 class="fw-bold mt-3">Bottoms & Dupattas</h6>
+                        <a href="#">Leggings</a>
+                        <a href="#">Palazzos</a>
+                        <a href="#">Salwars</a>
+                        <a href="#">Dupattas</a>
+                        <a href="#">Scarves & Stoles</a>
+
+                        <!-- Blouses -->
+                        <h6 class="fw-bold mt-3">Blouses & Tops</h6>
+                        <a href="#">Saree Blouses</a>
+                        <a href="#">Casual Tops</a>
+                        <a href="#">Designer Tops</a>
+
+                        <!-- Accessories -->
+                        <h6 class="fw-bold mt-3">Accessories & Footwear</h6>
+                        <a href="#">Jewellery</a>
+                        <a href="#">Bags & Clutches</a>
+                        <a href="#">Footwear</a>
+                        <a href="#">Belts & Waistbands</a>
+                        <a href="#">Hair Accessories</a>
+
+                        <!-- Fabrics -->
+                        <h6 class="fw-bold mt-3">Fabrics & Unstitched</h6>
+                        <a href="#">Dress Materials</a>
+                        <a href="#">Unstitched Suits</a>
+                        <a href="#">Fabric Rolls</a>
+
                     </div>
                 </div>
             </div>
-            <div class="accordion-item border-0">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#helpCollapse">
-                        HELP
-                    </button>
-                </h2>
-                <div id="helpCollapse" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        <a href="profile_page.php">Returns & Exchange</a>
-                        <a href="profile_page.php">Shipping</a>
-                    </div>
-                </div>
-            </div>
+
         </div>
+
         <div class="mob-actions mt-auto p-3 border-top">
             <div class="mob-action-grid">
                 <a href="profile_page.php" class="mob-action-item"><i class="bi bi-person-circle"></i> My
