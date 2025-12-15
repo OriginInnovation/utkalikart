@@ -147,7 +147,7 @@ body {
         position: fixed;
         width: 100%;
         z-index: 999;
-        margin-top: -65px;
+        /* margin-top: -65px; */
       }
     }
 
@@ -215,7 +215,7 @@ body {
       position: fixed;
       width: 100%;
       z-index: 999;
-      margin-top: -37px;
+      margin-top: 29px;
     }
 
     .mob-header .btn {
@@ -1306,179 +1306,170 @@ body {
     }
 
     /* css for features section */
-    .features {
-      background-color: #f9f9f9;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+   .features {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    .features h1 {
-      margin-bottom: 30px;
-      font-size: 2rem;
-      color: #333;
-    }
+.features h1 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #333;
+}
 
-    .motif-card-container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      width: 100%;
-      max-width: 1400px;
-    }
+/* ===== GRID LAYOUT ===== */
+.motif-card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Desktop: 4 */
+  gap: 20px;
+  width: 100%;
+  max-width: 1400px;
+}
 
-    .motif-card-link {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      width: 100%;
-    }
+/* ===== CARD LINK ===== */
+.motif-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+}
 
-    .motif-card {
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
+/* ===== CARD ===== */
+.motif-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
-    .motif-card-img-wrapper {
-      position: relative;
-      width: 100%;
-      padding-top: 75%;
-      background-color: #f0f0f0;
-    }
+.motif-card:hover {
+  transform: translateY(-4px);
+}
 
-    .motif-card img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: opacity 0.3s ease;
-    }
+/* ===== IMAGE ===== */
+.motif-card-img-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 75%;
+  background-color: #f0f0f0;
+}
 
-    .motif-card img.motif-hover-img {
-      opacity: 0;
-    }
+.motif-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
 
-    .motif-card:hover img.motif-base-img {
-      opacity: 0;
-    }
+.motif-card img.motif-hover-img {
+  opacity: 0;
+}
 
-    .motif-card:hover img.motif-hover-img {
-      opacity: 1;
-    }
+.motif-card:hover img.motif-base-img {
+  opacity: 0;
+}
 
-    .motif-card-badge {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background-color: #141414;
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 0.875rem;
-      font-weight: bold;
-      z-index: 1;
-    }
+.motif-card:hover img.motif-hover-img {
+  opacity: 1;
+}
 
-    .motif-card-content {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-      flex-grow: 1;
-    }
+/* ===== CONTENT ===== */
+.motif-card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 
-    .motif-card-title {
-      font-size: 17px;
-      font-weight: bold;
-      margin-bottom: 8px;
-      color: #333;
-    }
+.motif-card-title {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
 
-    .motif-card-description {
-      font-size: 1rem;
-      color: #555;
-      margin-bottom: auto;
-    }
+.motif-card-description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
 
-    .motif-card-btn {
-      margin-top: 16px;
-      padding: 10px 20px;
-      background-color: #001124;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 500;
-      transition: background-color 0.3s ease;
-      display: inline-block;
-      text-align: center;
-      width: 100% !important;
-    }
+/* ===== BUTTON ===== */
+.motif-card-btn {
+  margin-top: auto;
+  padding: 10px 20px;
+  background-color: #001124;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 500;
+  width: 100%;
+  border: none;
+  transition: 0.3s ease;
+}
 
-    .motif-card-link:hover .motif-card-btn {
-      background-color: #000000;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    }
+.motif-card-btn:hover {
+  background-color: #000;
+}
 
-    .ab-rating {
-      display: flex;
-      align-items: center;
-      font-size: 12px;
-      color: #388e3c;
-      gap: 6px;
-    }
+/* ===== RATING ===== */
+.ab-rating {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #388e3c;
+  gap: 5px;
+  margin: 6px 0;
+}
 
-    .ab-rating svg {
-      width: 18px;
-      height: 18px;
-      fill: #388e3c;
-    }
+.ab-rating svg {
+  width: 16px;
+  height: 16px;
+  fill: #388e3c;
+}
 
-    @media (max-width: 991px) {
-      .motif-card-container {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
+/* =============================
+   📱 MOBILE (1 CARD PER ROW)
+   ============================= */
+@media (max-width: 576px) {
+  .motif-card-container {
+    grid-template-columns: 1fr;
+  }
 
-    @media (max-width: 768px) {
-      .motif-card-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
+  .motif-card-content {
+    padding: 14px;
+  }
 
-      .motif-card-content {
-        padding: 15px;
-      }
+  .motif-card-title {
+    font-size: 16px;
+  }
+}
 
-      .motif-card-btn {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-      }
-    }
+/* =============================
+   📲 TABLET (2 CARDS PER ROW)
+   ============================= */
+@media (min-width: 577px) and (max-width: 991px) {
+  .motif-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-    @media (max-width: 480px) {
-      .motif-card-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
-
-      .motif-card {
-        border-radius: 10px;
-      }
-
-      .motif-card-btn {
-        width: 100%;
-      }
-    }
+/* =============================
+   💻 DESKTOP (4 CARDS PER ROW)
+   ============================= */
+@media (min-width: 992px) {
+  .motif-card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
     /* css for offer banner */
 
@@ -1631,7 +1622,7 @@ body {
       }
 
       .myshop-section-bg {
-        margin-top: -69px;
+        /* margin-top: -69px; */
       }
     }
 
@@ -1644,6 +1635,44 @@ body {
         margin-top: -40px;
       }
     }
+
+    /* =============================
+   📱 MOBILE — 1 CARD PER ROW
+   ============================= */
+@media (max-width: 576px) {
+  .myshop-section-bg .row > .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .myshop-image-box {
+    height: 319px;
+  }
+}
+
+/* =============================
+   📲 TABLET — 2 CARDS PER ROW
+   ============================= */
+@media (min-width: 577px) and (max-width: 991.98px) {
+  .myshop-section-bg .row > .col {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .myshop-image-box {
+    height: 220px;
+  }
+}
+
+/* =============================
+   💻 DESKTOP — 4 CARDS PER ROW
+   ============================= */
+@media (min-width: 992px) {
+  .myshop-section-bg .row > .col {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
 
     /* shop by role section*/
     .shop-role-section {
@@ -1849,6 +1878,53 @@ body {
         font-size: 0.8rem;
       }
     }
+
+    /* =============================
+   📱 MOBILE — 1 CARD PER ROW
+   ============================= */
+@media (max-width: 576px) {
+  .oa-new-arrivals-section .row > .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .oa-product-image img {
+    height: 220px !important;
+  }
+
+  .oa-product-title {
+    font-size: 1rem;
+  }
+}
+
+/* =============================
+   📲 TABLET — 2 CARDS PER ROW
+   ============================= */
+@media (min-width: 577px) and (max-width: 991.98px) {
+  .oa-new-arrivals-section .row > .col {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .oa-product-image img {
+    height: 240px !important;
+  }
+}
+
+/* =============================
+   💻 DESKTOP — 4 CARDS PER ROW
+   ============================= */
+@media (min-width: 992px) {
+  .oa-new-arrivals-section .row > .col {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .oa-product-image img {
+    height: 261px !important;
+  }
+}
+
 
     /* shop by collection */
 

@@ -48,11 +48,11 @@
             object-fit: cover;
         }
 
-        .view-btn {
+        .view-btns {
             transition: 0.3s ease-in-out;
         }
 
-        .view-btn:hover {
+        .view-btns:hover {
             background: #000 !important;
             color: #fff !important;
             border-color: #000 !important;
@@ -72,6 +72,17 @@
             position: relative;
             /* max-width: 1200px; */
             margin: 0 auto;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .slider-wrapper {
+                display: flex;
+                align-items: center;
+                position: relative;
+                /* max-width: 1200px; */
+                margin-top: 96px !important;
+                padding: 0px
+            }
         }
 
         /* The Scrollable Area */
@@ -364,7 +375,7 @@
 
 
     <div class="slider-section px-4">
-        <div class="slider-wrapper px-5">
+        <div class="slider-wrapper px-lg-5">
 
             <button class="nav-btn prev-btn" onclick="scrollSlider(-1)">
                 <i class="bi bi-chevron-left fs-5"></i>
@@ -883,7 +894,7 @@
             <div id="men-cats" class="row g-4">
 
                 <!-- 1 -->
-                <div class="col-6 col-md-3">
+                <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="cat-card">
                         <p class="cat-title">Sneakers</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
@@ -893,7 +904,7 @@
                 </div>
 
                 <!-- 2 -->
-                <div class="col-6 col-md-3">
+                <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="cat-card">
                         <p class="cat-title">Slip Ons</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
@@ -903,7 +914,7 @@
                 </div>
 
                 <!-- 3 -->
-                <div class="col-6 col-md-3">
+                <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="cat-card">
                         <p class="cat-title">Loafers</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
@@ -913,7 +924,7 @@
                 </div>
 
                 <!-- 4 -->
-                <div class="col-6 col-md-3">
+                <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="cat-card">
                         <p class="cat-title">Oxfords</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
@@ -923,7 +934,7 @@
                 </div>
 
                 <!-- 5 -->
-                <div class="col-6 col-md-3">
+                <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="cat-card">
                         <p class="cat-title">Sandals</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
@@ -933,7 +944,7 @@
                 </div>
 
                 <!-- 6 -->
-                <div class="col-6 col-md-3">
+                <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="cat-card">
                         <p class="cat-title">Flip Flops</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
@@ -943,7 +954,7 @@
                 </div>
 
                 <!-- 7 -->
-                <div class="col-6 col-md-3">
+                <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="cat-card">
                         <p class="cat-title">Slides</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
@@ -953,7 +964,7 @@
                 </div>
 
                 <!-- 8 -->
-                <div class="col-6 col-md-3">
+                <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="cat-card">
                         <p class="cat-title">Clogs</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
@@ -967,7 +978,7 @@
             <!-- WOMEN Categories -->
             <div id="women-cats" class="row g-4 d-none">
 
-                <div class="col-6 col-md-3">
+                <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="cat-card">
                         <p class="cat-title">Heels</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
@@ -976,7 +987,7 @@
                     </div>
                 </div>
 
-                <div class="col-6 col-md-3">
+                <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="cat-card">
                         <p class="cat-title">Flats</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
@@ -985,7 +996,7 @@
                     </div>
                 </div>
 
-                <div class="col-6 col-md-3">
+                <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="cat-card">
                         <p class="cat-title">Boots</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
@@ -994,7 +1005,7 @@
                     </div>
                 </div>
 
-                <div class="col-6 col-md-3">
+                <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="cat-card">
                         <p class="cat-title">Sandals</p>
                         <button class="cat-arrow"><i class="bi bi-arrow-right"></i></button>
@@ -1007,7 +1018,7 @@
 
             <!-- View All -->
             <div class="text-center mt-4">
-                <button class="btn btn-outline-dark px-4 py-2 rounded-pill fw-semibold view-btn">
+                <button class="btn btn-outline-dark px-4 py-2 rounded-pill fw-semibold view-btns">
                     View All <i class="bi bi-chevron-right ms-2"></i>
                 </button>
             </div>
@@ -1668,15 +1679,28 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
 
+            /* =============================
+               RESPONSIVE PER SLIDE COUNT
+            ============================= */
+            function getPerSlide() {
+                const width = window.innerWidth;
+                if (width < 576) return 1; // 📱 Mobile
+                if (width < 992) return 2; // 📲 Tablet
+                return 4; // 💻 Desktop
+            }
+
             const container = document.getElementById("carouselContainer");
             const items = Array.from(container.querySelectorAll(".video-card"));
-            container.innerHTML = ""; // clear original
+            container.innerHTML = ""; // clear original cards
 
-            const perSlide = 4; // number of cards per slide
+            const perSlide = getPerSlide();
             const total = items.length;
 
-            // CREATE CIRCULAR SLIDES
+            /* =============================
+               CREATE CAROUSEL SLIDES
+            ============================= */
             for (let i = 0; i < total; i += perSlide) {
+
                 const slide = document.createElement("div");
                 slide.classList.add("carousel-item");
                 if (i === 0) slide.classList.add("active");
@@ -1686,9 +1710,19 @@
                 slide.appendChild(row);
 
                 for (let j = 0; j < perSlide; j++) {
-                    const idx = (i + j) % total; // circular index
+                    const idx = (i + j) % total;
+
                     const col = document.createElement("div");
-                    col.classList.add("col-6", "col-md-3");
+
+                    // Responsive column width
+                    if (perSlide === 1) {
+                        col.classList.add("col-12");
+                    } else if (perSlide === 2) {
+                        col.classList.add("col-6");
+                    } else {
+                        col.classList.add("col-6", "col-md-3");
+                    }
+
                     col.appendChild(items[idx].cloneNode(true));
                     row.appendChild(col);
                 }
@@ -1696,9 +1730,9 @@
                 container.appendChild(slide);
             }
 
-            /* ---------------------------------- 
-               MODAL PLAY ON CLICK
-            ---------------------------------- */
+            /* =============================
+               MODAL VIDEO PLAY
+            ============================= */
             const modal = document.getElementById("videoModal");
             const popupVideo = document.getElementById("popupVideo");
             const fullscreenBtn = modal.querySelector(".fullscreen-btn");
@@ -1711,14 +1745,14 @@
                 });
             });
 
-            // Close modal top-right
+            // Close modal button
             document.querySelector(".close-modal").onclick = () => {
                 modal.style.display = "none";
                 popupVideo.pause();
                 popupVideo.src = "";
             };
 
-            // Click outside modal to close
+            // Click outside modal
             window.onclick = (e) => {
                 if (e.target === modal) {
                     modal.style.display = "none";
@@ -1727,21 +1761,27 @@
                 }
             };
 
-            // Fullscreen button
-            fullscreenBtn.onclick = () => {
-                if (popupVideo.requestFullscreen) {
-                    popupVideo.requestFullscreen();
-                } else if (popupVideo.webkitRequestFullscreen) {
-                    /* Safari */
-                    popupVideo.webkitRequestFullscreen();
-                } else if (popupVideo.msRequestFullscreen) {
-                    /* IE11 */
-                    popupVideo.msRequestFullscreen();
-                }
-            };
+            // Fullscreen (optional)
+            if (fullscreenBtn) {
+                fullscreenBtn.onclick = () => {
+                    if (popupVideo.requestFullscreen) popupVideo.requestFullscreen();
+                    else if (popupVideo.webkitRequestFullscreen) popupVideo.webkitRequestFullscreen();
+                    else if (popupVideo.msRequestFullscreen) popupVideo.msRequestFullscreen();
+                };
+            }
+
+            /* =============================
+               REBUILD ON RESIZE (OPTIONAL)
+            ============================= */
+            let resizeTimer;
+            window.addEventListener("resize", () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => location.reload(), 300);
+            });
 
         });
     </script>
+
 
     <section class="oa-new-arrivals-section">
         <div class="container">
@@ -1926,50 +1966,6 @@
         }
     </style>
 
-    <!-- <section class="py-5">
-        <div class="container">
-
-            <div class="text-center mb-5">
-                <h1 class="title-highlight">What We Do</h1>
-                <p class="text-muted w-75 mx-auto fs-5">
-                    Crafting modern, premium & sustainable clothing designed for everyday comfort.
-                </p>
-            </div>
-
-            <div class="row g-4">
-
-                <div class="col-6 col-md-3">
-                    <div class="glass-box text-center">
-                        <i class="fa-solid fa-shirt icon-modern"></i>
-                        <h6 class="fw-semibold mt-2">Men Fashion</h6>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-3">
-                    <div class="glass-box text-center">
-                        <i class="fa-solid fa-person-dress icon-modern"></i>
-                        <h6 class="fw-semibold mt-2">Women Fashion</h6>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-3">
-                    <div class="glass-box text-center">
-                        <i class="fa-solid fa-children icon-modern"></i>
-                        <h6 class="fw-semibold mt-2">Kids Apparel</h6>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-3">
-                    <div class="glass-box text-center">
-                        <i class="fa-solid fa-gem icon-modern"></i>
-                        <h6 class="fw-semibold mt-2">Premium Accessories</h6>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section> -->
 
     <?php include 'common/footer.php' ?>
     <!-- top offers bar -->
