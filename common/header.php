@@ -57,6 +57,228 @@
     .mega-menu .col-4:last-child {
         border-right: none;
     }
+
+    .profile-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-popup {
+    position: absolute;
+    top: 45px;
+    right: -103px;
+    width: 260px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+    /* Animation part */
+    opacity: 0;
+    transform: translateX(30px);
+    pointer-events: none;
+    transition: all 0.35s ease;
+
+    z-index: 9999;
+}
+
+.profile-popup.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+
+.popup-header {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.popup-header h6 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.popup-header p {
+    font-size: 13px;
+    color: #666;
+    margin: 5px 0 10px;
+}
+
+.login-btn {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.popup-menu {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.popup-menu li {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.popup-menu li:hover {
+    background: #f5f5f5;
+}
+
+.new-badge {
+    margin-left: auto;
+    background: #000;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ------------------ */
+
+.cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    z-index: 9998;
+}
+
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 380px;
+    max-width: 100%;
+    height: 100vh;
+    background: #fff;
+    transform: translateX(100%);
+    transition: 0.35s ease;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.cart-drawer.active {
+    transform: translateX(0);
+}
+
+.cart-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* HEADER */
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-header button {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* OFFER */
+.cart-offer {
+    padding: 15px;
+    background: #f6f6f6;
+}
+
+.progress-bar {
+    height: 6px;
+    background: #000;
+    width: 0%;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.offer-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+/* ITEM */
+.cart-item {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+    width: 70px;
+    height: 70px;
+}
+
+.qty {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.qty button {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #000;
+    background: none;
+    cursor: pointer;
+}
+
+/* SUGGEST */
+.cart-suggestion {
+    padding: 15px;
+}
+
+.suggest-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.add-btn {
+    margin-left: auto;
+    background: #e0a21b;
+    border: none;
+    padding: 6px 10px;
+    font-weight: 600;
+}
+
+/* FOOTER */
+.cart-footer {
+    margin-top: auto;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.checkout-btn {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    padding: 14px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
 </style>
 
 <div id="offersBarContainer">
@@ -261,9 +483,31 @@
             </div>
 
             <!-- PROFILE ICON -->
-            <a href="#" class="text-dark">
-                <i class="fa-regular fa-circle-user fs-4" style="color: rgb(227 101 42);"></i> <!-- modern user/profile icon -->
-            </a>
+            <div class="profile-wrapper">
+                <a href="javascript:void(0)" id="profileIcon" class="text-dark">
+                    <i class="fa-regular fa-circle-user fs-4" style="color: rgb(227 101 42);"></i>
+                </a>
+
+                <!-- PROFILE POPUP -->
+                <div class="profile-popup" id="profilePopup">
+                    <div class="popup-header">
+                        <h6>Welcome</h6>
+                        <p>To access account and manage orders</p>
+                        <button class="login-btn">LOGIN / SIGNUP</button>
+                    </div>
+
+                    <ul class="popup-menu">
+                        <li><i class="fa-solid fa-box"></i> Orders</li>
+                        <li><i class="fa-regular fa-heart"></i> Wishlist</li>
+                        <li><i class="fa-solid fa-phone"></i> Contact Us</li>
+                        <li class="gift">
+                            <i class="fa-solid fa-gift"></i> Gift Cards
+                            <span class="new-badge">NEW</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
 
             <!-- WISHLIST ICON -->
             <a href="#" class="text-dark">
@@ -271,15 +515,72 @@
             </a>
 
             <!-- CART ICON -->
-            <a href="#" class="text-dark">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                    stroke="rgb(227, 101, 42)" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" class="feather feather-shopping-cart">
-                    <circle cx="9" cy="21" r="1"></circle>
-                    <circle cx="20" cy="21" r="1"></circle>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                </svg>
-            </a>
+           <!-- CART ICON -->
+<a href="javascript:void(0)" id="cartIcon" class="text-dark">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+        stroke="rgb(227, 101, 42)" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" class="feather feather-shopping-cart">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+    </svg>
+</a>
+
+<!-- OVERLAY -->
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer">
+
+    <div class="cart-header">
+        <h4>My Cart <span>(1 item)</span></h4>
+        <button id="closeCart">&times;</button>
+    </div>
+
+    <div class="cart-offer">
+        Add 1 more and get <strong>Extra 7% OFF</strong>
+        <div class="progress-bar"></div>
+        <div class="offer-row">
+            <span>2 items<br><b>EXTRA 7% OFF</b></span>
+            <span>3 items<br><b>EXTRA 10% OFF</b></span>
+        </div>
+    </div>
+
+    <!-- CART ITEM -->
+    <div class="cart-item">
+        <img src="https://via.placeholder.com/70">
+        <div class="item-info">
+            <h5>Crossover Brogues · Tan</h5>
+            <p><del>Rs. 5,199</del> <b class="price">Rs. 2749</b> <span class="off">47% OFF</span></p>
+            <div class="qty">
+                <button class="minus">−</button>
+                <span class="count">1</span>
+                <button class="plus">+</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUGGESTION -->
+    <div class="cart-suggestion">
+        <h4>Top Picks for Max Savings 🚀</h4>
+        <div class="suggest-item">
+            <img src="https://via.placeholder.com/60">
+            <div>
+                <p>Sole Max Slip Ons · Ultra Black</p>
+                <b>Rs. 1529</b>
+            </div>
+            <button class="add-btn">ADD +</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="cart-footer">
+        <p>Subtotal: <b>Rs. 2749</b></p>
+        <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+    </div>
+
+</div>
+
 
 
         </div>
@@ -1014,3 +1315,117 @@
         </div>
     </div>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* ================= PROFILE POPUP ================= */
+    const profileIcon  = document.getElementById("profileIcon");
+    const profilePopup = document.getElementById("profilePopup");
+
+    if (profileIcon && profilePopup) {
+        profileIcon.addEventListener("click", function (e) {
+            e.stopPropagation();
+            profilePopup.classList.toggle("active");
+        });
+
+        profilePopup.addEventListener("click", function (e) {
+            e.stopPropagation();
+        });
+    }
+
+    /* ================= CART DRAWER ================= */
+    const cartIcon   = document.getElementById("cartIcon");
+    const cartDrawer = document.getElementById("cartDrawer");
+    const overlay    = document.getElementById("cartOverlay");
+    const closeBtn   = document.getElementById("closeCart");
+
+    const minus = document.querySelector(".minus");
+    const plus  = document.querySelector(".plus");
+    const count = document.querySelector(".count");
+
+    const addBtn      = document.querySelector(".add-btn");
+    const headerCount = document.querySelector(".cart-header span");
+    const progressBar = document.querySelector(".progress-bar");
+    const offerText   = document.querySelector(".cart-offer strong");
+
+    let cartQty = count ? parseInt(count.innerText) || 1 : 1;
+    const maxItems = 3;
+
+    if (cartIcon && cartDrawer && overlay) {
+        cartIcon.addEventListener("click", function (e) {
+            e.stopPropagation();
+            cartDrawer.classList.add("active");
+            overlay.classList.add("active");
+        });
+    }
+
+    if (closeBtn && overlay) {
+        closeBtn.addEventListener("click", closeCart);
+        overlay.addEventListener("click", closeCart);
+    }
+
+    function closeCart() {
+        cartDrawer.classList.remove("active");
+        overlay.classList.remove("active");
+    }
+
+    /* ================= UPDATE CART UI ================= */
+    function updateCartUI() {
+        if (!count) return;
+
+        count.innerText = cartQty;
+
+        if (headerCount) {
+            headerCount.innerText = `(${cartQty} item${cartQty > 1 ? "s" : ""})`;
+        }
+
+        if (progressBar) {
+            let progress = (cartQty / maxItems) * 100;
+            progressBar.style.width = Math.min(progress, 100) + "%";
+        }
+
+        if (offerText) {
+            if (cartQty >= 3) {
+                offerText.innerText = "Extra 10% OFF";
+            } else if (cartQty >= 2) {
+                offerText.innerText = "Extra 7% OFF";
+            } else {
+                offerText.innerText = "Extra 7% OFF";
+            }
+        }
+    }
+
+    /* ================= QUANTITY BUTTONS ================= */
+    if (minus) {
+        minus.addEventListener("click", function () {
+            if (cartQty > 1) {
+                cartQty--;
+                updateCartUI();
+            }
+        });
+    }
+
+    if (plus) {
+        plus.addEventListener("click", function () {
+            cartQty++;
+            updateCartUI();
+        });
+    }
+
+    /* ================= ADD + BUTTON ================= */
+    if (addBtn) {
+        addBtn.addEventListener("click", function () {
+            cartQty++;
+            updateCartUI();
+        });
+    }
+
+    /* ================= GLOBAL CLICK CLOSE ================= */
+    document.addEventListener("click", function () {
+        if (profilePopup) profilePopup.classList.remove("active");
+    });
+
+    updateCartUI(); // init
+
+});
+</script>
