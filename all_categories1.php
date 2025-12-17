@@ -396,7 +396,7 @@
         </div>
     </section>
 
-    <section class="container my-5">
+    <!-- <section class="container my-5">
         <h3 class="section-title text-center mb-4">Grand Brands</h3>
         <div class="row g-4 justify-content-center align-items-center">
 
@@ -456,10 +456,10 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
         }
-    </style>
+    </style> -->
 
     <div class="container-fluid my-5 p-0">
-        <img src="assets/img/banners/app-banner.jpg" class="img-fluid w-100" alt="Download App" onerror="this.src='https://assets.myntassets.com/assets/images/retaillabs/2021/4/19/292b604e-28b7-4348-963d-4c3d823614051618826490606-App-Download-Banner.jpg'">
+        <img src="c:\xampp\htdocs\utkalikart-main\assets\img\banner c.webp" class="img-fluid w-100" alt="Download App" onerror="this.src='https://assets.myntassets.com/assets/images/retaillabs/2021/4/19/292b604e-28b7-4348-963d-4c3d823614051618826490606-App-Download-Banner.jpg'">
     </div>
 
     <?php include 'common/footer.php' ?>
