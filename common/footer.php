@@ -326,6 +326,15 @@
         margin-right: 10px;
         border-bottom: 1px dotted #ccc;
     }
+
+    /* Center social icons on mobile */
+    @media (max-width: 767px) {
+        .footer-wrapper .row.align-items-center>.col-md-4 {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+    }
 </style>
 <footer class="footer-wrapper">
 

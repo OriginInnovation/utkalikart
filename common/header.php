@@ -358,7 +358,7 @@
                 <a class="nav-link" href="#">Offers</a>
             </li>
             <li class="nav-item dropdown mega-dropdown position-static">
-                <a class="nav-link fw-bold d-flex align-items-center gap-1" href="#" id="sareeMenu">
+                <a class="nav-link fw-bold d-flex align-items-center gap-1" href="all_categories1.php" id="sareeMenu">
                     Sarees & Kurti
                     <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
                 </a>
@@ -398,21 +398,21 @@
                         <div class="col-4">
                             <h6 class="fw-bold nav-text-link mb-3">Sarees</h6>
                             <ul class="list-unstyled mega-col">
-                                <li><a href="all_categories1.php">Silk Sarees</a></li>
-                                <li><a href="all_categories1.php">Cotton Sarees</a></li>
-                                <li><a href="all_categories1.php">Chiffon Sarees</a></li>
-                                <li><a href="all_categories1.php">Georgette Sarees</a></li>
-                                <li><a href="all_categories1.php">Designer Sarees</a></li>
-                                <li><a href="all_categories1.php">Wedding Sarees</a></li>
+                                <li><a href="allcategories.php">Silk Sarees</a></li>
+                                <li><a href="allcategories.php">Cotton Sarees</a></li>
+                                <li><a href="allcategories.php">Chiffon Sarees</a></li>
+                                <li><a href="allcategories.php">Georgette Sarees</a></li>
+                                <li><a href="allcategories.php">Designer Sarees</a></li>
+                                <li><a href="allcategories.php">Wedding Sarees</a></li>
                             </ul>
 
                             <h6 class="fw-bold nav-text-link mt-4 mb-3">Kurti Sets</h6>
                             <ul class="list-unstyled mega-col">
-                                <li><a href="all_categories1.php">Casual Kurtis</a></li>
-                                <li><a href="all_categories1.php">Party Wear Kurtis</a></li>
-                                <li><a href="all_categories1.php">Anarkali Kurtis</a></li>
-                                <li><a href="all_categories1.php">Straight Kurtis</a></li>
-                                <li><a href="all_categories1.php">Long Kurtis</a></li>
+                                <li><a href="allcategories.php">Casual Kurtis</a></li>
+                                <li><a href="allcategories.php">Party Wear Kurtis</a></li>
+                                <li><a href="allcategories.php">Anarkali Kurtis</a></li>
+                                <li><a href="allcategories.php">Straight Kurtis</a></li>
+                                <li><a href="allcategories.php">Long Kurtis</a></li>
                             </ul>
                         </div>
 
@@ -420,18 +420,18 @@
                         <div class="col-4">
                             <h6 class="fw-bold nav-text-link mb-3">Bottoms & Dupattas</h6>
                             <ul class="list-unstyled mega-col">
-                                <li><a href="all_categories1.php">Leggings</a></li>
-                                <li><a href="all_categories1.php">Palazzos</a></li>
-                                <li><a href="all_categories1.php">Salwars</a></li>
-                                <li><a href="all_categories1.php">Dupattas</a></li>
-                                <li><a href="all_categories1.php">Scarves & Stoles</a></li>
+                                <li><a href="allcategories.php">Leggings</a></li>
+                                <li><a href="allcategories.php">Palazzos</a></li>
+                                <li><a href="allcategories.php">Salwars</a></li>
+                                <li><a href="allcategories.php">Dupattas</a></li>
+                                <li><a href="allcategories.php">Scarves & Stoles</a></li>
                             </ul>
 
                             <h6 class="fw-bold nav-text-link mt-4 mb-3">Blouses & Tops</h6>
                             <ul class="list-unstyled mega-col">
-                                <li><a href="all_categories1.php">Saree Blouses</a></li>
-                                <li><a href="all_categories1.php">Casual Tops</a></li>
-                                <li><a href="all_categories1.php">Designer Tops</a></li>
+                                <li><a href="allcategories.php">Saree Blouses</a></li>
+                                <li><a href="allcategories.php">Casual Tops</a></li>
+                                <li><a href="allcategories.php">Designer Tops</a></li>
                             </ul>
                         </div>
 
@@ -439,18 +439,18 @@
                         <div class="col-4">
                             <h6 class="fw-bold nav-text-link mb-3">Accessories & Footwear</h6>
                             <ul class="list-unstyled mega-col">
-                                <li><a href="all_categories1.php">Jewellery</a></li>
-                                <li><a href="all_categories1.php">Bags & Clutches</a></li>
-                                <li><a href="all_categories1.php">Footwear</a></li>
-                                <li><a href="all_categories1.php">Belts & Waistbands</a></li>
-                                <li><a href="all_categories1.php">Hair Accessories</a></li>
+                                <li><a href="allcategories.php">Jewellery</a></li>
+                                <li><a href="allcategories.php">Bags & Clutches</a></li>
+                                <li><a href="allcategories.php">Footwear</a></li>
+                                <li><a href="allcategories.php">Belts & Waistbands</a></li>
+                                <li><a href="allcategories.php">Hair Accessories</a></li>
                             </ul>
 
                             <h6 class="fw-bold nav-text-link mt-4 mb-3">Fabrics & Unstitched</h6>
                             <ul class="list-unstyled mega-col">
-                                <li><a href="all_categories1.php">Dress Materials</a></li>
-                                <li><a href="all_categories1.php">Unstitched Suits</a></li>
-                                <li><a href="all_categories1.php">Fabric Rolls</a></li>
+                                <li><a href="allcategories.php">Dress Materials</a></li>
+                                <li><a href="allcategories.php">Unstitched Suits</a></li>
+                                <li><a href="allcategories.php">Fabric Rolls</a></li>
                             </ul>
                         </div>
 
