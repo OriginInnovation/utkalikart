@@ -10,7 +10,7 @@
     .mega-dropdown .mega-menu {
         display: none;
         position: absolute;
-        top: 100%;
+        top: 70%;
         left: 0;
         width: 100%;
         background-color: #fff;
@@ -1301,6 +1301,56 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        const checkoutModal = document.getElementById("buyNowUnq_CheckoutPanel");
+        const checkoutOverlay = document.getElementById("buyNowUnq_Overlay");
+
+        /* ================= OPEN CHECKOUT (DELEGATION) ================= */
+        document.addEventListener("click", function(e) {
+
+            const checkoutBtn = e.target.closest(".checkout-btn");
+
+            if (checkoutBtn) {
+                e.preventDefault();
+
+                if (!checkoutModal || !checkoutOverlay) {
+                    console.error("Checkout modal or overlay not found");
+                    return;
+                }
+
+                checkoutModal.classList.add("active");
+                checkoutOverlay.classList.add("active");
+                document.body.classList.add("modal-open");
+            }
+        });
+
+        /* ================= CLOSE CHECKOUT ================= */
+        function closeCheckout() {
+            checkoutModal.classList.remove("active");
+            checkoutOverlay.classList.remove("active");
+            document.body.classList.remove("modal-open");
+        }
+
+        // Close button
+        document.addEventListener("click", function(e) {
+            if (
+                e.target.id === "buyNowUnq_CloseBtn" ||
+                e.target.closest("#buyNowUnq_CloseBtn")
+            ) {
+                closeCheckout();
+            }
+        });
+
+        // Overlay click
+        if (checkoutOverlay) {
+            checkoutOverlay.addEventListener("click", closeCheckout);
+        }
+
+    });
+</script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function() {
 
