@@ -265,29 +265,75 @@
                 </button>
             </div>
 
-            <div class="col-lg-3 col-md-4 d-none d-md-block">
-                <div class="CA-sidebar">
-                    <div class="CA-sidebar-header" id="openProfileModal">
-                        <i class="bi bi-person-circle fs-4"></i>Account
-                    </div>
-                    <nav class="CA-sidebar-menu">
-                        <ul>
-                            <li class="CA-section-title"></li>
-                            <li><a href="#" data-tab-id="CA-overviewTab">Overview</a></li>
-                            <li class="CA-section-title"></li>
-                            <li><a href="#" data-tab-id="CA-ordersTab">Orders & Returns</a></li>
-                            <li><a href="#" data-tab-id="CA-wishlist">Wishlist</a></li>
-                            <li class="CA-section-title"></li>
-                            <li><a href="#" data-tab-id="CA-couponsTab">Coupons</a></li>
-                            <li class="CA-section-title"></li>
-                            <li><a href="#" data-tab-id="CA-profileDetailsView" class="active">Profile</a></li>
-                            <li><a href="#" data-tab-id="CA-addressesTab">Addresses</a></li>
-                            <li><a href="#" data-tab-id="CA-privacyTab">Privacy Center</a></li>
+           <div class="col-lg-3 col-md-4 d-none d-md-block">
+    <div class="CA-sidebar">
+        <div class="CA-sidebar-header" id="openProfileModal">
+            <i class="fa-regular fa-user"></i>
+            <span>Account</span>
+        </div>
 
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+        <nav class="CA-sidebar-menu">
+            <ul>
+                <li class="CA-section-title"></li>
+
+                <li>
+                    <a href="#" data-tab-id="CA-overviewTab">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <span>Overview</span>
+                    </a>
+                </li>
+
+                <li class="CA-section-title"></li>
+
+                <li>
+                    <a href="#" data-tab-id="CA-ordersTab">
+                        <i class="fa-solid fa-box"></i>
+                        <span>Orders & Returns</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" data-tab-id="CA-wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>Wishlist</span>
+                    </a>
+                </li>
+
+                <li class="CA-section-title"></li>
+
+                <li>
+                    <a href="#" data-tab-id="CA-couponsTab">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span>Coupons</span>
+                    </a>
+                </li>
+
+                <li class="CA-section-title"></li>
+
+                <li>
+                    <a href="#" data-tab-id="CA-profileDetailsView" class="active">
+                        <i class="fa-regular fa-id-card"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" data-tab-id="CA-addressesTab">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Addresses</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" data-tab-id="CA-privacyTab">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Privacy Center</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
 
             <div class="modal fade" id="userProfileModal" tabindex="-1" aria-labelledby="userProfileModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -384,41 +430,44 @@
                 <div class="CA-content-area" id="CA-tabContent">
 
                     <div class="CA-tab-pane active" id="CA-profileDetailsView">
-                        <h6>Profile Details</h6>
-                        <table class="CA-profile-details-table">
-                            <tr>
-                                <td>Full Name</td>
-                                <td data-field="fullName"></td>
-                            </tr>
-                            <tr>
-                                <td>Mobile Number</td>
-                                <td data-field="mobileNumber"></td>
-                            </tr>
-                            <tr>
-                                <td>Email ID</td>
-                                <td data-field="email"></td>
-                            </tr>
-                            <tr>
-                                <td>Gender</td>
-                                <td data-field="gender"></td>
-                            </tr>
-                            <tr>
-                                <td>Date of Birth</td>
-                                <td data-field="birthday"></td>
-                            </tr>
+    <h6 class="CA-profile-title">Profile Details</h6>
 
-                            <tr>
-                                <td>Alternate Mobile</td>
-                                <td data-field="alternateMobile"></td>
-                            </tr>
+    <table class="CA-profile-details-table">
+        <tr>
+            <td>Full Name</td>
+            <td data-field="fullName">Ritik Rosan</td>
+        </tr>
+        <tr>
+            <td>Mobile Number</td>
+            <td data-field="mobileNumber">+91 98765 43210</td>
+        </tr>
+        <tr>
+            <td>Email ID</td>
+            <td data-field="email">ritik@example.com</td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td data-field="gender">Male</td>
+        </tr>
+        <tr>
+            <td>Date of Birth</td>
+            <td data-field="birthday">15 Aug 1998</td>
+        </tr>
+        <tr>
+            <td>Alternate Mobile</td>
+            <td data-field="alternateMobile">+91 91234 56789</td>
+        </tr>
+        <tr>
+            <td>Hint Name</td>
+            <td data-field="hintName">Home</td>
+        </tr>
+    </table>
 
-                            <tr>
-                                <td>Hint Name</td>
-                                <td data-field="hintName"></td>
-                            </tr>
-                        </table>
-                        <button class="btn CA-btn-pink" id="CA-editProfileBtn">EDIT</button>
-                    </div>
+    <button class="btn CA-btn-pink" id="CA-editProfileBtn">
+        <i class="fa-regular fa-pen-to-square"></i> Edit Profile
+    </button>
+</div>
+
 
                     <div class="CA-tab-pane" id="CA-profileEditForm">
                         <form id="CA-editProfileForm">

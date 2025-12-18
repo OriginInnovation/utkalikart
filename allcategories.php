@@ -15,7 +15,83 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/main.css?v=2.5">
+    <link rel="stylesheet" href="assets/css/main.css?v=2.52">
+    <style>
+        /* Slider Wrapper */
+        .range-wrapper {
+            position: relative;
+            width: 100%;
+            height: 5px;
+            /* Track height */
+            margin-top: 15px;
+        }
+
+        /* Background Track (Grey Bar) */
+        .slider-track {
+            width: 100%;
+            height: 5px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: #ddd;
+            /* Inactive color */
+            border-radius: 5px;
+        }
+
+        /* Common Styles for Both Inputs */
+        input[type="range"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 100%;
+            outline: none;
+            position: absolute;
+            margin: auto;
+            top: 5px;
+            bottom: 0;
+            background-color: transparent;
+            pointer-events: none;
+            /* Important: Allows clicking through transparent parts */
+        }
+
+        /* Slider Thumb (Circle Handle) Styling */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 18px;
+            width: 18px;
+            background-color: #212529;
+            /* Dark Color */
+            cursor: pointer;
+            border-radius: 50%;
+            pointer-events: auto;
+            /* Re-enable clicking on the thumb */
+            border: 2px solid #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            margin-top: -7px;
+            /* Adjust vertical alignment */
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            height: 18px;
+            width: 18px;
+            background-color: #212529;
+            cursor: pointer;
+            border-radius: 50%;
+            pointer-events: auto;
+            border: 2px solid #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="range"]::-ms-thumb {
+            height: 18px;
+            width: 18px;
+            background-color: #212529;
+            cursor: pointer;
+            border-radius: 50%;
+            pointer-events: auto;
+        }
+    </style>
 
 </head>
 
@@ -26,174 +102,111 @@
     </button>
     <div class="container-fluid mt-3 categories-section">
         <div class="row">
-            <div class="col-lg-2 custom-desktop-sidebar d-none d-lg-block">
+            <div class="col-lg-3 custom-desktop-sidebar d-none d-lg-block">
                 <div class="bg-white p-3 border custom-filter-box">
                     <h6 class="fw-bold mb-3">FILTERS</h6>
                     <div id="custom-filterContent">
 
+                        <!-- SIZE -->
                         <div class="mb-4">
                             <h6 class="custom-filter-title">SIZE</h6>
-                            <div class="form-check"><input class="form-check-input" type="checkbox" id="sizeS"><label
-                                    class="form-check-label" for="sizeS">S</label></div>
-                            <div class="form-check"><input class="form-check-input" type="checkbox" id="sizeM"><label
-                                    class="form-check-label" for="sizeM">M</label></div>
-                            <div class="form-check"><input class="form-check-input" type="checkbox" id="sizeL"><label
-                                    class="form-check-label" for="sizeL">L</label></div>
-                            <div class="form-check"><input class="form-check-input" type="checkbox" id="sizeXL"><label
-                                    class="form-check-label" for="sizeXL">XL</label></div>
-                            <div class="form-check"><input class="form-check-input" type="checkbox" id="sizeXXL"><label
-                                    class="form-check-label" for="sizeXXL">XXL</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="sizeS"><label class="form-check-label" for="sizeS">S</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="sizeM"><label class="form-check-label" for="sizeM">M</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="sizeL"><label class="form-check-label" for="sizeL">L</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="sizeXL"><label class="form-check-label" for="sizeXL">XL</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="sizeXXL"><label class="form-check-label" for="sizeXXL">XXL</label></div>
                         </div>
 
+                        <!-- PRICE -->
                         <div class="mb-4">
                             <h6 class="custom-filter-title mb-2">PRICE</h6>
-                            <input type="range" class="form-range custom-price-slider" min="100" max="10000" step="100">
-                            <div class="text-muted small">₹100 - ₹10,000+</div>
+
+                            <div class="range-wrapper position-relative w-100" style="height: 30px;">
+                                <div class="slider-track"></div>
+                                <input type="range" min="0" max="10000" value="1000" id="slider-1" oninput="slideOne()">
+                                <input type="range" min="0" max="10000" value="7000" id="slider-2" oninput="slideTwo()">
+                            </div>
+
+                            <div class="d-flex justify-content-between text-muted small mt-2">
+                                <span>₹<span id="range1">1000</span></span>
+                                <span>₹<span id="range2">7000</span></span>
+                            </div>
                         </div>
 
+                        <!-- COLOR -->
                         <div class="mb-4">
                             <h6 class="custom-filter-title">COLOR</h6>
                             <input type="text" class="custom-search-input mb-2" placeholder="Search Color...">
+
                             <div class="form-check d-flex align-items-center mb-1">
                                 <input class="form-check-input me-2" type="checkbox" id="color-Blue">
                                 <span class="custom-color-dot bg-blue me-2"></span>
-                                <label class="form-check-label" for="color-Blue">Blue <span
-                                        class="text-muted">(4383)</span></label>
+                                <label class="form-check-label" for="color-Blue">Blue</label>
                             </div>
+
                             <div class="form-check d-flex align-items-center mb-1">
                                 <input class="form-check-input me-2" type="checkbox" id="color-Green">
                                 <span class="custom-color-dot bg-green me-2"></span>
-                                <label class="form-check-label" for="color-Green">Green <span
-                                        class="text-muted">(3787)</span></label>
+                                <label class="form-check-label" for="color-Green">Green</label>
                             </div>
+
                             <div class="form-check d-flex align-items-center mb-1">
                                 <input class="form-check-input me-2" type="checkbox" id="color-Black">
                                 <span class="custom-color-dot bg-black me-2"></span>
-                                <label class="form-check-label" for="color-Black">Black <span
-                                        class="text-muted">(3282)</span></label>
+                                <label class="form-check-label" for="color-Black">Black</label>
                             </div>
+
                             <div class="form-check d-flex align-items-center mb-1">
                                 <input class="form-check-input me-2" type="checkbox" id="color-Yellow">
                                 <span class="custom-color-dot bg-yellow me-2"></span>
-                                <label class="form-check-label" for="color-Yellow">Yellow <span
-                                        class="text-muted">(2708)</span></label>
+                                <label class="form-check-label" for="color-Yellow">Yellow</label>
                             </div>
                         </div>
 
+                        <!-- DISCOUNT -->
                         <div class="mb-4">
                             <h6 class="custom-filter-title mb-2">DISCOUNT RANGE</h6>
-                            <div class="form-check"><input class="form-check-input" type="checkbox" id="d10"><label
-                                    class="form-check-label" for="d10">10% and above</label></div>
-                            <div class="form-check"><input class="form-check-input" type="checkbox" id="d20"><label
-                                    class="form-check-label" for="d20">20% and above</label></div>
-                            <div class="form-check"><input class="form-check-input" type="checkbox" id="d30"><label
-                                    class="form-check-label" for="d30">30% and above</label></div>
-                            <div class="form-check"><input class="form-check-input" type="checkbox" id="d40"><label
-                                    class="form-check-label" for="d40">40% and above</label></div>
-                            <div class="form-check"><input class="form-check-input" type="checkbox" id="d50"><label
-                                    class="form-check-label" for="d50">50% and above</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="d10"><label class="form-check-label" for="d10">10% and above</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="d20"><label class="form-check-label" for="d20">20% and above</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="d30"><label class="form-check-label" for="d30">30% and above</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="d40"><label class="form-check-label" for="d40">40% and above</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="d50"><label class="form-check-label" for="d50">50% and above</label></div>
                         </div>
 
+                        <!-- BUNDLES -->
                         <div class="mb-4">
                             <h6 class="custom-filter-title">BUNDLES</h6>
-                            <div class="form-check"><input class="form-check-input" type="checkbox"
-                                    id="bundleSingle"><label class="form-check-label" for="bundleSingle">Single</label>
-                            </div>
-                            <div class="form-check"><input class="form-check-input" type="checkbox"
-                                    id="bundleCombo"><label class="form-check-label" for="bundleCombo">Combo</label>
-                            </div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="bundleSingle"><label class="form-check-label" for="bundleSingle">Single</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="bundleCombo"><label class="form-check-label" for="bundleCombo">Combo</label></div>
                         </div>
 
-
+                        <!-- SUB-CATEGORIES (NEW) -->
                         <div class="mb-4">
-                            <h6 class="custom-filter-title">RATING</h6>
-                            <div class="form-check"><input class="form-check-input" type="radio" name="rating"
-                                    id="rating4plus"><label class="form-check-label" for="rating4plus">4.0 ⭐ &
-                                    Up</label></div>
-                            <div class="form-check"><input class="form-check-input" type="radio" name="rating"
-                                    id="rating3plus"><label class="form-check-label" for="rating3plus">3.0 ⭐ &
-                                    Up</label></div>
+                            <h6 class="custom-filter-title">SUB-CATEGORIES</h6>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="subSaree"><label class="form-check-label" for="subSaree">Sarees</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="subKurti"><label class="form-check-label" for="subKurti">Kurtis</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="subDress"><label class="form-check-label" for="subDress">Dresses</label></div>
                         </div>
 
-
+                        <!-- FABRIC -->
                         <div class="mb-4">
                             <h6 class="custom-filter-title">FABRIC</h6>
                             <input type="text" class="custom-search-input mb-2" placeholder="Search Fabric...">
-                            <div class="form-check"><input class="form-check-input" type="checkbox"
-                                    id="fabricCotton"><label class="form-check-label" for="fabricCotton">Cotton</label>
-                            </div>
-                            <div class="form-check"><input class="form-check-input" type="checkbox"
-                                    id="fabricLinen"><label class="form-check-label" for="fabricLinen">Linen</label>
-                            </div>
-                        </div>
-
-
-                        <div class="mb-4">
-                            <h6 class="custom-filter-title">OCCASION</h6>
-                            <div class="form-check"><input class="form-check-input" type="checkbox"
-                                    id="occasionCasual"><label class="form-check-label"
-                                    for="occasionCasual">Casual</label></div>
-                            <div class="form-check"><input class="form-check-input" type="checkbox"
-                                    id="occasionParty"><label class="form-check-label" for="occasionParty">Party</label>
-                            </div>
-                        </div>
-
-                        <div class="mb-4">
-                            <h6 class="custom-filter-title">FASHION TREND</h6>
-                            <div class="form-check"><input class="form-check-input" type="checkbox"
-                                    id="trendOversized"><label class="form-check-label"
-                                    for="trendOversized">Oversized</label></div>
-                            <div class="form-check"><input class="form-check-input" type="checkbox"
-                                    id="trendSlimFit"><label class="form-check-label" for="trendSlimFit">Slim
-                                    Fit</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="fabricCotton"><label class="form-check-label" for="fabricCotton">Cotton</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="fabricLinen"><label class="form-check-label" for="fabricLinen">Linen</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="fabricSilk"><label class="form-check-label" for="fabricSilk">Silk</label></div>
                         </div>
 
                         <button class="btn btn-outline-dark btn-sm custom-clear-btn mt-3 fw-bold">Clear Filters</button>
+
                     </div>
                 </div>
-
             </div>
 
-            <div class="col-lg-10">
+
+            <div class="col-lg-9">
                 <div class="d-none d-lg-flex justify-content-between align-items-center mb-3 flex-wrap">
-                    <div class="d-flex flex-wrap gap-2">
-                        <div class="dropdown">
-                            <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Bundles
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Single</a></li>
-                            </ul>
-                        </div>
-                        <div class="dropdown">
-                            <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Colour Family
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Red</a></li>
-                            </ul>
-                        </div>
-                        <div class="dropdown">
-                            <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Fabric
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Cotton</a></li>
-                            </ul>
-                        </div>
-                        <div class="dropdown">
-                            <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                More
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">View All</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    
                     <div class="ms-auto d-flex align-items-center">
                         <label for="desktopSortSelect" class="me-2 mb-0">Sort by:</label>
                         <select class="form-select form-select-sm w-auto" id="desktopSortSelect"
@@ -1550,6 +1563,43 @@
         // initial load
         showSkeleton();
         setTimeout(loadProducts, 1200);
+    </script>
+    <script>
+        window.onload = function() {
+            slideOne();
+            slideTwo();
+        };
+
+        let sliderOne = document.getElementById("slider-1");
+        let sliderTwo = document.getElementById("slider-2");
+        let displayValOne = document.getElementById("range1");
+        let displayValTwo = document.getElementById("range2");
+        let minGap = 500; // Minimum distance between two handles
+        let sliderTrack = document.querySelector(".slider-track");
+        let sliderMaxValue = document.getElementById("slider-1").max;
+
+        function slideOne() {
+            if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
+                sliderOne.value = parseInt(sliderTwo.value) - minGap;
+            }
+            displayValOne.textContent = sliderOne.value;
+            fillColor();
+        }
+
+        function slideTwo() {
+            if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
+                sliderTwo.value = parseInt(sliderOne.value) + minGap;
+            }
+            displayValTwo.textContent = sliderTwo.value;
+            fillColor();
+        }
+
+        function fillColor() {
+            percent1 = (sliderOne.value / sliderMaxValue) * 100;
+            percent2 = (sliderTwo.value / sliderMaxValue) * 100;
+            // Track background gradient logic
+            sliderTrack.style.background = `linear-gradient(to right, #ddd ${percent1}%, #212529 ${percent1}%, #212529 ${percent2}%, #ddd ${percent2}%)`;
+        }
     </script>
 </body>
 
