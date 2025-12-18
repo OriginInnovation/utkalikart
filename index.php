@@ -33,7 +33,7 @@
     </button>
 
 
-    <div class="slider-section px-4">
+    <div class="slider-section px-4 py-5">
         <div class="slider-wrapper px-lg-5">
 
             <button class="nav-btn prev-btn" onclick="scrollSlider(-1)">
