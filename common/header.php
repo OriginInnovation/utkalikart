@@ -1,6 +1,11 @@
 <style>
     .nav-text-link {
         color: rgb(255 81 0) !important;
+        cursor: pointer !important;
+    }
+    .nav-text-link:hover {
+        color: rgb(255 81 0) !important;
+        cursor: pointer !important;
     }
 
     .mega-dropdown {
@@ -1464,4 +1469,17 @@
         updateCartUI(); // init
 
     });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".nav-text-link");
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault(); // agar <a> tag hai toh default roke
+            window.location.href = "all_categories1.php";
+        });
+    });
+});
 </script>
