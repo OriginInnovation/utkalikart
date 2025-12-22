@@ -546,7 +546,7 @@
                 </div>
             </div>
 
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="CA-sidebarOffcanvas"
+            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="CA-sidebarOffcanvas"
                 aria-labelledby="CA-sidebarOffcanvasLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="CA-sidebarOffcanvasLabel">Account</h5>
