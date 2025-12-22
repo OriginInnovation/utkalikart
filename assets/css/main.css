@@ -5346,6 +5346,15 @@ body {
   .slider-track {
     gap: 15px;
   }
+
+  .top-style-image {
+    height: 267px !important;
+  }
+
+  .navbar-brand {
+    margin-left: 0px !important;
+    margin-right: 150px !important;
+}
 }
 
 .category-section {
@@ -5840,4 +5849,9 @@ input[type="range"]::-ms-thumb {
   cursor: pointer;
   border-radius: 50%;
   pointer-events: auto;
+}
+
+button[data-bs-target="#newArrivalsCollapse"]::after,
+button[data-bs-target="#offersCollapse"]::after {
+  display: none !important;
 }
