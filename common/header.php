@@ -1089,49 +1089,49 @@
                     <div class="accordion-body">
 
                         <!-- Sarees -->
-                        <h6 class="fw-bold mt-2">Sarees</h6>
-                        <a href="#">Silk Sarees</a>
-                        <a href="#">Cotton Sarees</a>
-                        <a href="#">Chiffon Sarees</a>
-                        <a href="#">Georgette Sarees</a>
-                        <a href="#">Designer Sarees</a>
-                        <a href="#">Wedding Sarees</a>
+                        <h6 class="fw-bold mt-2 mob-nav-lin">Sarees</h6>
+                        <a href="allcategories.php">Silk Sarees</a>
+                        <a href="allcategories.php">Cotton Sarees</a>
+                        <a href="allcategories.php">Chiffon Sarees</a>
+                        <a href="allcategories.php">Georgette Sarees</a>
+                        <a href="allcategories.php">Designer Sarees</a>
+                        <a href="allcategories.php">Wedding Sarees</a>
 
                         <!-- Kurti Sets -->
-                        <h6 class="fw-bold mt-3">Kurti Sets</h6>
-                        <a href="#">Casual Kurtis</a>
-                        <a href="#">Party Wear Kurtis</a>
-                        <a href="#">Anarkali Kurtis</a>
-                        <a href="#">Straight Kurtis</a>
-                        <a href="#">Long Kurtis</a>
+                        <h6 class="fw-bold mt-3 mob-nav-lin">Kurti Sets</h6>
+                        <a href="allcategories.php">Casual Kurtis</a>
+                        <a href="allcategories.php">Party Wear Kurtis</a>
+                        <a href="allcategories.php">Anarkali Kurtis</a>
+                        <a href="allcategories.php">Straight Kurtis</a>
+                        <a href="allcategories.php">Long Kurtis</a>
 
                         <!-- Bottoms -->
-                        <h6 class="fw-bold mt-3">Bottoms & Dupattas</h6>
-                        <a href="#">Leggings</a>
-                        <a href="#">Palazzos</a>
-                        <a href="#">Salwars</a>
-                        <a href="#">Dupattas</a>
-                        <a href="#">Scarves & Stoles</a>
+                        <h6 class="fw-bold mt-3 mob-nav-lin">Bottoms & Dupattas</h6>
+                        <a href="allcategories.php">Leggings</a>
+                        <a href="allcategories.php">Palazzos</a>
+                        <a href="allcategories.php">Salwars</a>
+                        <a href="allcategories.php">Dupattas</a>
+                        <a href="allcategories.php">Scarves & Stoles</a>
 
                         <!-- Blouses -->
-                        <h6 class="fw-bold mt-3">Blouses & Tops</h6>
-                        <a href="#">Saree Blouses</a>
-                        <a href="#">Casual Tops</a>
-                        <a href="#">Designer Tops</a>
+                        <h6 class="fw-bold mt-3 mob-nav-lin">Blouses & Tops</h6>
+                        <a href="allcategories.php">Saree Blouses</a>
+                        <a href="allcategories.php">Casual Tops</a>
+                        <a href="allcategories.php">Designer Tops</a>
 
                         <!-- Accessories -->
-                        <h6 class="fw-bold mt-3">Accessories & Footwear</h6>
-                        <a href="#">Jewellery</a>
-                        <a href="#">Bags & Clutches</a>
-                        <a href="#">Footwear</a>
-                        <a href="#">Belts & Waistbands</a>
-                        <a href="#">Hair Accessories</a>
+                        <h6 class="fw-bold mt-3 mob-nav-lin">Accessories & Footwear</h6>
+                        <a href="allcategories.php">Jewellery</a>
+                        <a href="allcategories.php">Bags & Clutches</a>
+                        <a href="allcategories.php">Footwear</a>
+                        <a href="allcategories.php">Belts & Waistbands</a>
+                        <a href="allcategories.php">Hair Accessories</a>
 
                         <!-- Fabrics -->
-                        <h6 class="fw-bold mt-3">Fabrics & Unstitched</h6>
-                        <a href="#">Dress Materials</a>
-                        <a href="#">Unstitched Suits</a>
-                        <a href="#">Fabric Rolls</a>
+                        <h6 class="fw-bold mt-3 mob-nav-lin">Fabrics & Unstitched</h6>
+                        <a href="allcategories.php">Dress Materials</a>
+                        <a href="allcategories.php">Unstitched Suits</a>
+                        <a href="allcategories.php">Fabric Rolls</a>
 
                     </div>
                 </div>
@@ -1277,14 +1277,16 @@
 </script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const navLinks = document.querySelectorAll(".nav-text-link");
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".nav-text-link.mob-nav-lin");
 
-        navLinks.forEach(link => {
-            link.addEventListener("click", function(e) {
-                e.preventDefault(); // agar <a> tag hai toh default roke
-                window.location.href = "all_categories1.php";
-            });
+    navLinks.forEach(link => {
+        link.style.cursor = "pointer"; // hover pe pointer
+
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.location.href = "all_categories1.php";
         });
     });
+});
 </script>
