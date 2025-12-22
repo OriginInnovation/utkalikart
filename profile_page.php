@@ -247,6 +247,165 @@
             border-radius: 8px;
             margin-right: 6px;
         }
+
+        @media (max-width: 768px) {
+            #offersBarContainer {
+                margin-top: -65px !important;
+            }
+
+            .mob-header {
+                margin-top: -36px !important;
+            }
+        }
+
+        .ca-mob-menu-btn {
+            width: 100%;
+            max-width: 280px;
+            padding: 14px 20px;
+            border-radius: 50px;
+            border: none;
+            background: linear-gradient(135deg, #ff7a18, #ff3d00);
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 8px 20px rgba(255, 61, 0, 0.35);
+            transition: all 0.3s ease;
+            animation: pulseGlow 2s infinite;
+        }
+
+        /* Hover / Tap effect */
+        .ca-mob-menu-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Icon animation */
+        .ca-mob-menu-btn i {
+            font-size: 18px;
+            animation: bounceIcon 1.8s infinite;
+        }
+
+        /* Pulse animation */
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 61, 0, 0.6);
+            }
+
+            70% {
+                box-shadow: 0 0 0 12px rgba(255, 61, 0, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 61, 0, 0);
+            }
+        }
+
+        /* Icon bounce */
+        @keyframes bounceIcon {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-4px);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ca-mob-menu-btn {
+                position: fixed;
+                bottom: 15px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1050;
+            }
+        }
+
+        /* Form container enhancement */
+        #CA-profileEditForm {
+            position: relative;
+            padding: 20px 15px 25px;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+            animation: slideUpFade 0.4s ease;
+        }
+
+        /* Close button */
+        .CA-form-close-btn {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: #f1f1f1;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .CA-form-close-btn:hover {
+            background: #ff3d00;
+            color: #fff;
+            transform: rotate(90deg) scale(1.05);
+        }
+
+        /* Input focus glow */
+        #CA-profileEditForm .form-control:focus {
+            border-color: #ff3d00;
+            box-shadow: 0 0 0 3px rgba(255, 61, 0, 0.15);
+        }
+
+        /* Gender buttons */
+        .CA-gender-option {
+            padding: 10px 18px;
+            border-radius: 30px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .CA-gender-option:hover {
+            background: #fff0e9;
+            border-color: #ff3d00;
+        }
+
+        /* Save button animation */
+        #CA-saveDetailsBtn {
+            width: 100%;
+            padding: 14px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(255, 61, 0, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        #CA-saveDetailsBtn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Entrance animation */
+        @keyframes slideUpFade {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 
@@ -258,82 +417,86 @@
     <div class="container CA-main-container">
         <div class="row mt-5">
 
-            <div class="d-md-none">
-                <button class="btn btn" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#CA-sidebarOffcanvas" aria-controls="CA-sidebarOffcanvas">
-                    <i class="fa-solid fa-caret-down"></i> Menu
+            <div class="d-md-none mt-5 text-center">
+                <button class="btn ca-mob-menu-btn" type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#CA-sidebarOffcanvas"
+                    aria-controls="CA-sidebarOffcanvas">
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>Filter & Menu</span>
                 </button>
             </div>
 
-           <div class="col-lg-3 col-md-4 d-none d-md-block">
-    <div class="CA-sidebar">
-        <div class="CA-sidebar-header" id="openProfileModal">
-            <i class="fa-regular fa-user"></i>
-            <span>Account</span>
-        </div>
 
-        <nav class="CA-sidebar-menu">
-            <ul>
-                <li class="CA-section-title"></li>
+            <div class="col-lg-3 col-md-4 d-none d-md-block">
+                <div class="CA-sidebar">
+                    <div class="CA-sidebar-header" id="openProfileModal">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Account</span>
+                    </div>
 
-                <li>
-                    <a href="#" data-tab-id="CA-overviewTab">
-                        <i class="fa-solid fa-gauge-high"></i>
-                        <span>Overview</span>
-                    </a>
-                </li>
+                    <nav class="CA-sidebar-menu">
+                        <ul>
+                            <li class="CA-section-title"></li>
 
-                <li class="CA-section-title"></li>
+                            <li>
+                                <a href="#" data-tab-id="CA-overviewTab">
+                                    <i class="fa-solid fa-gauge-high"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
 
-                <li>
-                    <a href="#" data-tab-id="CA-ordersTab">
-                        <i class="fa-solid fa-box"></i>
-                        <span>Orders & Returns</span>
-                    </a>
-                </li>
+                            <li class="CA-section-title"></li>
 
-                <li>
-                    <a href="#" data-tab-id="CA-wishlist">
-                        <i class="fa-regular fa-heart"></i>
-                        <span>Wishlist</span>
-                    </a>
-                </li>
+                            <li>
+                                <a href="#" data-tab-id="CA-ordersTab">
+                                    <i class="fa-solid fa-box"></i>
+                                    <span>Orders & Returns</span>
+                                </a>
+                            </li>
 
-                <li class="CA-section-title"></li>
+                            <li>
+                                <a href="#" data-tab-id="CA-wishlist">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <span>Wishlist</span>
+                                </a>
+                            </li>
 
-                <li>
-                    <a href="#" data-tab-id="CA-couponsTab">
-                        <i class="fa-solid fa-ticket"></i>
-                        <span>Coupons</span>
-                    </a>
-                </li>
+                            <li class="CA-section-title"></li>
 
-                <li class="CA-section-title"></li>
+                            <li>
+                                <a href="#" data-tab-id="CA-couponsTab">
+                                    <i class="fa-solid fa-ticket"></i>
+                                    <span>Coupons</span>
+                                </a>
+                            </li>
 
-                <li>
-                    <a href="#" data-tab-id="CA-profileDetailsView" class="active">
-                        <i class="fa-regular fa-id-card"></i>
-                        <span>Profile</span>
-                    </a>
-                </li>
+                            <li class="CA-section-title"></li>
 
-                <li>
-                    <a href="#" data-tab-id="CA-addressesTab">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>Addresses</span>
-                    </a>
-                </li>
+                            <li>
+                                <a href="#" data-tab-id="CA-profileDetailsView" class="active">
+                                    <i class="fa-regular fa-id-card"></i>
+                                    <span>Profile</span>
+                                </a>
+                            </li>
 
-                <li>
-                    <a href="#" data-tab-id="CA-privacyTab">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <span>Privacy Center</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</div>
+                            <li>
+                                <a href="#" data-tab-id="CA-addressesTab">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>Addresses</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" data-tab-id="CA-privacyTab">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                    <span>Privacy Center</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
 
             <div class="modal fade" id="userProfileModal" tabindex="-1" aria-labelledby="userProfileModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -427,51 +590,61 @@
                     <a href="#" class="CA-nav-link" data-filter="all">All</a>
                 </div>
 
-                <div class="CA-content-area" id="CA-tabContent">
+                <div class="CA-content-area p-3" id="CA-tabContent">
 
                     <div class="CA-tab-pane active" id="CA-profileDetailsView">
-    <h6 class="CA-profile-title">Profile Details</h6>
+                        <h6 class="CA-profile-title">Profile Details</h6>
 
-    <table class="CA-profile-details-table">
-        <tr>
-            <td>Full Name</td>
-            <td data-field="fullName">Ritik Rosan</td>
-        </tr>
-        <tr>
-            <td>Mobile Number</td>
-            <td data-field="mobileNumber">+91 98765 43210</td>
-        </tr>
-        <tr>
-            <td>Email ID</td>
-            <td data-field="email">ritik@example.com</td>
-        </tr>
-        <tr>
-            <td>Gender</td>
-            <td data-field="gender">Male</td>
-        </tr>
-        <tr>
-            <td>Date of Birth</td>
-            <td data-field="birthday">15 Aug 1998</td>
-        </tr>
-        <tr>
-            <td>Alternate Mobile</td>
-            <td data-field="alternateMobile">+91 91234 56789</td>
-        </tr>
-        <tr>
-            <td>Hint Name</td>
-            <td data-field="hintName">Home</td>
-        </tr>
-    </table>
+                        <table class="CA-profile-details-table">
+                            <tr>
+                                <td>Full Name</td>
+                                <td data-field="fullName">Ritik Rosan</td>
+                            </tr>
+                            <tr>
+                                <td>Mobile Number</td>
+                                <td data-field="mobileNumber">+91 98765 43210</td>
+                            </tr>
+                            <tr>
+                                <td>Email ID</td>
+                                <td data-field="email">ritik@example.com</td>
+                            </tr>
+                            <tr>
+                                <td>Gender</td>
+                                <td data-field="gender">Male</td>
+                            </tr>
+                            <tr>
+                                <td>Date of Birth</td>
+                                <td data-field="birthday">15 Aug 1998</td>
+                            </tr>
+                            <tr>
+                                <td>Alternate Mobile</td>
+                                <td data-field="alternateMobile">+91 91234 56789</td>
+                            </tr>
+                            <tr>
+                                <td>Hint Name</td>
+                                <td data-field="hintName">Home</td>
+                            </tr>
+                        </table>
 
-    <button class="btn CA-btn-pink" id="CA-editProfileBtn">
-        <i class="fa-regular fa-pen-to-square"></i> Edit Profile
-    </button>
-</div>
+                        <button class="btn CA-btn-pink" id="CA-editProfileBtn">
+                            <i class="fa-regular fa-pen-to-square"></i> Edit Profile
+                        </button>
+                    </div>
 
 
                     <div class="CA-tab-pane" id="CA-profileEditForm">
+
+                        <!-- Close Button -->
+                        <button type="button"
+                            class="CA-form-close-btn"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+
+
                         <form id="CA-editProfileForm">
-                            <div class="mb-3">
+                            <div class="mb-3 mt-3">
                                 <label for="CA-mobileNumberInput" class="CA-form-label"></label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="CA-mobileNumberInput" placeholder="Mobile Number">
@@ -2365,7 +2538,6 @@
             bootstrap.Modal.getInstance(document.getElementById("rrModal")).hide();
         });
     </script>
-
 </body>
 
 </html>

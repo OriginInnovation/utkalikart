@@ -43,6 +43,34 @@
                 margin-top: -36px !important;
             }
         }
+        .AR-price-slider {
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+    appearance: none;
+    background: none;
+}
+
+.AR-price-slider::-webkit-slider-thumb {
+    pointer-events: auto;
+    appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #ff3d00;
+    cursor: pointer;
+}
+
+.AR-slider-track {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background: #ddd;
+    border-radius: 10px;
+}
+
     </style>
 </head>
 
@@ -506,10 +534,10 @@
         </div>
 
         <div class="custom-mobile-fixed-bar d-lg-none">
-            <!-- <button class="btn btn-outline-dark" type="button" data-bs-toggle="offcanvas"
+            <button class="btn btn-outline-dark" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#sortOffcanvas" aria-controls="sortOffcanvas">
                 <i class="bi bi-sort-down"></i> SORT
-            </button> -->
+            </button>
             <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas"
                 aria-controls="filterOffcanvas">
                 <i class="bi bi-filter"></i> FILTER
@@ -524,12 +552,10 @@
             </div>
             <div class="offcanvas-body d-flex flex-column">
                 <ul class="list-group list-group-flush sort-options flex-grow-1 overflow-auto">
-                    <li class="list-group-item active" data-sort-value="popularity">Popularity</li>
-                    <li class="list-group-item" data-sort-value="latest">Latest</li>
-                    <li class="list-group-item" data-sort-value="discount">Discount</li>
+                    <li class="list-group-item" data-sort-value="recommended">Recommended</li>
                     <li class="list-group-item" data-sort-value="price-high-to-low">Price: High to Low</li>
                     <li class="list-group-item" data-sort-value="price-low-to-high">Price: Low to High</li>
-                    <li class="list-group-item" data-sort-value="customer-rating">Customer Rating</li>
+                    <li class="list-group-item" data-sort-value="newest-first">Newest First</li>
                 </ul>
                 <div class="offcanvas-footer">
                     <button type="button" class="btn btn-outline-dark" data-bs-dismiss="offcanvas">CLOSE</button>
@@ -575,16 +601,30 @@
 
                         <!-- PRICE (same as desktop range logic) -->
                         <div id="price-filters" class="filter-detail-pane">
-                            <div class="range-wrapper position-relative w-100" style="height:30px;">
-                                <div class="slider-track"></div>
-                                <input type="range" min="0" max="10000" value="1000" id="slider-1">
-                                <input type="range" min="0" max="10000" value="7000" id="slider-2">
-                            </div>
-                            <div class="d-flex justify-content-between small mt-2">
-                                <span>₹<span id="range1">1000</span></span>
-                                <span>₹<span id="range2">7000</span></span>
-                            </div>
-                        </div>
+    <div class="AR-range-wrapper position-relative w-100" style="height:30px;">
+        <div class="AR-slider-track"></div>
+
+        <input type="range"
+               min="0"
+               max="10000"
+               value="1000"
+               id="AR-priceMin"
+               class="AR-price-slider">
+
+        <input type="range"
+               min="0"
+               max="10000"
+               value="7000"
+               id="AR-priceMax"
+               class="AR-price-slider">
+    </div>
+
+    <div class="d-flex justify-content-between small mt-2">
+        <span>₹<span id="AR-minPriceValue">1000</span></span>
+        <span>₹<span id="AR-maxPriceValue">7000</span></span>
+    </div>
+</div>
+
 
                         <!-- COLOR -->
                         <div id="color-filters" class="filter-detail-pane">
@@ -658,7 +698,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
     <script src="assets/js/main.js?v=1.2"></script>
-    <script src="assets/js/all_categories.js?v=1.5"></script>
+    <script src="assets/js/all_categories.js?v=1.6"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -688,6 +728,40 @@
 
         });
     </script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const minSlider = document.getElementById("AR-priceMin");
+    const maxSlider = document.getElementById("AR-priceMax");
+    const minOutput = document.getElementById("AR-minPriceValue");
+    const maxOutput = document.getElementById("AR-maxPriceValue");
+
+    const minimumGap = 500;
+
+    function updatePriceRange() {
+        let minVal = parseInt(minSlider.value);
+        let maxVal = parseInt(maxSlider.value);
+
+        if (maxVal - minVal < minimumGap) {
+            if (event.target === minSlider) {
+                minSlider.value = maxVal - minimumGap;
+            } else {
+                maxSlider.value = minVal + minimumGap;
+            }
+        }
+
+        minOutput.textContent = minSlider.value;
+        maxOutput.textContent = maxSlider.value;
+    }
+
+    minSlider.addEventListener("input", updatePriceRange);
+    maxSlider.addEventListener("input", updatePriceRange);
+
+    updatePriceRange(); // initial
+});
+</script>
+
 
 
 </body>

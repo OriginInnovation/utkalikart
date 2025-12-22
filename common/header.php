@@ -1277,16 +1277,14 @@
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const navLinks = document.querySelectorAll(".nav-text-link.mob-nav-lin");
+    document.addEventListener("DOMContentLoaded", function() {
+        const navLinks = document.querySelectorAll(".nav-text-link");
 
-    navLinks.forEach(link => {
-        link.style.cursor = "pointer"; // hover pe pointer
-
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
-            window.location.href = "all_categories1.php";
+        navLinks.forEach(link => {
+            link.addEventListener("click", function(e) {
+                e.preventDefault(); // agar <a> tag hai toh default roke
+                window.location.href = "allcategories.php";
+            });
         });
     });
-});
 </script>
