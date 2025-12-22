@@ -318,7 +318,7 @@
 
         @media (max-width: 767px) {
             .ca-mob-menu-btn {
-                position: fixed;
+                position: relative;
                 bottom: 15px;
                 left: 50%;
                 transform: translateX(-50%);
@@ -418,7 +418,7 @@
         <div class="row mt-5">
 
             <div class="d-md-none mt-5 text-center">
-                <button class="btn ca-mob-menu-btn" type="button"
+                <button class="btn ca-mob-menu-btn mt-1" type="button"
                     data-bs-toggle="offcanvas"
                     data-bs-target="#CA-sidebarOffcanvas"
                     aria-controls="CA-sidebarOffcanvas">
