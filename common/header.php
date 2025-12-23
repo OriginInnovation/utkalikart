@@ -485,7 +485,7 @@
                     <div class="popup-header">
                         <h6>Welcome</h6>
                         <p>To access account and manage orders</p>
-                        <button class="login-btn">LOGIN / SIGNUP</button>
+                        <button class="login-btn"><a class="text-decoration-none text-white" href="profile_page.php">LOGIN / SIGNUP</a></button>
                     </div>
 
                     <ul class="popup-menu">
