@@ -358,10 +358,10 @@
         <!-- CENTER NAV LINKS -->
         <ul class="navbar-nav mx-auto d-flex align-items-center gap-4 fw-bold">
             <li class="nav-item">
-                <a class="nav-link" href="#">New Arrivals</a>
+                <a class="nav-link" href="new_arrivals.php">New Arrivals</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Offers</a>
+                <a class="nav-link" href="offers.php">Offers</a>
             </li>
             <li class="nav-item dropdown mega-dropdown position-static">
                 <a class="nav-link fw-bold d-flex align-items-center gap-1" href="all_categories1.php" id="sareeMenu">
@@ -502,7 +502,7 @@
 
 
             <!-- WISHLIST ICON -->
-            <a href="#" class="text-dark">
+            <a href="wishlist.php" class="text-dark">
                 <i class="fa-regular fa-heart fs-4" style="color: rgb(227 101 42);"></i> <!-- keeps wishlist subtle and clean -->
             </a>
 
