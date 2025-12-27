@@ -485,15 +485,17 @@
                     <div class="popup-header">
                         <h6>Welcome</h6>
                         <p>To access account and manage orders</p>
-                        <button class="login-btn"><a class="text-decoration-none text-white" href="profile_page.php">LOGIN / SIGNUP</a></button>
+                        <button class="login-btn"><a class="text-decoration-none text-white" href="./login_signup.php">LOGIN / SIGNUP</a></button>
                     </div>
 
                     <ul class="popup-menu">
                         <li><i class="fa-solid fa-box"></i> Orders</li>
-                        <li><i class="fa-regular fa-heart"></i> Wishlist</li>
-                        <li><i class="fa-solid fa-phone"></i> Contact Us</li>
+                        <li><i class="fa-regular fa-heart"></i> <a href="wishlist.php" class="text-decoration-none text-black">Wishlist</a></li>
+                        <li onclick="window.location.href='contactus.php'">
+                            <i class="fa-solid fa-phone"></i> Contact Us
+                        </li>
                         <li class="gift">
-                            <i class="fa-solid fa-gift"></i> Gift Cards
+                            <i class="fa-solid fa-gift"></i> <a href="offers.php" class="text-decoration-none text-black" class="text-decoration-none text-black">Gift Cards</a>
                             <span class="new-badge">NEW</span>
                         </li>
                     </ul>
@@ -586,7 +588,6 @@
 
     </div>
 </nav>
-
 
 <div class="modal fade" id="trackingOrderModal" tabindex="-1" aria-labelledby="trackingOrderLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-sm-down">
@@ -687,7 +688,6 @@
         </div>
     </div>
 </div>
-
 
 <div class="modal fade" id="buyNowUnq_OffersBenefitsModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -927,19 +927,18 @@
     </div>
 </div>
 
-
 <nav class="navbar d-lg-none mob-header px-3 py-2">
     <div class="container-fluid d-flex justify-content-between align-items-center">
         <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
             <i class="bi bi-list fs-3"></i>
         </button>
         <a class="navbar-brand " href="index.php">
-           <img src="assets/img/ecommerce_logo_maker.png" alt="Logo" class="p-2 img-fluid" width="110">
+            <img src="assets/img/ecommerce_logo_maker.png" alt="Logo" class="p-2 img-fluid" width="110">
         </a>
         <div class="ec-header-mobile d-flex justify-content-end align-items-end d-lg-none">
             <div class="d-flex align-items-center gap-3 position-relative w-100 justify-content-end">
                 <div class="position-relative">
-                    <button class="btn p-0 border-0 text-dark" id="searchToggle2">
+                    <button class="btn p-0 border-0 text-dark" id="profileIcon1">
                         <i class="fa-regular fa-circle-user fs-5" style="color: rgb(227 101 42);"></i>
                     </button>
                     <div class="position-absolute searchbar-section bg-white border shadow-sm p-2 mt-2 rounded d-none"
@@ -949,7 +948,9 @@
                 </div>
 
                 <div class="ar-account-container" id="ar-account-container-mobile">
-                    <i class="fa-regular fa-heart fs-5" style="color: rgb(227 101 42);" id="ar-account-icon-mobile"></i>
+                    <a href="wishlist.php" class="text-dark">
+                        <i class="fa-regular fa-heart fs-5" style="color: rgb(227 101 42);"></i>
+                    </a>
                     <div class="ar-account-dropdown" id="ar-account-dropdown-mobile">
 
                         <!-- Before Login -->
@@ -1032,12 +1033,12 @@
 
                 <div class="cartIcon" id="cartOpenBtn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                    stroke="rgb(227, 101, 42)" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" class="feather feather-shopping-cart">
-                    <circle cx="9" cy="21" r="1"></circle>
-                    <circle cx="20" cy="21" r="1"></circle>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                </svg>
+                        stroke="rgb(227, 101, 42)" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-shopping-cart">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
                 </div>
             </div>
         </div>
@@ -1058,8 +1059,10 @@
             <!-- NEW ARRIVALS -->
             <div class="accordion-item border-0">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#newArrivalsCollapse">
+                    <button class="accordion-button collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#newArrivalsCollapse"
+                        onclick="window.location.href='new_arrivals.php'">
                         New Arrivals
                     </button>
                 </h2>
@@ -1068,8 +1071,10 @@
             <!-- OFFERS -->
             <div class="accordion-item border-0">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#offersCollapse">
+                    <button class="accordion-button collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#offersCollapse"
+                        onclick="window.location.href='offers.php'">
                         Offers
                     </button>
                 </h2>
