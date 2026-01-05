@@ -1,4 +1,3 @@
-<?php include 'common/header.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +13,8 @@
 </head>
 
 <body id="offers-page">
+
+<?php include 'common/header.php' ?>
 
     <div class="py-2 text-center small fw-bold" style="background: var(--aesthetic-lavender); color: var(--deep-lavender);">
         ✨ Use code <span class="text-dark">FIRST100</span> for an extra ₹100 off on your first app order!

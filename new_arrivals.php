@@ -1,6 +1,6 @@
-<?php include 'common/header.php' ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/main.css?v=3.98">
 </head>
+
 <body>
+
+    <?php include 'common/header.php' ?>
 
     <section class="simple-banner py-5 border-bottom">
         <div class="container">
@@ -48,7 +51,7 @@
     <section class="container my-2 mb-5">
         <h3 class="fw-bold mb-4">New Arrivals</h3>
         <div class="row g-4">
-            
+
             <div class="col-lg-3 col-md-6">
                 <div class="sn-card">
                     <span class="sn-tag tag-new">New</span>
@@ -162,7 +165,8 @@
     <?php include 'common/footer.php' ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-   <script src="assets/js/main.js?v=1.3"></script>
-   <script src="assets/js/new_arrivals.js?v=1.4"></script>
+    <script src="assets/js/main.js?v=1.3"></script>
+    <script src="assets/js/new_arrivals.js?v=1.4"></script>
 </body>
+
 </html>
