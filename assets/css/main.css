@@ -6997,3 +6997,84 @@ body.wishlist-safe button:focus {
   font-size: 14px;
   color: #444;
 }
+
+body#returns-refund {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+  color: #212529;
+}
+
+#returns-refund .policy-header {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+  background-color: #fff;
+  border-bottom: 1px solid #dee2e6;
+}
+
+#returns-refund .policy-header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000;
+}
+
+#returns-refund .policy-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+#returns-refund .policy-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+#returns-refund .policy-section {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+#returns-refund .policy-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+#returns-refund .policy-section p,
+#returns-refund .policy-section li {
+  color: #444;
+  line-height: 1.6;
+}
+
+#returns-refund footer {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  color: #666;
+}
+
+#returns-refund a {
+  color: #000;
+  text-decoration: underline;
+}
+
+#returns-refund a:hover {
+  color: #555;
+}
+
+@media (min-width: 768px) {
+  #returns-refund .policy-header {
+    /* margin-top: 65px; */
+  }
+}
+
+@media (max-width: 575.98px) {
+  #returns-refund .policy-header {
+    margin-top: 65px;
+  }
+
+}
