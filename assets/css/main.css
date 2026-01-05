@@ -5906,3 +5906,58 @@ button[data-bs-target="#offersCollapse"]::after {
         /* CART ITEM STYLING */
         .cart-item-img{width: 60px; height: 60px; object-fit: cover; border-radius: 8px;}
         .qty-btn{border: 1px solid #ddd; background: #fff; padding: 2px 8px; border-radius: 4px; cursor: pointer;}
+
+         /* Background Track (Grey Bar) */
+        #all-cat-bod .slider-track {
+            width: 100%;
+            height: 5px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: #ddd;
+            /* Inactive color */
+            border-radius: 5px;
+        }
+
+        #all-cat-bod .slider-track.slid {
+            padding: 0px 0px !important;
+        }
+
+        @media (max-width: 768px) {
+            #all-cat-bod #offersBarContainer {
+                margin-top: -65px !important;
+            }
+
+            #all-cat-bod .mob-header {
+                margin-top: -36px !important;
+            }
+        }
+
+        #all-cat-bod .AR-price-slider {
+            position: absolute;
+            width: 100%;
+            pointer-events: none;
+            appearance: none;
+            background: none;
+        }
+
+        #all-cat-bod .AR-price-slider::-webkit-slider-thumb {
+            pointer-events: auto;
+            appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #ff3d00;
+            cursor: pointer;
+        }
+
+        #all-cat-bod .AR-slider-track {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 4px;
+            width: 100%;
+            background: #ddd;
+            border-radius: 10px;
+        }

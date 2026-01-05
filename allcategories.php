@@ -15,66 +15,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/main.css?v=2.52">
-    <style>
-        /* Background Track (Grey Bar) */
-        .slider-track {
-            width: 100%;
-            height: 5px;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            background-color: #ddd;
-            /* Inactive color */
-            border-radius: 5px;
-        }
-
-        .slider-track.slid {
-            padding: 0px 0px !important;
-        }
-
-        @media (max-width: 768px) {
-            #offersBarContainer {
-                margin-top: -65px !important;
-            }
-
-            .mob-header {
-                margin-top: -36px !important;
-            }
-        }
-        .AR-price-slider {
-    position: absolute;
-    width: 100%;
-    pointer-events: none;
-    appearance: none;
-    background: none;
-}
-
-.AR-price-slider::-webkit-slider-thumb {
-    pointer-events: auto;
-    appearance: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: #ff3d00;
-    cursor: pointer;
-}
-
-.AR-slider-track {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 4px;
-    width: 100%;
-    background: #ddd;
-    border-radius: 10px;
-}
-
-    </style>
+    <link rel="stylesheet" href="assets/css/main.css?v=2.53">
 </head>
 
-<body>
+<body id="all-cat-bod">
     <?php include 'common/header.php' ?>
     <button id="ar-goTopBtn" class="ar-go-top-btn" aria-label="Go to top">
         <i class="bi bi-chevron-up"></i>
@@ -601,29 +545,29 @@
 
                         <!-- PRICE (same as desktop range logic) -->
                         <div id="price-filters" class="filter-detail-pane">
-    <div class="AR-range-wrapper position-relative w-100" style="height:30px;">
-        <div class="AR-slider-track"></div>
+                            <div class="AR-range-wrapper position-relative w-100" style="height:30px;">
+                                <div class="AR-slider-track"></div>
 
-        <input type="range"
-               min="0"
-               max="10000"
-               value="1000"
-               id="AR-priceMin"
-               class="AR-price-slider">
+                                <input type="range"
+                                    min="0"
+                                    max="10000"
+                                    value="1000"
+                                    id="AR-priceMin"
+                                    class="AR-price-slider">
 
-        <input type="range"
-               min="0"
-               max="10000"
-               value="7000"
-               id="AR-priceMax"
-               class="AR-price-slider">
-    </div>
+                                <input type="range"
+                                    min="0"
+                                    max="10000"
+                                    value="7000"
+                                    id="AR-priceMax"
+                                    class="AR-price-slider">
+                            </div>
 
-    <div class="d-flex justify-content-between small mt-2">
-        <span>₹<span id="AR-minPriceValue">1000</span></span>
-        <span>₹<span id="AR-maxPriceValue">7000</span></span>
-    </div>
-</div>
+                            <div class="d-flex justify-content-between small mt-2">
+                                <span>₹<span id="AR-minPriceValue">1000</span></span>
+                                <span>₹<span id="AR-maxPriceValue">7000</span></span>
+                            </div>
+                        </div>
 
 
                         <!-- COLOR -->
@@ -698,72 +642,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
     <script src="assets/js/main.js?v=1.2"></script>
-    <script src="assets/js/all_categories.js?v=1.6"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-
-            const categoryItems = document.querySelectorAll(".filter-category-item");
-            const detailPanes = document.querySelectorAll(".filter-detail-pane");
-
-            categoryItems.forEach(item => {
-                item.addEventListener("click", function() {
-
-                    // LEFT SIDE ACTIVE REMOVE
-                    categoryItems.forEach(i => i.classList.remove("active"));
-                    this.classList.add("active");
-
-                    // RIGHT SIDE PANES HIDE
-                    detailPanes.forEach(pane => pane.classList.remove("active"));
-
-                    // TARGET PANE SHOW
-                    const targetId = this.getAttribute("data-filter-target");
-                    const targetPane = document.getElementById(targetId);
-
-                    if (targetPane) {
-                        targetPane.classList.add("active");
-                    }
-                });
-            });
-
-        });
-    </script>
-
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const minSlider = document.getElementById("AR-priceMin");
-    const maxSlider = document.getElementById("AR-priceMax");
-    const minOutput = document.getElementById("AR-minPriceValue");
-    const maxOutput = document.getElementById("AR-maxPriceValue");
-
-    const minimumGap = 500;
-
-    function updatePriceRange() {
-        let minVal = parseInt(minSlider.value);
-        let maxVal = parseInt(maxSlider.value);
-
-        if (maxVal - minVal < minimumGap) {
-            if (event.target === minSlider) {
-                minSlider.value = maxVal - minimumGap;
-            } else {
-                maxSlider.value = minVal + minimumGap;
-            }
-        }
-
-        minOutput.textContent = minSlider.value;
-        maxOutput.textContent = maxSlider.value;
-    }
-
-    minSlider.addEventListener("input", updatePriceRange);
-    maxSlider.addEventListener("input", updatePriceRange);
-
-    updatePriceRange(); // initial
-});
-</script>
-
-
-
+    <script src="assets/js/all_categories.js?v=1.7"></script>
 </body>
 
 </html>
