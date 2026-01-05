@@ -7126,3 +7126,126 @@ body#returns-refund {
     margin-top: -38px !important;
   }
 }
+
+body#faqs-data {
+  background-color: #f8f9fa;
+  /* light gray background */
+  color: #000;
+  /* main text black */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header */
+#faqs-data .faq-header {
+  position: relative;
+  padding: 8rem 8rem;
+  text-align: center;
+  color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+
+  /* Background Image */
+  background: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f") center / cover no-repeat;
+}
+
+/* Black overlay */
+#faqs-data .faq-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  /* ONLY black effect */
+  z-index: 1;
+}
+
+/* Content above black overlay */
+#faqs-data .faq-header>* {
+  position: relative;
+  z-index: 2;
+}
+
+
+#faqs-data .faq-header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000;
+}
+
+#faqs-data .faq-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Search Bar */
+#faqs-data .search-bar {
+  max-width: 500px;
+  margin: 2rem auto;
+  position: relative;
+}
+
+#faqs-data .search-bar input {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+  border-radius: 30px;
+  padding: 0.75rem 3rem 0.75rem 1rem;
+}
+
+#faqs-data .search-bar input::placeholder {
+  color: #888;
+}
+
+#faqs-data .search-bar i {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+
+/* FAQ Section */
+#faqs-data .faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem 4rem;
+}
+
+#faqs-data .accordion-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 1.25rem;
+}
+
+#faqs-data .accordion-button {
+  background-color: transparent;
+  color: #000;
+  font-weight: 600;
+}
+
+#faqs-data .accordion-button:not(.collapsed) {
+  background-color: #f0f0f0;
+}
+
+#faqs-data .accordion-body {
+  color: #333;
+  background-color: #fff;
+}
+
+#faqs-data .accordion-button i {
+  margin-right: 10px;
+  color: #000;
+}
+
+@media (min-width: 768px) {
+  #faqs-data .faq-header {
+    /* margin-top: 65px; */
+  }
+}
+
+@media (max-width: 575.98px) {
+  #faqs-data .faq-header {
+    margin-top: 65px;
+  }
+
+}
