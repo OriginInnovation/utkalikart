@@ -7048,13 +7048,13 @@ body#returns-refund {
   line-height: 1.6;
 }
 
-#returns-refund footer {
+/* #returns-refund footer {
   text-align: center;
   padding: 2rem 0;
   background-color: #fff;
   border-top: 1px solid #ddd;
   color: #666;
-}
+} */
 /* 
 #returns-refund a {
   color: #000;
@@ -7075,5 +7075,44 @@ body#returns-refund {
   #returns-refund .policy-header {
     margin-top: 65px;
   }
+}
 
+#returns-refund .policy-header {
+  position: relative;
+  padding: 8rem 8rem;
+  text-align: center;
+  color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+
+  /* Background Image */
+  background: url("../img/banner_return_policy_mobile_1060_600.jpg") center / cover no-repeat;
+}
+
+/* Dark overlay for low opacity effect */
+#returns-refund .policy-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  /* opacity control */
+  z-index: 1;
+}
+
+/* Content above overlay */
+#returns-refund .policy-header h1,
+#returns-refund .policy-header p {
+  position: relative;
+  z-index: 2;
+}
+
+#returns-refund .policy-header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#returns-refund .policy-header p {
+  font-size: 1rem;
+  opacity: 0.9;
 }

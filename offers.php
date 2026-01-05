@@ -8,11 +8,12 @@
     <title>Aesthetic Boutique Offers - ShopNow</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/main.css?v=3.98">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/main.css?v=4.1">
 </head>
 
-<body id="offers-page" >
+<body id="offers-page">
 
     <div class="py-2 text-center small fw-bold" style="background: var(--aesthetic-lavender); color: var(--deep-lavender);">
         ✨ Use code <span class="text-dark">FIRST100</span> for an extra ₹100 off on your first app order!
@@ -131,7 +132,7 @@
                                         <h2 class="fw-bold grad-text mb-0">85% OFF</h2>
                                         <small class="text-muted">Use: MYSTERY85</small>
                                     </div>
-                                    <canvas id="scratchCanvas" width="350" height="200"></canvas>
+                                    <canvas id="scratchCanvas" width="460" height="420"></canvas>
                                 </div>
 
                                 <button class="btn btn-link text-decoration-none small mt-3 text-muted" onclick="initScratch()">Reset Card</button>
@@ -205,7 +206,7 @@
                 <div class="col-lg-3 col-md-4">
                     <div class="d-flex flex-column gap-3">
                         <div class="premium-img-wrapper shadow-sm">
-                            <img src="assets/img/saree1.webp" class="img-fluid rounded-4" style="height: 217px; width: 100%; object-fit: cover;" alt="Detail 1">
+                            <img src="assets/img/womens_fashion.jpeg" class="img-fluid rounded-4" style="height: 217px; width: 100%; object-fit: cover;" alt="Detail 1">
                         </div>
                         <div class="premium-img-wrapper shadow-sm">
                             <img src="assets/img/slide 4.webp" class="img-fluid rounded-4" style="height: 217px; width: 100%; object-fit: cover;" alt="Detail 2">
@@ -264,9 +265,10 @@
     <?php include 'common/footer.php' ?>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/main.js?v=1.3"></script>
-    <script src="assets/js/offers.js?v=1.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
+    <script src="assets/js/main.js?v=1.4"></script>
+    <script src="assets/js/offers.js?v=1.5"></script>
 </body>
 
 </html>
