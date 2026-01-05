@@ -11,102 +11,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/main.css?v=3.9">
-
-    <style>
-        /* Page Specific CSS */
-        .product-card {
-            transition: all 0.3s ease;
-            cursor: pointer;
-            overflow: hidden;
-            border: 1px solid #f0f0f0;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-            border-color: #e0e0e0;
-        }
-
-        /* Category Circle Styling */
-        .cat-circle {
-            transition: transform 0.2s;
-        }
-
-        .cat-circle:hover {
-            transform: scale(1.05);
-        }
-
-        .cat-circle img {
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 12px;
-            border: 2px solid #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .section-title {
-            font-weight: 700;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        /* Pricing Styling */
-        .price-text {
-            color: #282c3f;
-            font-weight: 700;
-            font-size: 1rem;
-        }
-
-        .strike-text {
-            text-decoration: line-through;
-            color: #94969f;
-            font-size: 0.85rem;
-            margin-left: 5px;
-        }
-
-        .discount-text {
-            color: #ff905a;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-left: 5px;
-        }
-
-        /* Adjust banner images */
-        .banner-img {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-        }
-
-        .top-style-image {
-            height: 350px;
-        }
-
-        .new-arrival-image {
-            height: 300px !important;
-        }
-
-        .carousel-caption {
-            position: absolute;
-            right: 15%;
-            bottom: 6.25rem !important;
-            left: 6% !important;
-            padding-top: 1.25rem;
-            padding-bottom: 1.25rem;
-            color: #fff;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/main.css?v=4.0">
 </head>
 
-<body>
+<body id="all-cat1-data" >
 
     <?php include 'common/header.php' ?>
 
@@ -395,69 +303,6 @@
             </div>
         </div>
     </section>
-
-    <!-- <section class="container my-5">
-        <h3 class="section-title text-center mb-4">Grand Brands</h3>
-        <div class="row g-4 justify-content-center align-items-center">
-
-            <div class="col-4 col-md-2">
-                <div class="card border-0 shadow-sm h-100 p-3 align-items-center justify-content-center brand-box">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/320px-Logo_NIKE.svg.png" class="img-fluid" alt="Nike" style="max-height: 50px;">
-                    <p class="small text-muted mt-2 mb-0">Min 40% OFF</p>
-                </div>
-            </div>
-
-            <div class="col-4 col-md-2">
-                <div class="card border-0 shadow-sm h-100 p-3 align-items-center justify-content-center brand-box">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Puma-logo-%28text%29.svg/320px-Puma-logo-%28text%29.svg.png" class="img-fluid" alt="Puma" style="max-height: 50px;">
-                    <p class="small text-muted mt-2 mb-0">Flat 50% OFF</p>
-                </div>
-            </div>
-
-            <div class="col-4 col-md-2">
-                <div class="card border-0 shadow-sm h-100 p-3 align-items-center justify-content-center brand-box">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/320px-Adidas_Logo.svg.png" class="img-fluid" alt="Adidas" style="max-height: 50px;">
-                    <p class="small text-muted mt-2 mb-0">Up to 60% OFF</p>
-                </div>
-            </div>
-
-            <div class="col-4 col-md-2">
-                <div class="card border-0 shadow-sm h-100 p-3 align-items-center justify-content-center brand-box">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Levi%27s_logo.svg/320px-Levi%27s_logo.svg.png" class="img-fluid" alt="Levis" style="max-height: 50px;">
-                    <p class="small text-muted mt-2 mb-0">Flat 30% OFF</p>
-                </div>
-            </div>
-
-            <div class="col-4 col-md-2">
-                <div class="card border-0 shadow-sm h-100 p-3 align-items-center justify-content-center brand-box">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/320px-H%26M-Logo.svg.png" class="img-fluid" alt="H&M" style="max-height: 50px;">
-                    <p class="small text-muted mt-2 mb-0">New Season</p>
-                </div>
-            </div>
-
-            <div class="col-4 col-md-2">
-                <div class="card border-0 shadow-sm h-100 p-3 align-items-center justify-content-center brand-box">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Zara_Logo.svg/320px-Zara_Logo.svg.png" class="img-fluid" alt="Zara" style="max-height: 50px;">
-                    <p class="small text-muted mt-2 mb-0">Best Sellers</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <style>
-        .brand-box {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            background: #fff;
-        }
-
-        .brand-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
-        }
-    </style> -->
-
     <div class="container-fluid my-5 p-0">
         <img src="c:\xampp\htdocs\utkalikart-main\assets\img\banner c.webp" class="img-fluid w-100" alt="Download App" onerror="this.src='https://assets.myntassets.com/assets/images/retaillabs/2021/4/19/292b604e-28b7-4348-963d-4c3d823614051618826490606-App-Download-Banner.jpg'">
     </div>
