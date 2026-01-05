@@ -7055,7 +7055,7 @@ body#returns-refund {
   border-top: 1px solid #ddd;
   color: #666;
 }
-
+/* 
 #returns-refund a {
   color: #000;
   text-decoration: underline;
@@ -7063,7 +7063,7 @@ body#returns-refund {
 
 #returns-refund a:hover {
   color: #555;
-}
+} */
 
 @media (min-width: 768px) {
   #returns-refund .policy-header {
