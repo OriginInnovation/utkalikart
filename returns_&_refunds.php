@@ -10,16 +10,58 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/main.css?v=2.4">
+    <style>
+        .policy-header {
+            position: relative;
+            padding: 70px 20px;
+            text-align: center;
+            color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+
+            /* Background Image */
+            background: url("assets/img/banner_return_policy_mobile_1060_600.jpg") center / cover no-repeat;
+        }
+
+        /* Dark overlay for low opacity effect */
+        .policy-header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            /* opacity control */
+            z-index: 1;
+        }
+
+        /* Content above overlay */
+        .policy-header h1,
+        .policy-header p {
+            position: relative;
+            z-index: 2;
+        }
+
+        .policy-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .policy-header p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+    </style>
 </head>
 
-<body id="returns-refund" >
+<body id="returns-refund">
 
     <?php include 'common/header.php' ?>
     <!-- Header -->
     <div class="policy-header">
-        <h1><i class="fa-solid fa-box-return"></i> Returns & Refunds Policy</h1>
-        <p>Your satisfaction is important to us. Here's everything you need to know.</p>
+        <h1 class="text-white" ><i class="fa-solid fa-box-return"></i> Returns & Refunds Policy</h1>
+        <p class="text-white">Your satisfaction is important to us. Here's everything you need to know.</p>
     </div>
+
 
     <!-- Main Content -->
     <div class="container py-5">

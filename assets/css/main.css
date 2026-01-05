@@ -6726,7 +6726,6 @@ body.wishlist-safe button:focus {
   transform: translateX(-50%) scale(0.95);
 }
 
-
 /* Icon animation */
 #prof-page .ca-mob-menu-btn i {
   font-size: 18px;
@@ -7006,7 +7005,7 @@ body#returns-refund {
 
 #returns-refund .policy-header {
   text-align: center;
-  padding: 4rem 1rem 2rem;
+  padding: 8rem 2rem 8rem;
   background-color: #fff;
   border-bottom: 1px solid #dee2e6;
 }
