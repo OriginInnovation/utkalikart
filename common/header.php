@@ -485,17 +485,20 @@
                     <div class="popup-header">
                         <h6>Welcome</h6>
                         <p>To access account and manage orders</p>
-                        <button class="login-btn"><a class="text-decoration-none text-white" href="./login_signup.php">LOGIN / SIGNUP</a></button>
+                        <button class="login-btn" data-bs-toggle="modal"
+                            data-bs-target="#arLoginModal">LOGIN / SIGNUP</button>
                     </div>
 
                     <ul class="popup-menu">
-                        <li><i class="fa-solid fa-box"></i> Orders</li>
-                        <li><i class="fa-regular fa-heart"></i> <a href="wishlist.php" class="text-decoration-none text-black">Wishlist</a></li>
+                        <li onclick="window.location.href='profile_page.php'" style="cursor:pointer;">
+                            <i class="fa-solid fa-box"></i> Profile Details
+                        </li>
+                        <!-- <li><i class="fa-regular fa-heart"></i> <a href="wishlist.php" class="text-decoration-none text-black">Wishlist</a></li> -->
                         <li onclick="window.location.href='contactus.php'">
                             <i class="fa-solid fa-phone"></i> Contact Us
                         </li>
                         <li class="gift">
-                            <i class="fa-solid fa-gift"></i> <a href="offers.php" class="text-decoration-none text-black" class="text-decoration-none text-black">Gift Cards</a>
+                            <i class="fa-solid fa-gift"></i> <a href="offers.php" class="text-decoration-none text-black" class="text-decoration-none text-black">Offers</a>
                             <span class="new-badge">NEW</span>
                         </li>
                     </ul>
@@ -573,12 +576,12 @@
                     <button class="checkout-btn">PROCEED TO CHECKOUT</button>
                 </div>
 
-                <script>
+                <!-- <script>
                     const modal = new bootstrap.Modal(
                         document.getElementById('buyNowUnq_CheckoutPanel')
                     );
                     modal.show();
-                </script>
+                </script> -->
 
             </div>
 

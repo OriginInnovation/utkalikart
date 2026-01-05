@@ -772,12 +772,6 @@
         </div>
     </section>
 
-
-
-
-
-
-
     <section class="myshop-section-bg" style="background-color: #fff0e9;">
         <div class="container py-5">
             <div class="of-collection-heading4 m-0 mb-5">

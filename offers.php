@@ -231,7 +231,94 @@
             font-size: 12px;
             color: #888;
         }
+        /* FLOATING AURA EFFECT */
+.creativity-section {
+    position: relative;
+    padding: 100px 0;
+    background: radial-gradient(circle at 10% 20%, var(--aesthetic-peach) 0%, #fff 100%);
+    overflow: hidden;
+}
+
+/* SCRATCH CARD SYSTEM */
+.scratch-card-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    height: 200px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--soft-shadow);
+}
+
+.scratch-content {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    background: var(--aesthetic-mint);
+    z-index: 1;
+}
+
+#scratchCanvas {
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 2;
+    cursor: crosshair;
+    touch-action: none;
+}
+
+/* STYLISH FLOATING BADGE */
+.floating-badge {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    animation: float 6s ease-in-out infinite;
+    z-index: 5;
+    top: -30px; left: -30px;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
     </style>
+
+    <style>
+    .premium-img-wrapper {
+        overflow: hidden;
+        border-radius: 20px;
+        transition: 0.5s ease;
+    }
+    .premium-img-wrapper img {
+        transition: 0.8s ease;
+    }
+    .premium-img-wrapper:hover img {
+        transform: scale(1.1);
+    }
+    .grad-text {
+        background: linear-gradient(45deg, #2d3436, #ff85a1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    @media (max-width: 768px) {
+        .premium-img-wrapper img {
+            height: 300px !important;
+        }
+    }
+</style>
 </head>
 
 <body>
@@ -335,36 +422,110 @@
             </div>
         </div>
 
-        <div class="steal-box shadow-sm mb-5">
-            <div class="row align-items-center p-4">
-                <div class="col-md-5">
-                    <img src="assets/img/jackets.webp" class="img-fluid rounded-5 shadow-lg" style="height: 400px; width: 100%; object-fit: cover;">
-                </div>
-                <div class="col-md-7 ps-md-5">
-                    <div class="mt-4 mt-md-0">
-                        <span class="badge bg-white text-danger border border-danger mb-3 px-3"><span class="flash-dot"></span>LIVE OFFER</span>
-                        <h2 class="fw-bold display-6">Organza Floral Saree</h2>
-                        <p class="text-muted fs-5">Our best-seller is on flash sale for 24 hours. Don't miss this aesthetic piece.</p>
-                        <div class="d-flex align-items-center gap-3 mb-4">
-                            <h2 class="fw-bold text-dark mb-0">₹2,249</h2>
-                            <del class="text-muted fs-4">₹5,499</del>
-                        </div>
-                        <button class="btn btn-outline-dark rounded-pill px-5 py-3" onclick="addToBagAnimation('Organza Floral Saree')">
-                            Add to Bag <i class="fa fa-shopping-bag ms-2"></i>
-                        </button>
-                        <div id="cartToast" class="custom-toast animate__animated">
-                            <div class="toast-icon">
-                                <i class="fa fa-shopping-bag"></i>
+        <section class="creativity-section my-5 rounded-5 shadow-sm">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            
+            <div class="col-lg-5 order-2 order-lg-1">
+                <div class="position-relative p-4">
+                    <div class="floating-badge shadow-sm">
+                        <span>Revealing<br>Happiness<br>✨</span>
+                    </div>
+                    <div class="aesthetic-card p-4 text-center">
+                        <h4 class="fw-bold mb-3">Mystery Reward 🎁</h4>
+                        <p class="small text-muted mb-4">Scratch the card below to reveal your secret personalized discount!</p>
+                        
+                        <div class="scratch-card-wrapper">
+                            <div class="scratch-content">
+                                <h2 class="fw-bold grad-text mb-0">85% OFF</h2>
+                                <small class="text-muted">Use: MYSTERY85</small>
                             </div>
-                            <div class="toast-text">
-                                <h6 id="toastProductName">Product Added!</h6>
-                                <p>Successfully added to your bag.</p>
-                            </div>
+                            <canvas id="scratchCanvas" width="350" height="200"></canvas>
                         </div>
+                        
+                        <button class="btn btn-link text-decoration-none small mt-3 text-muted" onclick="initScratch()">Reset Card</button>
                     </div>
                 </div>
             </div>
+
+            <div class="col-lg-7 order-1 order-lg-2">
+                <div class="ps-lg-5">
+                    <span class="badge bg-white text-dark shadow-sm mb-3">#CuratedByAesthetics</span>
+                    <h2 class="display-4 fw-bold mb-4">The Silk <br><span class="grad-text">Symphony</span></h2>
+                    <p class="fs-5 text-muted mb-4">Every thread tells a story of heritage. Our new Silk Symphony collection is hand-woven by local artisans to bring you the finest texture and timeless elegance.</p>
+                    
+                    <div class="d-flex gap-4 align-items-center">
+                        <div class="text-center">
+                            <div class="fs-2 fw-bold text-dark">12k+</div>
+                            <small class="text-muted text-uppercase">Happy Souls</small>
+                        </div>
+                        <div style="width: 1px; height: 50px; background: #ddd;"></div>
+                        <div class="text-center">
+                            <div class="fs-2 fw-bold text-dark">100%</div>
+                            <small class="text-muted text-uppercase">Handcrafted</small>
+                        </div>
+                        <div style="width: 1px; height: 50px; background: #ddd;"></div>
+                        <button class="btn btn-dark rounded-pill px-5 py-3 ms-auto">Explore Story</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </div>
+</section>
+
+<section class="full-banner-section py-5">
+        <div class="container-fluid p-0">
+            <a href="https://example.com" target="_blank">
+                <img src="assets/img/middle-banner.webp" alt="Advertisement Banner" class="img-fluid w-100" style="object-fit: cover;">
+            </a>
+        </div>
+    </section>
+
+
+<div class="steal-box shadow-sm mb-5 p-4 border-0" style="background: var(--aesthetic-peach); border-radius: 40px;">
+    <div class="row align-items-center g-3">
+        
+        <div class="col-lg-3 col-md-4">
+            <div class="premium-img-wrapper shadow-sm">
+                <img src="assets/img/jackets.webp" class="img-fluid rounded-4" style="height: 450px; width: 100%; object-fit: cover;" alt="Premium Left">
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-4 text-center px-lg-5">
+            <div class="p-2">
+                <span class="badge bg-white text-danger border border-danger mb-3 px-3">
+                    <span class="flash-dot"></span>LIMITED EDITION
+                </span>
+                <h2 class="fw-bold display-6 mb-3 grad-text" style="letter-spacing: -1px;">Heritage Silk <br> Symphony</h2>
+                <p class="text-muted small mb-4">A curated masterpiece blending traditional weaving with modern aesthetic textures. Meticulously crafted for elegance.</p>
+                
+                <div class="d-flex align-items-center justify-content-center gap-3 mb-4">
+                    <h3 class="fw-bold text-dark mb-0">₹3,499</h3>
+                    <del class="text-muted small">₹7,999</del>
+                </div>
+
+                <button class="btn btn-outline-dark rounded-pill px-5 py-3 shadow-sm" onclick="addToBagAnimation('Heritage Silk Symphony')">
+                    Add to Bag <i class="fa fa-shopping-bag ms-2"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+            <div class="d-flex flex-column gap-3">
+                <div class="premium-img-wrapper shadow-sm">
+                    <img src="assets/img/saree1.webp" class="img-fluid rounded-4" style="height: 217px; width: 100%; object-fit: cover;" alt="Detail 1">
+                </div>
+                <div class="premium-img-wrapper shadow-sm">
+                    <img src="assets/img/slide 4.webp" class="img-fluid rounded-4" style="height: 217px; width: 100%; object-fit: cover;" alt="Detail 2">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
 
         <div class="my-5 py-5 text-center">
             <h2 class="fw-bold mb-5">Loved by Our Community ✨</h2>
@@ -564,6 +725,43 @@
                 }, 500); // Wait for fadeOut animation
             }, 3000);
         }
+        function initScratch() {
+    const canvas = document.getElementById('scratchCanvas');
+    const ctx = canvas.getContext('2d');
+    let isDrawing = false;
+
+    // Fill with a nice aesthetic pattern/color
+    ctx.fillStyle = '#e2d1c3'; // Pastel Beige
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Add some "Aesthetic Text" on top of scratch layer
+    ctx.fillStyle = '#8e7f7f';
+    ctx.font = '20px Inter';
+    ctx.textAlign = 'center';
+    ctx.fillText('SCRATCH TO REVEAL', canvas.width/2, canvas.height/2 + 7);
+
+    function scratch(e) {
+        if (!isDrawing) return;
+        const rect = canvas.getBoundingClientRect();
+        const x = (e.clientX || e.touches[0].clientX) - rect.left;
+        const y = (e.clientY || e.touches[0].clientY) - rect.top;
+
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.beginPath();
+        ctx.arc(x, y, 25, 0, Math.PI * 2);
+        ctx.fill();
+    }
+
+    canvas.addEventListener('mousedown', () => isDrawing = true);
+    canvas.addEventListener('touchstart', () => isDrawing = true);
+    window.addEventListener('mouseup', () => isDrawing = false);
+    window.addEventListener('touchend', () => isDrawing = false);
+    canvas.addEventListener('mousemove', scratch);
+    canvas.addEventListener('touchmove', scratch);
+}
+
+// Start scratch on load
+document.addEventListener('DOMContentLoaded', initScratch);
     </script>
 </body>
 
