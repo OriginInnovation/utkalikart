@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <div class="nav-panel__logo heading_resize">
         <a href="index">
-            <h2 class="text-white incolor">INDUS-SUPPLY</h2>
+            <h2 class="text-white incolor">UTKALIKART</h2>
         </a>
     </div>
     <!-- Sidebar -->
@@ -14,13 +14,6 @@
                             <a href="index" class="nav-link">
                                 <i class="fas fa-tachometer-alt nav-icon"></i>
                                 <p>Dashboard</p>
-                                <i class="right fas fa-angle-right"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="banner" class="nav-link active">
-                                <i class="fa fa-image nav-icon"></i>
-                                <p>Banner</p>
                                 <i class="right fas fa-angle-right"></i>
                             </a>
                         </li>
@@ -53,6 +46,27 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="pro_highlight" class="nav-link">
+                                <i class="fas fa-star nav-icon"></i>
+                                <p>Product Highlight</p>
+                                <i class="right fas fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="occasion" class="nav-link">
+                                <i class="fa fa-book nav-icon"></i>
+                                <p>Occasion</p>
+                                <i class="right fas fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="price" class="nav-link">
+                                <i class="fa fa-money-bill nav-icon"></i>
+                                <p>Price</p>
+                                <i class="right fas fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="offer" class="nav-link">
                                 <i class="fa fa-gift nav-icon"></i>
                                 <p>Offers</p>
@@ -63,13 +77,6 @@
                             <a href="coupon" class="nav-link">
                                 <i class="fas fa-tag nav-icon"></i>
                                 <p>Coupon</p>
-                                <i class="right fas fa-angle-right"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="occasion" class="nav-link">
-                                <i class="fa fa-book nav-icon"></i>
-                                <p>Occasion</p>
                                 <i class="right fas fa-angle-right"></i>
                             </a>
                         </li>

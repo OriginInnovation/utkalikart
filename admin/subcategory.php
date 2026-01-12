@@ -42,6 +42,7 @@ if ($userid === NULL) {
                                 <thead>
                                     <tr>
                                         <th class="text-center">Sl.No</th>
+                                        <th class="text-center">Sub-Category Image</th>
                                         <th class="text-center">Sub-Category Name</th>
                                         <th class="text-center">Category Name</th>
                                         <th class="text-center">Manage</th>
@@ -59,6 +60,9 @@ if ($userid === NULL) {
                                         ?>
                                         <tr>
                                             <td class="serial-no text-center"></td>
+                                            <td class="text-center"><img
+                                                    src="upload/sub_category/<?php echo $row['sub_image']; ?>"
+                                                    alt="profile image" width="50" height="50">
                                             <td class="text-center"><?php echo $sub_category_name; ?></td>
                                             <td class="text-center">
                                                 <?php
@@ -87,7 +91,7 @@ if ($userid === NULL) {
                                                 }
                                                 ?>
                                                 <button type="button" name="update1" class="btn btn-primary btn-sm m-2"
-                                                    onclick="myfcn3(<?php echo $row['id']; ?>, '<?php echo $sub_category_name; ?>', <?php echo $row['category_id']; ?>)"
+                                                    onclick="myfcn3(<?php echo $row['id']; ?>, '<?php echo $row['sub_image']; ?>',  '<?php echo $sub_category_name; ?>', <?php echo $row['category_id']; ?>)"
                                                     data-toggle="modal" data-target="#updatedesubcategory" title="Edit"
                                                     aria-hidden="true">
                                                     <i class='fas fa-edit'></i>
@@ -104,6 +108,7 @@ if ($userid === NULL) {
                                 <tfoot>
                                     <tr>
                                         <th class="text-center">Sl.No</th>
+                                        <th class="text-center">Sub-Category Image</th>
                                         <th class="text-center">Sub-Category Name</th>
                                         <th class="text-center">Category Name</th>
                                         <th class="text-center">Manage</th>
@@ -129,6 +134,12 @@ if ($userid === NULL) {
                 <div class="modal-body">
                     <div class="card-body">
                         <div class="form-group">
+                            <label for="exampleInputcname">Sub_category Image:</label>
+                            <input type="file" class="form-control" name="sub_cat_img"
+                                accept="image/jpeg, image/jpg, image/png"
+                                onchange="document.getElementById('image11').src = window.URL.createObjectURL(this.files[0])"
+                                required>
+                            <img id="image11" src="dist/img/noimage1.png" alt="image" width="50" height="50" />
                             <label for="subcategoryDropdown">Category Name:</label>
                             <select class="form-control" name="value" required>
                                 <option value="">Select Category</option>
@@ -176,7 +187,35 @@ if (isset($_POST['subcategory_insert'])) {
                 });
             </script>";
     } else {
-        $sql = "INSERT INTO sub_category (sub_category_name, category_id, status) VALUES ('$name','$value','1')";
+        function handleFileUpload($fieldName, $uploadDir)
+        {
+            global $conn;
+            $image_name = $_FILES[$fieldName]['name'];
+            $image_size = $_FILES[$fieldName]['size'];
+            $image_tmp = $_FILES[$fieldName]['tmp_name'];
+            $file_type = pathinfo($image_name, PATHINFO_EXTENSION);
+            $new_file_name = uniqid() . '.' . $file_type;
+
+            // Ensure upload directory exists
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0777, true); // Ensure directory is writable
+            }
+
+            $target_file = $uploadDir . $new_file_name;
+
+            if (move_uploaded_file($image_tmp, $target_file)) {
+                return $new_file_name; // Return the generated file name if upload succeeds
+            } else {
+                return null; // Return null if upload fails
+            }
+        }
+
+
+        // File upload directory
+        $upload_dir = "upload/sub_category/";
+        // Handle image uploads
+        $new_file_name = handleFileUpload('sub_cat_img', $upload_dir);
+        $sql = "INSERT INTO sub_category (sub_image, sub_category_name, category_id, status) VALUES ('$new_file_name', '$name','$value','1')";
         if ($conn->query($sql) === true) {
             echo "<script>
                     $(document).ready(function(){
@@ -204,12 +243,16 @@ if (isset($_POST['subcategory_insert'])) {
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-body p-4">
                     <input type="hidden" name="id3" id="id3">
                     <div class="form-group">
-                        <label for="subcategory_name">Sub-Category Name:</label>
-                        <input type="text" class="form-control" id="subcategory_name" name="subcategory_name">
+                        <label for="exampleInputcname">Sub_Category Image:</label>
+                        <input type="file" class="form-control" name="sub_catt_image" placeholder="image"
+                            accept="image/jpeg, image/jpg, image/png"
+                            onchange="document.getElementById('image12').src = window.URL.createObjectURL(this.files[0])">
+                        <img id="image12" src="dist/img/noimage1.png" alt="image" width="50" height="50" />
+                        <img id="sub_category1_img" alt="image" width="50" height="50" />
                     </div>
                     <div class="form-group">
                         <label for="category_name2">Category Name:</label>
@@ -226,6 +269,10 @@ if (isset($_POST['subcategory_insert'])) {
                             <?php } ?>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label for="subcategory_name">Sub-Category Name:</label>
+                        <input type="text" class="form-control" id="subcategory_name" name="subcategory_name">
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -240,24 +287,66 @@ if (isset($_POST['subcategory_insert'])) {
 <?php
 if (isset($_POST['subcategory_update'])) {
     include 'conn.php';
+    $image_name = $_FILES['sub_catt_image']['name'];
     $id = $_POST["id3"];
-    $subcategory = htmlspecialchars($_POST["subcategory_name"]);
-    $category = $_POST["category_name"];
-    $currentDateTime = date('Y-m-d H:i:s');
-    $sql1 = "UPDATE sub_category SET category_id='$category', sub_category_name='$subcategory', updated_at='$currentDateTime' WHERE id='$id'";
-    if ($conn->query($sql1) === true) {
-        echo "<script>
-                $(document).ready(function(){
-                toastr.success('Form submitted successfully');
-                setTimeout(function(){
-                window.location.href = 'subcategory';
-                }, 2000); // 2000 milliseconds = 1 second
-                });
-            </script>";
+    $subcategory_name = htmlspecialchars($_POST["subcategory_name"]);
+    $category_name = htmlspecialchars($_POST["category_name"]);
+    if ($image_name == NULL) {
+        $sql1 = "UPDATE sub_category SET sub_category_name='$subcategory_name', category_id='$category_name' WHERE id='$id'";
+        if ($conn->query($sql1) === true) {
+            echo "<script>
+                    $(document).ready(function(){
+                    toastr.success('Form submitted successfully');
+                    setTimeout(function(){
+                    window.location.href = 'subcategory';
+                    }, 2000); // 2000 milliseconds = 2 second
+                    });
+                </script>";
+        } else {
+            echo $conn->error;
+        }
+        $conn->close();
     } else {
-        echo "Error: " . $sql1 . "<br>" . $conn->error;
+
+        $image_size = $_FILES['sub_catt_image']['size'];
+        $image_tmp = $_FILES['sub_catt_image']['tmp_name'];
+        $file_type = pathinfo($image_name, PATHINFO_EXTENSION);
+        $new_file_name = uniqid() . '.' . $file_type;
+        $upload_dir = "upload/sub_category/";
+
+        // Retrieve the previous file name from the database
+        $sql_previous_image = "SELECT sub_image FROM sub_category WHERE id='$id'";
+        $result = $conn->query($sql_previous_image);
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $previous_image = $upload_dir . $row['sub_image'];
+
+            // Delete previous photo from the upload folder
+            if (file_exists($previous_image)) {
+                unlink($previous_image);
+            }
+        }
+        $target_file = $upload_dir . $new_file_name;
+        if (move_uploaded_file($image_tmp, $target_file)) {
+
+            $sql1 = "UPDATE sub_category SET sub_image='$new_file_name', sub_category_name='$subcategory_name', category_id='$category_name' WHERE id='$id'";
+            if ($conn->query($sql1) == true) {
+                echo "<script>
+                    $(document).ready(function(){
+                    toastr.success('Form submitted successfully');
+                    setTimeout(function(){
+                    window.location.href = 'subcategory';
+                    }, 2000); // 2000 milliseconds = 2 second
+                    });
+                </script>";
+            } else {
+                echo $conn->error;
+            }
+            $conn->close();
+        } else {
+            echo "<script>alert('Image not uploaded');</script>";
+        }
     }
-    $conn->close();
 }
 ?>
 <!-- for catalogue dropdown -->

@@ -121,7 +121,11 @@ if ($userid === NULL) {
                         <div class="row">
                             <div class="form-group col-6">
                                 <label for="exampleInputcname">Occasion Image:</label>
-                                <input type="file" class="form-control" name="occ_img" required>
+                                <input type="file" class="form-control" name="occ_img"
+                                    accept="image/jpeg, image/jpg, image/png"
+                                    onchange="document.getElementById('image100').src = window.URL.createObjectURL(this.files[0])"
+                                    required>
+                                <img id="image100" src="dist/img/noimage1.png" alt="image" width="50" height="50" />
                             </div>
                             <div class="form-group col-6">
                                 <label for="exampleInputcname">Occasion Name:</label>
@@ -200,7 +204,7 @@ $conn->close();
             </div>
             <form action="<?php $_SERVER['PHP_SELF']; ?>" method='post' enctype="multipart/form-data">
                 <div class="modal-body p-4">
-                    <input type="text" name="id8" id="id88">
+                    <input type="hidden" name="id8" id="id88">
                     <div class="card-body">
                         <div class="row">
                             <div class="form-group col-6">

@@ -46,22 +46,18 @@ function confirmAction(action, id, tb, tbc, tbc1, returnpage, extra) {
     return false;
 }
 
-/* for banner id get */
-function myfcn1(idx, image) {
-    document.getElementById("id1").value = idx;
-    document.getElementById("image1").src = "upload/banner/" + image;
-}
-
 /* for category id get */
-function myfcn2(idx, category_name, popular_category) {
+function myfcn2(idx, image122, category_name) {
     document.getElementById("id2").value = idx;
+    document.getElementById("category1_img").src = "upload/category/" + image122;
     document.getElementById("category_name").value = category_name;
 }
 
 /* for sub-category id get */
-function myfcn3(idx, subcategory_name, category_name) {
+function myfcn3(idx, image123, subcategory_name, category_name) {
     console.log("ID: " + idx, "Sub-Category Name: " + subcategory_name, "Category ID: " + category_name);
     document.getElementById("id3").value = idx;
+    document.getElementById("sub_category1_img").src = "upload/sub_category/" + image123;
     document.getElementById("subcategory_name").value = subcategory_name;
     document.getElementById("category_name2").value = category_name;
 }
@@ -140,12 +136,18 @@ function myfcn8(idx, image, occasion1_name) {
     document.getElementById("occasion1_name").value = occasion1_name;
 }
 
-/* for metatags id get */
-function myfcn9(idx, description, keywords, author) {
+/* for price id get */
+function myfcn9(idx, image22, pricee_name) {
     document.getElementById("id9").value = idx;
-    document.getElementById("metaadescription").value = description;
-    document.getElementById("keywoords").value = keywords;
-    document.getElementById("author1").value = author;
+    document.getElementById("price1_img").src = "upload/pricee/" + image22;
+    document.getElementById("pricee_name").value = pricee_name;
+}
+
+/* for price id get */
+function myfcn10(idx, hightt1, namee1) {
+    document.getElementById("id10").value = idx;
+    document.getElementById("hightt1").value = hightt1;
+    document.getElementById("namee1").value = namee1;
 }
 
 
@@ -179,6 +181,7 @@ $(document).ready(function () {
         getSubcategories(categoryId);
     });
 });
+
 
 // Function to retrieve subcategories using AJAX
 function getSubcategories(categoryId) {
@@ -233,13 +236,12 @@ $(document).ready(function () {
     var initialsubCategoryId = $('#sub-category-dropdown1').val();
     getsubSubcategories(initialsubCategoryId);
 
-    // Event listener to trigger the AJAX request when category changes
     $('#sub-category-dropdown1').change(function () {
         var subcategoryId = $(this).val();
         getsubSubcategories(subcategoryId);
     });
 });
-// Function to retrieve subcategories using AJAX
+
 function getsubSubcategories(subcategoryId) {
     $.ajax({
         url: 'get_subsub_update.php',

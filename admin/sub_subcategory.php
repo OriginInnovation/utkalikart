@@ -259,7 +259,7 @@ if (isset($_POST['sub_subcategory_insert'])) {
             </div>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-body p-4">
-                    <input type="text" name="id89" id="id89">
+                    <input type="hidden" name="id89" id="id89">
                     <div class="form-group">
                         <label for="exampleInputcname">Occasion Image:</label>
                         <input type="file" class="form-control" name="sub_subcat_image" placeholder="image"
@@ -269,8 +269,19 @@ if (isset($_POST['sub_subcategory_insert'])) {
                         <img id="subsubcat1_img" alt="image" width="50" height="50" />
                     </div>
                     <div class="form-group">
-                        <label for="sub_subcategory">Sub-Subcategory Name:</label>
-                        <input type="text" class="form-control" id="sub_subcategory" name="sub_subcategory_name">
+                        <label for="category_name2">Category Name:</label>
+                        <select class="form-control" id="category_name2" name="category_name">
+                            <option value="">Select Category</option>
+                            <?php
+                            $sql8 = "SELECT * FROM category";
+                            $result8 = $conn->query($sql8);
+                            while ($row8 = $result8->fetch_assoc()) {
+                                ?>
+                                <option value="<?php echo $row8["id"]; ?>">
+                                    <?php echo htmlspecialchars($row8["category_name"], ENT_QUOTES, 'UTF-8'); ?>
+                                </option>
+                            <?php } ?>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="subcategoryname1">Sub_Category Name:</label>
@@ -288,19 +299,8 @@ if (isset($_POST['sub_subcategory_insert'])) {
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="category_name2">Category Name:</label>
-                        <select class="form-control" id="category_name2" name="category_name">
-                            <option value="">Select Category</option>
-                            <?php
-                            $sql8 = "SELECT * FROM category";
-                            $result8 = $conn->query($sql8);
-                            while ($row8 = $result8->fetch_assoc()) {
-                                ?>
-                                <option value="<?php echo $row8["id"]; ?>">
-                                    <?php echo htmlspecialchars($row8["category_name"], ENT_QUOTES, 'UTF-8'); ?>
-                                </option>
-                            <?php } ?>
-                        </select>
+                        <label for="sub_subcategory">Sub-Subcategory Name:</label>
+                        <input type="text" class="form-control" id="sub_subcategory" name="sub_subcategory_name">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -398,6 +398,27 @@ if (isset($_POST['sub_subcategory_update'])) {
                     $("#sub-category-dropdown22").html(result);
                 }
             });
+        });
+    });
+</script>
+<!-- update code of sub subcategory -->
+<script>
+    $(document).ready(function () {
+        $('#category_name2').on('change', function () {
+            var category_id = $(this).val();
+
+            if (category_id !== '') {
+                $.ajax({
+                    url: "get_subsub_update.php",
+                    type: "POST",
+                    data: { category_id: category_id },
+                    success: function (data) {
+                        $('#subcategoryname1').html(data);
+                    }
+                });
+            } else {
+                $('#subcategoryname1').html('<option value="">Select Sub-Category</option>');
+            }
         });
     });
 </script>
