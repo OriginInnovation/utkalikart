@@ -114,20 +114,11 @@ function myfcn6(idx, offer_name, offer_id, offer_dis) {
     document.getElementById("offer_dis").value = offer_dis;
 }
 
-/* for pdfupload id get */
-function myfcn7(idx, cname, c_code, cexpiry, cdetails) {
-    document.getElementById("id7").value = idx;
-    document.getElementById("cname").value = cname;
-    document.getElementById("c_code").value = c_code;
-    document.getElementById("cexpiry").value = cexpiry;
-    document.getElementById("cdetails").value = cdetails;
-}
 
 /*for addproduct close button*/
 document.getElementById("closeModalBtn").addEventListener("click", function () {
     window.location.href = "product.php";
 });
-
 
 /* for occasion id get */
 function myfcn8(idx, image, occasion1_name) {
@@ -149,6 +140,15 @@ function myfcn10(idx, hightt1, namee1) {
     document.getElementById("hightt1").value = hightt1;
     document.getElementById("namee1").value = namee1;
 }
+
+/* for reels id get */
+function myfcn11(idx, occ_video_preview, pro_name12, pro_pro12) {
+    document.getElementById("id11").value = idx;
+    document.getElementById("occ_video_preview").src = "upload/reels/" + occ_video_preview;
+    document.getElementById("pro_name12").value = pro_name12;
+    document.getElementById("pro_pro12").value = pro_pro12;
+}
+
 
 
 /*categorywise sub-category in insert*/

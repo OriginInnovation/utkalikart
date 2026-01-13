@@ -12,7 +12,7 @@ if ($userid === NULL) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Utkalika | Add Product</title>
+    <title>Utkalikart | Add Product</title>
     <link href="dist/img/titleimage.png" rel="icon">
     <script src="http://cdn.ckeditor.com/4.6.2/standard-all/ckeditor.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/42.0.0/classic/ckeditor.js"></script>
@@ -72,20 +72,16 @@ if ($userid === NULL) {
                                             </div>
                                             <div class="form-group col-3">
                                                 <select class="form-control" name="subcategory"
-                                                    id="sub-category-dropdown" required>
+                                                    id="sub-category-dropdown">
                                                     <option value="">Select Sub-Category</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-3">
                                                 <select class="form-control" name="subsubcategory"
-                                                    id="sub-sub-category-dropdown" required>
+                                                    id="sub-sub-category-dropdown">
                                                     <option value="">Select Sub Sub Category</option>
                                                     <option value="0">None</option>
                                                 </select>
-                                            </div>
-                                            <div class="form-group col-3">
-                                                <input type="text" class="form-control" id="exampleInputskqcode"
-                                                    placeholder="Enter SKQ Code" name="skqcode" required>
                                             </div>
                                             <div class="form-group col-3">
                                                 <input type="text" class="form-control" id="exampleInputproductcode"
@@ -98,18 +94,23 @@ if ($userid === NULL) {
                                             </div>
                                             <div class="form-group col-3">
                                                 <input type="text" class="form-control"
-                                                    placeholder="Enter Product Discount" id="discount" name="discount">
+                                                    placeholder="Enter Product Discount" id="discountt"
+                                                    name="discount1">
                                             </div>
                                             <div class="form-group col-3">
                                                 <input type="text" class="form-control"
-                                                    placeholder="Enter Product Discount Price" id="productdiscountprice"
-                                                    name="productdiscountprice">
+                                                    placeholder="Enter Product Discount Price"
+                                                    id="productdiscountprice1" name="productdiscountprice">
                                             </div>
-                                            <div class="form-group col-12">
-                                                <label for="exampleInputcname">Product Description Or
-                                                    Specification:</label>
+                                            <!-- <div class="form-group col-12">
+                                                <label for="exampleInputcname">Product Details:</label>
                                                 <textarea id="content" name="content" class="form-control" rows="6"
                                                     required></textarea>
+                                            </div> -->
+                                            <div class="form-group col-12">
+                                                <input type="text" class="form-control"
+                                                    placeholder="Enter Product Details" id="productdetaill"
+                                                    name="product_detail">
                                             </div>
                                             <div class="form-group col-3">
                                                 <label for="image">Product Image1:</label>
@@ -144,100 +145,100 @@ if ($userid === NULL) {
                                                     height="50" />
                                             </div>
                                             <div class="form-group col-4">
-                                                <label for="image">Product Image5:</label>
-                                                <input type="file" name="image5" class="form-control"
-                                                    placeholder="image" accept="image/jpeg, image/jpg, image/png"
-                                                    onchange="document.getElementById('image19').src = window.URL.createObjectURL(this.files[0])">
-                                                <img id="image19" src="dist/img/noimage1.png" alt="image" width="50"
-                                                    height="50" />
+                                                <label>Video 5:</label>
+                                                <input type="file" name="video5" class="form-control" accept="video/mp4"
+                                                    onchange="previewVideo5(this)">
+                                                <video id="video19" width="100" height="70" controls
+                                                    style="display:none;"></video>
                                             </div>
                                             <div class="form-group col-4">
-                                                <label for="text">Others:</label>
+                                                <label for="text">Type:</label>
                                                 <div class="checkbox-container">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="featured_product" name="featured" value="1">
-                                                        <label class="form-check-label" for="featured_product">Featured
-                                                            Product</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="top_selling"
-                                                            name="topselling1" value="1">
-                                                        <label class="form-check-label" for="topselling">Top
-                                                            Selling</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="popular_product" name="popular1" value="1">
-                                                        <label class="form-check-label" for="popularproduct">Popular
-                                                            Products</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="bestsellers"
-                                                            name="bestsellers" value="1">
-                                                        <label class="form-check-label" for="bestsellers">New
-                                                            Arrivals</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-4">
-                                                <label for="text">Size:</label>
-                                                <div class="checkbox-container">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="extra_small"
-                                                            name="extra_small1" value="1">
-                                                        <label class="form-check-label" for="extra_small">XS</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="small"
-                                                            name="small1" value="1">
-                                                        <label class="form-check-label" for="small">S</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="medium"
-                                                            name="medium1" value="1">
-                                                        <label class="form-check-label" for="medium">M</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="large"
-                                                            name="large1" value="1">
-                                                        <label class="form-check-label" for="large">L</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="extralarge"
-                                                            name="extralarge1" value="1">
-                                                        <label class="form-check-label" for="extralarge">XL</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="extralarge_large" name="extralarge_large1" value="1">
+                                                        <input class="form-check-input" type="checkbox" id="pro_neww"
+                                                            name="pro_new" value="1">
                                                         <label class="form-check-label"
-                                                            for="extralarge_large">XXL</label>
+                                                            for="featured_product">New</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="pro_premiumm" name="pro_premium" value="1">
+                                                        <label class="form-check-label" for="topselling">Premium</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="pro_hott"
+                                                            name="pro_hot" value="1">
+                                                        <label class="form-check-label" for="popularproduct">Hot</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group col-3">
-                                                <select class="form-control" name="occasion" required>
-                                                    <option value="">Select Occasion</option>
-                                                    <?php
-                                                    include "conn.php";
-                                                    $result = mysqli_query($conn, "SELECT * FROM occasion");
-                                                    while ($row = mysqli_fetch_array($result)) {
-                                                        ?>
-                                                        <option value="<?php echo $row['id']; ?>">
-                                                            <?php echo $row["name"]; ?>
-                                                        </option>
-                                                    <?php } ?>
-                                                </select>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Enter Product Fabric" id="fabricc" name="fabric">
                                             </div>
-                                            <div class="form-group col-12">
-                                                <label for="text">Colors:</label>
-                                                <input type="text" name="keywords1" id="tag-input1">
+                                            <div class="form-group col-3">
+                                                <input type="text" class="form-control" placeholder="Blouse"
+                                                    id="blousree" name="blouse">
                                             </div>
-                                            <div class="form-group col-12">
-                                                <label for="exampleInputcname">Meta Description:</label>
-                                                <textarea name="metadescription" class="form-control"
-                                                    required></textarea>
+                                            <div class="form-group col-3">
+                                                <input type="text" class="form-control" placeholder="Care" id="caree"
+                                                    name="care">
+                                            </div>
+                                            <div class="form-group col-3">
+                                                <input type="text" class="form-control" placeholder="Dimensions"
+                                                    id="dimensionnss" name="dimension">
+                                            </div>
+                                            <div class="form-group col-3">
+                                                <input type="text" class="form-control" placeholder="Available Offers"
+                                                    id="aveable_offer" name="ava_offerr">
+                                            </div>
+                                            <div class="form-group col-3">
+                                                <input type="text" class="form-control" placeholder="About Item"
+                                                    id="abou_itm" name="about_item">
+                                            </div>
+                                            <div class="form-group col-3">
+                                                <input type="text" class="form-control" placeholder="Size" id="sizee"
+                                                    name="size">
+                                            </div>
+                                            <div class="form-group col-3">
+                                                <input type="text" class="form-control" placeholder="Under Price"
+                                                    id="un_pricee" name="under_price">
+                                            </div>
+                                            <div class="form-group col-3">
+                                                <input type="text" class="form-control" placeholder="Color" id="colorr"
+                                                    name="color">
+                                            </div>
+                                            <div class="form-group col-3">
+                                                <input type="text" class="form-control" placeholder="Stock" id="stockk"
+                                                    name="stock">
+                                            </div>
+                                            <div class="form-group col-3">
+                                                <input type="text" class="form-control" placeholder="Manufacture"
+                                                    id="manufacturee" name="manufacture">
+                                            </div>
+                                            <div class="form-group col-3">
+                                                <input type="text" class="form-control" placeholder="Packer"
+                                                    id="packerr" name="packer">
+                                            </div>
+                                            <div class="form-group col-3">
+                                                <input type="text" class="form-control" placeholder="Item Weight"
+                                                    id="item_weightt" name="item_weight">
+                                            </div>
+                                            <div class="form-group col-3">
+                                                <input type="text" class="form-control" placeholder="Net Quentity"
+                                                    id="net_quenn" name="net_quentity">
+                                            </div>
+                                            <div class="form-group col-3">
+                                                <input type="text" class="form-control" placeholder="Generic Name"
+                                                    id="gen_nm" name="generic_nm">
+                                            </div>
+                                            <div class="form-group col-3">
+                                                <input type="text" class="form-control" placeholder="Keywords"
+                                                    id="keywordss" name="keyword">
+                                            </div>
+                                            <div class="form-group col-3">
+                                                <input type="text" class="form-control" placeholder="Meta Description"
+                                                    id="meta_descc" name="meta_desc">
                                             </div>
                                         </div>
                                     </div>
@@ -290,7 +291,7 @@ if ($userid === NULL) {
         $new_file_name2 = handleFileUpload('image2', $upload_dir);
         $new_file_name3 = handleFileUpload('image3', $upload_dir);
         $new_file_name4 = handleFileUpload('image4', $upload_dir);
-        $new_file_name5 = handleFileUpload('image5', $upload_dir);
+
 
         // Sanitize inputs
         $productname = htmlspecialchars($conn->real_escape_string($_POST["productname"]));
@@ -301,41 +302,47 @@ if ($userid === NULL) {
         $category = $conn->real_escape_string($_POST["category"]);
         $subcategory = $conn->real_escape_string($_POST["subcategory"]);
         $subsubcategory = $conn->real_escape_string($_POST["subsubcategory"]);
-        $skqcode = $conn->real_escape_string($_POST["skqcode"]);
+
         $productcode = $conn->real_escape_string($_POST["productcode"]);
         $productprice = $conn->real_escape_string($_POST["productprice"]);
+        $discount1 = $conn->real_escape_string($_POST["discount1"]);
         $productdiscountprice = $conn->real_escape_string($_POST["productdiscountprice"]);
-        $productdescription = $conn->real_escape_string($_POST["content"]);
-        $occasion = $conn->real_escape_string($_POST["occasion"]);
-        $discount = $conn->real_escape_string($_POST["discount"]);
-        $featured = isset($_POST["featured"]) ? $_POST["featured"] : 0;
-        $topselling1 = isset($_POST["topselling1"]) ? $_POST["topselling1"] : 0;
-        $popular1 = isset($_POST["popular1"]) ? $_POST["popular1"] : 0;
-        $bestsellers = isset($_POST["bestsellers"]) ? $_POST["bestsellers"] : 0;
+        $product_detail = $conn->real_escape_string($_POST["product_detail"]);
 
-        $extra_small1 = isset($_POST["extra_small1"]) ? $_POST["extra_small1"] : 0;
-        $small1 = isset($_POST["small1"]) ? $_POST["small1"] : 0;
-        $medium1 = isset($_POST["medium1"]) ? $_POST["medium1"] : 0;
-        $large1 = isset($_POST["large1"]) ? $_POST["large1"] : 0;
-        $extralarge1 = isset($_POST["extralarge1"]) ? $_POST["extralarge1"] : 0;
-        $extralarge_large1 = isset($_POST["extralarge_large1"]) ? $_POST["extralarge_large1"] : 0;
+        $pro_new = isset($_POST["pro_new"]) ? $_POST["pro_new"] : 0;
+        $pro_premium = isset($_POST["pro_premium"]) ? $_POST["pro_premium"] : 0;
+        $pro_hot = isset($_POST["pro_hot"]) ? $_POST["pro_hot"] : 0;
 
-        $slug = strtolower(preg_replace('/[^A-Za-z0-9-]+/', '_', $conn->real_escape_string($_POST["productname"]))) . '_' . date('d_m_Y');
-        // $slug = slugurl($productname);
-        // $slug = slugurl($productname, $category, $subcategory, $keywords, $metadescription);
-        $keywords = $conn->real_escape_string($_POST["keywords1"]);
-        $metadescription = $conn->real_escape_string($_POST["metadescription"]);
+        $fabric = $conn->real_escape_string($_POST["fabric"]);
+        $blouse = $conn->real_escape_string($_POST["blouse"]);
+        $care = $conn->real_escape_string($_POST["care"]);
+        $dimension = $conn->real_escape_string($_POST["dimension"]);
+        $ava_offerr = $conn->real_escape_string($_POST["ava_offerr"]);
+        $about_item = $conn->real_escape_string($_POST["about_item"]);
+        $size = $conn->real_escape_string($_POST["size"]);
+        $under_price = $conn->real_escape_string($_POST["under_price"]);
+        $color = $conn->real_escape_string($_POST["color"]);
+        $stock = $conn->real_escape_string($_POST["stock"]);
+        $manufacture = $conn->real_escape_string($_POST["manufacture"]);
+        $packer = $conn->real_escape_string($_POST["packer"]);
+        $item_weight = $conn->real_escape_string($_POST["item_weight"]);
+        $net_quentity = $conn->real_escape_string($_POST["net_quentity"]);
+        $generic_nm = $conn->real_escape_string($_POST["generic_nm"]);
+
+
+        $keywords = $conn->real_escape_string($_POST["keyword"]);
+        $metadescription = $conn->real_escape_string($_POST["meta_desc"]);
 
         // Insert into database
-        $sql = "INSERT INTO product (product_name, product_short_nm, rating, review, category_id, sub_category_id, sub_subcategory_id, skq_code, product_code, product_price, product_discount_price, product_description, product_image1, product_image2, product_image3, product_image4, product_image5, featured_product, top_sell, popul_pro, bestsellers, extra_small, small, medium, large, extra_large, extra_large_large, occ_id, discount_idd, slug, keywords, meta_description,stock, status) 
-            VALUES ('$productname', '$descc1', '$ratingss', '$reviewss', '$category', '$subcategory', '$subsubcategory', '$skqcode', '$productcode', '$productprice', '$productdiscountprice', '$productdescription', '$new_file_name1', '$new_file_name2', '$new_file_name3', '$new_file_name4', '$new_file_name5', '$featured', '$topselling1', '$popular1', '$bestsellers', '$extra_small1', '$small1', '$medium1', '$large1', '$extralarge1', '$extralarge_large1', '$occasion', '$discount', '$slug', '$keywords', '$metadescription','1', '1')";
+        $sql = "INSERT INTO product (pro_name, product_short_nm, rating, review, category_id, sub_category_id, sub_subcategory_id, product_code, product_price, pro_discount, product_discount_price, pro_details, neww, premiumm, hott, fabric, blousee, caree, dimenn, ave_offer, about_item, sizee, pricee, colorr, stockk, manuufacturee, packer, item_weight, net_quentity, generic_nm, keywordss, meta_desc, product_image1, product_image2, product_image3, product_image4, status) 
+            VALUES ('$productname', '$descc1', '$ratingss', '$reviewss', '$category', '$subcategory', '$subsubcategory', '$productcode', '$productprice', '$discount1', '$productdiscountprice', '$product_detail', '$pro_new', '$pro_premium', '$pro_hot', '$fabric', '$blouse', '$care', '$dimension', '$ava_offerr', '$about_item', '$size', '$under_price', '$color', '$stock', '$manufacture', '$packer', '$item_weight', '$net_quentity', '$generic_nm', '$keywords', '$metadescription','$new_file_name1','$new_file_name2','$new_file_name3','$new_file_name4','1')";
 
         if ($conn->query($sql) === true) {
             echo "<script>
                 $(document).ready(function(){
                     toastr.success('Product added successfully');
                     setTimeout(function(){
-                        window.location.href = 'product.php';
+                        window.location.href = 'product';
                     }, 2000); // 2000 milliseconds = 2 seconds
                 });
             </script>";

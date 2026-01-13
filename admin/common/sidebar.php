@@ -67,6 +67,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="reels" class="nav-link">
+                                <i class="fas fa-video nav-icon"></i>
+                                <p>Trending Reels</p>
+                                <i class="right fas fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="offer" class="nav-link">
                                 <i class="fa fa-gift nav-icon"></i>
                                 <p>Offers</p>
