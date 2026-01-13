@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="assets/css/main.css?v=3.0">
 </head>
 
-<body id="prod-det-xtra" >
+<body id="prod-det-xtra">
   <?php include 'common/header.php' ?>
   <button id="ar-goTopBtn" class="ar-go-top-btn" aria-label="Go to top">
     <i class="bi bi-chevron-up"></i>
@@ -203,7 +203,16 @@
                 <i class="bi bi-bag-plus-fill me-2"></i>ADD TO CART
               </button>
 
+              <!-- Chat with Us - WhatsApp -->
+              <a
+                href="https://wa.me/919876543210?text=Hello%20I%20am%20interested%20in%20this%20product"
+                target="_blank"
+                class="btn btn-success flex-grow-1 py-3 fw-bold rounded-3 shadow-sm text-white">
+                <i class="bi bi-whatsapp me-2"></i>CHAT WITH US
+              </a>
+
             </div>
+
 
             <div class="text-center mt-2">
               <small class="text-muted" style="font-size: 0.8rem;">
@@ -614,6 +623,61 @@
           </div>
         </div>
 
+        <div class="col-6 col-md-4 col-lg-3 mb-4 d-flex">
+          <div class="card custom-product-card h-100 w-100 border-0 shadow-sm">
+            <img src="https://i0.wp.com/utkalikaodisha.com/wp-content/uploads/2025/06/Group_1717_optimized_500.jpg"
+              class="card-img-top" alt="Men's Cotton Straight Kurta">
+            <i class="fas fa-heart myshop-wishlist-btn"
+              onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+            <i class="fas fa-cart-shopping myshop-cart-icon"></i>
+            <div class="card-body d-flex flex-column p-3">
+              <h6 class="card-title mb-1 fw-semibold text-dark">HERE&NOW</h6>
+              <p class="mb-1 text-muted small">Cotton Straight Kurta</p>
+              <div class="wl-rating">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>
+                4.5 <span class="myshop text-secondary">| 34,567 Ratings</span>
+              </div>
+              <p class="fw-bold text-dark mt-auto mb-2">
+                Rs. 1099
+              </p>
+              <a href="product_details.php" class="btn btn-dark w-100">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-4 d-flex">
+          <div class="card custom-product-card h-100 w-100 border-0 shadow-sm">
+            <img src="https://i0.wp.com/utkalikaodisha.com/wp-content/uploads/2025/06/Group_1717_optimized_500.jpg"
+              class="card-img-top" alt="Men's Cotton Straight Kurta">
+            <i class="fas fa-heart myshop-wishlist-btn"
+              onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+            <i class="fas fa-cart-shopping myshop-cart-icon"></i>
+            <div class="card-body d-flex flex-column p-3">
+              <h6 class="card-title mb-1 fw-semibold text-dark">HERE&NOW</h6>
+              <p class="mb-1 text-muted small">Cotton Straight Kurta</p>
+              <div class="wl-rating">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>
+                4.5 <span class="myshop text-secondary">| 34,567 Ratings</span>
+              </div>
+              <p class="fw-bold text-dark mt-auto mb-2">
+                Rs. 1099
+              </p>
+              <a href="product_details.php" class="btn btn-dark w-100">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="view-related-products mb-3">
+    <div class="container">
+      <h1 class="text-center py-4">Recently Viewed</h1>
+      <div class="row">
         <div class="col-6 col-md-4 col-lg-3 mb-4 d-flex">
           <div class="card custom-product-card h-100 w-100 border-0 shadow-sm">
             <img src="https://i0.wp.com/utkalikaodisha.com/wp-content/uploads/2025/06/Group_1717_optimized_500.jpg"

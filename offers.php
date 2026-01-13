@@ -167,15 +167,6 @@
             </div>
         </section>
 
-        <section class="full-banner-section py-5">
-            <div class="container-fluid p-0">
-                <a href="https://example.com" target="_blank">
-                    <img src="assets/img/middle-banner.webp" alt="Advertisement Banner" class="img-fluid w-100" style="object-fit: cover;">
-                </a>
-            </div>
-        </section>
-
-
         <div class="steal-box shadow-sm mb-5 p-4 border-0" style="background: var(--aesthetic-peach); border-radius: 40px;">
             <div class="row align-items-center g-3">
 

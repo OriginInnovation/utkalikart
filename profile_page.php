@@ -48,9 +48,9 @@
                             <li class="CA-section-title"></li>
 
                             <li>
-                                <a href="#" data-tab-id="CA-overviewTab">
-                                    <i class="fa-solid fa-gauge-high"></i>
-                                    <span>Overview</span>
+                                <a href="#" data-tab-id="CA-profileDetailsView" class="active">
+                                    <i class="fa-regular fa-id-card"></i>
+                                    <span>Profile</span>
                                 </a>
                             </li>
 
@@ -80,13 +80,6 @@
                             </li>
 
                             <li class="CA-section-title"></li>
-
-                            <li>
-                                <a href="#" data-tab-id="CA-profileDetailsView" class="active">
-                                    <i class="fa-regular fa-id-card"></i>
-                                    <span>Profile</span>
-                                </a>
-                            </li>
 
                             <li>
                                 <a href="#" data-tab-id="CA-addressesTab">
@@ -175,28 +168,19 @@
                         aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <div class="CA-sidebar-header">
-
-                    </div>
                     <nav class="CA-sidebar-menu">
                         <ul>
                             <li class="CA-section-title"></li>
-                            <li><a href="#" data-tab-id="CA-overviewTab" class="CA-offcanvas-link">Overview</a></li>
+                            <li><a href="#" data-tab-id="CA-profileDetailsView" class="CA-offcanvas-link">Profile</a></li>
                             <li class="CA-section-title"></li>
-                            <li><a href="#" data-tab-id="CA-ordersTab" class="CA-offcanvas-link">Orders & Returns</a>
-                            </li>
-                            <li><a href="#" data-tab-id="CA-wishlist" class="CA-offcanvas-link">Wishlist</a>
-                            </li>
+                            <li><a href="#" data-tab-id="CA-ordersTab" class="CA-offcanvas-link">Orders & Returns</a></li>
+                            <li><a href="#" data-tab-id="CA-wishlist" class="CA-offcanvas-link">Wishlist</a></li>
                             <li class="CA-section-title"></li>
                             <li><a href="#" data-tab-id="CA-couponsTab" class="CA-offcanvas-link">Coupons</a></li>
                             <li class="CA-section-title"></li>
-                            <li><a href="#" data-tab-id="CA-profileDetailsView" class="CA-offcanvas-link">Profile</a>
-                            </li>
                             <li><a href="#" data-tab-id="CA-addressesTab" class="CA-offcanvas-link">Addresses</a></li>
                             <li class="CA-section-title"></li>
-                            <li><a href="#" data-tab-id="CA-privacyTab" class="CA-offcanvas-link">Privacy Policy</a>
-                            </li>
-
+                            <li><a href="#" data-tab-id="CA-privacyTab" class="CA-offcanvas-link">Privacy Policy</a></li>
                         </ul>
                     </nav>
                 </div>

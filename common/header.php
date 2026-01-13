@@ -352,7 +352,7 @@
 
         <!-- LOGO -->
         <a class="navbar-brand" href="index.php">
-            <img src="assets/img/ecommerce_logo_maker.png" alt="Logo" class="p-2 img-fluid" width="150">
+            <img src="assets/img/ecommerce_logo_maker.png" alt="Logo" class="p-2 img-fluid" width="170">
         </a>
 
         <!-- CENTER NAV LINKS -->
