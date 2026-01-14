@@ -1519,124 +1519,133 @@ body {
     display: none;
   }
 }
+/* --- CSS START --- */
+        
+        .myshop-product-card {
+            position: relative;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            height: 100%;
+        }
 
-/* this css for shop product card */
-.myshop-product-card {
-  position: relative;
-  overflow: hidden;
-  background-color: #fff;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  height: 100%;
-}
+        .myshop-product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
 
-.myshop-product-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-}
+        /* Updated Image Box to handle overlapping images */
+        .myshop-image-box {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            position: relative; /* Zaroori hai taaki hover image iske andar absolute ho sake */
+        }
 
-.myshop-image-box {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
-}
+        /* Main Image Styling */
+        .myshop-product-image {
+            max-height: 261px !important;
+            max-width: 100%;
+            object-fit: contain;
+            transition: opacity 0.3s ease-in-out; /* Smooth transition */
+            opacity: 1;
+        }
 
-.myshop-product-image {
-  max-height: 261px !important;
-  max-width: 100%;
-  object-fit: contain;
-}
+        /* NEW: Hover Image Styling (Hidden by default) */
+        .myshop-hover-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 0; /* Shuru mein invisible */
+            transition: opacity 0.3s ease-in-out;
+            padding: 10px; /* Optional: Agar image box se chipak rahi ho */
+            background-color: #fff; /* Transparent PNGs ke liye safe */
+        }
 
-.myshop-wishlist-btn,
-.myshop-cart-icon {
-  position: absolute;
-  right: 15px;
-  z-index: 10;
-  background: #fff;
-  border-radius: 50%;
-  padding: 8px;
-  color: #a7a6a6;
-  font-size: 15px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  transition: color 0.3s ease;
-}
+        /* --- HOVER LOGIC --- */
+        /* Jab card hover ho, main image gayab */
+        .myshop-product-card:hover .myshop-product-image {
+            opacity: 0;
+        }
 
-.myshop-wishlist-btn {
-  top: 15px;
-}
+        /* Jab card hover ho, second image dikhe */
+        .myshop-product-card:hover .myshop-hover-image {
+            opacity: 1;
+        }
 
-.myshop-cart-icon {
-  top: 60px;
-}
+        /* Icons Styling */
+        .myshop-wishlist-btn,
+        .myshop-cart-icon {
+            position: absolute;
+            right: 15px;
+            z-index: 10;
+            background: #fff;
+            border-radius: 50%;
+            padding: 8px;
+            color: #a7a6a6;
+            font-size: 15px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            transition: color 0.3s ease;
+        }
 
-.myshop-wishlist-btn:hover,
-.myshop-wishlist-btn.active {
-  color: #da1d08;
-}
+        .myshop-wishlist-btn { top: 15px; }
+        .myshop-cart-icon { top: 60px; }
 
-.myshop-cart-icon:hover,
-.myshop-cart-icon.active {
-  color: #050505;
-}
+        .myshop-wishlist-btn:hover,
+        .myshop-wishlist-btn.active { color: #da1d08; }
 
-.myshop-product-body {
-  padding: 20px;
-  text-align: center;
-}
+        .myshop-cart-icon:hover,
+        .myshop-cart-icon.active { color: #050505; }
 
-.myshop-product-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
+        .myshop-product-body { padding: 20px; text-align: center; }
 
-.myshop-product-price {
-  font-size: 1rem;
-  color: #28a745;
-  font-weight: bold;
-  margin-bottom: 12px;
-}
+        .myshop-product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
 
-.myshop-add-to-cart-btn {
-  width: 100%;
-  background-color: #000;
-  border: none;
-  color: white;
-  padding: 10px;
-  font-weight: 500;
-  border-radius: 10px;
-  transition: all 0.3s;
-}
+        .myshop-product-price {
+            font-size: 1rem;
+            color: #28a745;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
 
-.myshop-add-to-cart-btn:hover {
-  background-color: #272626ec;
-  color: white;
-}
+        .myshop-add-to-cart-btn {
+            width: 100%;
+            background-color: #000;
+            border: none;
+            color: white;
+            padding: 10px;
+            font-weight: 500;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
 
-@media (max-width: 576px) {
-  .myshop-image-box {
-    height: 163px;
-  }
+        .myshop-add-to-cart-btn:hover {
+            background-color: #272626ec;
+            color: white;
+        }
 
-  .myshop-section-bg {
-    /* margin-top: -69px; */
-  }
-}
+        /* Media Queries */
+        @media (max-width: 576px) {
+            .myshop-image-box { height: 163px; }
+        }
 
-@media (min-width:768px) and (max-width:991.98px) {
-  .oa-new-arrivals-section .row>[class*="col"] {
-    flex: 0 0 50%;
-  }
-
-  .myshop-section-bg {
-    margin-top: -40px;
-  }
-}
-
+        @media (min-width:768px) and (max-width:991.98px) {
+            .myshop-section-bg { margin-top: -40px; }
+        }
+        
+        /* --- CSS END --- */
 /* =============================
    📱 MOBILE — 1 CARD PER ROW
    ============================= */
@@ -1779,107 +1788,196 @@ body {
     margin-top: -40px;
   }
 }
+/* --- NEW ARRIVAL SECTION CSS --- */
+        .oa-new-arrivals-section {
+            padding: 60px 0;
+            background: #fff;
+        }
 
-/* new arrival page design */
-.oa-new-arrivals-section {
-  padding: 60px 0;
-  background: #fff;
-}
+        .oa-subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 40px;
+        }
 
-.oa-subtitle {
-  text-align: center;
-  color: #555;
-  margin-bottom: 40px;
-}
+        .oa-product-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            height: 100%;
+        }
 
-.oa-product-card {
-  background: #fff;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease-in-out;
-  position: relative;
-}
+        .oa-product-card:hover {
+            transform: translateY(-5px);
+        }
 
-.oa-product-card:hover {
-  transform: translateY(-5px);
-}
+        /* Image Wrapper */
+        .oa-product-image {
+            position: relative;
+            overflow: hidden; /* Zoom bahar na nikle */
+            height: 261px; /* Height fix kar di wrapper pe */
+        }
 
-.oa-product-image {
-  position: relative;
-}
+        /* Common style for both images */
+        .oa-product-image img {
+            width: 100%;
+            height: 261px !important;
+            object-fit: cover;
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth swap & zoom */
+            display: block;
+        }
 
-.oa-product-image img {
-  width: 100%;
-  height: 261px !important;
-  object-fit: cover;
-  transition: transform 0.3s ease-in-out;
-}
+        /* Front Image (Default visible) */
+        .oa-front-img {
+            opacity: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2; /* Upar rahegi */
+        }
 
-.oa-product-card:hover img {
-  transform: scale(1.05);
-}
+        /* Hover Image (Hidden initially) */
+        .oa-hover-img {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1; /* Niche rahegi */
+        }
 
-.oa-product-content {
-  padding: 15px;
-}
+        /* --- HOVER EFFECT LOGIC --- */
+        
+        /* Jab card hover ho, Front image gayab */
+        .oa-product-card:hover .oa-front-img {
+            opacity: 0;
+            transform: scale(1.05); /* Zoom effect maintain kiya */
+        }
 
-.oa-product-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 5px;
-}
+        /* Jab card hover ho, Back image dikhe */
+        .oa-product-card:hover .oa-hover-img {
+            opacity: 1;
+            transform: scale(1.05); /* Zoom effect maintain kiya */
+        }
 
-.oa-product-brand {
-  font-size: 0.9rem;
-  color: #888;
-}
+        /* Product Content Styling */
+        .oa-product-content {
+            padding: 15px;
+        }
 
-.oa-product-price {
-  margin-top: 10px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #e53935;
-}
+        .oa-product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
 
-.oa-product-price span {
-  font-size: 0.9rem;
-  color: #999;
-  text-decoration: line-through;
-  margin-left: 10px;
-}
+        .oa-product-brand {
+            font-size: 0.9rem;
+            color: #888;
+        }
 
-.oa-sale-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #000000;
-  color: #fff;
-  font-size: 0.8rem;
-  font-weight: bold;
-  padding: 5px 8px;
-  border-radius: 5px;
-}
+        .oa-product-price {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #e53935;
+        }
 
-@media (max-width: 576px) {
+        .oa-product-price span {
+            font-size: 0.9rem;
+            color: #999;
+            text-decoration: line-through;
+            margin-left: 10px;
+        }
 
-  .oa-product-card {
-    margin-bottom: 20px;
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+        /* Icons & Badges */
+        .oa-sale-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #000000;
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 5px 8px;
+            border-radius: 5px;
+            z-index: 10;
+        }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .oa-product-title {
-    font-size: 0.9rem;
-  }
+        .oa-product-icons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 10;
+        }
 
-  .oa-product-brand {
-    font-size: 0.8rem;
-  }
-}
+        .myshop-wishlist-btn,
+        .myshop-cart-icon {
+            background: #fff;
+            border-radius: 50%;
+            padding: 8px;
+            color: #a7a6a6;
+            font-size: 15px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            transition: color 0.3s ease;
+            cursor: pointer;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
+        .myshop-wishlist-btn:hover { color: #da1d08; }
+        .myshop-cart-icon:hover { color: #050505; }
+
+        .wl-rating {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        
+        .wl-rating svg {
+            width: 16px;
+            height: 16px;
+            fill: #ffc107;
+            margin-right: 5px;
+        }
+
+        .wl-rating-count {
+            color: #888;
+            font-weight: 400;
+            margin-left: 5px;
+            font-size: 0.85rem;
+        }
+
+        .myshop-add-to-cart-btn {
+            width: 100%;
+            background-color: #000;
+            border: none;
+            color: white;
+            padding: 10px;
+            font-weight: 500;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .myshop-add-to-cart-btn:hover {
+            background-color: #333;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 576px) {
+            .oa-product-card { margin-bottom: 20px; }
+        }
 /* =============================
    📱 MOBILE — 1 CARD PER ROW
    ============================= */
@@ -7163,7 +7261,6 @@ body#faqs-data {
   position: relative;
   z-index: 2;
 }
-
 
 #faqs-data .faq-header h1 {
   font-size: 3rem;

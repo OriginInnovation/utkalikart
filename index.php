@@ -780,29 +780,26 @@
 
             <div class="row row-cols-2 row-cols-md-4 g-4">
 
-                <!-- CARD 1 -->
                 <div class="col">
                     <div class="myshop-product-card">
-                        <i class="fas fa-heart myshop-wishlist-btn"
-                            onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+                        <i class="fas fa-heart myshop-wishlist-btn" onclick="event.stopPropagation(); toggleWishlist(this)"></i>
                         <i class="fas fa-cart-shopping myshop-cart-icon"></i>
 
                         <div class="myshop-image-box">
                             <a href="#">
-                                <img src="assets/img/cotton.webp" class="myshop-product-image" alt="">
+                                <img src="assets/img/cotton.webp" class="myshop-product-image" alt="Cotton Saree">
+                                <img src="assets/img/cotton_hover.webp" class="myshop-hover-image" alt="Cotton Saree Back">
                             </a>
                         </div>
 
                         <div class="myshop-product-title p-2">Sambalpuri Cotton Saree</div>
-
+                        
                         <div class="wl-rating px-2">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                             <svg viewBox="0 0 24 24" width="15" height="15" fill="#f4c150">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                             </svg>
                             4.8 <span class="myshop text-secondary">| 120 Reviews</span>
                         </div>
-
                         <span class="wl-price text-dark p-2">₹1299</span>
 
                         <div class="myshop-product-body">
@@ -811,29 +808,26 @@
                     </div>
                 </div>
 
-                <!-- CARD 2 -->
                 <div class="col">
                     <div class="myshop-product-card">
-                        <i class="fas fa-heart myshop-wishlist-btn"
-                            onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+                        <i class="fas fa-heart myshop-wishlist-btn" onclick="event.stopPropagation(); toggleWishlist(this)"></i>
                         <i class="fas fa-cart-shopping myshop-cart-icon"></i>
 
                         <div class="myshop-image-box">
                             <a href="#">
-                                <img src="assets/img/black2.webp" class="myshop-product-image" alt="">
+                                <img src="assets/img/black2.webp" class="myshop-product-image" alt="Ikat Kurti">
+                                <img src="assets/img/black2_hover.webp" class="myshop-hover-image" alt="Ikat Kurti Back">
                             </a>
                         </div>
 
                         <div class="myshop-product-title p-2">Handloom Ikat Kurti</div>
 
                         <div class="wl-rating px-2">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                             <svg viewBox="0 0 24 24" width="15" height="15" fill="#f4c150">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                             </svg>
                             4.5 <span class="myshop text-secondary">| 85 Reviews</span>
                         </div>
-
                         <span class="wl-price text-dark p-2">₹999</span>
 
                         <div class="myshop-product-body">
@@ -842,29 +836,26 @@
                     </div>
                 </div>
 
-                <!-- CARD 3 -->
                 <div class="col">
                     <div class="myshop-product-card">
-                        <i class="fas fa-heart myshop-wishlist-btn"
-                            onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+                        <i class="fas fa-heart myshop-wishlist-btn" onclick="event.stopPropagation(); toggleWishlist(this)"></i>
                         <i class="fas fa-cart-shopping myshop-cart-icon"></i>
 
                         <div class="myshop-image-box">
                             <a href="#">
-                                <img src="assets/img/pink.webp" class="myshop-product-image" alt="">
+                                <img src="assets/img/pink.webp" class="myshop-product-image" alt="Silk Saree">
+                                <img src="assets/img/pink_hover.webp" class="myshop-hover-image" alt="Silk Saree Back">
                             </a>
                         </div>
 
                         <div class="myshop-product-title p-2">Traditional Silk Saree</div>
 
                         <div class="wl-rating px-2">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                             <svg viewBox="0 0 24 24" width="15" height="15" fill="#f4c150">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                             </svg>
                             4.9 <span class="myshop text-secondary">| 180 Reviews</span>
                         </div>
-
                         <span class="wl-price text-dark p-2">₹2499</span>
 
                         <div class="myshop-product-body">
@@ -873,29 +864,26 @@
                     </div>
                 </div>
 
-                <!-- CARD 4 -->
                 <div class="col">
                     <div class="myshop-product-card">
-                        <i class="fas fa-heart myshop-wishlist-btn"
-                            onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+                        <i class="fas fa-heart myshop-wishlist-btn" onclick="event.stopPropagation(); toggleWishlist(this)"></i>
                         <i class="fas fa-cart-shopping myshop-cart-icon"></i>
 
                         <div class="myshop-image-box">
                             <a href="#">
-                                <img src="assets/img/slide 5.webp" class="myshop-product-image" alt="">
+                                <img src="assets/img/slide 5.webp" class="myshop-product-image" alt="Dupatta">
+                                <img src="assets/img/slide 5_hover.webp" class="myshop-hover-image" alt="Dupatta Back">
                             </a>
                         </div>
 
                         <div class="myshop-product-title p-2">Designer Handloom Dupatta</div>
 
                         <div class="wl-rating px-2">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            <svg viewBox="0 0 24 24" width="15" height="15" fill="#f4c150">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                             </svg>
                             4.7 <span class="myshop text-secondary">| 60 Reviews</span>
                         </div>
-
                         <span class="wl-price text-dark p-2">₹799</span>
 
                         <div class="myshop-product-body">
@@ -990,28 +978,27 @@
     </div>
 
 
-
-
-    <section class="oa-new-arrivals-section">
+<section class="oa-new-arrivals-section">
         <div class="container">
-            <div class="of-collection-heading5">
+            <div class="of-collection-heading5 text-center mb-2">
                 <h2>New Arrivals</h2>
             </div>
             <p class="oa-subtitle">Discover the latest must-have arrivals. Fresh styles and best picks just for you.</p>
 
             <div class="row row-cols-2 row-cols-md-4 g-4">
 
-                <!-- CARD 1 -->
                 <div class="col">
                     <div class="oa-product-card">
                         <div class="oa-product-image">
-                            <a href="#"><img src="assets/img/black2.webp" alt=""></a>
+                            <a href="#">
+                                <img src="assets/img/black2.webp" class="oa-front-img" alt="Saree Front">
+                                <img src="assets/img/black2_hover.webp" class="oa-hover-img" alt="Saree Back">
+                            </a>
 
                             <div class="oa-sale-badge">20% OFF</div>
 
                             <div class="oa-product-icons">
-                                <i class="fas fa-heart myshop-wishlist-btn"
-                                    onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+                                <i class="fas fa-heart myshop-wishlist-btn" onclick="event.stopPropagation(); toggleWishlist(this)"></i>
                                 <i class="fas fa-cart-shopping myshop-cart-icon"></i>
                             </div>
                         </div>
@@ -1021,31 +1008,32 @@
                             <div class="oa-product-brand">Handloom Premium</div>
 
                             <div class="wl-rating p-1">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                </svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
                                 4.7 <span class="wl-rating-count">| 90 Reviews</span>
                             </div>
 
-                            <span class="wl-price">₹1299</span>
-                            <span class="wl-price-original">₹1599</span>
+                            <div class="d-flex align-items-center gap-2 mt-2">
+                                <span class="oa-product-price m-0">₹1299</span>
+                                <span class="text-decoration-line-through text-muted" style="font-size: 0.9rem;">₹1599</span>
+                            </div>
 
                             <button class="btn myshop-add-to-cart-btn my-3">Buy Now</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- CARD 2 -->
                 <div class="col">
                     <div class="oa-product-card">
                         <div class="oa-product-image">
-                            <a href="#"><img src="assets/img/cotton2.webp" alt=""></a>
+                            <a href="#">
+                                <img src="assets/img/cotton2.webp" class="oa-front-img" alt="Kurti Front">
+                                <img src="assets/img/cotton2_hover.webp" class="oa-hover-img" alt="Kurti Back">
+                            </a>
 
                             <div class="oa-sale-badge">15% OFF</div>
 
                             <div class="oa-product-icons">
-                                <i class="fas fa-heart myshop-wishlist-btn"
-                                    onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+                                <i class="fas fa-heart myshop-wishlist-btn" onclick="event.stopPropagation(); toggleWishlist(this)"></i>
                                 <i class="fas fa-cart-shopping myshop-cart-icon"></i>
                             </div>
                         </div>
@@ -1055,31 +1043,32 @@
                             <div class="oa-product-brand">Urban Collection</div>
 
                             <div class="wl-rating p-1">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                </svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
                                 4.5 <span class="wl-rating-count">| 75 Reviews</span>
                             </div>
 
-                            <span class="wl-price">₹899</span>
-                            <span class="wl-price-original">₹1050</span>
+                            <div class="d-flex align-items-center gap-2 mt-2">
+                                <span class="oa-product-price m-0">₹899</span>
+                                <span class="text-decoration-line-through text-muted" style="font-size: 0.9rem;">₹1050</span>
+                            </div>
 
                             <button class="btn myshop-add-to-cart-btn my-3">Buy Now</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- CARD 3 -->
                 <div class="col">
                     <div class="oa-product-card">
                         <div class="oa-product-image">
-                            <a href="#"><img src="assets/img/ethinic_collection.webp" alt=""></a>
+                            <a href="#">
+                                <img src="assets/img/ethinic_collection.webp" class="oa-front-img" alt="Silk Saree Front">
+                                <img src="assets/img/ethinic_collection_hover.webp" class="oa-hover-img" alt="Silk Saree Back">
+                            </a>
 
                             <div class="oa-sale-badge">30% OFF</div>
 
                             <div class="oa-product-icons">
-                                <i class="fas fa-heart myshop-wishlist-btn"
-                                    onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+                                <i class="fas fa-heart myshop-wishlist-btn" onclick="event.stopPropagation(); toggleWishlist(this)"></i>
                                 <i class="fas fa-cart-shopping myshop-cart-icon"></i>
                             </div>
                         </div>
@@ -1089,31 +1078,32 @@
                             <div class="oa-product-brand">Royal Silk</div>
 
                             <div class="wl-rating p-1">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                </svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
                                 4.9 <span class="wl-rating-count">| 200 Reviews</span>
                             </div>
 
-                            <span class="wl-price">₹3499</span>
-                            <span class="wl-price-original">₹4999</span>
+                            <div class="d-flex align-items-center gap-2 mt-2">
+                                <span class="oa-product-price m-0">₹3499</span>
+                                <span class="text-decoration-line-through text-muted" style="font-size: 0.9rem;">₹4999</span>
+                            </div>
 
                             <button class="btn myshop-add-to-cart-btn my-3">Buy Now</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- CARD 4 -->
                 <div class="col">
                     <div class="oa-product-card">
                         <div class="oa-product-image">
-                            <a href="#"><img src="assets/img/pink2.webp" alt=""></a>
+                            <a href="#">
+                                <img src="assets/img/pink2.webp" class="oa-front-img" alt="Dupatta Front">
+                                <img src="assets/img/pink2_hover.webp" class="oa-hover-img" alt="Dupatta Back">
+                            </a>
 
                             <div class="oa-sale-badge">10% OFF</div>
 
                             <div class="oa-product-icons">
-                                <i class="fas fa-heart myshop-wishlist-btn"
-                                    onclick="event.stopPropagation(); toggleWishlist(this)"></i>
+                                <i class="fas fa-heart myshop-wishlist-btn" onclick="event.stopPropagation(); toggleWishlist(this)"></i>
                                 <i class="fas fa-cart-shopping myshop-cart-icon"></i>
                             </div>
                         </div>
@@ -1123,14 +1113,14 @@
                             <div class="oa-product-brand">Ethnic Style</div>
 
                             <div class="wl-rating p-1">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                </svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
                                 4.6 <span class="wl-rating-count">| 40 Reviews</span>
                             </div>
 
-                            <span class="wl-price">₹599</span>
-                            <span class="wl-price-original">₹670</span>
+                            <div class="d-flex align-items-center gap-2 mt-2">
+                                <span class="oa-product-price m-0">₹599</span>
+                                <span class="text-decoration-line-through text-muted" style="font-size: 0.9rem;">₹670</span>
+                            </div>
 
                             <button class="btn myshop-add-to-cart-btn my-3">Buy Now</button>
                         </div>
