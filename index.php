@@ -764,15 +764,41 @@
     </div>
 
     <!-- Full Banner Section -->
-    <section class="full-banner-section">
+    <!-- <section class="full-banner-section">
         <div class="container-fluid p-0">
             <a href="https://example.com" target="_blank">
                 <img src="assets/img/middle-banner.webp" alt="Advertisement Banner" class="img-fluid w-100" style="object-fit: cover;">
             </a>
         </div>
+    </section> -->
+
+     <section class="od-banner-wrapper py-5">
+        <img src="assets/img/about_bg_element.png" class="od-dome-bg" alt="Dome Background" />
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 od-banner-left">
+                    <h2>The Gateway to</h2>
+                    <h2> India's Timeless Heritage</h2>
+                    <p>
+                        We aim to provide a platform to Indian Handloom Weavers and Handicraft Artisans to sell
+                        their
+                        traditional handcrafted products online; paving the way for their financial and social
+                        empowerment.
+                        This will also help in promoting their skills while eliminating the intermediaries.
+                        We hope to raise the dignity of the Indian artisans and kindle an interest for an
+                        unsurpassed
+                        legacy
+                        of craft that spans millennia and spreads across the length and breadth of India.
+                    </p>
+                </div>
+                <div class="col-md-6 od-banner-img-wrapper mt-4 mt-md-0">
+                    <img src="assets/img/thegateway.webp" alt="Handloom Weaver" />
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="myshop-section-bg" style="background-color: #fff0e9;">
+    <section class="myshop-section-bg">
         <div class="container py-5">
             <div class="of-collection-heading4 m-0 mb-5">
                 <h2>Popular Products</h2>
@@ -978,7 +1004,7 @@
     </div>
 
 
-<section class="oa-new-arrivals-section">
+<section class="oa-new-arrivals-section" style="background-color: #fff0e9;">
         <div class="container">
             <div class="of-collection-heading5 text-center mb-2">
                 <h2>New Arrivals</h2>
