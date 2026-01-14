@@ -95,11 +95,7 @@
 
         </div>
     </div>
-
-
-
-
-
+    
     <div class="hero-banner">
         <img src="assets/img/eZCrPgtM_ecf89ec6e998443894b3bd4eed721c3e.webp"
             alt="Advertisement Banner" class="banner-img">

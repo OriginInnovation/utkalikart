@@ -463,13 +463,19 @@
                     </div>
                 </div>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="offers.php">Our Story</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="offers.php">Artists Story</a>
+            </li>
         </ul>
 
         <!-- RIGHT SIDE: SEARCH + PROFILE + WISHLIST + CART -->
         <div class="d-flex align-items-center gap-3 ms-auto">
 
             <!-- SEARCH BAR -->
-            <div class="position-relative" style="width: 350px;">
+            <div class="position-relative" style="width: 230px;">
                 <input type="text" class="form-control rounded-pill ps-4" placeholder="Search for products...">
                 <i class="fa-solid fa-magnifying-glass position-absolute top-50 end-0 translate-middle-y me-3" style="color: rgb(227 101 42);"></i>
             </div>
