@@ -15,7 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="assets/css/main.css?v=3.99">
+    <link rel="stylesheet" href="assets/css/main.css?v=4.2">
 </head>
 
 <body>
@@ -132,6 +132,70 @@
                 </div>
             </div>
         </div>
+
+        <section id="txt-making-process" class="txt-section-wrapper">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h5 class="txt-subheading">Behind The Seams</h5>
+            <h2 class="txt-main-heading">The Art of Textile Making</h2>
+            <div class="txt-divider mx-auto"></div>
+        </div>
+
+        <div class="row position-relative g-4">
+            
+            <div class="txt-connecting-line d-none d-lg-block"></div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="txt-process-card text-center">
+                    <div class="txt-icon-box">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h4 class="txt-step-title">Ethical Sourcing</h4>
+                    <p class="txt-step-desc">
+                        We select the finest organic cotton and pure silks directly from authentic farmers.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="txt-process-card text-center">
+                    <div class="txt-icon-box">
+                        <i class="fas fa-scroll"></i>
+                    </div>
+                    <h4 class="txt-step-title">Handloom Weaving</h4>
+                    <p class="txt-step-desc">
+                        Master weavers intertwine threads with precision to create breathable, durable fabric.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="txt-process-card text-center">
+                    <div class="txt-icon-box">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h4 class="txt-step-title">Artistic Printing</h4>
+                    <p class="txt-step-desc">
+                        Using eco-friendly dyes, our artisans hand-block print intricate aesthetic patterns.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="txt-process-card text-center">
+                    <div class="txt-icon-box">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <h4 class="txt-step-title">Quality Assurance</h4>
+                    <p class="txt-step-desc">
+                        Every thread is inspected to ensure the final product meets premium standards.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
     <?php include 'common/footer.php' ?>
     <script>

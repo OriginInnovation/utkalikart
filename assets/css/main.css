@@ -7346,3 +7346,124 @@ body#faqs-data {
   }
 
 }
+
+
+/* --- MAKING PROCESS SECTION CSS --- */
+
+/* Section Background */
+.txt-section-wrapper {
+    padding: 80px 0;
+    background-color: #fffbf7; /* Very light beige for premium feel */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Headings */
+.txt-subheading {
+    color: #d4a373; /* Gold/Brown shade */
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.txt-main-heading {
+    font-family: 'Playfair Display', serif; /* Agar aapke paas ye font nahi hai to default serif lega */
+    color: #333;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/* Divider Line below heading */
+.txt-divider {
+    width: 60px;
+    height: 3px;
+    background-color: #d4a373;
+    border-radius: 2px;
+}
+
+/* Connecting Line (Dashed line background) */
+.txt-connecting-line {
+    position: absolute;
+    top: 50px; /* Aligns with the center of icons */
+    left: 15%;
+    width: 70%;
+    height: 2px;
+    background-image: linear-gradient(to right, #e0e0e0 50%, transparent 50%);
+    background-size: 20px 100%; /* Creates dashed effect */
+    z-index: 0;
+}
+
+/* Card Styling */
+.txt-process-card {
+    background: transparent;
+    padding: 20px;
+    position: relative;
+    z-index: 1; /* Ensures card stays above the line */
+    transition: transform 0.3s ease;
+}
+
+.txt-process-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Icon Box Styling */
+.txt-icon-box {
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border: 1px dashed #d4a373;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px auto;
+    font-size: 32px;
+    color: #d4a373;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+/* Hover Effect on Icon */
+.txt-process-card:hover .txt-icon-box {
+    background-color: #d4a373;
+    color: #ffffff;
+    border-style: solid;
+    transform: rotateY(180deg); /* 3D Flip effect */
+}
+
+/* Ensuring icon stays straight during flip */
+.txt-process-card:hover .txt-icon-box i {
+    transform: rotateY(-180deg); 
+}
+
+/* Step Title */
+.txt-step-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+/* Step Description */
+.txt-step-desc {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 991px) {
+    .txt-connecting-line {
+        display: none; /* Hide line on tablet/mobile */
+    }
+    
+    .txt-process-card {
+        margin-bottom: 20px;
+        background: #fff; /* White bg for better readability on mobile */
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    }
+}
