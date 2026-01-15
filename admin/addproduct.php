@@ -63,7 +63,7 @@ if ($userid === NULL) {
                                                     include "conn.php";
                                                     $result = mysqli_query($conn, "SELECT * FROM category");
                                                     while ($row = mysqli_fetch_array($result)) {
-                                                        ?>
+                                                    ?>
                                                         <option value="<?php echo $row['id']; ?>">
                                                             <?php echo $row["category_name"]; ?>
                                                         </option>
@@ -201,7 +201,7 @@ if ($userid === NULL) {
                                                     include "conn.php";
                                                     $result = mysqli_query($conn, "SELECT * FROM price");
                                                     while ($row = mysqli_fetch_array($result)) {
-                                                        ?>
+                                                    ?>
                                                         <option value="<?php echo $row['id']; ?>">
                                                             <?php echo $row["name"]; ?>
                                                         </option>
@@ -243,7 +243,7 @@ if ($userid === NULL) {
 
                                             <div class="form-group col-12">
                                                 <label for="text">Keywords:</label>
-                                                <input type="text" name="keywords1" id="tag-input1">
+                                                <input type="text" class="form-control" name="keywords1" id="tag-input1">
                                             </div>
 
                                             <div class="form-group col-3">
@@ -369,15 +369,20 @@ if ($userid === NULL) {
             height: 300,
             filebrowserUploadUrl: "upload.php"
         });
+    </script>
 
+    <script>
         //for keywords
-        (function () {
+        (function() {
             "use strict"
-            var TagsInput = function (opts) {
+            // Plugin Constructor
+            var TagsInput = function(opts) {
                 this.options = Object.assign(TagsInput.defaults, opts);
                 this.init();
             }
-            TagsInput.prototype.init = function (opts) {
+
+            // Initialize the plugin
+            TagsInput.prototype.init = function(opts) {
                 this.options = opts ? Object.assign(this.options, opts) : this.options;
 
                 if (this.initialized)
@@ -392,26 +397,37 @@ if ($userid === NULL) {
                 this.input = document.createElement('input');
                 init(this);
                 initEvents(this);
-
+                // Check if there's existing data and populate the input field with tags
+                if (this.orignal_input.value) {
+                    var existingTags = this.orignal_input.value.split(',');
+                    for (var i = 0; i < existingTags.length; i++) {
+                        this.addTag(existingTags[i]);
+                    }
+                }
                 this.initialized = true;
                 return this;
             }
-            // Add Tags
-            TagsInput.prototype.addTag = function (string) {
 
+            // Add Tags
+            TagsInput.prototype.addTag = function(string) {
                 if (this.anyErrors(string))
                     return;
+
                 this.arr.push(string);
                 var tagInput = this;
+
                 var tag = document.createElement('span');
                 tag.className = this.options.tagClass;
                 tag.innerText = string;
+
                 var closeIcon = document.createElement('a');
                 closeIcon.innerHTML = '&times;';
+
                 // delete the tag when icon is clicked
-                closeIcon.addEventListener('click', function (e) {
+                closeIcon.addEventListener('click', function(e) {
                     e.preventDefault();
                     var tag = this.parentNode;
+
                     for (var i = 0; i < tagInput.wrapper.childNodes.length; i++) {
                         if (tagInput.wrapper.childNodes[i] == tag)
                             tagInput.deleteTag(tag, i);
@@ -420,11 +436,12 @@ if ($userid === NULL) {
                 tag.appendChild(closeIcon);
                 this.wrapper.insertBefore(tag, this.input);
                 this.orignal_input.value = this.arr.join(',');
+
                 return this;
             }
 
             // Delete Tags
-            TagsInput.prototype.deleteTag = function (tag, i) {
+            TagsInput.prototype.deleteTag = function(tag, i) {
                 tag.remove();
                 this.arr.splice(i, 1);
                 this.orignal_input.value = this.arr.join(',');
@@ -432,12 +449,11 @@ if ($userid === NULL) {
             }
 
             // Make sure input string have no error with the plugin
-            TagsInput.prototype.anyErrors = function (string) {
+            TagsInput.prototype.anyErrors = function(string) {
                 if (this.options.max != null && this.arr.length >= this.options.max) {
                     console.log('max tags limit reached');
                     return true;
                 }
-
                 if (!this.options.duplicate && this.arr.indexOf(string) != -1) {
                     console.log('duplicate found " ' + string + ' " ')
                     return true;
@@ -447,29 +463,28 @@ if ($userid === NULL) {
             }
 
             // Add tags programmatically 
-            TagsInput.prototype.addData = function (array) {
+            TagsInput.prototype.addData = function(array) {
                 var plugin = this;
 
-                array.forEach(function (string) {
+                array.forEach(function(string) {
                     plugin.addTag(string);
                 })
                 return this;
             }
 
             // Get the Input String
-            TagsInput.prototype.getInputString = function () {
+            TagsInput.prototype.getInputString = function() {
                 return this.arr.join(',');
             }
 
-
             // destroy the plugin
-            TagsInput.prototype.destroy = function () {
+            TagsInput.prototype.destroy = function() {
                 this.orignal_input.removeAttribute('hidden');
 
                 delete this.orignal_input;
                 var self = this;
 
-                Object.keys(this).forEach(function (key) {
+                Object.keys(this).forEach(function(key) {
                     if (self[key] instanceof HTMLElement)
                         self[key].remove();
 
@@ -490,20 +505,22 @@ if ($userid === NULL) {
 
             // initialize the Events
             function initEvents(tags) {
-                tags.wrapper.addEventListener('click', function () {
+                tags.wrapper.addEventListener('click', function() {
                     tags.input.focus();
                 });
-                tags.input.addEventListener('keydown', function (e) {
+
+                tags.input.addEventListener('keydown', function(e) {
                     var str = tags.input.value.trim();
+
                     if (!!(~[9, 13, 188].indexOf(e.keyCode))) {
                         e.preventDefault();
                         tags.input.value = "";
                         if (str != "")
                             tags.addTag(str);
                     }
+
                 });
             }
-
             // Set All the Default Values
             TagsInput.defaults = {
                 selector: '',
@@ -512,7 +529,9 @@ if ($userid === NULL) {
                 max: null,
                 duplicate: false
             }
+
             window.TagsInput = TagsInput;
+
         })();
         var tagInput1 = new TagsInput({
             selector: 'tag-input1',
@@ -527,10 +546,10 @@ if ($userid === NULL) {
 <!-- for catalogue dropdown -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
 
         // CATEGORY ➜ SUBCATEGORY
-        $('#category-dropdown').change(function () {
+        $('#category-dropdown').change(function() {
             var category_id = $(this).val();
 
             $('#sub-sub-category-dropdown').html('<option value="">Select Sub Sub Category</option><option value="0">None</option>');
@@ -539,8 +558,10 @@ if ($userid === NULL) {
                 $.ajax({
                     url: "fetch_subcategory.php",
                     type: "POST",
-                    data: { category_id: category_id },
-                    success: function (data) {
+                    data: {
+                        category_id: category_id
+                    },
+                    success: function(data) {
                         $('#sub-category-dropdown').html(data);
                     }
                 });
@@ -550,15 +571,17 @@ if ($userid === NULL) {
         });
 
         // SUBCATEGORY ➜ SUBSUBCATEGORY
-        $('#sub-category-dropdown').change(function () {
+        $('#sub-category-dropdown').change(function() {
             var subcategory_id = $(this).val();
 
             if (subcategory_id) {
                 $.ajax({
                     url: "fetch_subsubcategory.php",
                     type: "POST",
-                    data: { subcategory_id: subcategory_id },
-                    success: function (data) {
+                    data: {
+                        subcategory_id: subcategory_id
+                    },
+                    success: function(data) {
                         $('#sub-sub-category-dropdown').html(data);
                     }
                 });
