@@ -464,7 +464,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="out_story.php">Our Story</a>
+                <a class="nav-link" href="our_story.php">Our Story</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="artist_story.php">Artists Story</a>
