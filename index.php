@@ -488,31 +488,37 @@
     </section>
 
 
-    <section class="od-banner-wrapper">
-        <img src="assets/img/about_bg_element.png" class="od-dome-bg" alt="Dome Background" />
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 od-banner-left">
-                    <h2>The Gateway to</h2>
-                    <h2> India's Timeless Heritage</h2>
-                    <p>
-                        We aim to provide a platform to Indian Handloom Weavers and Handicraft Artisans to sell
-                        their
-                        traditional handcrafted products online; paving the way for their financial and social
-                        empowerment.
-                        This will also help in promoting their skills while eliminating the intermediaries.
-                        We hope to raise the dignity of the Indian artisans and kindle an interest for an
-                        unsurpassed
-                        legacy
-                        of craft that spans millennia and spreads across the length and breadth of India.
-                    </p>
-                </div>
-                <div class="col-md-6 od-banner-img-wrapper mt-4 mt-md-0">
-                    <img src="assets/img/thegateway.webp" alt="Handloom Weaver" />
+   <section class="od-banner-wrapper">
+    <img src="assets/img/about_bg_element.png" class="od-dome-bg" alt="Dome Background" />
+    
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <div class="col-md-6 mb-4 mb-md-0">
+                <div class="od-banner-img-wrapper">
+                    <img src="assets/img/UTKALIKART (2).png" alt="Handloom Weaver" />
                 </div>
             </div>
+
+            <div class="col-md-6 od-banner-text">
+                <span class="od-subtitle">Welcome to Our Legacy</span>
+                <h2>The Gateway to <br> <span>India's Timeless Heritage</span></h2>
+                <p>
+                    We aim to provide a platform to Indian Handloom Weavers and Handicraft Artisans to sell
+                    their traditional handcrafted products online; paving the way for their financial and social
+                    empowerment.
+                </p>
+                <p>
+                    This will also help in promoting their skills while eliminating the intermediaries.
+                    We hope to raise the dignity of the Indian artisans and kindle an interest for an
+                    unsurpassed legacy of craft that spans millennia.
+                </p>
+                <a href="#" class="od-btn-aesthetic">Explore Collection</a>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="category-section py-5">
         <div class="container">
