@@ -207,8 +207,8 @@
               <a
                 href="https://wa.me/919876543210?text=Hello%20I%20am%20interested%20in%20this%20product"
                 target="_blank"
-                class="btn btn-success flex-grow-1 py-3 fw-bold rounded-3 shadow-sm text-white">
-                <i class="bi bi-whatsapp me-2"></i>CHAT WITH US
+                class="btn btn-outline-success flex-grow-1 py-3 fw-bold rounded-3 shadow-sm text-black">
+                <i class="bi bi-whatsapp me-2 text-success"></i>CHAT WITH US
               </a>
 
             </div>
