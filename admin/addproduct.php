@@ -41,7 +41,7 @@ if ($userid === NULL) {
                                             <div class="form-group col-3">
                                                 <input type="text" class="form-control" id="exampleInputproductname"
                                                     placeholder="Enter Product Name" name="productname"
-                                                    title="Enter a valid name (up to 50 characters)" required>
+                                                    title="Enter a valid name (up to 50 characters)">
                                             </div>
                                             <div class="form-group col-3">
                                                 <input type="text" class="form-control" id="exampleInputproductname"
@@ -72,7 +72,7 @@ if ($userid === NULL) {
                                             </div>
                                             <div class="form-group col-3">
                                                 <select class="form-control" name="subcategory"
-                                                    id="sub-category-dropdown">
+                                                    id="sub-category-dropdown" required>
                                                     <option value="">Select Sub-Category</option>
                                                 </select>
                                             </div>
@@ -85,7 +85,7 @@ if ($userid === NULL) {
                                             </div>
                                             <div class="form-group col-3">
                                                 <input type="text" class="form-control" id="exampleInputproductcode"
-                                                    placeholder="Enter Product Code" name="productcode" required>
+                                                    placeholder="Enter Product Code" name="productcode">
                                             </div>
                                             <div class="form-group col-3">
                                                 <input type="text" class="form-control"
@@ -102,15 +102,9 @@ if ($userid === NULL) {
                                                     placeholder="Enter Product Discount Price"
                                                     id="productdiscountprice1" name="productdiscountprice">
                                             </div>
-                                            <!-- <div class="form-group col-12">
-                                                <label for="exampleInputcname">Product Details:</label>
-                                                <textarea id="content" name="content" class="form-control" rows="6"
-                                                    required></textarea>
-                                            </div> -->
                                             <div class="form-group col-12">
-                                                <input type="text" class="form-control"
-                                                    placeholder="Enter Product Details" id="productdetaill"
-                                                    name="product_detail">
+                                                <textarea id="productdetaill" placeholder="Enter Product Details"
+                                                    name="product_detail" class="form-control" rows="6"></textarea>
                                             </div>
                                             <div class="form-group col-3">
                                                 <label for="image">Product Image1:</label>
@@ -201,8 +195,18 @@ if ($userid === NULL) {
                                                     name="size">
                                             </div>
                                             <div class="form-group col-3">
-                                                <input type="text" class="form-control" placeholder="Under Price"
-                                                    id="un_pricee" name="under_price">
+                                                <select class="form-control" name="under_price" id="un_pricee">
+                                                    <option value="">Select Price</option>
+                                                    <?php
+                                                    include "conn.php";
+                                                    $result = mysqli_query($conn, "SELECT * FROM price");
+                                                    while ($row = mysqli_fetch_array($result)) {
+                                                        ?>
+                                                        <option value="<?php echo $row['id']; ?>">
+                                                            <?php echo $row["name"]; ?>
+                                                        </option>
+                                                    <?php } ?>
+                                                </select>
                                             </div>
                                             <div class="form-group col-3">
                                                 <input type="text" class="form-control" placeholder="Color" id="colorr"
@@ -232,10 +236,16 @@ if ($userid === NULL) {
                                                 <input type="text" class="form-control" placeholder="Generic Name"
                                                     id="gen_nm" name="generic_nm">
                                             </div>
-                                            <div class="form-group col-3">
+                                            <!-- <div class="form-group col-3">
                                                 <input type="text" class="form-control" placeholder="Keywords"
                                                     id="keywordss" name="keyword">
+                                            </div> -->
+
+                                            <div class="form-group col-12">
+                                                <label for="text">Keywords:</label>
+                                                <input type="text" name="keywords1" id="tag-input1">
                                             </div>
+
                                             <div class="form-group col-3">
                                                 <input type="text" class="form-control" placeholder="Meta Description"
                                                     id="meta_descc" name="meta_desc">
@@ -517,7 +527,47 @@ if ($userid === NULL) {
 <!-- for catalogue dropdown -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script>
+    $(document).ready(function () {
 
+        // CATEGORY ➜ SUBCATEGORY
+        $('#category-dropdown').change(function () {
+            var category_id = $(this).val();
+
+            $('#sub-sub-category-dropdown').html('<option value="">Select Sub Sub Category</option><option value="0">None</option>');
+
+            if (category_id) {
+                $.ajax({
+                    url: "fetch_subcategory.php",
+                    type: "POST",
+                    data: { category_id: category_id },
+                    success: function (data) {
+                        $('#sub-category-dropdown').html(data);
+                    }
+                });
+            } else {
+                $('#sub-category-dropdown').html('<option value="">Select Sub-Category</option>');
+            }
+        });
+
+        // SUBCATEGORY ➜ SUBSUBCATEGORY
+        $('#sub-category-dropdown').change(function () {
+            var subcategory_id = $(this).val();
+
+            if (subcategory_id) {
+                $.ajax({
+                    url: "fetch_subsubcategory.php",
+                    type: "POST",
+                    data: { subcategory_id: subcategory_id },
+                    success: function (data) {
+                        $('#sub-sub-category-dropdown').html(data);
+                    }
+                });
+            } else {
+                $('#sub-sub-category-dropdown').html('<option value="">Select Sub Sub Category</option><option value="0">None</option>');
+            }
+        });
+
+    });
 </script>
 
 </html>

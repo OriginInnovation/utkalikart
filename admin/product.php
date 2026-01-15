@@ -54,7 +54,7 @@ if ($userid === NULL) {
                                         ?>
                                         <tr>
                                             <td class="serial-no text-center"></td>
-                                            <td class="text-center"><?php echo $row['product_name']; ?></td>
+                                            <td class="text-center"><?php echo $row['pro_name']; ?></td>
                                             <td class="text-center">
                                                 <?php
                                                 $category_id = $row["category_id"];
