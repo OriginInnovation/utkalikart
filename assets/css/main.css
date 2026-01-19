@@ -2676,8 +2676,8 @@ body {
 .newsletter-input:focus {
   outline: none;
   box-shadow: none;
-  background-color: #353535;
-  color: white !important;
+  /* background-color: #353535;
+  color: white !important; */
 }
 
 .btn-newsleter {

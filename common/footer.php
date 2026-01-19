@@ -28,7 +28,7 @@
     }
 
     .footer-wrapper a:hover {
-        color: #000;
+        /* color: #000; */
         transform: translateX(3px);
         /* Subtle shift right */
         font-weight: 500;
@@ -109,10 +109,10 @@
         transition: all 0.3s;
     }
 
-    .btn-contact:hover {
+    /* .btn-contact:hover {
         background: #222;
         color: #fff;
-    }
+    } */
 
     /* --- Payment & Trust --- */
     .payment-row img {
@@ -214,7 +214,7 @@
     }
 
     .footer-wrapper a:hover {
-        color: #000;
+        /* color: #000; */
         transform: translateX(3px);
         font-weight: 500;
     }

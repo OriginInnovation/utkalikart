@@ -16,6 +16,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="assets/css/main.css?v=4.2">
+    <style>
+        .video-card {
+            border-radius: 14px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            transition: transform .3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .video-thumb {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .video-info {
+            padding: 10px 12px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -32,170 +59,182 @@
         <i class="bi bi-chevron-up"></i>
     </button>
 
-        <div class="hero-banner">
+    <div class="hero-banner">
         <img src="assets/img/eZCrPgtM_ecf89ec6e998443894b3bd4eed721c3e.webp"
             alt="Advertisement Banner" class="banner-img">
     </div>
 
-        <section class="py-5">
+    <section class="py-5">
         <div class="container">
-            <h2 class="mb-4 fw-bold">Trending Reels</h2>
+            <h1 class="mb-4 fw-bold text-center">Our Story</h2>
 
-            <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner" id="carouselContainer">
+            <div class="container my-4">
+                <div class="row g-4">
 
-                    <!-- Just dump all cards here -->
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3695955128721715073_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Pretty Rama Nylo Pretty Rama Nylon Pretty Rama Nylon<span>₹2,999</span></div>
-                    </div>
-
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Splendiferous Sky…<span>₹1,699</span></div>
-                    </div>
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3739441664931710900_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Pretty Rama Nylon…<span>₹2,999</span></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3695955128721715073_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Pretty Rama Nylon <span>₹2,999</span></div> -->
+                        </div>
                     </div>
 
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3740164265094212156_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Splendiferous Sky…<span>₹1,699</span></div>
-                    </div>
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3740164265094212156_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Pretty Rama Nylon…<span>₹2,999</span></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Splendiferous Sky <span>₹1,699</span></div> -->
+                        </div>
                     </div>
 
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3688762854879451532_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Splendiferous Sky…<span>₹1,699</span></div>
-                    </div>
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3656871212438455884_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Pretty Rama Nylon…<span>₹2,999</span></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3739441664931710900_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Pretty Rama Nylon <span>₹2,999</span></div> -->
+                        </div>
                     </div>
 
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Splendiferous Sky…<span>₹1,699</span></div>
-                    </div>
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3695955128721715073_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Pretty Rama Nylon…<span>₹2,999</span></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3740164265094212156_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Splendiferous Sky <span>₹1,699</span></div> -->
+                        </div>
                     </div>
 
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Splendiferous Sky…<span>₹1,699</span></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3740164265094212156_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Pretty Rama Nylon <span>₹2,999</span></div> -->
+                        </div>
                     </div>
 
-                    <!-- Jitne chahe utne cards yaha daal -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3688762854879451532_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Splendiferous Sky <span>₹1,699</span></div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3656871212438455884_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Pretty Rama Nylon <span>₹2,999</span></div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Splendiferous Sky <span>₹1,699</span></div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3695955128721715073_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Pretty Rama Nylon <span>₹2,999</span></div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Splendiferous Sky <span>₹1,699</span></div> -->
+                        </div>
+                    </div>
 
                 </div>
-
-                <!-- CONTROLS -->
-                <button class="carousel-control-prev custom-top-controls" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-
-                <button class="carousel-control-next custom-top-controls" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-
             </div>
+
 
         </div>
     </section>
 
-     <div class="container py-5 text-center">
-            <h2 class="fw-bold mb-5">Loved by Our Community ✨</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="quote-card shadow-sm p-4">
-                        "The pastel collection is a dream! Used the MIST25 code and saved so much. Quality is top-notch."
-                        <div class="mt-3 fw-bold small">- Ananya M.</div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="quote-card shadow-sm p-4" style="background: var(--aesthetic-lavender);">
-                        "Fastest delivery ever! The gift hamper I won from the spin wheel was so thoughtful. Thank you!"
-                        <div class="mt-3 fw-bold small">- Priyanshi S.</div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="quote-card shadow-sm p-4">
-                        "Aesthetic vibes all the way. Finally a boutique that understands modern ethnic fashion."
-                        <div class="mt-3 fw-bold small">- Sneha K.</div>
-                    </div>
+    <div class="container py-5 text-center">
+        <h2 class="fw-bold mb-5">Loved by Our Community ✨</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="quote-card shadow-sm p-4">
+                    "The pastel collection is a dream! Used the MIST25 code and saved so much. Quality is top-notch."
+                    <div class="mt-3 fw-bold small">- Ananya M.</div>
                 </div>
             </div>
-        </div>
-
-        <section id="txt-making-process" class="txt-section-wrapper">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h5 class="txt-subheading">Behind The Seams</h5>
-            <h2 class="txt-main-heading">The Art of Textile Making</h2>
-            <div class="txt-divider mx-auto"></div>
-        </div>
-
-        <div class="row position-relative g-4">
-            
-            <div class="txt-connecting-line d-none d-lg-block"></div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="txt-process-card text-center">
-                    <div class="txt-icon-box">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h4 class="txt-step-title">Ethical Sourcing</h4>
-                    <p class="txt-step-desc">
-                        We select the finest organic cotton and pure silks directly from authentic farmers.
-                    </p>
+            <div class="col-md-4">
+                <div class="quote-card shadow-sm p-4" style="background: var(--aesthetic-lavender);">
+                    "Fastest delivery ever! The gift hamper I won from the spin wheel was so thoughtful. Thank you!"
+                    <div class="mt-3 fw-bold small">- Priyanshi S.</div>
                 </div>
             </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="txt-process-card text-center">
-                    <div class="txt-icon-box">
-                        <i class="fas fa-scroll"></i>
-                    </div>
-                    <h4 class="txt-step-title">Handloom Weaving</h4>
-                    <p class="txt-step-desc">
-                        Master weavers intertwine threads with precision to create breathable, durable fabric.
-                    </p>
+            <div class="col-md-4">
+                <div class="quote-card shadow-sm p-4">
+                    "Aesthetic vibes all the way. Finally a boutique that understands modern ethnic fashion."
+                    <div class="mt-3 fw-bold small">- Sneha K.</div>
                 </div>
             </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="txt-process-card text-center">
-                    <div class="txt-icon-box">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h4 class="txt-step-title">Artistic Printing</h4>
-                    <p class="txt-step-desc">
-                        Using eco-friendly dyes, our artisans hand-block print intricate aesthetic patterns.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="txt-process-card text-center">
-                    <div class="txt-icon-box">
-                        <i class="fas fa-check-double"></i>
-                    </div>
-                    <h4 class="txt-step-title">Quality Assurance</h4>
-                    <p class="txt-step-desc">
-                        Every thread is inspected to ensure the final product meets premium standards.
-                    </p>
-                </div>
-            </div>
-
         </div>
     </div>
-</section>
+
+    <section id="txt-making-process" class="txt-section-wrapper">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h5 class="txt-subheading">Behind The Seams</h5>
+                <h2 class="txt-main-heading">The Art of Textile Making</h2>
+                <div class="txt-divider mx-auto"></div>
+            </div>
+
+            <div class="row position-relative g-4">
+
+                <div class="txt-connecting-line d-none d-lg-block"></div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="txt-process-card text-center">
+                        <div class="txt-icon-box">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4 class="txt-step-title">Ethical Sourcing</h4>
+                        <p class="txt-step-desc">
+                            We select the finest organic cotton and pure silks directly from authentic farmers.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="txt-process-card text-center">
+                        <div class="txt-icon-box">
+                            <i class="fas fa-scroll"></i>
+                        </div>
+                        <h4 class="txt-step-title">Handloom Weaving</h4>
+                        <p class="txt-step-desc">
+                            Master weavers intertwine threads with precision to create breathable, durable fabric.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="txt-process-card text-center">
+                        <div class="txt-icon-box">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h4 class="txt-step-title">Artistic Printing</h4>
+                        <p class="txt-step-desc">
+                            Using eco-friendly dyes, our artisans hand-block print intricate aesthetic patterns.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="txt-process-card text-center">
+                        <div class="txt-icon-box">
+                            <i class="fas fa-check-double"></i>
+                        </div>
+                        <h4 class="txt-step-title">Quality Assurance</h4>
+                        <p class="txt-step-desc">
+                            Every thread is inspected to ensure the final product meets premium standards.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
     <?php include 'common/footer.php' ?>
     <script>

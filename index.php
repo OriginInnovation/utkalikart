@@ -816,7 +816,7 @@
                         <div class="myshop-image-box">
                             <a href="#">
                                 <img src="assets/img/cotton.webp" class="myshop-product-image" alt="Cotton Saree">
-                                <img src="assets/img/cotton_hover.webp" class="myshop-hover-image" alt="Cotton Saree Back">
+                                <img src="assets/img/cotton2.webp" class="myshop-hover-image" alt="Cotton Saree Back">
                             </a>
                         </div>
 
@@ -844,7 +844,7 @@
                         <div class="myshop-image-box">
                             <a href="#">
                                 <img src="assets/img/black2.webp" class="myshop-product-image" alt="Ikat Kurti">
-                                <img src="assets/img/black2_hover.webp" class="myshop-hover-image" alt="Ikat Kurti Back">
+                                <img src="assets/img/black.webp" class="myshop-hover-image" alt="Ikat Kurti Back">
                             </a>
                         </div>
 
@@ -872,7 +872,7 @@
                         <div class="myshop-image-box">
                             <a href="#">
                                 <img src="assets/img/pink.webp" class="myshop-product-image" alt="Silk Saree">
-                                <img src="assets/img/pink_hover.webp" class="myshop-hover-image" alt="Silk Saree Back">
+                                <img src="assets/img/pink2.webp" class="myshop-hover-image" alt="Silk Saree Back">
                             </a>
                         </div>
 
@@ -900,7 +900,7 @@
                         <div class="myshop-image-box">
                             <a href="#">
                                 <img src="assets/img/slide 5.webp" class="myshop-product-image" alt="Dupatta">
-                                <img src="assets/img/slide 5_hover.webp" class="myshop-hover-image" alt="Dupatta Back">
+                                <img src="assets/img/white.webp" class="myshop-hover-image" alt="Dupatta Back">
                             </a>
                         </div>
 
@@ -1020,7 +1020,7 @@
                         <div class="oa-product-image">
                             <a href="#">
                                 <img src="assets/img/black2.webp" class="oa-front-img" alt="Saree Front">
-                                <img src="assets/img/black2_hover.webp" class="oa-hover-img" alt="Saree Back">
+                                <img src="assets/img/black.webp" class="oa-hover-img" alt="Saree Back">
                             </a>
 
                             <div class="oa-sale-badge">20% OFF</div>
@@ -1055,7 +1055,7 @@
                         <div class="oa-product-image">
                             <a href="#">
                                 <img src="assets/img/cotton2.webp" class="oa-front-img" alt="Kurti Front">
-                                <img src="assets/img/cotton2_hover.webp" class="oa-hover-img" alt="Kurti Back">
+                                <img src="assets/img/cotton.webp" class="oa-hover-img" alt="Kurti Back">
                             </a>
 
                             <div class="oa-sale-badge">15% OFF</div>
@@ -1090,7 +1090,7 @@
                         <div class="oa-product-image">
                             <a href="#">
                                 <img src="assets/img/ethinic_collection.webp" class="oa-front-img" alt="Silk Saree Front">
-                                <img src="assets/img/ethinic_collection_hover.webp" class="oa-hover-img" alt="Silk Saree Back">
+                                <img src="assets/img/slide 4.webp" class="oa-hover-img" alt="Silk Saree Back">
                             </a>
 
                             <div class="oa-sale-badge">30% OFF</div>
@@ -1125,7 +1125,7 @@
                         <div class="oa-product-image">
                             <a href="#">
                                 <img src="assets/img/pink2.webp" class="oa-front-img" alt="Dupatta Front">
-                                <img src="assets/img/pink2_hover.webp" class="oa-hover-img" alt="Dupatta Back">
+                                <img src="assets/img/pink.webp" class="oa-hover-img" alt="Dupatta Back">
                             </a>
 
                             <div class="oa-sale-badge">10% OFF</div>

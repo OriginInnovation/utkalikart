@@ -16,6 +16,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="assets/css/main.css?v=4.2">
+    <style>
+        .video-card {
+            border-radius: 14px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            transition: transform .3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .video-thumb {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .video-info {
+            padding: 10px 12px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -36,6 +63,90 @@
         <img src="assets/img/eZCrPgtM_ecf89ec6e998443894b3bd4eed721c3e.webp"
             alt="Advertisement Banner" class="banner-img">
     </div>
+
+     <section class="py-5">
+        <div class="container">
+            <h2
+        1 class="mb-4 fw-bold text-center">Artists Story</h2>
+
+            <div class="container my-4">
+                <div class="row g-4">
+
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3695955128721715073_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Pretty Rama Nylon <span>₹2,999</span></div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Splendiferous Sky <span>₹1,699</span></div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3739441664931710900_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Pretty Rama Nylon <span>₹2,999</span></div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3740164265094212156_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Splendiferous Sky <span>₹1,699</span></div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3740164265094212156_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Pretty Rama Nylon <span>₹2,999</span></div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3688762854879451532_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Splendiferous Sky <span>₹1,699</span></div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3656871212438455884_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Pretty Rama Nylon <span>₹2,999</span></div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Splendiferous Sky <span>₹1,699</span></div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3695955128721715073_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Pretty Rama Nylon <span>₹2,999</span></div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="video-card">
+                            <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
+                            <!-- <div class="video-info">Splendiferous Sky <span>₹1,699</span></div> -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
 
      <div class="container py-5 text-center">
             <h2 class="fw-bold mb-5">Loved by Our Community ✨</h2>
@@ -60,78 +171,6 @@
                 </div>
             </div>
         </div>
-
-        <section class="py-5">
-        <div class="container">
-            <h2 class="mb-4 fw-bold">Trending Reels</h2>
-
-            <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner" id="carouselContainer">
-
-                    <!-- Just dump all cards here -->
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3695955128721715073_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Pretty Rama Nylo Pretty Rama Nylon Pretty Rama Nylon<span>₹2,999</span></div>
-                    </div>
-
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Splendiferous Sky…<span>₹1,699</span></div>
-                    </div>
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3739441664931710900_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Pretty Rama Nylon…<span>₹2,999</span></div>
-                    </div>
-
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3740164265094212156_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Splendiferous Sky…<span>₹1,699</span></div>
-                    </div>
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3740164265094212156_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Pretty Rama Nylon…<span>₹2,999</span></div>
-                    </div>
-
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3688762854879451532_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Splendiferous Sky…<span>₹1,699</span></div>
-                    </div>
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3656871212438455884_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Pretty Rama Nylon…<span>₹2,999</span></div>
-                    </div>
-
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Splendiferous Sky…<span>₹1,699</span></div>
-                    </div>
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3695955128721715073_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Pretty Rama Nylon…<span>₹2,999</span></div>
-                    </div>
-
-                    <div class="video-card">
-                        <video class="video-thumb" src="assets/videos/3736542686779253411_video.mp4" muted autoplay loop playsinline></video>
-                        <div class="video-info">Splendiferous Sky…<span>₹1,699</span></div>
-                    </div>
-
-                    <!-- Jitne chahe utne cards yaha daal -->
-
-                </div>
-
-                <!-- CONTROLS -->
-                <button class="carousel-control-prev custom-top-controls" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-
-                <button class="carousel-control-next custom-top-controls" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-
-            </div>
-
-        </div>
-    </section>
 
     <?php include 'common/footer.php' ?>
     <script>
