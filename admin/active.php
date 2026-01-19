@@ -104,6 +104,14 @@
         } else {
             echo $conn->error;
         }
+    } elseif ($id1 == "stockk") {
+        $sql7 = "UPDATE product SET stockk = '0' WHERE id='$id'";
+
+        if ($conn->query($sql7) === TRUE) {
+            header("location:$id2");
+        } else {
+            echo $conn->error;
+        }
     } else {
         $sql7 = "UPDATE $id1 SET status='0' WHERE id='$id'";
 

@@ -43,6 +43,7 @@ if ($userid === NULL) {
                                         <th class="text-center">Sub-Category</th>
                                         <th class="text-center">Sub-Sub-Category</th>
                                         <th class="text-center">Product Price</th>
+                                        <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -54,7 +55,7 @@ if ($userid === NULL) {
                                         ?>
                                         <tr>
                                             <td class="serial-no text-center"></td>
-                                            <td class="text-center"><?php echo $row['product_name']; ?></td>
+                                            <td class="text-center"><?php echo $row['pro_name']; ?></td>
                                             <td class="text-center">
                                                 <?php
                                                 $category_id = $row["category_id"];
@@ -120,11 +121,11 @@ if ($userid === NULL) {
                                                     <i class='fas fa-edit'></i>
                                                 </a>
                                                 <?php
-                                                $status = $row['stock'];
+                                                $status = $row['stockk'];
                                                 $idm = $row['id'];
-                                                $tb = 'product';
+                                                $tb = 'stockk';
                                                 $tbc = 'id';
-                                                $tbc1 = 'stock';
+                                                $tbc1 = 'stockk';
                                                 $returnpage = 'product.php';
                                                 $extra = $row['sub_subcategory_id'];
                                                 if ($status == 1) {
@@ -152,6 +153,7 @@ if ($userid === NULL) {
                                         <th class="text-center">Sub-Category</th>
                                         <th class="text-center">Sub-Sub-Category</th>
                                         <th class="text-center">Product Price</th>
+                                        <th class="text-center">Action</th>
                                     </tr>
                                 </tfoot>
                             </table>

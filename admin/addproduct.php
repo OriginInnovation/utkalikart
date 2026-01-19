@@ -41,7 +41,7 @@ if ($userid === NULL) {
                                             <div class="form-group col-3">
                                                 <input type="text" class="form-control" id="exampleInputproductname"
                                                     placeholder="Enter Product Name" name="productname"
-                                                    title="Enter a valid name (up to 50 characters)" required>
+                                                    title="Enter a valid name (up to 50 characters)">
                                             </div>
                                             <div class="form-group col-3">
                                                 <input type="text" class="form-control" id="exampleInputproductname"
@@ -72,7 +72,7 @@ if ($userid === NULL) {
                                             </div>
                                             <div class="form-group col-3">
                                                 <select class="form-control" name="subcategory"
-                                                    id="sub-category-dropdown">
+                                                    id="sub-category-dropdown" required>
                                                     <option value="">Select Sub-Category</option>
                                                 </select>
                                             </div>
@@ -85,7 +85,7 @@ if ($userid === NULL) {
                                             </div>
                                             <div class="form-group col-3">
                                                 <input type="text" class="form-control" id="exampleInputproductcode"
-                                                    placeholder="Enter Product Code" name="productcode" required>
+                                                    placeholder="Enter Product Code" name="productcode">
                                             </div>
                                             <div class="form-group col-3">
                                                 <input type="text" class="form-control"
@@ -102,15 +102,9 @@ if ($userid === NULL) {
                                                     placeholder="Enter Product Discount Price"
                                                     id="productdiscountprice1" name="productdiscountprice">
                                             </div>
-                                            <!-- <div class="form-group col-12">
-                                                <label for="exampleInputcname">Product Details:</label>
-                                                <textarea id="content" name="content" class="form-control" rows="6"
-                                                    required></textarea>
-                                            </div> -->
                                             <div class="form-group col-12">
-                                                <input type="text" class="form-control"
-                                                    placeholder="Enter Product Details" id="productdetaill"
-                                                    name="product_detail">
+                                                <textarea id="productdetaill" placeholder="Enter Product Details"
+                                                    name="product_detail" class="form-control" rows="6"></textarea>
                                             </div>
                                             <div class="form-group col-3">
                                                 <label for="image">Product Image1:</label>
@@ -201,8 +195,18 @@ if ($userid === NULL) {
                                                     name="size">
                                             </div>
                                             <div class="form-group col-3">
-                                                <input type="text" class="form-control" placeholder="Under Price"
-                                                    id="un_pricee" name="under_price">
+                                                <select class="form-control" name="under_price" id="un_pricee">
+                                                    <option value="">Select Price</option>
+                                                    <?php
+                                                    include "conn.php";
+                                                    $result = mysqli_query($conn, "SELECT * FROM price");
+                                                    while ($row = mysqli_fetch_array($result)) {
+                                                        ?>
+                                                        <option value="<?php echo $row['id']; ?>">
+                                                            <?php echo $row["name"]; ?>
+                                                        </option>
+                                                    <?php } ?>
+                                                </select>
                                             </div>
                                             <div class="form-group col-3">
                                                 <input type="text" class="form-control" placeholder="Color" id="colorr"
@@ -232,10 +236,12 @@ if ($userid === NULL) {
                                                 <input type="text" class="form-control" placeholder="Generic Name"
                                                     id="gen_nm" name="generic_nm">
                                             </div>
-                                            <div class="form-group col-3">
-                                                <input type="text" class="form-control" placeholder="Keywords"
-                                                    id="keywordss" name="keyword">
+                                            <div class="form-group col-12">
+                                                <label for="text">Keywords:</label>
+                                                <input type="text" class="form-control" name="keywords1"
+                                                    id="tag-input1">
                                             </div>
+
                                             <div class="form-group col-3">
                                                 <input type="text" class="form-control" placeholder="Meta Description"
                                                     id="meta_descc" name="meta_desc">
@@ -259,59 +265,54 @@ if ($userid === NULL) {
     <?php
     if (isset($_POST['product_update'])) {
         include 'conn.php';
-        // Function to handle file uploads
         function handleFileUpload($fieldName, $uploadDir)
         {
-            global $conn;
-            $image_name = $_FILES[$fieldName]['name'];
-            $image_size = $_FILES[$fieldName]['size'];
-            $image_tmp = $_FILES[$fieldName]['tmp_name'];
-            $file_type = pathinfo($image_name, PATHINFO_EXTENSION);
-            $new_file_name = uniqid() . '.' . $file_type;
+            if (!isset($_FILES[$fieldName]) || $_FILES[$fieldName]['error'] !== 0) {
+                return null;
+            }
 
-            // Ensure upload directory exists
+            $file_name = $_FILES[$fieldName]['name'];
+            $file_tmp = $_FILES[$fieldName]['tmp_name'];
+            $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+
+            $new_file_name = uniqid() . '.' . $file_ext;
+
             if (!is_dir($uploadDir)) {
-                mkdir($uploadDir, 0777, true); // Ensure directory is writable
+                mkdir($uploadDir, 0777, true);
             }
 
-            $target_file = $uploadDir . $new_file_name;
-
-            if (move_uploaded_file($image_tmp, $target_file)) {
-                return $new_file_name; // Return the generated file name if upload succeeds
-            } else {
-                return null; // Return null if upload fails
+            if (move_uploaded_file($file_tmp, $uploadDir . $new_file_name)) {
+                return $new_file_name;
             }
+
+            return null;
         }
+        $image_upload_dir = "upload/product/";
+        $video_upload_dir = "upload/product/video/";
 
+        $new_file_name1 = handleFileUpload('image1', $image_upload_dir);
+        $new_file_name2 = handleFileUpload('image2', $image_upload_dir);
+        $new_file_name3 = handleFileUpload('image3', $image_upload_dir);
+        $new_file_name4 = handleFileUpload('image4', $image_upload_dir);
 
-        // File upload directory
-        $upload_dir = "upload/product/";
-        // Handle image uploads
-        $new_file_name1 = handleFileUpload('image1', $upload_dir);
-        $new_file_name2 = handleFileUpload('image2', $upload_dir);
-        $new_file_name3 = handleFileUpload('image3', $upload_dir);
-        $new_file_name4 = handleFileUpload('image4', $upload_dir);
+        $video5_name = handleFileUpload('video5', $video_upload_dir);
 
-
-        // Sanitize inputs
-        $productname = htmlspecialchars($conn->real_escape_string($_POST["productname"]));
-        $descc1 = htmlspecialchars($conn->real_escape_string($_POST["descc1"]));
-        $ratingss = htmlspecialchars($conn->real_escape_string($_POST["ratingss"]));
-        $reviewss = htmlspecialchars($conn->real_escape_string($_POST["reviewss"]));
-        $category = $conn->real_escape_string($_POST["category"]);
+        $productname = $conn->real_escape_string($_POST["productname"]);
+        $descc1 = $conn->real_escape_string($_POST["descc1"]);
+        $ratingss = $conn->real_escape_string($_POST["ratingss"]);
+        $reviewss = $conn->real_escape_string($_POST["reviewss"]);
         $category = $conn->real_escape_string($_POST["category"]);
         $subcategory = $conn->real_escape_string($_POST["subcategory"]);
         $subsubcategory = $conn->real_escape_string($_POST["subsubcategory"]);
-
         $productcode = $conn->real_escape_string($_POST["productcode"]);
         $productprice = $conn->real_escape_string($_POST["productprice"]);
         $discount1 = $conn->real_escape_string($_POST["discount1"]);
         $productdiscountprice = $conn->real_escape_string($_POST["productdiscountprice"]);
         $product_detail = $conn->real_escape_string($_POST["product_detail"]);
 
-        $pro_new = isset($_POST["pro_new"]) ? $_POST["pro_new"] : 0;
-        $pro_premium = isset($_POST["pro_premium"]) ? $_POST["pro_premium"] : 0;
-        $pro_hot = isset($_POST["pro_hot"]) ? $_POST["pro_hot"] : 0;
+        $pro_new = isset($_POST["pro_new"]) ? 1 : 0;
+        $pro_premium = isset($_POST["pro_premium"]) ? 1 : 0;
+        $pro_hot = isset($_POST["pro_hot"]) ? 1 : 0;
 
         $fabric = $conn->real_escape_string($_POST["fabric"]);
         $blouse = $conn->real_escape_string($_POST["blouse"]);
@@ -328,45 +329,69 @@ if ($userid === NULL) {
         $item_weight = $conn->real_escape_string($_POST["item_weight"]);
         $net_quentity = $conn->real_escape_string($_POST["net_quentity"]);
         $generic_nm = $conn->real_escape_string($_POST["generic_nm"]);
-
-
-        $keywords = $conn->real_escape_string($_POST["keyword"]);
+        $keywords = $conn->real_escape_string(implode(',', array_filter(explode(' ', trim($_POST['keywords1'])))));
         $metadescription = $conn->real_escape_string($_POST["meta_desc"]);
 
-        // Insert into database
-        $sql = "INSERT INTO product (pro_name, product_short_nm, rating, review, category_id, sub_category_id, sub_subcategory_id, product_code, product_price, pro_discount, product_discount_price, pro_details, neww, premiumm, hott, fabric, blousee, caree, dimenn, ave_offer, about_item, sizee, pricee, colorr, stockk, manuufacturee, packer, item_weight, net_quentity, generic_nm, keywordss, meta_desc, product_image1, product_image2, product_image3, product_image4, status) 
-            VALUES ('$productname', '$descc1', '$ratingss', '$reviewss', '$category', '$subcategory', '$subsubcategory', '$productcode', '$productprice', '$discount1', '$productdiscountprice', '$product_detail', '$pro_new', '$pro_premium', '$pro_hot', '$fabric', '$blouse', '$care', '$dimension', '$ava_offerr', '$about_item', '$size', '$under_price', '$color', '$stock', '$manufacture', '$packer', '$item_weight', '$net_quentity', '$generic_nm', '$keywords', '$metadescription','$new_file_name1','$new_file_name2','$new_file_name3','$new_file_name4','1')";
+        /* ==============================
+           INSERT QUERY
+        =============================== */
+        $sql = "INSERT INTO product (
+        pro_name, product_short_nm, rating, review,
+        category_id, sub_category_id, sub_subcategory_id,
+        product_code, product_price, pro_discount, product_discount_price,
+        pro_details, neww, premiumm, hott,
+        fabric, blousee, caree, dimenn, ave_offer, about_item,
+        sizee, pricee, colorr, stockk, manuufacturee, packer,
+        item_weight, net_quentity, generic_nm,
+        keywordss, meta_desc,
+        product_image1, product_image2, product_image3, product_image4,
+        product_vdo, status
+    ) VALUES (
+        '$productname', '$descc1', '$ratingss', '$reviewss',
+        '$category', '$subcategory', '$subsubcategory',
+        '$productcode', '$productprice', '$discount1', '$productdiscountprice',
+        '$product_detail', '$pro_new', '$pro_premium', '$pro_hot',
+        '$fabric', '$blouse', '$care', '$dimension', '$ava_offerr', '$about_item',
+        '$size', '$under_price', '$color', '$stock', '$manufacture', '$packer',
+        '$item_weight', '$net_quentity', '$generic_nm',
+        '$keywords', '$metadescription',
+        '$new_file_name1', '$new_file_name2', '$new_file_name3', '$new_file_name4',
+        '$video5_name',
+        '1'
+    )";
 
-        if ($conn->query($sql) === true) {
+        if ($conn->query($sql)) {
             echo "<script>
-                $(document).ready(function(){
-                    toastr.success('Product added successfully');
-                    setTimeout(function(){
-                        window.location.href = 'product';
-                    }, 2000); // 2000 milliseconds = 2 seconds
-                });
-            </script>";
+            toastr.success('Product added successfully');
+            setTimeout(() => window.location.href = 'product', 2000);
+        </script>";
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Database Error: " . $conn->error;
         }
 
         $conn->close();
     }
     ?>
 
+
     <script>
         CKEDITOR.replace('content', {
             height: 300,
             filebrowserUploadUrl: "upload.php"
         });
+    </script>
 
+    <script>
         //for keywords
         (function () {
             "use strict"
+            // Plugin Constructor
             var TagsInput = function (opts) {
                 this.options = Object.assign(TagsInput.defaults, opts);
                 this.init();
             }
+
+            // Initialize the plugin
             TagsInput.prototype.init = function (opts) {
                 this.options = opts ? Object.assign(this.options, opts) : this.options;
 
@@ -382,26 +407,37 @@ if ($userid === NULL) {
                 this.input = document.createElement('input');
                 init(this);
                 initEvents(this);
-
+                // Check if there's existing data and populate the input field with tags
+                if (this.orignal_input.value) {
+                    var existingTags = this.orignal_input.value.split(',');
+                    for (var i = 0; i < existingTags.length; i++) {
+                        this.addTag(existingTags[i]);
+                    }
+                }
                 this.initialized = true;
                 return this;
             }
+
             // Add Tags
             TagsInput.prototype.addTag = function (string) {
-
                 if (this.anyErrors(string))
                     return;
+
                 this.arr.push(string);
                 var tagInput = this;
+
                 var tag = document.createElement('span');
                 tag.className = this.options.tagClass;
                 tag.innerText = string;
+
                 var closeIcon = document.createElement('a');
                 closeIcon.innerHTML = '&times;';
+
                 // delete the tag when icon is clicked
                 closeIcon.addEventListener('click', function (e) {
                     e.preventDefault();
                     var tag = this.parentNode;
+
                     for (var i = 0; i < tagInput.wrapper.childNodes.length; i++) {
                         if (tagInput.wrapper.childNodes[i] == tag)
                             tagInput.deleteTag(tag, i);
@@ -410,6 +446,7 @@ if ($userid === NULL) {
                 tag.appendChild(closeIcon);
                 this.wrapper.insertBefore(tag, this.input);
                 this.orignal_input.value = this.arr.join(',');
+
                 return this;
             }
 
@@ -427,7 +464,6 @@ if ($userid === NULL) {
                     console.log('max tags limit reached');
                     return true;
                 }
-
                 if (!this.options.duplicate && this.arr.indexOf(string) != -1) {
                     console.log('duplicate found " ' + string + ' " ')
                     return true;
@@ -450,7 +486,6 @@ if ($userid === NULL) {
             TagsInput.prototype.getInputString = function () {
                 return this.arr.join(',');
             }
-
 
             // destroy the plugin
             TagsInput.prototype.destroy = function () {
@@ -483,17 +518,19 @@ if ($userid === NULL) {
                 tags.wrapper.addEventListener('click', function () {
                     tags.input.focus();
                 });
+
                 tags.input.addEventListener('keydown', function (e) {
                     var str = tags.input.value.trim();
+
                     if (!!(~[9, 13, 188].indexOf(e.keyCode))) {
                         e.preventDefault();
                         tags.input.value = "";
                         if (str != "")
                             tags.addTag(str);
                     }
+
                 });
             }
-
             // Set All the Default Values
             TagsInput.defaults = {
                 selector: '',
@@ -502,7 +539,9 @@ if ($userid === NULL) {
                 max: null,
                 duplicate: false
             }
+
             window.TagsInput = TagsInput;
+
         })();
         var tagInput1 = new TagsInput({
             selector: 'tag-input1',
@@ -517,7 +556,74 @@ if ($userid === NULL) {
 <!-- for catalogue dropdown -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script>
+    $(document).ready(function () {
 
+        // CATEGORY ➜ SUBCATEGORY
+        $('#category-dropdown').change(function () {
+            var category_id = $(this).val();
+
+            $('#sub-sub-category-dropdown').html('<option value="">Select Sub Sub Category</option><option value="0">None</option>');
+
+            if (category_id) {
+                $.ajax({
+                    url: "fetch_subcategory.php",
+                    type: "POST",
+                    data: {
+                        category_id: category_id
+                    },
+                    success: function (data) {
+                        $('#sub-category-dropdown').html(data);
+                    }
+                });
+            } else {
+                $('#sub-category-dropdown').html('<option value="">Select Sub-Category</option>');
+            }
+        });
+
+        // SUBCATEGORY ➜ SUBSUBCATEGORY
+        $('#sub-category-dropdown').change(function () {
+            var subcategory_id = $(this).val();
+
+            if (subcategory_id) {
+                $.ajax({
+                    url: "fetch_subsubcategory.php",
+                    type: "POST",
+                    data: {
+                        subcategory_id: subcategory_id
+                    },
+                    success: function (data) {
+                        $('#sub-sub-category-dropdown').html(data);
+                    }
+                });
+            } else {
+                $('#sub-sub-category-dropdown').html('<option value="">Select Sub Sub Category</option><option value="0">None</option>');
+            }
+        });
+
+    });
+</script>
+<!--for product price and discount price -->
+<script>
+    $(document).ready(function () {
+
+        $('#productprice, #discountt').on('keyup change', function () {
+
+            let price = parseFloat($('#productprice').val());
+            let discount = parseFloat($('#discountt').val());
+
+            if (!isNaN(price) && !isNaN(discount)) {
+
+                let discountAmount = (price * discount) / 100;
+                let finalPrice = price - discountAmount;
+
+                $('#productdiscountprice1').val(finalPrice.toFixed(2));
+            } else {
+                $('#productdiscountprice1').val('');
+            }
+
+        });
+
+    });
 </script>
 
 </html>

@@ -75,6 +75,13 @@ if ($id1 == "category") {
    } else {
       header("location:$id2");
    }
+} elseif ($id1 == "stockk") {
+   $sql6 = "UPDATE product SET $tbc1='1' WHERE $tbc='$id'";
+   if ($conn->query($sql6) === TRUE) {
+      header("location:$id2");
+   } else {
+      echo $conn->error;
+   }
 } else {
    $sql7 = "UPDATE $id1 SET $tbc1='1' WHERE $tbc='$id'";
    if ($conn->query($sql7) === TRUE) {
@@ -84,4 +91,3 @@ if ($id1 == "category") {
    }
 }
 $conn->close();
-?>

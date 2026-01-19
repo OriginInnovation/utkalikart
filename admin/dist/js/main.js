@@ -230,6 +230,25 @@ $(document).ready(function () {
     });
 });
 
+/*add product sub-category insert (add product)*/
+$(document).ready(function () {
+    $('#category-dropdown').on('change', function () {
+        var category_id = $(this).val();
+
+        if (category_id) {
+            $.ajax({
+                url: "fetch_subcategory.php",
+                type: "POST",
+                data: { category_id: category_id },
+                success: function (data) {
+                    $('#sub-category-dropdown').html(data);
+                }
+            });
+        } else {
+            $('#sub-category-dropdown').html('<option value="">Select Sub-Category</option>');
+        }
+    });
+});
 
 /*categorywise sub-sub-category in product update*/
 $(document).ready(function () {
@@ -270,20 +289,3 @@ function getsubSubcategories(subcategoryId) {
     });
 }
 
-//for product price and discount price 
-document.addEventListener("DOMContentLoaded", function () {
-    var productPriceInput = document.getElementById("exampleInputproductprice");
-    var productDiscountPriceInput = document.getElementById("exampleInputproductdiscountprice");
-    var discountPriceError = document.getElementById("discountPriceError");
-
-    productDiscountPriceInput.addEventListener("input", function () {
-        var productPrice = parseInt(productPriceInput.value);
-        var productDiscountPrice = parseInt(productDiscountPriceInput.value);
-
-        if (productDiscountPrice >= productPrice) {
-            discountPriceError.textContent = "Discount price must be less than product price.";
-        } else {
-            discountPriceError.textContent = "";
-        }
-    });
-});
