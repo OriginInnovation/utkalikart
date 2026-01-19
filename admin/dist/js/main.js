@@ -289,20 +289,3 @@ function getsubSubcategories(subcategoryId) {
     });
 }
 
-//for product price and discount price 
-document.addEventListener("DOMContentLoaded", function () {
-    var productPriceInput = document.getElementById("exampleInputproductprice");
-    var productDiscountPriceInput = document.getElementById("exampleInputproductdiscountprice");
-    var discountPriceError = document.getElementById("discountPriceError");
-
-    productDiscountPriceInput.addEventListener("input", function () {
-        var productPrice = parseInt(productPriceInput.value);
-        var productDiscountPrice = parseInt(productDiscountPriceInput.value);
-
-        if (productDiscountPrice >= productPrice) {
-            discountPriceError.textContent = "Discount price must be less than product price.";
-        } else {
-            discountPriceError.textContent = "";
-        }
-    });
-});

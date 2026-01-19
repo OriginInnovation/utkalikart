@@ -63,7 +63,7 @@ if ($userid === NULL) {
                                                     include "conn.php";
                                                     $result = mysqli_query($conn, "SELECT * FROM category");
                                                     while ($row = mysqli_fetch_array($result)) {
-                                                    ?>
+                                                        ?>
                                                         <option value="<?php echo $row['id']; ?>">
                                                             <?php echo $row["category_name"]; ?>
                                                         </option>
@@ -201,7 +201,7 @@ if ($userid === NULL) {
                                                     include "conn.php";
                                                     $result = mysqli_query($conn, "SELECT * FROM price");
                                                     while ($row = mysqli_fetch_array($result)) {
-                                                    ?>
+                                                        ?>
                                                         <option value="<?php echo $row['id']; ?>">
                                                             <?php echo $row["name"]; ?>
                                                         </option>
@@ -236,14 +236,10 @@ if ($userid === NULL) {
                                                 <input type="text" class="form-control" placeholder="Generic Name"
                                                     id="gen_nm" name="generic_nm">
                                             </div>
-                                            <!-- <div class="form-group col-3">
-                                                <input type="text" class="form-control" placeholder="Keywords"
-                                                    id="keywordss" name="keyword">
-                                            </div> -->
-
                                             <div class="form-group col-12">
                                                 <label for="text">Keywords:</label>
-                                                <input type="text" class="form-control" name="keywords1" id="tag-input1">
+                                                <input type="text" class="form-control" name="keywords1"
+                                                    id="tag-input1">
                                             </div>
 
                                             <div class="form-group col-3">
@@ -269,59 +265,54 @@ if ($userid === NULL) {
     <?php
     if (isset($_POST['product_update'])) {
         include 'conn.php';
-        // Function to handle file uploads
         function handleFileUpload($fieldName, $uploadDir)
         {
-            global $conn;
-            $image_name = $_FILES[$fieldName]['name'];
-            $image_size = $_FILES[$fieldName]['size'];
-            $image_tmp = $_FILES[$fieldName]['tmp_name'];
-            $file_type = pathinfo($image_name, PATHINFO_EXTENSION);
-            $new_file_name = uniqid() . '.' . $file_type;
+            if (!isset($_FILES[$fieldName]) || $_FILES[$fieldName]['error'] !== 0) {
+                return null;
+            }
 
-            // Ensure upload directory exists
+            $file_name = $_FILES[$fieldName]['name'];
+            $file_tmp = $_FILES[$fieldName]['tmp_name'];
+            $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+
+            $new_file_name = uniqid() . '.' . $file_ext;
+
             if (!is_dir($uploadDir)) {
-                mkdir($uploadDir, 0777, true); // Ensure directory is writable
+                mkdir($uploadDir, 0777, true);
             }
 
-            $target_file = $uploadDir . $new_file_name;
-
-            if (move_uploaded_file($image_tmp, $target_file)) {
-                return $new_file_name; // Return the generated file name if upload succeeds
-            } else {
-                return null; // Return null if upload fails
+            if (move_uploaded_file($file_tmp, $uploadDir . $new_file_name)) {
+                return $new_file_name;
             }
+
+            return null;
         }
+        $image_upload_dir = "upload/product/";
+        $video_upload_dir = "upload/product/video/";
 
+        $new_file_name1 = handleFileUpload('image1', $image_upload_dir);
+        $new_file_name2 = handleFileUpload('image2', $image_upload_dir);
+        $new_file_name3 = handleFileUpload('image3', $image_upload_dir);
+        $new_file_name4 = handleFileUpload('image4', $image_upload_dir);
 
-        // File upload directory
-        $upload_dir = "upload/product/";
-        // Handle image uploads
-        $new_file_name1 = handleFileUpload('image1', $upload_dir);
-        $new_file_name2 = handleFileUpload('image2', $upload_dir);
-        $new_file_name3 = handleFileUpload('image3', $upload_dir);
-        $new_file_name4 = handleFileUpload('image4', $upload_dir);
+        $video5_name = handleFileUpload('video5', $video_upload_dir);
 
-
-        // Sanitize inputs
-        $productname = htmlspecialchars($conn->real_escape_string($_POST["productname"]));
-        $descc1 = htmlspecialchars($conn->real_escape_string($_POST["descc1"]));
-        $ratingss = htmlspecialchars($conn->real_escape_string($_POST["ratingss"]));
-        $reviewss = htmlspecialchars($conn->real_escape_string($_POST["reviewss"]));
-        $category = $conn->real_escape_string($_POST["category"]);
+        $productname = $conn->real_escape_string($_POST["productname"]);
+        $descc1 = $conn->real_escape_string($_POST["descc1"]);
+        $ratingss = $conn->real_escape_string($_POST["ratingss"]);
+        $reviewss = $conn->real_escape_string($_POST["reviewss"]);
         $category = $conn->real_escape_string($_POST["category"]);
         $subcategory = $conn->real_escape_string($_POST["subcategory"]);
         $subsubcategory = $conn->real_escape_string($_POST["subsubcategory"]);
-
         $productcode = $conn->real_escape_string($_POST["productcode"]);
         $productprice = $conn->real_escape_string($_POST["productprice"]);
         $discount1 = $conn->real_escape_string($_POST["discount1"]);
         $productdiscountprice = $conn->real_escape_string($_POST["productdiscountprice"]);
         $product_detail = $conn->real_escape_string($_POST["product_detail"]);
 
-        $pro_new = isset($_POST["pro_new"]) ? $_POST["pro_new"] : 0;
-        $pro_premium = isset($_POST["pro_premium"]) ? $_POST["pro_premium"] : 0;
-        $pro_hot = isset($_POST["pro_hot"]) ? $_POST["pro_hot"] : 0;
+        $pro_new = isset($_POST["pro_new"]) ? 1 : 0;
+        $pro_premium = isset($_POST["pro_premium"]) ? 1 : 0;
+        $pro_hot = isset($_POST["pro_hot"]) ? 1 : 0;
 
         $fabric = $conn->real_escape_string($_POST["fabric"]);
         $blouse = $conn->real_escape_string($_POST["blouse"]);
@@ -338,31 +329,50 @@ if ($userid === NULL) {
         $item_weight = $conn->real_escape_string($_POST["item_weight"]);
         $net_quentity = $conn->real_escape_string($_POST["net_quentity"]);
         $generic_nm = $conn->real_escape_string($_POST["generic_nm"]);
-
-
-        $keywords = $conn->real_escape_string($_POST["keyword"]);
+        $keywords = $conn->real_escape_string($_POST["keyword1"]);
         $metadescription = $conn->real_escape_string($_POST["meta_desc"]);
 
-        // Insert into database
-        $sql = "INSERT INTO product (pro_name, product_short_nm, rating, review, category_id, sub_category_id, sub_subcategory_id, product_code, product_price, pro_discount, product_discount_price, pro_details, neww, premiumm, hott, fabric, blousee, caree, dimenn, ave_offer, about_item, sizee, pricee, colorr, stockk, manuufacturee, packer, item_weight, net_quentity, generic_nm, keywordss, meta_desc, product_image1, product_image2, product_image3, product_image4, status) 
-            VALUES ('$productname', '$descc1', '$ratingss', '$reviewss', '$category', '$subcategory', '$subsubcategory', '$productcode', '$productprice', '$discount1', '$productdiscountprice', '$product_detail', '$pro_new', '$pro_premium', '$pro_hot', '$fabric', '$blouse', '$care', '$dimension', '$ava_offerr', '$about_item', '$size', '$under_price', '$color', '$stock', '$manufacture', '$packer', '$item_weight', '$net_quentity', '$generic_nm', '$keywords', '$metadescription','$new_file_name1','$new_file_name2','$new_file_name3','$new_file_name4','1')";
+        /* ==============================
+           INSERT QUERY
+        =============================== */
+        $sql = "INSERT INTO product (
+        pro_name, product_short_nm, rating, review,
+        category_id, sub_category_id, sub_subcategory_id,
+        product_code, product_price, pro_discount, product_discount_price,
+        pro_details, neww, premiumm, hott,
+        fabric, blousee, caree, dimenn, ave_offer, about_item,
+        sizee, pricee, colorr, stockk, manuufacturee, packerrr,
+        item_weight, net_quentity, generic_nm,
+        keywordss, meta_desc,
+        product_image1, product_image2, product_image3, product_image4,
+        product_vdo, status
+    ) VALUES (
+        '$productname', '$descc1', '$ratingss', '$reviewss',
+        '$category', '$subcategory', '$subsubcategory',
+        '$productcode', '$productprice', '$discount1', '$productdiscountprice',
+        '$product_detail', '$pro_new', '$pro_premium', '$pro_hot',
+        '$fabric', '$blouse', '$care', '$dimension', '$ava_offerr', '$about_item',
+        '$size', '$under_price', '$color', '$stock', '$manufacture', '$packer',
+        '$item_weight', '$net_quentity', '$generic_nm',
+        '$keywords', '$metadescription',
+        '$new_file_name1', '$new_file_name2', '$new_file_name3', '$new_file_name4',
+        '$video5_name',
+        '1'
+    )";
 
-        if ($conn->query($sql) === true) {
+        if ($conn->query($sql)) {
             echo "<script>
-                $(document).ready(function(){
-                    toastr.success('Product added successfully');
-                    setTimeout(function(){
-                        window.location.href = 'product';
-                    }, 2000); // 2000 milliseconds = 2 seconds
-                });
-            </script>";
+            toastr.success('Product added successfully');
+            setTimeout(() => window.location.href = 'product', 2000);
+        </script>";
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Database Error: " . $conn->error;
         }
 
         $conn->close();
     }
     ?>
+
 
     <script>
         CKEDITOR.replace('content', {
@@ -373,16 +383,16 @@ if ($userid === NULL) {
 
     <script>
         //for keywords
-        (function() {
+        (function () {
             "use strict"
             // Plugin Constructor
-            var TagsInput = function(opts) {
+            var TagsInput = function (opts) {
                 this.options = Object.assign(TagsInput.defaults, opts);
                 this.init();
             }
 
             // Initialize the plugin
-            TagsInput.prototype.init = function(opts) {
+            TagsInput.prototype.init = function (opts) {
                 this.options = opts ? Object.assign(this.options, opts) : this.options;
 
                 if (this.initialized)
@@ -409,7 +419,7 @@ if ($userid === NULL) {
             }
 
             // Add Tags
-            TagsInput.prototype.addTag = function(string) {
+            TagsInput.prototype.addTag = function (string) {
                 if (this.anyErrors(string))
                     return;
 
@@ -424,7 +434,7 @@ if ($userid === NULL) {
                 closeIcon.innerHTML = '&times;';
 
                 // delete the tag when icon is clicked
-                closeIcon.addEventListener('click', function(e) {
+                closeIcon.addEventListener('click', function (e) {
                     e.preventDefault();
                     var tag = this.parentNode;
 
@@ -441,7 +451,7 @@ if ($userid === NULL) {
             }
 
             // Delete Tags
-            TagsInput.prototype.deleteTag = function(tag, i) {
+            TagsInput.prototype.deleteTag = function (tag, i) {
                 tag.remove();
                 this.arr.splice(i, 1);
                 this.orignal_input.value = this.arr.join(',');
@@ -449,7 +459,7 @@ if ($userid === NULL) {
             }
 
             // Make sure input string have no error with the plugin
-            TagsInput.prototype.anyErrors = function(string) {
+            TagsInput.prototype.anyErrors = function (string) {
                 if (this.options.max != null && this.arr.length >= this.options.max) {
                     console.log('max tags limit reached');
                     return true;
@@ -463,28 +473,28 @@ if ($userid === NULL) {
             }
 
             // Add tags programmatically 
-            TagsInput.prototype.addData = function(array) {
+            TagsInput.prototype.addData = function (array) {
                 var plugin = this;
 
-                array.forEach(function(string) {
+                array.forEach(function (string) {
                     plugin.addTag(string);
                 })
                 return this;
             }
 
             // Get the Input String
-            TagsInput.prototype.getInputString = function() {
+            TagsInput.prototype.getInputString = function () {
                 return this.arr.join(',');
             }
 
             // destroy the plugin
-            TagsInput.prototype.destroy = function() {
+            TagsInput.prototype.destroy = function () {
                 this.orignal_input.removeAttribute('hidden');
 
                 delete this.orignal_input;
                 var self = this;
 
-                Object.keys(this).forEach(function(key) {
+                Object.keys(this).forEach(function (key) {
                     if (self[key] instanceof HTMLElement)
                         self[key].remove();
 
@@ -505,11 +515,11 @@ if ($userid === NULL) {
 
             // initialize the Events
             function initEvents(tags) {
-                tags.wrapper.addEventListener('click', function() {
+                tags.wrapper.addEventListener('click', function () {
                     tags.input.focus();
                 });
 
-                tags.input.addEventListener('keydown', function(e) {
+                tags.input.addEventListener('keydown', function (e) {
                     var str = tags.input.value.trim();
 
                     if (!!(~[9, 13, 188].indexOf(e.keyCode))) {
@@ -546,10 +556,10 @@ if ($userid === NULL) {
 <!-- for catalogue dropdown -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
 
         // CATEGORY ➜ SUBCATEGORY
-        $('#category-dropdown').change(function() {
+        $('#category-dropdown').change(function () {
             var category_id = $(this).val();
 
             $('#sub-sub-category-dropdown').html('<option value="">Select Sub Sub Category</option><option value="0">None</option>');
@@ -561,7 +571,7 @@ if ($userid === NULL) {
                     data: {
                         category_id: category_id
                     },
-                    success: function(data) {
+                    success: function (data) {
                         $('#sub-category-dropdown').html(data);
                     }
                 });
@@ -571,7 +581,7 @@ if ($userid === NULL) {
         });
 
         // SUBCATEGORY ➜ SUBSUBCATEGORY
-        $('#sub-category-dropdown').change(function() {
+        $('#sub-category-dropdown').change(function () {
             var subcategory_id = $(this).val();
 
             if (subcategory_id) {
@@ -581,13 +591,36 @@ if ($userid === NULL) {
                     data: {
                         subcategory_id: subcategory_id
                     },
-                    success: function(data) {
+                    success: function (data) {
                         $('#sub-sub-category-dropdown').html(data);
                     }
                 });
             } else {
                 $('#sub-sub-category-dropdown').html('<option value="">Select Sub Sub Category</option><option value="0">None</option>');
             }
+        });
+
+    });
+</script>
+<!--for product price and discount price -->
+<script>
+    $(document).ready(function () {
+
+        $('#productprice, #discountt').on('keyup change', function () {
+
+            let price = parseFloat($('#productprice').val());
+            let discount = parseFloat($('#discountt').val());
+
+            if (!isNaN(price) && !isNaN(discount)) {
+
+                let discountAmount = (price * discount) / 100;
+                let finalPrice = price - discountAmount;
+
+                $('#productdiscountprice1').val(finalPrice.toFixed(2));
+            } else {
+                $('#productdiscountprice1').val('');
+            }
+
         });
 
     });
