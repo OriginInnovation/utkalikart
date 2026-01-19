@@ -329,7 +329,7 @@ if ($userid === NULL) {
         $item_weight = $conn->real_escape_string($_POST["item_weight"]);
         $net_quentity = $conn->real_escape_string($_POST["net_quentity"]);
         $generic_nm = $conn->real_escape_string($_POST["generic_nm"]);
-        $keywords = $conn->real_escape_string($_POST["keyword1"]);
+        $keywords = $conn->real_escape_string(implode(',', array_filter(explode(' ', trim($_POST['keywords1'])))));
         $metadescription = $conn->real_escape_string($_POST["meta_desc"]);
 
         /* ==============================
@@ -341,7 +341,7 @@ if ($userid === NULL) {
         product_code, product_price, pro_discount, product_discount_price,
         pro_details, neww, premiumm, hott,
         fabric, blousee, caree, dimenn, ave_offer, about_item,
-        sizee, pricee, colorr, stockk, manuufacturee, packerrr,
+        sizee, pricee, colorr, stockk, manuufacturee, packer,
         item_weight, net_quentity, generic_nm,
         keywordss, meta_desc,
         product_image1, product_image2, product_image3, product_image4,
