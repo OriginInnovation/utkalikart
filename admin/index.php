@@ -10,8 +10,8 @@ if ($userid === NULL) {
 <html lang="en">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Indus-Supply | Home</title>
-<link href="dist/img/titleimage.png" rel="icon">
+<title>Utkalikart | Home</title>
+<link href="dist/img/titleimage1.png" rel="icon">
 <style>
     body {
         overflow-x: hidden;

@@ -13,7 +13,7 @@ if ($userid === NULL) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Utkalikart | Add Product</title>
-    <link href="dist/img/titleimage.png" rel="icon">
+    <link href="dist/img/titleimage1.png" rel="icon">
     <script src="http://cdn.ckeditor.com/4.6.2/standard-all/ckeditor.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/42.0.0/classic/ckeditor.js"></script>
     <!-- toaster -->
@@ -38,26 +38,17 @@ if ($userid === NULL) {
                                 <div class="modal-body p-0">
                                     <div class="card-body p-0">
                                         <div class="row">
-                                            <div class="form-group col-3">
+                                            <div class="form-group col-6">
                                                 <input type="text" class="form-control" id="exampleInputproductname"
                                                     placeholder="Enter Product Name" name="productname"
                                                     title="Enter a valid name (up to 50 characters)">
                                             </div>
-                                            <div class="form-group col-3">
+                                            <div class="form-group col-6">
                                                 <input type="text" class="form-control" id="exampleInputproductname"
                                                     placeholder="Enter Product Short Description" name="descc1">
                                             </div>
                                             <div class="form-group col-3">
-                                                <input type="text" class="form-control" id="exampleInputproductname"
-                                                    placeholder="Enter Ratings" name="ratingss">
-                                            </div>
-                                            <div class="form-group col-3">
-                                                <input type="text" class="form-control" id="exampleInputproductname"
-                                                    placeholder="Enter Reviews" name="reviewss">
-                                            </div>
-                                            <div class="form-group col-3">
-                                                <select class="form-control" name="category" id="category-dropdown"
-                                                    required>
+                                                <select class="form-control" name="category" id="category-dropdown">
                                                     <option value="">Select Category</option>
                                                     <?php
                                                     include "conn.php";
@@ -72,7 +63,7 @@ if ($userid === NULL) {
                                             </div>
                                             <div class="form-group col-3">
                                                 <select class="form-control" name="subcategory"
-                                                    id="sub-category-dropdown" required>
+                                                    id="sub-category-dropdown">
                                                     <option value="">Select Sub-Category</option>
                                                 </select>
                                             </div>
@@ -87,17 +78,25 @@ if ($userid === NULL) {
                                                 <input type="text" class="form-control" id="exampleInputproductcode"
                                                     placeholder="Enter Product Code" name="productcode">
                                             </div>
-                                            <div class="form-group col-3">
+                                            <div class="form-group col-6">
+                                                <input type="text" class="form-control" id="exampleInputproductname"
+                                                    placeholder="Enter Ratings" name="ratingss">
+                                            </div>
+                                            <div class="form-group col-6">
+                                                <input type="text" class="form-control" id="exampleInputproductname"
+                                                    placeholder="Enter Reviews" name="reviewss">
+                                            </div>
+                                            <div class="form-group col-4">
                                                 <input type="text" class="form-control"
                                                     placeholder="Enter Product Price" id="productprice"
                                                     name="productprice">
                                             </div>
-                                            <div class="form-group col-3">
+                                            <div class="form-group col-4">
                                                 <input type="text" class="form-control"
                                                     placeholder="Enter Product Discount" id="discountt"
                                                     name="discount1">
                                             </div>
-                                            <div class="form-group col-3">
+                                            <div class="form-group col-4">
                                                 <input type="text" class="form-control"
                                                     placeholder="Enter Product Discount Price"
                                                     id="productdiscountprice1" name="productdiscountprice">
@@ -138,14 +137,29 @@ if ($userid === NULL) {
                                                 <img id="image18" src="dist/img/noimage1.png" alt="image" width="50"
                                                     height="50" />
                                             </div>
-                                            <div class="form-group col-4">
+                                            <div class="form-group col-3">
                                                 <label>Video 5:</label>
                                                 <input type="file" name="video5" class="form-control" accept="video/mp4"
                                                     onchange="previewVideo5(this)">
                                                 <video id="video19" width="100" height="70" controls
                                                     style="display:none;"></video>
                                             </div>
-                                            <div class="form-group col-4">
+                                            <div class="form-group col-3">
+                                                <label>Product Highlights</label>
+                                                <select class="form-control" name="pro_high[]" id="pro_highhh" multiple
+                                                    required>
+                                                    <?php
+                                                    include "conn.php";
+                                                    $result = mysqli_query($conn, "SELECT * FROM pro_high");
+                                                    while ($row = mysqli_fetch_assoc($result)) {
+                                                        ?>
+                                                        <option value="<?= $row['id']; ?>">
+                                                            <?= htmlspecialchars($row['name']); ?>
+                                                        </option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-3">
                                                 <label for="text">Type:</label>
                                                 <div class="checkbox-container">
                                                     <div class="form-check">
@@ -167,6 +181,7 @@ if ($userid === NULL) {
                                                 </div>
                                             </div>
                                             <div class="form-group col-3">
+                                                <label>Product Fabric</label>
                                                 <input type="text" class="form-control"
                                                     placeholder="Enter Product Fabric" id="fabricc" name="fabric">
                                             </div>
@@ -186,10 +201,7 @@ if ($userid === NULL) {
                                                 <input type="text" class="form-control" placeholder="Available Offers"
                                                     id="aveable_offer" name="ava_offerr">
                                             </div>
-                                            <div class="form-group col-3">
-                                                <input type="text" class="form-control" placeholder="About Item"
-                                                    id="abou_itm" name="about_item">
-                                            </div>
+
                                             <div class="form-group col-3">
                                                 <input type="text" class="form-control" placeholder="Size" id="sizee"
                                                     name="size">
@@ -208,6 +220,7 @@ if ($userid === NULL) {
                                                     <?php } ?>
                                                 </select>
                                             </div>
+
                                             <div class="form-group col-3">
                                                 <input type="text" class="form-control" placeholder="Color" id="colorr"
                                                     name="color">
@@ -229,22 +242,27 @@ if ($userid === NULL) {
                                                     id="item_weightt" name="item_weight">
                                             </div>
                                             <div class="form-group col-3">
-                                                <input type="text" class="form-control" placeholder="Net Quentity"
-                                                    id="net_quenn" name="net_quentity">
-                                            </div>
-                                            <div class="form-group col-3">
                                                 <input type="text" class="form-control" placeholder="Generic Name"
                                                     id="gen_nm" name="generic_nm">
+                                            </div>
+                                            <!-- <div class="form-group col-12">
+                                                <input type="text" class="form-control" placeholder="About Item"
+                                                    id="abou_itm" name="about_item">
+                                            </div> -->
+                                            <div class="form-group col-12">
+                                                <label for="exampleInputcname">About Item:</label>
+                                                <textarea id="content" name="about_item" class="form-control" rows="6"
+                                                    required></textarea>
                                             </div>
                                             <div class="form-group col-12">
                                                 <label for="text">Keywords:</label>
                                                 <input type="text" class="form-control" name="keywords1"
                                                     id="tag-input1">
                                             </div>
-
-                                            <div class="form-group col-3">
-                                                <input type="text" class="form-control" placeholder="Meta Description"
-                                                    id="meta_descc" name="meta_desc">
+                                            <div class="form-group col-12">
+                                                <label for="text">Meta Description:</label>
+                                                <textarea class="form-control" id="meta_descc" name="meta_desc"
+                                                    rows="3"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -329,6 +347,10 @@ if ($userid === NULL) {
         $item_weight = $conn->real_escape_string($_POST["item_weight"]);
         $net_quentity = $conn->real_escape_string($_POST["net_quentity"]);
         $generic_nm = $conn->real_escape_string($_POST["generic_nm"]);
+        // $pro_high = $conn->real_escape_string($_POST["pro_high[]"]);
+        $pro_high = $conn->real_escape_string(
+            implode(',', array_filter($_POST['pro_high']))
+        );
         $keywords = $conn->real_escape_string(implode(',', array_filter(explode(' ', trim($_POST['keywords1'])))));
         $metadescription = $conn->real_escape_string($_POST["meta_desc"]);
 
@@ -342,7 +364,7 @@ if ($userid === NULL) {
         pro_details, neww, premiumm, hott,
         fabric, blousee, caree, dimenn, ave_offer, about_item,
         sizee, pricee, colorr, stockk, manuufacturee, packer,
-        item_weight, net_quentity, generic_nm,
+        item_weight, net_quentity, generic_nm, pro_high_id,
         keywordss, meta_desc,
         product_image1, product_image2, product_image3, product_image4,
         product_vdo, status
@@ -353,7 +375,7 @@ if ($userid === NULL) {
         '$product_detail', '$pro_new', '$pro_premium', '$pro_hot',
         '$fabric', '$blouse', '$care', '$dimension', '$ava_offerr', '$about_item',
         '$size', '$under_price', '$color', '$stock', '$manufacture', '$packer',
-        '$item_weight', '$net_quentity', '$generic_nm',
+        '$item_weight', '$net_quentity', '$generic_nm', '$pro_high',
         '$keywords', '$metadescription',
         '$new_file_name1', '$new_file_name2', '$new_file_name3', '$new_file_name4',
         '$video5_name',
@@ -624,6 +646,163 @@ if ($userid === NULL) {
         });
 
     });
+</script>
+<script>
+    CKEDITOR.replace('content', {
+        height: 300,
+        filebrowserUploadUrl: "upload.php"
+    });
+
+    //for keywords
+    (function () {
+        "use strict"
+        var TagsInput = function (opts) {
+            this.options = Object.assign(TagsInput.defaults, opts);
+            this.init();
+        }
+        TagsInput.prototype.init = function (opts) {
+            this.options = opts ? Object.assign(this.options, opts) : this.options;
+
+            if (this.initialized)
+                this.destroy();
+
+            if (!(this.orignal_input = document.getElementById(this.options.selector))) {
+                console.error("tags-input couldn't find an element with the specified ID");
+                return this;
+            }
+            this.arr = [];
+            this.wrapper = document.createElement('div');
+            this.input = document.createElement('input');
+            init(this);
+            initEvents(this);
+
+            this.initialized = true;
+            return this;
+        }
+        // Add Tags
+        TagsInput.prototype.addTag = function (string) {
+
+            if (this.anyErrors(string))
+                return;
+            this.arr.push(string);
+            var tagInput = this;
+            var tag = document.createElement('span');
+            tag.className = this.options.tagClass;
+            tag.innerText = string;
+            var closeIcon = document.createElement('a');
+            closeIcon.innerHTML = '&times;';
+            // delete the tag when icon is clicked
+            closeIcon.addEventListener('click', function (e) {
+                e.preventDefault();
+                var tag = this.parentNode;
+                for (var i = 0; i < tagInput.wrapper.childNodes.length; i++) {
+                    if (tagInput.wrapper.childNodes[i] == tag)
+                        tagInput.deleteTag(tag, i);
+                }
+            })
+            tag.appendChild(closeIcon);
+            this.wrapper.insertBefore(tag, this.input);
+            this.orignal_input.value = this.arr.join(',');
+            return this;
+        }
+
+        // Delete Tags
+        TagsInput.prototype.deleteTag = function (tag, i) {
+            tag.remove();
+            this.arr.splice(i, 1);
+            this.orignal_input.value = this.arr.join(',');
+            return this;
+        }
+
+        // Make sure input string have no error with the plugin
+        TagsInput.prototype.anyErrors = function (string) {
+            if (this.options.max != null && this.arr.length >= this.options.max) {
+                console.log('max tags limit reached');
+                return true;
+            }
+
+            if (!this.options.duplicate && this.arr.indexOf(string) != -1) {
+                console.log('duplicate found " ' + string + ' " ')
+                return true;
+            }
+
+            return false;
+        }
+
+        // Add tags programmatically 
+        TagsInput.prototype.addData = function (array) {
+            var plugin = this;
+
+            array.forEach(function (string) {
+                plugin.addTag(string);
+            })
+            return this;
+        }
+
+        // Get the Input String
+        TagsInput.prototype.getInputString = function () {
+            return this.arr.join(',');
+        }
+
+
+        // destroy the plugin
+        TagsInput.prototype.destroy = function () {
+            this.orignal_input.removeAttribute('hidden');
+
+            delete this.orignal_input;
+            var self = this;
+
+            Object.keys(this).forEach(function (key) {
+                if (self[key] instanceof HTMLElement)
+                    self[key].remove();
+
+                if (key != 'options')
+                    delete self[key];
+            });
+
+            this.initialized = false;
+        }
+
+        // Private function to initialize the tag input plugin
+        function init(tags) {
+            tags.wrapper.append(tags.input);
+            tags.wrapper.classList.add(tags.options.wrapperClass);
+            tags.orignal_input.setAttribute('hidden', 'true');
+            tags.orignal_input.parentNode.insertBefore(tags.wrapper, tags.orignal_input);
+        }
+
+        // initialize the Events
+        function initEvents(tags) {
+            tags.wrapper.addEventListener('click', function () {
+                tags.input.focus();
+            });
+            tags.input.addEventListener('keydown', function (e) {
+                var str = tags.input.value.trim();
+                if (!!(~[9, 13, 188].indexOf(e.keyCode))) {
+                    e.preventDefault();
+                    tags.input.value = "";
+                    if (str != "")
+                        tags.addTag(str);
+                }
+            });
+        }
+
+        // Set All the Default Values
+        TagsInput.defaults = {
+            selector: '',
+            wrapperClass: 'tags-input-wrapper',
+            tagClass: 'tag',
+            max: null,
+            duplicate: false
+        }
+        window.TagsInput = TagsInput;
+    })();
+    var tagInput1 = new TagsInput({
+        selector: 'tag-input1',
+        duplicate: false,
+        max: 10
+    });
+    tagInput1.addData([])
 </script>
 
 </html>

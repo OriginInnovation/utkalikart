@@ -12,8 +12,8 @@ if ($userid === NULL) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indus-Supply | Category</title>
-    <link href="dist/img/titleimage.png" rel="icon">
+    <title>Utkalikart | Category</title>
+    <link href="dist/img/titleimage1.png" rel="icon">
     <!-- toaster -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js?v=1.2"></script>

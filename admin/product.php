@@ -12,8 +12,8 @@ if ($userid === NULL) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indus-Supply | Product</title>
-    <link href="dist/img/titleimage.png" rel="icon">
+    <title>Utkalikart | Product</title>
+    <link href="dist/img/titleimage1.png" rel="icon">
 </head>
 <?php include 'common/navbar.php'; ?>
 <!-- Main Sidebar Container -->

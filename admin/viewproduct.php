@@ -7,8 +7,8 @@ $id = urldecode(base64_decode($_GET['id']));
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indus-Supply | Viewproduct</title>
-    <link href="dist/img/titleimage.png" rel="icon">
+    <title>Utkalikart | Viewproduct</title>
+    <link href="dist/img/titleimage1.png" rel="icon">
     <script src="http://cdn.ckeditor.com/4.6.2/standard-all/ckeditor.js"></script>
 </head>
 
@@ -57,7 +57,7 @@ $id = urldecode(base64_decode($_GET['id']));
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a href="index">
-                        <h2 class="text-white incolor">INDUS-SUPPLY</h2>
+                        <h2 class="text-white incolor">UTKALIKART</h2>
                     </a>
                 </li>
             </ul>
@@ -83,8 +83,8 @@ $id = urldecode(base64_decode($_GET['id']));
                                     $category_id = $row["category_id"];
                                     $subcategory_id = $row["sub_category_id"];
                                     $subsubcategory_id = $row["sub_subcategory_id"];
-                                    $occ_id = $row["occ_id"];
-
+                                    // $occ_id = $row["occ_id"];
+                                
                                     $sql1 = "SELECT * FROM category WHERE id = $category_id";
                                     $result1 = $conn->query($sql1);
                                     $row1 = $result1->fetch_assoc();
@@ -97,16 +97,16 @@ $id = urldecode(base64_decode($_GET['id']));
                                     $result3 = $conn->query($sql3);
                                     $row3 = $result3->fetch_assoc();
 
-                                    $sql4 = "SELECT * FROM occasion WHERE id = $occ_id";
-                                    $result4 = $conn->query($sql4);
-                                    $row4 = $result4->fetch_assoc();
+                                    // $sql4 = "SELECT * FROM occasion WHERE id = $occ_id";
+                                    // $result4 = $conn->query($sql4);
+                                    // $row4 = $result4->fetch_assoc();
                                     ?>
                                     <h3 class="mb-3 home_color">View Product</h3>
                                     <div class="product-details">
                                         <div class="row">
                                             <div class="col-12">
                                                 <h6 class="text-black"><strong>Product Name:</strong></h6>
-                                                <p class="pd-vi p-2"><?php echo $row['product_name']; ?></p>
+                                                <p class="pd-vi p-2"><?php echo $row['pro_name']; ?></p>
                                             </div>
                                             <div class="col-3">
                                                 <h6 class="text-black"><strong>Category:</strong></h6>
@@ -126,40 +126,34 @@ $id = urldecode(base64_decode($_GET['id']));
                                                     ?>
                                                 </p>
                                             </div>
-
                                             <div class="col-3">
-                                                <h6 class="text-black"><strong>SKQ Code:</strong></h6>
+                                                <h6 class="text-black"><strong>Product Code:</strong></h6>
                                                 <p class="pd-vi p-2">
-                                                    <?php
-                                                    echo (!empty($row3["skq_code"]) && $row3["skq_code"] != 0)
-                                                        ? $row3["skq_code"]
-                                                        : "NULL";
-                                                    ?>
+                                                    <?php echo $row["product_code"]; ?>
                                                 </p>
                                             </div>
-                                            <div class="form-group col-3">
-                                                <h6 class="text-black"><strong>Product Code:</strong></h6>
-                                                <p class="pd-vi p-2"><?php echo $row["product_code"]; ?></p>
+                                            <div class="col-6">
+                                                <h6 class="text-black"><strong>Product Ratings:</strong></h6>
+                                                <p class="pd-vi p-2">
+                                                    <?php echo $row["rating"]; ?>
+                                                </p>
                                             </div>
-                                            <div class="form-group col-3">
+                                            <div class="col-6">
+                                                <h6 class="text-black"><strong>Product Reviews:</strong></h6>
+                                                <p class="pd-vi p-2"><?php echo $row["review"]; ?></p>
+                                            </div>
+                                            <div class="col-4">
                                                 <h6 class="text-black"><strong>Product Price:</strong></h6>
                                                 <p class="pd-vi p-2"><?php echo $row["product_price"]; ?></p>
                                             </div>
-                                            <div class="form-group col-3">
-                                                <h6 class="text-black"><strong>Product Discount:</strong></h6>
-                                                <p class="pd-vi p-2"><?php echo $row['discount_idd']; ?></p>
+                                            <div class="col-4">
+                                                <h6 class="text-black"><strong>Discount:</strong></h6>
+                                                <p class="pd-vi p-2"><?php echo $row["pro_discount"]; ?></p>
                                             </div>
-                                            <div class="form-group col-3">
+                                            <div class="col-4">
                                                 <h6 class="text-black"><strong>Product Discount Price:</strong></h6>
-                                                <p class="pd-vi p-2"><?php echo $row['product_discount_price']; ?></p>
-                                            </div>
-                                            <div class="col-12">
-                                                <h6 class="text-black"><strong>Product Description Or
-                                                        Specification:</strong></h6>
-                                                <textarea class="pd-vi p-2" id="content" name="content" rows="5" cols="50"
-                                                    readonly>
-                                                                        <?php echo htmlspecialchars($row['product_description']); ?>
-                                                                </textarea>
+                                                <p class="pd-vi p-2"><?php echo $row["product_discount_price"]; ?>
+                                                </p>
                                             </div>
                                             <div class="col-3">
                                                 <strong>Image1:</strong>
@@ -197,96 +191,152 @@ $id = urldecode(base64_decode($_GET['id']));
                                                     <img src="dist/img/noimage1.png" alt="No Image" width="50" height="50">
                                                 <?php endif; ?>
                                             </div>
-                                            <div class="col-4">
-                                                <strong>Image5:</strong>
-                                                <?php if (file_exists("upload/product/{$row['product_image5']}")): ?>
-                                                    <img src="upload/product/<?php echo $row['product_image5']; ?>" alt="image1"
-                                                        width="50" height="50">
-                                                <?php else: ?>
-                                                    <img src="dist/img/noimage1.png" alt="No Image" width="50" height="50">
-                                                <?php endif; ?>
-                                            </div>
-                                            <div class="col-4">
-                                                <label for="text">Others:</label>
-                                                <?php $featured_product = $row["featured_product"]; ?>
-                                                <?php $bestsellers = $row["bestsellers"]; ?>
-                                                <div class="checkbox-container">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="featured_product" name="product_categories[]"
-                                                            value="featured" <?php if ($featured_product == 1)
-                                                                echo "checked"; ?> disabled>
-                                                        <label class="form-check-label" for="featured_product">Featured
-                                                            Product</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="bestsellers"
-                                                            name="product_categories[]" value="bestsellers" <?php if ($bestsellers == 1)
-                                                                echo "checked"; ?> disabled>
-                                                        <label class="form-check-label" for="bestsellers">New
-                                                            Arrivals</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <label for="text">Size:</label>
-                                                <?php
-                                                $sizes = [
-                                                    "extra_small" => "XS",
-                                                    "small" => "S",
-                                                    "medium" => "M",
-                                                    "large" => "L",
-                                                    "extra_large" => "XL",
-                                                    "extra_large_large" => "XXL"
-                                                ];
-                                                ?>
-                                                <div class="checkbox-container">
-                                                    <?php foreach ($sizes as $key => $label): ?>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="<?php echo $key; ?>" name="product_categories[]"
-                                                                value="<?php echo $key; ?>" <?php echo ($row[$key] == 1) ? 'checked' : ''; ?> disabled>
-                                                            <label class="form-check-label" for="<?php echo $key; ?>">
-                                                                <?php echo $label; ?>
-                                                            </label>
-                                                        </div>
-                                                    <?php endforeach; ?>
-                                                </div>
-                                            </div>
+                                            <div class="form-group col-4">
+                                                <label>Video 5:</label>
 
-                                            <div class="col-6">
-                                                <h6 class="text-black"><strong>Slug:</strong></h6>
-                                                <p class="pd-vi p-2"><?php echo $row['slug']; ?></p>
-                                            </div>
-                                            <div class="col-6">
-                                                <h6 class="text-black"><strong>Occasion:</strong></h6>
-                                                <p class="pd-vi p-2">
-                                                    <?php
-                                                        echo (!empty($row["occ_id"]) && $row["occ_id"] != 0)
-                                                            ? $row4["name"]
-                                                            : "NULL";
+                                                <?php
+                                                if (!empty($row['product_video5'])) {
+                                                    $videoPath = 'upload/product/video/' . $row['product_video5'];
+                                                    $extension = pathinfo($videoPath, PATHINFO_EXTENSION);
+
+                                                    if (!empty($extension)) {
                                                         ?>
+                                                        <video width="200" height="120" controls class="mt-2">
+                                                            <source src="<?= $videoPath; ?>" type="video/mp4">
+                                                            Your browser does not support the video tag.
+                                                        </video>
+                                                        <?php
+                                                    }
+                                                } else {
+                                                    ?>
+                                                    <video width="200" height="120" controls class="mt-2">
+                                                        <source src="dist/video/novideo.mp4" type="video/mp4">
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                    <?php
+                                                }
+                                                ?>
+                                            </div>
+                                            <div class="col-4">
+                                                <label for="text">Type:</label>
+                                                <?php $neww = $row["neww"]; ?>
+                                                <?php $premiumm = $row["premiumm"]; ?>
+                                                <?php $hott = $row["hott"]; ?>
+                                                <div class="checkbox-container">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" <?php if ($neww == 1)
+                                                            echo "checked"; ?> disabled>
+                                                        <label class="form-check-label">New</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" <?php if ($premiumm == 1)
+                                                            echo "checked"; ?> disabled>
+                                                        <label class="form-check-label">Premium</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" <?php if ($hott == 1)
+                                                            echo "checked"; ?> disabled>
+                                                        <label class="form-check-label">Hot</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <h6 class="text-black"><strong>Fabric:</strong></h6>
+                                                <p class="pd-vi p-2"><?php echo $row["fabric"]; ?>
                                                 </p>
                                             </div>
+                                            <div class="col-3">
+                                                <h6 class="text-black"><strong>Care:</strong></h6>
+                                                <p class="pd-vi p-2"><?php echo $row["caree"]; ?>
+                                                </p>
+                                            </div>
+                                            <div class="col-3">
+                                                <h6 class="text-black"><strong>Dimensions:</strong></h6>
+                                                <p class="pd-vi p-2"><?php echo $row["dimenn"]; ?>
+                                                </p>
+                                            </div>
+                                            <div class="col-3">
+                                                <h6 class="text-black"><strong>Available Offers:</strong></h6>
+                                                <p class="pd-vi p-2"><?php echo $row["ave_offer"]; ?>
+                                                </p>
+                                            </div>
+                                            <div class="col-3">
+                                                <h6 class="text-black"><strong>Size:</strong></h6>
+                                                <p class="pd-vi p-2"><?php echo $row["sizee"]; ?>
+                                                </p>
+                                            </div>
+                                            <div class="form-group col-3">
+                                                <label>Select Price:</label>
+                                                <?php
+                                                $priceName = '';
+                                                $sql5 = "SELECT name FROM price WHERE id = '" . $row["pricee"] . "'";
+                                                $result5 = $conn->query($sql5);
+                                                if ($result5->num_rows > 0) {
+                                                    $data = $result5->fetch_assoc();
+                                                    $priceName = $data['name'];
+                                                }
+                                                ?>
+                                                <input type="text" class="form-control"
+                                                    value="<?= htmlspecialchars($priceName); ?>" readonly>
+                                            </div>
+                                            <div class="col-3">
+                                                <h6 class="text-black"><strong>Color:</strong></h6>
+                                                <p class="pd-vi p-2">
+                                                    <?php echo $row["colorr"]; ?>
+                                                </p>
+                                            </div>
+                                            <div class="col-3">
+                                                <h6 class="text-black"><strong>Stock:</strong></h6>
+                                                <p class="pd-vi p-2"><?php echo $row["stockk"]; ?>
+                                                </p>
+                                            </div>
+                                            <div class="col-3">
+                                                <h6 class="text-black"><strong>Manufacture:</strong></h6>
+                                                <p class="pd-vi p-2"><?php echo $row["manuufacturee"]; ?>
+                                                </p>
+                                            </div>
+                                            <div class="col-3">
+                                                <h6 class="text-black"><strong>Packer:</strong></h6>
+                                                <p class="pd-vi p-2"><?php echo $row["packer"]; ?>
+                                                </p>
+                                            </div>
+                                            <div class="col-3">
+                                                <h6 class="text-black"><strong>Item Weight:</strong></h6>
+                                                <p class="pd-vi p-2"><?php echo $row["item_weight"]; ?>
+                                                </p>
+                                            </div>
+                                            <div class="col-3">
+                                                <h6 class="text-black"><strong>Generic Name:</strong></h6>
+                                                <p class="pd-vi p-2"><?php echo $row["generic_nm"]; ?>
+                                                </p>
+                                            </div>
+                                            <div class="col-12">
+                                                <h6 class="text-black"><strong>About Item:</strong></h6>
+                                                <textarea class="pd-vi p-2" id="content" name="content" rows="5" cols="50"
+                                                    readonly>
+                                                                                            <?php echo htmlspecialchars($row['about_item']); ?>
+                                                                                        </textarea>
+                                            </div>
 
-                                            <div class="col-12">
-                                                <h6 class="text-black"><strong>Colors:</strong></h6>
-                                                <p class="pd-vi p-2"><?php echo $row['keywords']; ?></p>
+                                            <div class="form-group col-12">
+                                                <label for="text">Keywords:</label>
+                                                <input type="text" class="form-control" id="tag-input1"
+                                                    value="<?php echo htmlspecialchars($row['keywordss']); ?>" readonly>
                                             </div>
-                                            <div class="col-12">
-                                                <h6 class="text-black"><strong>Meta Description:</strong></h6>
-                                                <p class="pd-vi p-2"><?php echo $row['meta_description']; ?></p>
+                                            <div class="form-group col-12">
+                                                <label>Meta Description:</label>
+                                                <textarea class="form-control" rows="4" readonly><?php
+                                                echo htmlspecialchars($row['meta_desc'] ?? '');
+                                                ?></textarea>
                                             </div>
-                                        </div>
+                                        <?php } ?>
+                                        <button type="button" class="btn btn-success"
+                                            onclick="window.location.href='product.php';">Back
+                                        </button>
                                     </div>
-                                <?php } ?>
-                                <button type="button" class="btn btn-success"
-                                    onclick="window.location.href='product.php';">Back
-                                </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
             </section>
         </div>
         <?php include 'common/footer.php'; ?>
@@ -314,6 +364,12 @@ $id = urldecode(base64_decode($_GET['id']));
                     folderItem.style.display = 'none';
                     pdfUploadItem.style.display = 'none';
                 }
+            });
+        </script>
+        <script>
+            CKEDITOR.replace('content', {
+                height: 300,
+                filebrowserUploadUrl: "upload.php"
             });
         </script>
     </body>

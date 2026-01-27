@@ -12,8 +12,8 @@ if ($userid === NULL) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indus-Supply | Product HIghlight</title>
-    <link href="dist/img/titleimage.png" rel="icon">
+    <title>Utkalikart | Product Highlight</title>
+    <link href="dist/img/titleimage1.png" rel="icon">
     <!-- toaster -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -31,7 +31,7 @@ if ($userid === NULL) {
                 <div class="col-12">
                     <div class="card mt-3">
                         <div class="card-header d-flex justify-content-between align-items-center">
-                            <h3 class="home_color">Product HIghlight</h3>
+                            <h3 class="home_color">Product Highlight</h3>
                             <button type="button" class="btn btn-success ml-auto" data-toggle="modal"
                                 data-target="#myModal">
                                 <i class="fa fa-plus" aria-hidden="true"></i> Add

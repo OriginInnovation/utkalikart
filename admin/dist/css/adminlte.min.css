@@ -3008,38 +3008,38 @@ fieldset:disabled a.btn {
 
 .btn-success {
     color: #fff;
-    background-color: #28a745;
-    border-color: #28a745;
+    background-color: #8C5342;
+    border-color: #8C5342;
     box-shadow: none
 }
 
 .btn-success:hover {
     color: #fff;
-    background-color: #218838;
-    border-color: #1e7e34
+    background-color: #8C5342;
+    border-color: #8C5342
 }
 
 .btn-success.focus,
 .btn-success:focus {
     color: #fff;
-    background-color: #218838;
-    border-color: #1e7e34;
+    background-color: #8C5342;
+    border-color: #8C5342;
     box-shadow: 0 0 0 0 rgba(72, 180, 97, .5)
 }
 
 .btn-success.disabled,
 .btn-success:disabled {
     color: #fff;
-    background-color: #28a745;
-    border-color: #28a745
+    background-color: #8C5342;
+    border-color: #8C5342
 }
 
 .btn-success:not(:disabled):not(.disabled).active,
 .btn-success:not(:disabled):not(.disabled):active,
 .show>.btn-success.dropdown-toggle {
     color: #fff;
-    background-color: #1e7e34;
-    border-color: #1c7430
+    background-color: #8C5342;
+    border-color: #8C5342
 }
 
 .btn-success:not(:disabled):not(.disabled).active:focus,
@@ -5631,7 +5631,7 @@ input[type=submit].btn-block {
     padding: .5rem .75rem;
     margin-left: -1px;
     line-height: 1.25;
-    color: #00b050;
+    color: #8C5342;
     background-color: #fff;
     border: 1px solid #dee2e6
 }
@@ -5664,8 +5664,8 @@ input[type=submit].btn-block {
 .page-item.active .page-link {
     z-index: 3;
     color: #fff;
-    background-color: #00b050;
-    border-color: #00b050
+    background-color: #8C5342;
+    border-color: #8C5342
 }
 
 .page-item.disabled .page-link {
@@ -11492,7 +11492,7 @@ a.text-dark:hover {
     }
 
     abbr[title]::after {
-        content: " ("attr(title) ")"
+        content: " (" attr(title) ")"
     }
 
     pre {
@@ -14315,7 +14315,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 [class*=sidebar-dark-] {
-    background-color: #00b050
+    background-color: #8C5342
 }
 
 [class*=sidebar-dark-] .user-panel a:hover {

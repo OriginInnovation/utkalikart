@@ -15,8 +15,8 @@ $id = urldecode(base64_decode($_GET['id']));
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indus-Supply | Updateproduct</title>
-    <link href="dist/img/titleimage.png" rel="icon">
+    <title>Utkalikart | Updateproduct</title>
+    <link href="dist/img/titleimage1.png" rel="icon">
     <script src="http://cdn.ckeditor.com/4.6.2/standard-all/ckeditor.js"></script>
     <!-- toaster -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
@@ -52,13 +52,13 @@ $id = urldecode(base64_decode($_GET['id']));
                                                 <input type="text" class="form-control" id="productname"
                                                     placeholder="Enter Product Name" name="productname"
                                                     value="<?php echo $row["pro_name"]; ?>"
-                                                    title="Enter a valid name (up to 50 characters)" required>
+                                                    title="Enter a valid name (up to 50 characters)">
                                             </div>
                                             <div class="form-group col-6">
                                                 <label for="exampleInputcname">Product Short Description:</label>
                                                 <input type="text" class="form-control" id="product_short_desc"
                                                     placeholder="Enter Product Description" name="productshortname"
-                                                    value="<?php echo $row["product_short_nm"]; ?>" title="Enter a valid name (up to 50 characters)" required>
+                                                    value="<?php echo $row["product_short_nm"]; ?>" title="Enter a valid name (up to 50 characters)">
                                             </div>
                                             <div class="form-group col-3">
                                                 <label for="subcategoryDropdown">Select Category:</label>
@@ -115,22 +115,30 @@ $id = urldecode(base64_decode($_GET['id']));
                                                 <label for="exampleInputcname">Product Code:</label>
                                                 <input type="text" class="form-control" id="procode"
                                                     name="procode1"
-                                                    value="<?php echo $row["product_code"]; ?>" title="Enter a valid name (up to 50 characters)" required>
+                                                    value="<?php echo $row["product_code"]; ?>" title="Enter a valid name (up to 50 characters)">
                                             </div>
-                                            <div class="form-group col-3">
+                                            <div class="form-group col-6">
+                                                <label for="exampleInputcname">Product Ratings:</label>
+                                                <input type="text" class="form-control" id="exampleInputproductname" name="ratingss" value="<?php echo $row["rating"]; ?>">
+                                            </div>
+                                            <div class="form-group col-6">
+                                                <label for="exampleInputcname">Product Reviews:</label>
+                                                <input type="text" class="form-control" id="exampleInputproductname" name="reviewss" value="<?php echo $row["review"]; ?>">
+                                            </div>
+                                            <div class="form-group col-4">
                                                 <label for="exampleInputcname">Product Price:</label>
                                                 <input type="text" class="form-control" id="productprice1"
                                                     placeholder="Enter Product Code"
                                                     value="<?php echo $row["product_price"]; ?>" name="productprice11"
-                                                    required>
+                                                    >
                                             </div>
-                                            <div class="form-group col-3">
+                                            <div class="form-group col-4">
                                                 <label for="exampleInputcname">Discount:</label>
                                                 <input type="text" class="form-control" id="discount1"
                                                     placeholder="Enter Product Color"
                                                     value="<?php echo $row["pro_discount"]; ?>" name="discount11">
                                             </div>
-                                            <div class="form-group col-3">
+                                            <div class="form-group col-4">
                                                 <label for="exampleInputcname">Product Discount Price:</label>
                                                 <input type="text" class="form-control" id="productdiscountprice1"
                                                     placeholder="Enter Product Size"
@@ -237,60 +245,58 @@ $id = urldecode(base64_decode($_GET['id']));
                                                 <?php $hott = $row["hott"]; ?>
                                                 <div class="checkbox-container">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="new11" name="new1" value="1" <?php if ($neww == 1)
-                                                                                                    echo "checked"; ?>>
+                                                        <input class="form-check-input" type="checkbox" id="new11" name="new1" value="1" <?php if ($neww == 1)
+                                                            echo "checked"; ?>>
                                                         <label class="form-check-label" for="new">New</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="premiumm11" name="premiumm1" value="1" <?php if ($premiumm == 1)
-                                                                                                            echo "checked"; ?>>
+                                                        <input class="form-check-input" type="checkbox" id="premiumm11" name="premiumm1" value="1" <?php if ($premiumm == 1)
+                                                            echo "checked"; ?>>
                                                         <label class="form-check-label" for="premium">Premium
                                                         </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="hot11" name="hot1" value="1" <?php if ($hott == 1)
-                                                                                                    echo "checked"; ?>>
+                                                        <input class="form-check-input" type="checkbox" id="hot11" name="hot1" value="1" <?php if ($hott == 1)
+                                                            echo "checked"; ?>>
                                                         <label class="form-check-label" for="popprou">Hot</label>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group col-3">
+                                             <div class="form-group col-4">
                                                 <label for="exampleInputcname">Fabric:</label>
                                                 <input type="text" class="form-control" id="fabric11" name="fabric1"
-                                                    value="<?php echo $row["fabric"]; ?>" required>
+                                                    value="<?php echo $row["fabric"]; ?>">
                                             </div>
-                                            <div class="form-group col-3">
+                                             <div class="form-group col-3">
                                                 <label for="exampleInputcname">Blouse:</label>
                                                 <input type="text" class="form-control" id="blouse11" name="blouse1"
-                                                    value="<?php echo $row["blousee"]; ?>" required>
+                                                    value="<?php echo $row["blousee"]; ?>">
                                             </div>
+                                            
                                             <div class="form-group col-3">
                                                 <label for="exampleInputcname">Care:</label>
                                                 <input type="text" class="form-control" id="care11" name="care1"
-                                                    value="<?php echo $row["caree"]; ?>" required>
+                                                    value="<?php echo $row["caree"]; ?>">
                                             </div>
                                             <div class="form-group col-3">
                                                 <label for="exampleInputcname">Dimensions:</label>
                                                 <input type="text" class="form-control" id="dimen11" name="dimen1"
-                                                    value="<?php echo $row["dimenn"]; ?>" required>
+                                                    value="<?php echo $row["dimenn"]; ?>">
                                             </div>
                                             <div class="form-group col-3">
                                                 <label for="exampleInputcname">Available Offers:</label>
                                                 <input type="text" class="form-control" id="ave_offer11" name="ave_offer1"
-                                                    value="<?php echo $row["ave_offer"]; ?>" required>
+                                                    value="<?php echo $row["ave_offer"]; ?>">
                                             </div>
-                                            <div class="form-group col-3">
+                                            <!-- <div class="form-group col-3">
                                                 <label for="exampleInputcname">About Item:</label>
                                                 <input type="text" class="form-control" id="about_item11" name="about_item1"
-                                                    value="<?php echo $row["about_item"]; ?>" required>
-                                            </div>
+                                                    value="<?php echo $row["about_item"]; ?>">
+                                            </div> -->
                                             <div class="form-group col-3">
                                                 <label for="exampleInputcname">Size:</label>
                                                 <input type="text" class="form-control" id="size11" name="size1"
-                                                    value="<?php echo $row["sizee"]; ?>" required>
+                                                    value="<?php echo $row["sizee"]; ?>">
                                             </div>
                                             <div class="form-group col-3">
                                                 <label for="subcategoryDropdown">Select Price:</label>
@@ -312,43 +318,69 @@ $id = urldecode(base64_decode($_GET['id']));
                                             <div class="form-group col-3">
                                                 <label for="exampleInputcname">Color:</label>
                                                 <input type="text" class="form-control" id="color11" name="color1"
-                                                    value="<?php echo $row["colorr"]; ?>" required>
+                                                    value="<?php echo $row["colorr"]; ?>">
+                                            </div>
+                                            <div class="form-group col-3">
+                                                <label for="exampleInputcname">Stock:</label>
+                                                <input type="text" class="form-control" id="size11" name="size1"
+                                                    value="<?php echo $row["stockk"]; ?>">
                                             </div>
                                             <div class="form-group col-3">
                                                 <label for="exampleInputcname">Manufacture:</label>
                                                 <input type="text" class="form-control" id="manufacture11" name="manufacture1"
-                                                    value="<?php echo $row["manuufacturee"]; ?>" required>
+                                                    value="<?php echo $row["manuufacturee"]; ?>">
                                             </div>
                                             <div class="form-group col-3">
                                                 <label for="exampleInputcname">Packer:</label>
                                                 <input type="text" class="form-control" id="packer11" name="packer1"
-                                                    value="<?php echo $row["packer"]; ?>" required>
+                                                    value="<?php echo $row["packer"]; ?>">
                                             </div>
                                             <div class="form-group col-3">
                                                 <label for="exampleInputcname">Item Weight:</label>
                                                 <input type="text" class="form-control" id="itemweight11" name="itemweight1"
-                                                    value="<?php echo $row["item_weight"]; ?>" required>
-                                            </div>
-                                            <div class="form-group col-3">
-                                                <label for="exampleInputcname">Net quentity:</label>
-                                                <input type="text" class="form-control" id="netquantity11" name="netquantity1"
-                                                    value="<?php echo $row["net_quentity"]; ?>" required>
+                                                    value="<?php echo $row["item_weight"]; ?>">
                                             </div>
                                             <div class="form-group col-3">
                                                 <label for="exampleInputcname">Generic Name:</label>
                                                 <input type="text" class="form-control" id="genericnm11" name="genericnm1"
-                                                    value="<?php echo $row["generic_nm"]; ?>" required>
+                                                    value="<?php echo $row["generic_nm"]; ?>">
+                                            </div>
+                                             <div class="form-group col-12">
+                                                <label for="exampleInputcname">About Item:</label>
+                                                <textarea id="content" name="content"
+                                                    class="form-control"><?php echo $row["about_item"]; ?></textarea>
+                                            </div>
+                                            <?php
+                                            // Convert stored IDs into array
+                                            $selectedHighlights = array_filter(explode(',', $row["pro_high_id"]));
+                                            ?>  
+                                            <div class="form-group col-6">
+                                                <label>Product Highlights</label>
+                                                <select class="form-control" name="pro_high77[]" id="pro_highhh" multiple required>
+                                                    <?php
+                                                    include "conn.php";
+                                                    $result6 = mysqli_query($conn, "SELECT * FROM pro_high");
+
+                                                    while ($row6 = mysqli_fetch_assoc($result6)) {
+                                                        $selected = in_array($row6['id'], $selectedHighlights) ? 'selected' : '';
+                                                        ?>
+                                                        <option value="<?= $row6['id']; ?>" <?= $selected; ?>>
+                                                            <?= htmlspecialchars($row6['name']); ?>
+                                                        </option>
+                                                    <?php } ?>
+                                                </select>
                                             </div>
                                             <div class="form-group col-12">
                                                 <label for="text">Keywords:</label>
                                                 <input type="text" class="form-control" id="tag-input1" name="keywords1"
-                                                    value="<?php echo $row["keywordss"]; ?>" id="keywords1">
+                                                    value="<?php echo $row["keywordss"]; ?>">
                                             </div>
                                             <div class="form-group col-12">
-                                                <label for="exampleInputcname">Meta Description:</label>
-                                                <textarea name="metadescription1" id="metadescription11"
-                                                    class="form-control"
-                                                    required><?php echo htmlspecialchars($row["meta_desc"]); ?></textarea>
+                                            <label for="exampleInputcname">Meta Description:</label>
+                                            <input type="text"
+                                                class="form-control"
+                                                name="metadescription1"
+                                                value="<?php echo htmlspecialchars($row['meta_desc'] ?? ''); ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -455,7 +487,7 @@ $id = urldecode(base64_decode($_GET['id']));
         $id = $_POST["id4"];
         $productname = $conn->real_escape_string(htmlspecialchars($_POST["productname"]));
         $productshortname = $conn->real_escape_string(htmlspecialchars($_POST["productshortname"]));
-        $metadescription1 = $conn->real_escape_string(htmlspecialchars($_POST["metadescription1"]));
+        
 
         $category = $_POST["category"];
         $subcategory = $_POST["subcategory"];
@@ -482,8 +514,10 @@ $id = urldecode(base64_decode($_GET['id']));
         $itemweight1 = $_POST["itemweight1"];
         $netquantity1 = $_POST["netquantity1"];
         $genericnm1 = $_POST["genericnm1"];
+        $pro_high77 = $_POST['pro_high77']; // this is an array
+        $pro_high_id = implode(',', array_map('intval', $pro_high77));
         $keywords1 = $conn->real_escape_string($_POST["keywords1"]);
-
+        $metadescription1 = $conn->real_escape_string(htmlspecialchars($_POST["metadescription1"]));
 
         /* ================= UPDATE QUERY ================= */
         $sql = "UPDATE product SET
@@ -512,6 +546,7 @@ $id = urldecode(base64_decode($_GET['id']));
             item_weight='$itemweight1',
             net_quentity='$netquantity1',
             generic_nm='$genericnm1',
+            pro_high_id='$pro_high_id',
             keywordss='$keywords1',
             meta_desc='$metadescription1'";
 
@@ -546,10 +581,10 @@ $id = urldecode(base64_decode($_GET['id']));
     <?php include 'common/footer.php'; ?>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
     <script>
-        CKEDITOR.replace('content', {
-            height: 300,
-            filebrowserUploadUrl: "upload.php"
-        });
+    CKEDITOR.replace('content', {
+        height: 300,
+        filebrowserUploadUrl: "upload.php"
+    });
     </script>
     <script>
         //for keywords

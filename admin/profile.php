@@ -12,8 +12,8 @@ if ($userid === NULL) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indus-Supply | Profile</title>
-    <link href="dist/img/titleimage.png" rel="icon">
+    <title>Utkalikart | Profile</title>
+    <link href="dist/img/titleimage1.png" rel="icon">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <?php include 'common/navbar.php'; ?>
@@ -21,7 +21,7 @@ if ($userid === NULL) {
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <div class="nav-panel__logo heading_resize">
         <a href="index">
-            <h2 class="text-white incolor">INDUS-SUPPLY</h2>
+            <h2 class="text-white incolor">UTKALIKART</h2>
         </a>
     </div>
     <!-- Sidebar -->

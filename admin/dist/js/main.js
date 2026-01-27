@@ -62,21 +62,6 @@ function myfcn3(idx, image123, subcategory_name, category_name) {
     document.getElementById("category_name2").value = category_name;
 }
 
-/* for product id get */
-function myfcn4(idx, productname, category_name, subcategory_name, productcode, productprice, productdiscountprice, productdescription, slug, keywords1, metadescription) {
-    document.getElementById("id4").value = idx;
-    document.getElementById("productname").value = productname;
-    document.getElementById("categoryDropdown").value = category_name;
-    document.getElementById("sub-category-dropdown").value = subcategory_name;
-    document.getElementById("productcode").value = productcode;
-    document.getElementById("productprice").value = productprice;
-    document.getElementById("productdiscountprice").value = productdiscountprice;
-    document.getElementById("content").value = productdescription;
-    document.getElementById("slug").value = slug;
-    document.getElementById("keywords1").value = keywords1;
-    document.getElementById("metadescription").value = metadescription;
-}
-
 
 /* calculate the discount price */
 const priceInput = document.getElementById('productprice');

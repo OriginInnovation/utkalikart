@@ -118,7 +118,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php" role="button">
-                        <img src="dist/img/logout.png" alt="Logout" style="height: 30px;">
+                        <img src="dist/img/logout1.png" alt="Logout" style="height: 30px;">
                     </a>
                 </li>
             </ul>
