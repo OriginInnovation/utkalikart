@@ -496,7 +496,7 @@
             
             <div class="col-md-6 mb-4 mb-md-0">
                 <div class="od-banner-img-wrapper">
-                    <img src="assets/img/UTKALIKART (2).png" alt="Handloom Weaver" />
+                    <img src="assets/img/UTKALIKART (3).png" alt="Handloom Weaver" />
                 </div>
             </div>
 

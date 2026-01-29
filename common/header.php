@@ -283,6 +283,27 @@
         font-size: 15px;
         cursor: pointer;
     }
+
+    .modal-content {
+        background: transparent !important;
+    }
+
+    .buyNowUnq-step-label {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ACTIVE & COMPLETED = CLICKABLE */
+.buyNowUnq-step-label.active,
+.buyNowUnq-step-label.completed {
+  opacity: 1;
+  cursor: pointer;
+  pointer-events: auto;
+  color: #198754;
+  font-weight: 600;
+}
+
 </style>
 
 <div id="offersBarContainer">
@@ -352,7 +373,7 @@
 
         <!-- LOGO -->
         <a class="navbar-brand" href="index.php">
-            <img src="assets/img/ecommerce_logo_maker.png" alt="Logo" class="p-2 img-fluid" width="170">
+            <img src="assets/img/Mail_Logo.png" alt="Logo" class="p-2 img-fluid" width="170">
         </a>
 
         <!-- CENTER NAV LINKS -->
@@ -579,7 +600,12 @@
                 <!-- FOOTER -->
                 <div class="cart-footer">
                     <p>Subtotal: <b>Rs. 2749</b></p>
-                    <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+                    <button class="checkout-btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#buyNowUnq_CheckoutPanel">
+                        PROCEED TO CHECKOUT
+                    </button>
+
                 </div>
 
                 <!-- <script>
@@ -664,33 +690,188 @@
 
             <!-- 🔽 TUMHARA EXISTING CONTENT (NO CHANGE) -->
             <div class="buyNowUnq-panel">
-
-                <!-- HEADER -->
                 <div class="mobile-fixed-top">
                     <div class="buyNowUnq-header">
                         <div class="d-flex align-items-center gap-2">
-                            <img src="https://assets.website-files.com/62c161821422736b41295328/62c1626f2129188e7343e06a_logo.png">
+                            <img src="assets/img/Mail_Logo.png"
+                                alt="Logo">
                             <span class="fw-semibold small"></span>
                         </div>
-
-                        <!-- Bootstrap close -->
-                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                        <button id="buyNowUnq_CloseBtn" class="btn btn-close" aria-label="Close"></button>
                     </div>
-
-                    <!-- step indicator (unchanged) -->
-                    ...
+                    <div class="buyNowUnq-step-indicator">
+                        <div class="buyNowUnq-step-label active" data-step="1">
+                            <i class="bi bi-check-circle-fill icon-check"></i><span
+                                class="icon-circle">1</span><span>Mobile</span>
+                        </div>
+                        <div class="buyNowUnq-step-label" data-step="2">
+                            <i class="bi bi-check-circle-fill icon-check"></i><span
+                                class="icon-circle">2</span><span>Address</span>
+                        </div>
+                        <div class="buyNowUnq-step-label" data-step="3">
+                            <i class="bi bi-check-circle-fill icon-check"></i><span class="icon-circle">3</span><span>Pay</span>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- BODY -->
                 <div class="buyNowUnq-scroll-content">
-                    ...
+                    <h6 id="buyNowUnq_ToggleSummary" class="bg-white">
+                        Order Summary <i class="bi bi-chevron-down" id="buyNowUnq_SummaryIcon"></i>
+                    </h6>
+                    <div class="d-flex justify-content-between px-4 py-2 bg-white summary-price">
+                        <strong>Total:</strong>
+                        <strong id="totalPrice">₹2,499</strong>
+                    </div>
+                    <div class="border rounded p-3 mt-3 mx-4 d-none" id="buyNowUnq_ProductDetails">
+                        <div class="d-flex mb-2 gap-2">
+                            <img src="https://via.placeholder.com/60" class="rounded" alt="Product">
+                            <div>
+                                <strong>Eco-friendly Sneakers</strong><br>
+                                <span class="text-muted small">Color: White | Size: UK 9</span>
+                                <span>₹2,499</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="buyNowUnq_Step1" class="buyNowUnq-step-content active">
+                        <label class="form-label text-muted small">Hey! Welcome back</label>
+                        <div id="mobileDisplayMode" class="d-none d-flex align-items-center mb-3">
+                            <div class="input-group">
+                                <span class="input-group-text fw-bold">+91</span>
+                                <input type="tel" class="form-control" id="displayedMobile" value="" readonly>
+                            </div>
+                            <button class="btn btn-outline-secondary btn-sm ms-2" id="editMobileBtn">Edit</button>
+                        </div>
+                        <div id="mobileEditMode">
+                            <label class="form-label text-muted small">Enter Mobile Number</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text fw-bold">+91</span>
+                                <input type="tel" class="form-control" id="mobileNumberInput" name="mobileNumber"
+                                    placeholder="Enter Mobile Number" required>
+                            </div>
+                        </div>
+                        <p class="text-muted small mb-3">
+                            <label class="form-check-label">
+                                <input type="checkbox" name="notifyMe" class="form-check-input me-1" checked>
+                                Notify me for orders, updates & offers
+                            </label>
+                        </p>
+                    </div>
+                    <div id="buyNowUnq_Step2" class="buyNowUnq-step-content">
+                        <label class="form-label fw-semibold">Deliver To</label>
+                        <div id="addressDisplayMode" class="d-none border rounded p-3 bg-light position-relative mb-3">
+                            <strong><span id="displayFullName"></span></strong><br>
+                            <span id="displayAddressLine"></span><br>
+                            <span class="text-muted" id="displayEmail"></span>
+                            <button class="btn btn-link btn-sm position-absolute top-0 end-0 me-2 mt-2 p-0"
+                                id="editAddressBtn">Click to
+                                Edit</button>
+                        </div>
+                        <div id="addressEditMode">
+                            <h6 class="fw-bold mb-3">Add New Address / Edit Address</h6>
+                            <input type="text" name="pincode" class="form-control mb-3" placeholder="Pincode *" required>
+                            <div class="d-flex gap-2 mb-3">
+                                <input type="text" name="city" class="form-control" placeholder="City *" readonly>
+                                <input type="text" name="state" class="form-control" placeholder="State *" readonly>
+                            </div>
+                            <input type="text" name="fullName" class="form-control mb-3" placeholder="Full Name *" required>
+                            <input type="email" name="emailAddress" class="form-control mb-3" placeholder="Email Address *"
+                                required>
+                            <textarea name="fullAddress" class="form-control mb-3" rows="2" placeholder="Complete Address *"
+                                required></textarea>
+                            <input type="text" name="landmark" class="form-control mb-3"
+                                placeholder="House,Floor,Landmark (Optional)">
+                        </div>
+                    </div>
+                    <div id="buyNowUnq_Step3" class="buyNowUnq-step-content">
+                        <div class="coupon-section">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h6 class="fw-bold mb-0">ENTER COUPON CODE</h6>
+                                <a href="#" class="small text-decoration-none" id="viewCouponsLink">Click to view coupons ></a>
+                            </div>
+                            <div class="input-group mb-2">
+                                <input type="text" id="couponInput" class="form-control" placeholder="Enter coupon code">
+                                <button class="btn btn-dark" id="applyCouponBtn">Apply</button>
+                            </div>
+                            <div id="couponAppliedText" class="alert alert-success d-none p-2 py-1 small">
+                                ✅ <strong>FLAT100</strong> Applied — ₹100 OFF
+                            </div>
+                            <div id="couponError" class="text-danger small d-none">❌ Invalid coupon. Try again.</div>
+                        </div>
+                        <label class="form-label fw-bold">Payment Options</label>
+                        <p class="text-success small mb-3">Get Extra Cashback on Mobikwik UPI & Wallet & Amazon Pay Wallet
+                        </p>
+                        <div class="buyNowUnq-payment-option" data-payment-type="upi">
+                            <span class="header-badge">Faster Delivery + cashback</span>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <img src="https://img.icons8.com/color/48/000000/upi.png" alt="UPI" class="payment-logo">
+                                    <h6 class="d-inline-block mb-0 align-middle">UPI</h6>
+                                    <small class="text-muted d-block ms-4">Paytm, PhonePe, GPay</small>
+                                </div>
+                                <span class="fw-bold">₹<span id="upiPrice">2499</span> <i
+                                        class="bi bi-chevron-right"></i></span>
+                            </div>
+                        </div>
+                        <div class="buyNowUnq-payment-option" data-payment-type="card">
+                            <span class="header-badge">Faster Delivery</span>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <img src="https://img.icons8.com/fluency/48/000000/bank-card.png" alt="Cards"
+                                        class="payment-logo">
+                                    <h6 class="d-inline-block mb-0 align-middle">Debit/Credit Cards</h6>
+                                    <small class="text-muted d-block ms-4">Visa, Mastercard, Rupay</small>
+                                </div>
+                                <span class="fw-bold">₹<span id="cardPrice">2499</span> <i
+                                        class="bi bi-chevron-right"></i></span>
+                            </div>
+                        </div>
+                        <div class="buyNowUnq-payment-option" data-payment-type="emi">
+                            <span class="header-badge">NEW - Pay with EMI</span>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <img src="https://img.icons8.com/ios-filled/50/000000/money-bag-euro.png" alt="EMI"
+                                        class="payment-logo">
+                                    <h6 class="d-inline-block mb-0 align-middle">Pay Later</h6>
+                                    <small class="text-muted d-block ms-4">0% EMI on UPI • by Snapmint</small>
+                                </div>
+                                <span class="fw-bold">₹1000 now + 2 EMIs <i class="bi bi-chevron-right"></i></span>
+                            </div>
+                        </div>
+                        <div class="buyNowUnq-payment-option" data-payment-type="wallet">
+                            <span class="header-badge">Get cashback</span>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <img src="https://img.icons8.com/color/48/000000/wallet--v1.png" alt="Wallet"
+                                        class="payment-logo">
+                                    <h6 class="d-inline-block mb-0 align-middle">Wallets</h6>
+                                    <small class="text-muted d-block ms-4">Mobikwik, Amazon Pay, Freecharge etc.</small>
+                                </div>
+                                <span class="fw-bold">₹<span id="walletPrice">2499</span> <i
+                                        class="bi bi-chevron-right"></i></span>
+                            </div>
+                        </div>
+                        <div class="buyNowUnq-payment-option" data-payment-type="cod">
+                            <h6 class="mb-0">Cash on Delivery</h6>
+                        </div>
+                        <div id="payMethodError" class="text-danger small mt-2 d-none">⚠️ Please select a payment method
+                        </div>
+                    </div>
                 </div>
-
-                <!-- FOOTER -->
                 <div class="mobile-fixed-bottom">
-                    ...
+                    <div class="buyNowUnq-fixed-bottom-bar">
+                        <button id="buyNowUnq_StepActionBtn" class="btn btn-dark w-100">Continue →</button>
+                    </div>
+                    <div class="buyNowUnq-footer">
+                        <p class="mb-1"><a href="#" class="text-decoration-none text-muted">Privacy Policy</a> and <a href="#"
+                                class="text-decoration-none text-muted">T&C</a>.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-2">
+                            <img src="https://img.icons8.com/color/24/000000/verified-account.png" alt="Verified"
+                                title="Verified Merchant">
+                            <img src="https://img.icons8.com/color/24/000000/trust.png" alt="Trust" title="Secure Payments">
+                            <img src="https://img.icons8.com/color/24/000000/warranty.png" alt="Warranty"
+                                title="Verified Website">
+                        </div>
+                    </div>
                 </div>
-
             </div>
             <!-- 🔼 END -->
 
@@ -942,7 +1123,7 @@
             <i class="bi bi-list fs-3"></i>
         </button>
         <a class="navbar-brand " href="index.php">
-            <img src="assets/img/ecommerce_logo_maker.png" alt="Logo" class="p-2 img-fluid" width="110">
+            <img src="assets/img/Mail_Logo.png" alt="Logo" class="p-2 img-fluid" width="110">
         </a>
         <div class="ec-header-mobile d-flex justify-content-end align-items-end d-lg-none">
             <div class="d-flex align-items-center gap-3 position-relative w-100 justify-content-end">
@@ -1058,7 +1239,7 @@
 <div class="offcanvas offcanvas-start mob-offcanvas" id="mobileMenu">
     <div class="offcanvas-header border-bottom">
         <a class="navbar-brand" href="index.php">
-            <h6>E-commerce</h6>
+            <h6><img src="assets/img/Mail_Logo.png" width="200px" height="50px" alt=""></h6>
         </a>
         <button class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
@@ -1301,4 +1482,68 @@
             });
         });
     });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  let currentStep = 1;
+  const totalSteps = 3;
+
+  const labels = document.querySelectorAll(".buyNowUnq-step-label");
+  const contents = document.querySelectorAll(".buyNowUnq-step-content");
+  const nextBtn = document.getElementById("buyNowUnq_StepActionBtn");
+  const backBtn = document.getElementById("buyNowUnq_BackBtn");
+
+  function updateSteps(step) {
+    labels.forEach(label => {
+      const stepNum = Number(label.dataset.step);
+
+      label.classList.remove("active", "completed");
+
+      if (stepNum < step) {
+        label.classList.add("completed"); // green
+      } else if (stepNum === step) {
+        label.classList.add("active"); // green + focus
+      }
+    });
+
+    contents.forEach(c => c.classList.remove("active"));
+    document.getElementById(`buyNowUnq_Step${step}`)?.classList.add("active");
+
+    backBtn.style.display = step === 1 ? "none" : "inline-block";
+    nextBtn.innerText = step === totalSteps ? "Place Order" : "Continue";
+  }
+
+  // NEXT
+  nextBtn.addEventListener("click", () => {
+    if (currentStep < totalSteps) {
+      currentStep++;
+      updateSteps(currentStep);
+    } else {
+      console.log("Order placed ✅");
+    }
+  });
+
+  // BACK
+  backBtn.addEventListener("click", () => {
+    if (currentStep > 1) {
+      currentStep--;
+      updateSteps(currentStep);
+    }
+  });
+
+  // CLICK ON STEP
+  labels.forEach(label => {
+    label.addEventListener("click", () => {
+      const step = Number(label.dataset.step);
+      if (step <= currentStep) {
+        currentStep = step;
+        updateSteps(currentStep);
+      }
+    });
+  });
+
+  updateSteps(currentStep);
+});
 </script>
