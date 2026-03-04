@@ -5,11 +5,142 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aesthetic Boutique Offers - ShopNow</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/main.css?v=4.2">
+    <link rel="stylesheet" href="assets/css/main.css?v=2.8">
+    <style>
+        .floating-badge {
+    /* position: absolute;
+    top: 30px;
+    right: 30px; */
+    background: linear-gradient(135deg, #ff4e50, #fc913a);
+    color: #fff;
+    padding: 20px 35px;   /* thoda horizontal padding badhaya */
+    border-radius: 20px;
+    min-width: auto;      /* auto kar diya */
+    white-space: nowrap;  /* 🔥 force single line */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+}
+        /* SCRATCH CARD */
+#offers-page .scratch-card-wrapper {
+  max-width: 350px;
+  height: 200px;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--soft-shadow);
+}
+
+#offers-page #scratchCanvas {
+    border-radius: 30px !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: crosshair;
+}
+
+/* PREMIUM IMAGE */
+#offers-page .premium-img-wrapper {
+  overflow: hidden;
+  border-radius: 20px;
+  transition: 0.5s ease;
+}
+
+#offers-page .premium-img-wrapper img {
+  transition: 0.8s ease;
+}
+
+#offers-page .premium-img-wrapper:hover img {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  #offers-page .premium-img-wrapper img {
+    height: 300px !important;
+  }
+}
+
+/* wrapper for future use – currently no visual change */
+body.wishlist-safe {}
+
+/* image rendering safety */
+body.wishlist-safe img {
+  image-rendering: auto;
+}
+
+/* pointer hint only */
+body.wishlist-safe .cart-icon,
+body.wishlist-safe .remove-wishlist,
+body.wishlist-safe .add-cart {
+  cursor: pointer;
+}
+
+/* prevent focus outline jump */
+body.wishlist-safe button:focus {
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  #offersBarContainer {
+    margin-top: -48px !important;
+  }
+
+  .mob-header {
+    margin-top: -7px !important;
+  }
+
+  .wish-cont {
+    margin-top: 70px !important
+  }
+  #scratchCanvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+
+/* VOUCHER CARDS */
+#offers-page .aesthetic-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid #fff;
+  border-radius: 35px;
+  padding: 30px;
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: var(--soft-shadow);
+}
+
+/* #offers-page .aesthetic-card:hover {
+  transform: translateY(-15px);
+} */
+
+#offers-page .coupon-box {
+  background: var(--aesthetic-lavender);
+  border: 2px dashed var(--deep-lavender);
+  padding: 12px;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 15px;
+  cursor: pointer;
+  color: #6c5ce7;
+  transition: 0.3s;
+}
+
+#offers-page .coupon-box:hover {
+  background: #6c5ce7;
+  color: #fff;
+  transform: scale(1.05);
+}
+    </style>
 </head>
 
 <body id="offers-page">
@@ -121,9 +252,13 @@
 
                     <div class="col-lg-5 order-2 order-lg-1">
                         <div class="position-relative p-4">
-                            <div class="floating-badge shadow-sm">
-                                <span>Revealing<br>Happiness<br>✨</span>
-                            </div>
+                            <div class="position-relative" style="background:#f8f9fa;">
+    
+    <div class="floating-badge shadow-lg">
+        <span>Revealing<br>Happiness ✨</span>
+    </div>
+
+</div>
                             <div class="aesthetic-card p-4 text-center">
                                 <h4 class="fw-bold mb-3">Mystery Reward 🎁</h4>
                                 <p class="small text-muted mb-4">Scratch the card below to reveal your secret personalized discount!</p>
@@ -133,7 +268,7 @@
                                         <h2 class="fw-bold grad-text mb-0">85% OFF</h2>
                                         <small class="text-muted">Use: MYSTERY85</small>
                                     </div>
-                                    <canvas id="scratchCanvas" width="460" height="420"></canvas>
+                                    <canvas id="scratchCanvas" width="379" height="415"></canvas>
                                 </div>
 
                                 <button class="btn btn-link text-decoration-none small mt-3 text-muted" onclick="initScratch()">Reset Card</button>
@@ -259,7 +394,7 @@
     <script src="assets/js/main.js?v=1.5"></script>
     <script src="assets/js/offers.js?v=1.6"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
 </body>
 

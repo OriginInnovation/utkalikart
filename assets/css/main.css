@@ -6391,38 +6391,6 @@ body {
   letter-spacing: -1.5px;
 }
 
-/* VOUCHER CARDS */
-#offers-page .aesthetic-card {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  border: 1px solid #fff;
-  border-radius: 35px;
-  padding: 30px;
-  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: var(--soft-shadow);
-}
-
-#offers-page .aesthetic-card:hover {
-  transform: translateY(-15px);
-}
-
-#offers-page .coupon-box {
-  background: var(--aesthetic-lavender);
-  border: 2px dashed var(--deep-lavender);
-  padding: 12px;
-  text-align: center;
-  font-weight: 700;
-  border-radius: 15px;
-  cursor: pointer;
-  color: #6c5ce7;
-  transition: 0.3s;
-}
-
-#offers-page .coupon-box:hover {
-  background: #6c5ce7;
-  color: #fff;
-  transform: scale(1.05);
-}
 
 /* WHEEL PROMO */
 #offers-page .wheel-promo {
@@ -6558,77 +6526,7 @@ body {
   justify-content: center;
 }
 
-/* SCRATCH CARD */
-#offers-page .scratch-card-wrapper {
-  max-width: 350px;
-  height: 200px;
-  background: #fff;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: var(--soft-shadow);
-}
 
-#offers-page #scratchCanvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  cursor: crosshair;
-}
-
-/* PREMIUM IMAGE */
-#offers-page .premium-img-wrapper {
-  overflow: hidden;
-  border-radius: 20px;
-  transition: 0.5s ease;
-}
-
-#offers-page .premium-img-wrapper img {
-  transition: 0.8s ease;
-}
-
-#offers-page .premium-img-wrapper:hover img {
-  transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-  #offers-page .premium-img-wrapper img {
-    height: 300px !important;
-  }
-}
-
-/* wrapper for future use – currently no visual change */
-body.wishlist-safe {}
-
-/* image rendering safety */
-body.wishlist-safe img {
-  image-rendering: auto;
-}
-
-/* pointer hint only */
-body.wishlist-safe .cart-icon,
-body.wishlist-safe .remove-wishlist,
-body.wishlist-safe .add-cart {
-  cursor: pointer;
-}
-
-/* prevent focus outline jump */
-body.wishlist-safe button:focus {
-  box-shadow: none;
-}
-
-@media (max-width: 768px) {
-  #offersBarContainer {
-    margin-top: -48px !important;
-  }
-
-  .mob-header {
-    margin-top: -7px !important;
-  }
-
-  .wish-cont {
-    margin-top: 70px !important
-  }
-}
 
 #prof-page .policy-container {
   padding: 35px;
